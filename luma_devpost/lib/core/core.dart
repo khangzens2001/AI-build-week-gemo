@@ -1,0 +1,12 @@
+export 'bindings/bindings.dart';
+export 'configs/configs.dart';
+export 'constants/constants.dart';
+export 'controllers/controllers.dart';
+export 'data/data.dart';
+export 'domain/domain.dart';
+export 'errors/errors.dart';
+export 'routes/routes.dart';
+export 'services/services.dart';
+export 'theme/theme.dart';
+export 'translations/translations.dart';
+export 'utils/utils.dart';
