@@ -1,0 +1,88 @@
+name: luma_devpost
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+dependencies:
+
+  #firebase
+  firebase_core: ^4.10.0
+  firebase_messaging: ^16.3.0
+  firebase_analytics: ^12.4.2
+  firebase_crashlytics: ^5.2.3
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  dio: ^5.9.2
+  google_fonts: ^8.1.0
+  get: ^4.7.3
+  intl: ^0.20.2
+  permission_handler: ^12.0.3
+  shared_preferences: ^2.5.5
+  html: ^0.15.6
+  path_provider: ^2.1.6
+  universal_html: ^2.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  flutter_flavorizr: ^2.5.0
+  flutter_launcher_icons: ^0.14.4
+
+
+flutter:
+
+  uses-material-design: true
+
+
+
+
+
+# Flutter Flavorizr Configuration
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+  flavors:
+    dev:
+      app:
+        name: "App Dev"
+      android:
+        applicationId: "com.example.app.dev"
+        firebase:
+          config: ".firebase/dev/google-services.json"
+      ios:
+        bundleId: "com.example.app.dev"
+        firebase:
+          config: ".firebase/dev/GoogleService-Info.plist"
+
+    prod:
+      app:
+        name: "App"
+      android:
+        applicationId: "com.example.app"
+        firebase:
+          config: ".firebase/prod/google-services.json"
+      ios:
+        bundleId: "com.example.app"
+        firebase:
+          config: ".firebase/prod/GoogleService-Info.plist"
+
+
+# dart run flutter_launcher_icons
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  adaptive_icon_background: "#FFA721"
+  adaptive_icon_foreground: "assets/images/app_ic.png"
+  image_path: "assets/images/app_ic.png"
