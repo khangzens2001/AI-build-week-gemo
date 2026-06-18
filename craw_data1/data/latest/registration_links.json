@@ -1,0 +1,34 @@
+{
+  "main_event_registration": "https://luma.com/gaf-hm61?utm_source=landing_page",
+  "devpost": "https://agentic-ai-build-week-2026.devpost.com/",
+  "workshop_rsvps": [
+    {
+      "event_id": "day01-byteplus",
+      "url": "https://luma.com/gaf-vbkf"
+    },
+    {
+      "event_id": "day01-nvidia",
+      "url": "https://luma.com/gaf-t4bs"
+    },
+    {
+      "event_id": "day01-trae",
+      "url": "https://luma.com/gaf-jpy4"
+    },
+    {
+      "event_id": "day03-apify",
+      "url": "https://luma.com/gaf-umu5"
+    },
+    {
+      "event_id": "day03-google-developer-experts",
+      "url": "https://luma.com/gaf-idob"
+    },
+    {
+      "event_id": "day04-networking-night",
+      "url": "https://luma.com/gaf-u7gd"
+    },
+    {
+      "event_id": "day04-agentic-ai-build-week-networking-night",
+      "url": "https://luma.com/gaf-u7gd"
+    }
+  ]
+}

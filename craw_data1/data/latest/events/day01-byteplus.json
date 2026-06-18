@@ -1,0 +1,67 @@
+{
+  "id": "day01-byteplus",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
+    "https://luma.com/gaf-vbkf"
+  ],
+  "type": "workshop",
+  "day_number": 1,
+  "day_theme": "Enable",
+  "date": "2026-07-08",
+  "display_date": "Wed · July 8",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "Render the Next Era of Creation with BytePlus AI Stack",
+  "venue": "Tasco Office",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/gaf-vbkf",
+  "event_detail_url": "https://luma.com/gaf-vbkf",
+  "description": "The AI stack you ship on is about to change. **BytePlus** — ByteDance's enterprise AI arm — is opening the hood on the tools their own teams use to build at scale, live in Ho Chi Minh City as part of Agentic AI Build Week.\n\nThis is hands-on and builder-first. Come build, not just watch.\n\n **What you'll take away**\n\n- A working view of the BytePlus AI stack — from idea to shipped AI product, faster\n\n- Practical patterns you can put to work the same week during the hackathon\n\n- For qualifying startups: a path into the **V-START Global Accelerator** (up to **$15,000** in AI & cloud credits)\n\n **Your speakers**\n\n- **Vu Tien Hung** — Senior Manager, Enterprise Sector, BytePlus\n\n- **Lam Thao** — Solution Architect, BytePlus\n\n- **Tran Quoc Huy** — Enterprise Sales Manager, BytePlus\n\n **Event details**\n\n- 📅 Tuesday, July 8, 2026\n\n- 🕐 10:00 AM – 12:00 PM (Indochina Time, GMT+7)\n\n- 📍 TBC, HCMC\n\n- 🎟 Part of Agentic AI Build Week (July 8–12, 2026)\n\n- ✅ Private event · approval required · limited seats\n\n **Before you apply:** You must be registered for Agentic AI Build Week — [👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61) if you haven't yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don't forget to [🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma).\n\n **👉 Apply now to request your seat. Approval required, and seats are filling fast.**",
+  "takeaways": [
+    "A working view of the BytePlus AI stack — from idea to shipped AI product, faster",
+    "Practical patterns you can put to work the same week during the hackathon",
+    "For qualifying startups: a path into the V-START Global Accelerator (up to $15,000 in AI & cloud credits)"
+  ],
+  "speakers": [
+    "Vu Tien Hung — Senior Manager, Enterprise Sector, BytePlus",
+    "Lam Thao — Solution Architect, BytePlus",
+    "Tran Quoc Huy — Enterprise Sales Manager, BytePlus"
+  ],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [
+    "Must be registered for Agentic AI Build Week",
+    "Seats are prioritised for Builder or Founding Builder ticket holders",
+    "AABW Buildathon Devpost signup is recommended",
+    "Private event; approval required; limited seats"
+  ],
+  "location": {
+    "venue_name": "Tasco Office",
+    "address_visibility": "register_to_see_address",
+    "address_text": "TBC, HCMC",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.824298548535092,
+    "longitude": 106.62998121126604,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.824298548535092%2C106.62998121126604",
+    "source": "luma"
+  },
+  "status": "registration_required",
+  "confidence": "homepage+external",
+  "organizer_or_partner": "BytePlus",
+  "start_time": "10:00",
+  "end_time": "12:00",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/r7/cf59a715-7e51-4fe5-90f4-23683ca3d53a.png",
+  "external_time_text": "10:00 AM – 12:00 PM (Indochina Time, GMT+7)",
+  "external_location_text": "TBC, HCMC",
+  "completeness_score": 1.0,
+  "missing_fields": [],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "21d1322596e07c046fb2fab5f3b2ed44bc7d0f4fc2c7de6086b779afec3ab78b",
+  "content_hash": "4b3d315db449b6dd6c90cfcc1753c17952c5a7773a0bba2d3c106e6e7b90553c",
+  "quality_level": "full",
+  "scraped_at": "2026-06-18T10:53:23.815411"
+}

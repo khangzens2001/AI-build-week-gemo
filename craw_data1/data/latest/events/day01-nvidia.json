@@ -1,0 +1,65 @@
+{
+  "id": "day01-nvidia",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
+    "https://luma.com/gaf-t4bs"
+  ],
+  "type": "workshop",
+  "day_number": 1,
+  "day_theme": "Enable",
+  "date": "2026-07-08",
+  "display_date": "Wed · July 8",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally",
+  "venue": "Tasco Office",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/gaf-t4bs",
+  "event_detail_url": "https://luma.com/gaf-t4bs",
+  "description": "Every serious AI startup eventually hits the same wall: compute, capital, and connections. **NVIDIA Inception** exists to knock it down — and in 45 focused minutes, you'll learn exactly how.\n\n **What you'll take away**\n\n- The real map from prototype to production with NVIDIA\n\n- Technical resources, startup-friendly offers, investor access, and go-to-market support members tap into\n\n- A **free NVIDIA DLI course** for every participant\n\n **Your speaker**\n\n- **Jason Pham** — NVIDIA Inception Community Manager, Southeast Asia — the person who connects the region's AI startups to the NVIDIA ecosystem\n\n **Event details**\n\n- 📅 Tuesday, July 8, 2026\n\n- 🕐 2:00 PM – 2:45 PM (Indochina Time, GMT+7)\n\n- 📍 Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date\n\n- 🎟 Part of Agentic AI Build Week (July 8–12, 2026)\n\n- ✅ Private event · approval required · limited seats\n\n **Before you apply:** You must be registered for Agentic AI Build Week — **[👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61)** if you haven't yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don't forget to **[🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma)** **.**\n\n **👉 Apply now to request your seat. Approval required, and seats are filling fast.**",
+  "takeaways": [
+    "The real map from prototype to production with NVIDIA",
+    "Technical resources, startup-friendly offers, investor access, and go-to-market support members tap into",
+    "A free NVIDIA DLI course for every participant"
+  ],
+  "speakers": [
+    "Jason Pham — NVIDIA Inception Community Manager, Southeast Asia — the person who connects the region's AI startups to the NVIDIA ecosystem"
+  ],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [
+    "Must be registered for Agentic AI Build Week",
+    "Seats are prioritised for Builder or Founding Builder ticket holders",
+    "AABW Buildathon Devpost signup is recommended",
+    "Private event; approval required; limited seats"
+  ],
+  "location": {
+    "venue_name": "Tasco Office",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.820793685134667,
+    "longitude": 106.63057916592689,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.820793685134667%2C106.63057916592689",
+    "source": "luma"
+  },
+  "status": "registration_required",
+  "confidence": "homepage+external",
+  "organizer_or_partner": "NVIDIA",
+  "start_time": "14:00",
+  "end_time": "14:45",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/ve/82109156-fac2-43b7-813c-6dffaa1be3e6.png",
+  "external_time_text": "2:00 PM – 2:45 PM (Indochina Time, GMT+7)",
+  "external_location_text": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
+  "completeness_score": 1.0,
+  "missing_fields": [],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "272010cea8ea13ec9ad34853b78c13571339f3a3af121fe21aa9db70b3f81755",
+  "content_hash": "0ae096822bc4d1f9d0e5a1df2ce7a59b6f7975493428441fe1bad7d73add4d9a",
+  "quality_level": "full",
+  "scraped_at": "2026-06-18T10:53:23.818996"
+}

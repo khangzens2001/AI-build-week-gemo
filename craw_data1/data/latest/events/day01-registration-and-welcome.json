@@ -1,0 +1,49 @@
+{
+  "id": "day01-registration-and-welcome",
+  "source": "homepage_daily_schedule",
+  "source_urls": [
+    "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+  ],
+  "type": "administrative",
+  "day_number": 1,
+  "day_theme": "Enable",
+  "date": "2026-07-08",
+  "display_date": "Wed · July 8",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "Registration & Welcome",
+  "venue": "Tasco Office",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": null,
+  "event_detail_url": null,
+  "description": "",
+  "takeaways": [],
+  "speakers": [],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [],
+  "location": {
+    "venue_name": "Tasco Office",
+    "address_visibility": "public_summary",
+    "address_text": "Tasco Office",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  "status": "scheduled",
+  "confidence": "homepage",
+  "start_time": "09:00",
+  "end_time": null,
+  "completeness_score": 1.0,
+  "missing_fields": [],
+  "warnings": [
+    "summary-only event from homepage"
+  ],
+  "important_hash": "969d984f7ba77d29a97430aa2c44feb681fe84c7dd4af785d6c8e618874edd2e",
+  "content_hash": "05cc300c791e9ec43ef2029085f749f40977036477730d1ebfe8abd7b2db02be",
+  "quality_level": "summary_only",
+  "scraped_at": "2026-06-18T10:53:23.813260"
+}

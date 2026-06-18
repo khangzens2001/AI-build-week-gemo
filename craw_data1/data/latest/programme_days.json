@@ -1,0 +1,73 @@
+[
+  {
+    "day_number": 1,
+    "theme": "Enable",
+    "date": "2026-07-08",
+    "display_date": "Wed · July 8",
+    "category": "Workshops",
+    "venue": "Tasco Office",
+    "partners": [
+      "BytePlus",
+      "NVIDIA",
+      "TRAE",
+      "Apify"
+    ],
+    "source": "homepage_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme",
+    "summary_markdown": "### Day 01:Enable\n\nWorkshops\n\n![BytePlus logo](https://agenticaibuildweek.genaifund.ai/assets/byteplus-DpblwXad.svg)\n\n![NVIDIA logo](https://agenticaibuildweek.genaifund.ai/assets/nvidia-5AcRFX3u.png)\n\n![TRAE logo](https://agenticaibuildweek.genaifund.ai/assets/trae-BnVBAW92.png)\n\n![Apify logo](data:image/svg+xml,%3csvg%20width='658'%20height='287'%20viewBox='0%200%20658%20287'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_341_4172)'%3e%3cpath%20d='M153.782%2073H211.73C212.909%2073%20213.865%2073.9556%20213.865%2075.1343V163.693C213.865%20165.815%20211.106%20166.637%20209.944%20164.862L151.996%2076.303C151.068%2074.8835%20152.086%2073%20153.782%2073Z'%20fill='%23246DFF'/%3e%3cpath%20d='M133.083%2073H75.1343C73.9556%2073%2073%2073.9556%2073%2075.1343V163.693C73%20165.815%2075.7588%20166.637%2076.9203%20164.862L134.869%2076.303C135.798%2074.8835%20134.779%2073%20133.083%2073Z'%20fill='%2320A34E'/%3e%3cpath%20d='M142.439%20143.903L76.6101%20210.228C75.2733%20211.575%2076.2273%20213.866%2078.1249%20213.866H208.793C210.683%20213.866%20211.641%20211.591%20210.32%20210.239L145.48%20143.915C144.648%20143.063%20143.279%20143.058%20142.439%20143.903Z'%20fill='%23F86606'/%3e%3cpath%20d='M525.792%2092.3785H501.134C493.419%2092.3785%20490.113%2096.2354%20490.113%20103.261V110.011L526.04%20110.012L546.565%20157.399L567.092%20110.012H585L542.019%20209.059H524.386L537.611%20178.477L513.028%20124.888H490.113V179.716H472.481V124.888H453.332V110.011H472.481V99.8174C472.481%2086.3173%20479.919%2078.3271%20495.761%2078.3271H525.792V92.3785Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M385.456%20108.497C403.639%20108.497%20418.517%20122.135%20418.517%20144.865C418.517%20167.732%20403.639%20181.232%20385.456%20181.232C370.302%20181.232%20362.725%20171.865%20361.348%20169.11V208.922H343.99V110.012H361.485V121.033C362.725%20118.416%20370.302%20108.497%20385.456%20108.497ZM380.909%20123.926C368.924%20123.926%20361.21%20132.88%20361.21%20144.865C361.21%20156.712%20368.924%20165.804%20380.909%20165.804C393.031%20165.804%20400.746%20156.712%20400.746%20144.865C400.746%20132.88%20393.031%20123.926%20380.909%20123.926Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M298.259%20108.221C319.886%20108.221%20331.871%20119.517%20331.871%20136.047V159.604C331.871%20163.737%20333.386%20165.665%20337.381%20165.94V180.129H331.871C323.193%20179.991%20317.544%20176.685%20315.616%20170.486C312.172%20175.445%20305.009%20181.232%20293.024%20181.232C276.631%20181.232%20264.232%20171.864%20264.232%20157.675C264.233%20143.624%20274.84%20136.047%20292.059%20136.047H314.927C314.927%20127.644%20308.452%20122.272%20298.259%20122.272C288.616%20122.272%20284.758%20127.506%20283.794%20129.297H266.023C267.401%20121.858%20276.356%20108.221%20298.259%20108.221ZM294.952%20148.032C286.824%20148.032%20281.589%20151.063%20281.589%20157.4C281.59%20164.15%20287.927%20168.145%20296.743%20168.145C306.662%20168.144%20314.927%20163.185%20314.927%20153.956V148.032H294.952Z'%20fill='white'/%3e%3cpath%20d='M444.943%20179.716H427.311V110.012H444.943V179.716Z'%20fill='white'/%3e%3cpath%20d='M445.218%2098.854H426.896V77.915H445.218V98.854Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_341_4172'%3e%3crect%20width='512'%20height='141'%20fill='white'%20transform='translate(73%2073)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e)\n\nVenue: Tasco Office\n\n- ![](https://agenticaibuildweek.genaifund.ai/venues/aws-office.webp)\n\n"
+  },
+  {
+    "day_number": 2,
+    "theme": "Integrate",
+    "date": "2026-07-09",
+    "display_date": "Thu · July 9",
+    "category": "Workshops",
+    "venue": "AWS Office, Bitexco Tower",
+    "partners": [
+      "AWS"
+    ],
+    "source": "homepage_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme",
+    "summary_markdown": "### Day 02:Integrate\n\nWorkshops\n\n![AWS logo](https://agenticaibuildweek.genaifund.ai/assets/aws-C2UkUU-W.png)\n\nVenue: AWS Office, Bitexco Tower\n\n- ![](https://agenticaibuildweek.genaifund.ai/venues/vng-campus.webp)\n\n"
+  },
+  {
+    "day_number": 3,
+    "theme": "Design",
+    "date": "2026-07-10",
+    "display_date": "Fri · July 10",
+    "category": "Workshops",
+    "venue": "VNG Campus",
+    "partners": [
+      "Agora",
+      "Google for Developers",
+      "TinyFish"
+    ],
+    "source": "homepage_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme",
+    "summary_markdown": "### Day 03:Design\n\nWorkshops\n\n![Agora logo](https://agenticaibuildweek.genaifund.ai/assets/agora-QnjCbkeX.png)\n\n![Google for Developers logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/890b0ff2-fe97-4908-91d7-07d1862dd7f1/googledev.svg)\n\n![TinyFish logo](https://agenticaibuildweek.genaifund.ai/assets/tinyfish-ux5kSZ0w.png)\n\nVenue: VNG Campus\n\n- ![](https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp)\n\n"
+  },
+  {
+    "day_number": 4,
+    "theme": "Build",
+    "date": "2026-07-11",
+    "display_date": "Sat · July 11",
+    "category": "Keynotes · Networking · Late-night build",
+    "venue": "Galaxy Innovation Park",
+    "partners": [],
+    "source": "homepage_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme",
+    "summary_markdown": "### Day 04:Build\n\n - Keynotes\n - Networking\n - Late-night build\n\nVenue: Galaxy Innovation Park\n\n- ![](https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp)\n\n"
+  },
+  {
+    "day_number": 5,
+    "theme": "Demo",
+    "date": "2026-07-12",
+    "display_date": "Sun · July 12",
+    "category": "Demo Day · Award Ceremony",
+    "venue": "Galaxy Innovation Park",
+    "partners": [],
+    "source": "homepage_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme",
+    "summary_markdown": "### Day 05:Demo\n\n - Demo Day\n - Award Ceremony\n\nVenue: Galaxy Innovation Park"
+  }
+]

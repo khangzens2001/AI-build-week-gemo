@@ -1,0 +1,60 @@
+{
+  "id": "day01-trae",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
+    "https://luma.com/gaf-jpy4"
+  ],
+  "type": "workshop",
+  "day_number": 1,
+  "day_theme": "Enable",
+  "date": "2026-07-08",
+  "display_date": "Wed · July 8",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "TRAE in Your Professional Workflow",
+  "venue": "Tasco Office",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/gaf-jpy4",
+  "event_detail_url": "https://luma.com/gaf-jpy4",
+  "description": "The builders pulling ahead right now aren't working harder. They've rewired how they work. **TRAE** shows you how.\n\n **What you'll take away**\n\n- A practical look at folding agentic AI into the way you actually build, day to day\n\n- Workflow moves you can use the same night during the hackathon\n\n- A sharper edge in an AI era that rewards builders who adapt fast\n\n **Your speaker**\n\n- **Rita Huang** — Product Operations Manager, TRAE\n\n **Event details**\n\n- 📅 Tuesday, July 8, 2026\n\n- 🕐 3:00 PM – 4:00 PM (Indochina Time, GMT+7)\n\n- 📍 TBC, HCMC\n\n- 🎟 Part of Agentic AI Build Week (July 8–12, 2026)\n\n- ✅ Private event · approval required · limited seats\n\n **Before you apply:** You must be registered for Agentic AI Build Week — [👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61) if you haven't yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don't forget to [🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma).\n\n **👉 Apply now to request your seat. Approval required, and seats are filling fast.**",
+  "takeaways": [
+    "A practical look at folding agentic AI into the way you actually build, day to day",
+    "Workflow moves you can use the same night during the hackathon",
+    "A sharper edge in an AI era that rewards builders who adapt fast"
+  ],
+  "speakers": [
+    "Rita Huang** — Product Operations Manager, TRAE"
+  ],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [],
+  "location": {
+    "venue_name": "Tasco Office",
+    "address_visibility": "register_to_see_address",
+    "address_text": "TBC, HCMC",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.82280548662264,
+    "longitude": 106.62819539147068,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.82280548662264%2C106.62819539147068",
+    "source": "luma"
+  },
+  "status": "registration_required",
+  "confidence": "homepage+external",
+  "organizer_or_partner": "TRAE",
+  "start_time": "15:00",
+  "end_time": "16:00",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/4w/98e547e7-11c0-4a07-b7cd-105069417d75.png",
+  "external_time_text": "3:00 PM – 4:00 PM (Indochina Time, GMT+7)",
+  "external_location_text": "TBC, HCMC",
+  "completeness_score": 0.92,
+  "missing_fields": [
+    "requirements"
+  ],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "684b776842f5175a19d603581bcefd69467bbc4e1d58fcf8dfe63e962357dcbf",
+  "scraped_at": "2026-06-18T10:36:26.027738"
+}

@@ -1,0 +1,43 @@
+{
+  "url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
+  "title": "Daily Schedule",
+  "markdown": "Daily Schedule\n\nTimes are indicative · sessions still being finalised\n\nDay 01EnableWed · July 8Day 02IntegrateThu · July 9Day 03DesignFri · July 10Day 04BuildSat · July 11Day 05DemoSun · July 12\n\nDay 01 · EnableWed · July 8\n\nTasco Office\n\n1. 09:00Registration & Welcome\n2. ![](https://agenticaibuildweek.genaifund.ai/workshops/byteplus.png)\n\n\n10:00–12:00·BytePlus\n\n\n\nRender the Next Era of Creation with BytePlus AI Stack\n\n\n\n[RSVP](https://luma.com/gaf-vbkf)\n\n3. 12:00Lunch\n4. ![](https://agenticaibuildweek.genaifund.ai/workshops/nvidia.png)\n\n\n14:00–14:45·NVIDIA\n\n\n\nInside NVIDIA Inception Program: How Startups Build & Scale AI Globally\n\n\n\n[RSVP](https://luma.com/gaf-t4bs)\n\n5. ![](https://agenticaibuildweek.genaifund.ai/workshops/trae.png)\n\n\n15:00–16:00·TRAE\n\n\n\nTRAE in Your Professional Workflow\n\n\n\n[RSVP](https://luma.com/gaf-jpy4)",
+  "metadata": {
+    "sourceURL": "https://agenticaibuildweek.genaifund.ai/",
+    "section": "daily_schedule"
+  },
+  "links": [
+    {
+      "text": "RSVP",
+      "url": "https://luma.com/gaf-vbkf",
+      "type": "registration"
+    },
+    {
+      "text": "RSVP",
+      "url": "https://luma.com/gaf-t4bs",
+      "type": "registration"
+    },
+    {
+      "text": "RSVP",
+      "url": "https://luma.com/gaf-jpy4",
+      "type": "registration"
+    }
+  ],
+  "images": [
+    {
+      "alt": "",
+      "url": "https://agenticaibuildweek.genaifund.ai/workshops/byteplus.png"
+    },
+    {
+      "alt": "",
+      "url": "https://agenticaibuildweek.genaifund.ai/workshops/nvidia.png"
+    },
+    {
+      "alt": "",
+      "url": "https://agenticaibuildweek.genaifund.ai/workshops/trae.png"
+    }
+  ],
+  "status": "ok",
+  "content_hash": "273219fa80a19ff878f6e72ef7812fda901f84f44b418b009713c7ee9d64e5ea",
+  "scraped_at": "2026-06-18T10:14:33.253518"
+}

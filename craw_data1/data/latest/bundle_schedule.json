@@ -1,0 +1,329 @@
+[
+  {
+    "day": "01",
+    "weekday": "Wed",
+    "dateLabel": "July 8",
+    "theme": "Enable",
+    "venue": "Tasco Office",
+    "venueImage": "/venues/tasco-office.webp",
+    "workshop_partners": [
+      "BytePlus",
+      "NVIDIA",
+      "TRAE",
+      "Apify"
+    ],
+    "blocks": [
+      {
+        "time": "09:00",
+        "end": null,
+        "host": null,
+        "label": "Registration & Welcome",
+        "tone": "break",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "10:00",
+        "end": "12:00",
+        "host": "BytePlus",
+        "label": "Render the Next Era of Creation with BytePlus AI Stack",
+        "tone": "workshop",
+        "luma": "https://luma.com/gaf-vbkf",
+        "lumaId": "evt-TtLtKxrH0efkETM"
+      },
+      {
+        "time": "12:00",
+        "end": null,
+        "host": null,
+        "label": "Lunch",
+        "tone": "break",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "14:00",
+        "end": "14:45",
+        "host": "NVIDIA",
+        "label": "Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally",
+        "tone": "workshop",
+        "luma": "https://luma.com/gaf-t4bs",
+        "lumaId": "evt-DzGyMadWRcAjYX0"
+      },
+      {
+        "time": "15:00",
+        "end": "16:00",
+        "host": "TRAE",
+        "label": "TRAE in Your Professional Workflow",
+        "tone": "workshop",
+        "luma": "https://luma.com/gaf-jpy4",
+        "lumaId": "evt-0CvTZee9QMkC1tT"
+      }
+    ]
+  },
+  {
+    "day": "02",
+    "weekday": "Thu",
+    "dateLabel": "July 9",
+    "theme": "Integrate",
+    "venue": "AWS Office, Bitexco Tower",
+    "venueImage": "/venues/aws-office.webp",
+    "workshop_partners": [
+      "AWS"
+    ],
+    "blocks": [
+      {
+        "time": "09:00",
+        "end": "10:30",
+        "host": "AWS",
+        "label": null,
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "10:30",
+        "end": "12:00",
+        "host": "Agora",
+        "label": null,
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "12:00",
+        "end": null,
+        "host": null,
+        "label": "Lunch",
+        "tone": "break",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "13:00",
+        "end": "14:30",
+        "host": "AWS",
+        "label": null,
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "14:30",
+        "end": "16:00",
+        "host": "Tiny Fish",
+        "label": null,
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "16:30",
+        "end": "18:00",
+        "host": "AWS",
+        "label": null,
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "18:00",
+        "end": null,
+        "host": null,
+        "label": "AI × Gaming Night",
+        "tone": "signature",
+        "luma": null,
+        "lumaId": null
+      }
+    ]
+  },
+  {
+    "day": "03",
+    "weekday": "Fri",
+    "dateLabel": "July 10",
+    "theme": "Design",
+    "venue": "VNG Campus",
+    "venueImage": "/venues/vng-campus.webp",
+    "workshop_partners": [
+      "Agora",
+      "Google for Developers",
+      "TinyFish"
+    ],
+    "blocks": [
+      {
+        "time": "09:00",
+        "end": null,
+        "host": null,
+        "label": "Registration & Welcome",
+        "tone": "break",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "10:00",
+        "end": "12:00",
+        "host": "Apify",
+        "label": "Build, Deploy & Monetize AI Agents: The Future of the Developer Economy",
+        "tone": "workshop",
+        "luma": "https://luma.com/gaf-umu5",
+        "lumaId": "evt-tBo8l1liwEUQi62"
+      },
+      {
+        "time": "12:00",
+        "end": "14:00",
+        "host": "Langfuse × ClickHouse",
+        "label": null,
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "14:00",
+        "end": "15:00",
+        "host": "Google Developer Experts",
+        "label": "Beyond Autocomplete: How Agentic AI Solves the Enterprise Design Bottleneck",
+        "tone": "workshop",
+        "luma": "https://luma.com/gaf-idob",
+        "lumaId": "evt-ja1zqmbFpmpAY4M"
+      },
+      {
+        "time": "15:00",
+        "end": "17:00",
+        "host": "Tencent Cloud",
+        "label": null,
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "18:00",
+        "end": null,
+        "host": null,
+        "label": "Builder Night",
+        "tone": "signature",
+        "luma": null,
+        "lumaId": null
+      }
+    ]
+  },
+  {
+    "day": "04",
+    "weekday": "Sat",
+    "dateLabel": "July 11",
+    "theme": "Build",
+    "venue": "Galaxy Innovation Park",
+    "venueImage": "/venues/galaxy-innovation-park.webp",
+    "workshop_partners": [],
+    "blocks": [
+      {
+        "time": "09:00",
+        "end": null,
+        "host": null,
+        "label": "Opening Ceremony + Keynotes",
+        "tone": "signature",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "12:00",
+        "end": null,
+        "host": null,
+        "label": "Lunch",
+        "tone": "break",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "13:00",
+        "end": null,
+        "host": null,
+        "label": "On-site Build Sprint",
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "16:00",
+        "end": null,
+        "host": null,
+        "label": "Expert Parade",
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "18:00",
+        "end": null,
+        "host": null,
+        "label": "Networking Night",
+        "tone": "signature",
+        "luma": "https://luma.com/gaf-u7gd",
+        "lumaId": "evt-FlMo6AtULkEZZhS"
+      },
+      {
+        "time": "20:00",
+        "end": null,
+        "host": null,
+        "label": "Late Night Build",
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      }
+    ]
+  },
+  {
+    "day": "05",
+    "weekday": "Sun",
+    "dateLabel": "July 12",
+    "theme": "Demo",
+    "venue": "Galaxy Innovation Park",
+    "venueImage": "/venues/galaxy-innovation-park.webp",
+    "workshop_partners": [],
+    "blocks": [
+      {
+        "time": "09:00",
+        "end": null,
+        "host": null,
+        "label": "Submission Deadline",
+        "tone": "signature",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "10:00",
+        "end": null,
+        "host": null,
+        "label": "Demo Pitches",
+        "tone": "workshop",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "12:00",
+        "end": null,
+        "host": null,
+        "label": "Lunch",
+        "tone": "break",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "16:00",
+        "end": null,
+        "host": null,
+        "label": "Awards Ceremony",
+        "tone": "signature",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "18:00",
+        "end": null,
+        "host": null,
+        "label": "Networking Night",
+        "tone": "signature",
+        "luma": null,
+        "lumaId": null
+      }
+    ]
+  }
+]
