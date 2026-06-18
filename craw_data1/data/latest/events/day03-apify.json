@@ -1,0 +1,66 @@
+{
+  "id": "day03-apify",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
+    "https://luma.com/gaf-umu5"
+  ],
+  "type": "workshop",
+  "day_number": 3,
+  "day_theme": "Design",
+  "date": "2026-07-10",
+  "display_date": "Fri · July 10",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "Build, Deploy & Monetize AI Agents: The Future of the Developer Economy",
+  "venue": "VNG Campus",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/gaf-umu5",
+  "event_detail_url": "https://luma.com/gaf-umu5",
+  "description": "Building an AI agent is one thing. Getting it deployed, used, and **paying you** is another. This session is about the second part.\n\n **What you'll take away**\n\n- Repeatable patterns for turning agents into a real developer economy — build, deploy, monetize\n\n- Practical, ship-it-this-week tactics (not theory)\n\n- **$25 in Apify platform credits** for every registered builder, with top-ups at the Apify booth\n\n **Your speakers**\n\n- **Saurav Jain** — Senior Developer Community Manager, Apify\n\n- **Jakub Drobnik** — Engineering Team Lead, Apify\n\n **Event details**\n\n- 📅 Thursday, July 10, 2026\n\n- 🕐 10:00 AM – 12:00 PM (Indochina Time, GMT+7)\n\n- 📍 VNG Group JSC, Ho Chi Minh\n\n- 🎟 Part of Agentic AI Build Week (July 8–12, 2026)\n\n- ✅ Private event · approval required · limited seats\n\n **Before you apply:** You must be registered for Agentic AI Build Week — [👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61) if you haven't yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don't forget to [🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma).\n\n **👉 Apply now to request your seat. Approval required, and seats are filling fast.**",
+  "takeaways": [
+    "Repeatable patterns for turning agents into a real developer economy — build, deploy, monetize",
+    "Practical, ship-it-this-week tactics (not theory)",
+    "$25 in Apify platform credits for every registered builder, with top-ups at the Apify booth"
+  ],
+  "speakers": [
+    "Saurav Jain — Senior Developer Community Manager, Apify",
+    "Jakub Drobnik — Engineering Team Lead, Apify"
+  ],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [
+    "Must be registered for Agentic AI Build Week",
+    "Seats are prioritised for Builder or Founding Builder ticket holders",
+    "AABW Buildathon Devpost signup is recommended",
+    "Private event; approval required; limited seats"
+  ],
+  "location": {
+    "venue_name": "VNG Campus",
+    "address_visibility": "register_to_see_address",
+    "address_text": "VNG Group JSC, Ho Chi Minh",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.75730637936679,
+    "longitude": 106.74442982072918,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.75730637936679%2C106.74442982072918",
+    "source": "luma"
+  },
+  "status": "registration_required",
+  "confidence": "homepage+external",
+  "start_time": "10:00",
+  "end_time": "12:00",
+  "organizer_or_partner": "Apify",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/jj/288529bd-2fc0-43c1-a25b-32fe1736d278.png",
+  "external_time_text": "10:00 AM – 12:00 PM (Indochina Time, GMT+7)",
+  "external_location_text": "VNG Group JSC, Ho Chi Minh",
+  "completeness_score": 1.0,
+  "missing_fields": [],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "4ee8bacdb32e595baa39c75f6c57a9ed013d8503676fa9c05911bcb109bce06f",
+  "content_hash": "e8a5a55aa76da9c73ddbd6749589d9b4cb97e069066e5edc97c59b61b0cfdceb",
+  "quality_level": "full",
+  "scraped_at": "2026-06-18T15:27:19.781089"
+}

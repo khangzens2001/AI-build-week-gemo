@@ -1,0 +1,58 @@
+{
+  "id": "day04-agentic-ai-build-week-networking-night",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://luma.com/gaf-u7gd"
+  ],
+  "type": "networking",
+  "day_number": 4,
+  "day_theme": "Build",
+  "date": "2026-07-11",
+  "display_date": "Sat · July 11",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "Agentic AI Build Week Networking Night",
+  "venue": "Ho Chi Minh City",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/gaf-u7gd",
+  "event_detail_url": "https://luma.com/gaf-u7gd",
+  "description": "## NOT EVERY GREAT CONVERSATION FITS INTO A THEME.\n\nAcross Agentic AI Build Week, we ran private networking events for visual AI, gaming, and robotics. This is the one where everything — and everyone — comes together.\n\nThe AABW Builder Networking Night is an invitation-only closing event, curated for the most engaged builders, investors, and industry leaders from the entire week.\n\n* * *\n\n## 👋 WHAT THIS IS\n\nA private, by-application evening gathering for a select group of practitioners from across the AI ecosystem. No agenda. No panels. No pitches.\n\nJust the kind of genuine, unhurried conversation that happens when the right people are finally in the same room — with nowhere else to be.\n\n* * *\n\n## 🌐 WHO'S IN THE ROOM\n\n- Founders and builders from across the AI stack\n\n- Investors and VCs active in the Southeast Asia and global AI ecosystem\n\n- Corporate and brand leaders at the frontier of AI adoption\n\n- Industry players who shaped what this week became\n\n* * *\n\n## 💡 HOW IT WORKS\n\nAttendance is by application and personal review. We curate every room we run — and this one is no different. Every person here was selected because they make the room better for everyone else in it.\n\nPart of Agentic AI Build Week — Ho Chi Minh City, 8–12 July 2026.\n\n📅 11 July 2026\n\n⏰ 6:00 PM – 8:00 PM\n\n📍 Ho Chi Minh City\n\nClose the week right. Apply to attend 👉 [**HERE**](https://luma.com/fojg38pi)\n\n* * *\n\n## ONE REQUIREMENT\n\nTo be eligible for this networking event, you must be registered for Agentic AI Build Week. Register for the main event 👉 [**HERE**](https://luma.com/t6n0irct?utm_source=luma_networkingevent)",
+  "takeaways": [],
+  "speakers": [],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [
+    "Must be registered for Agentic AI Build Week",
+    "Private event; approval required; limited seats"
+  ],
+  "location": {
+    "venue_name": "Ho Chi Minh City",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Ho Chi Minh City",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.8230989,
+    "longitude": 106.62966379999999,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.8230989%2C106.62966379999999&query_place_id=ChIJ0T2NLikpdTERKxE8d61aX_E",
+    "source": "luma"
+  },
+  "status": "registration_required",
+  "confidence": "homepage+external",
+  "start_time": null,
+  "end_time": null,
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/w1/e17cfc9d-4e28-4fce-984d-ab7ff63147a1.png",
+  "external_time_text": "",
+  "external_location_text": "Ho Chi Minh City",
+  "source_note": "Agentic AI Build Week Networking Night; not currently linked from homepage schedule.",
+  "completeness_score": 0.86,
+  "missing_fields": [
+    "start_time"
+  ],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "a4cfcbb6fbb63003f60704e15795d4596540f5bf36e6f920a4ef14b72ff276bc",
+  "content_hash": "04186b4d3c0c87444a972e005426b7add90e08b9810fdf998ace4df06e74716f",
+  "quality_level": "full",
+  "scraped_at": "2026-06-18T13:11:31.329265"
+}

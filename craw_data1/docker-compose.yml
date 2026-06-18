@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  scraper:
+    build: .
+    container_name: aabw_scraper
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    # Default runs in scheduler mode (15 min loop). To run once and exit, uncomment below:
+    # command: ["python", "main.py", "--once"]

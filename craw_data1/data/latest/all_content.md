@@ -1,0 +1,1640 @@
+# Agentic AI Build Week | GenAI Fund
+
+Source: https://agenticaibuildweek.genaifund.ai/
+
+[Pre-Event TrackBuilder Experience Track — win $900 & ship it liveEnter Now](https://agenticaibuildweek.genaifund.ai/builder-experience-track)
+
+Backed by the AI Stack Building the Future
+
+Strategic Partner
+
+![AWS logo](https://agenticaibuildweek.genaifund.ai/assets/aws-C2UkUU-W.png)
+
+Technology Partners
+
+![OpenAI logo](data:image/svg+xml,%3csvg%20width='180'%20height='49'%20viewBox='0%200%20288%2078'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M30.6%200.398438C13.77%200.398438%200%2014.1684%200%2030.9984C0%2047.8284%2013.77%2061.5984%2030.6%2061.5984C47.43%2061.5984%2061.2%2047.9134%2061.2%2030.9984C61.2%2014.0834%2047.515%200.398438%2030.6%200.398438ZM30.6%2050.6334C20.145%2050.6334%2011.73%2042.0484%2011.73%2030.9984C11.73%2019.9484%2020.145%2011.3634%2030.6%2011.3634C41.055%2011.3634%2049.47%2019.9484%2049.47%2030.9984C49.47%2042.0484%2041.055%2050.6334%2030.6%2050.6334Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M92.1393%2017.3984C86.6143%2017.3984%2081.2593%2019.6084%2078.4543%2023.3484V18.2484H67.4043V77.7484H78.4543V56.2434C81.2593%2059.7284%2086.4443%2061.5984%2092.1393%2061.5984C104.039%2061.5984%20113.389%2052.2484%20113.389%2039.4984C113.389%2026.7484%20104.039%2017.3984%2092.1393%2017.3984ZM90.2693%2051.9934C83.9793%2051.9934%2078.3693%2047.0634%2078.3693%2039.4984C78.3693%2031.9334%2083.9793%2027.0034%2090.2693%2027.0034C96.5593%2027.0034%20102.169%2031.9334%20102.169%2039.4984C102.169%2047.0634%2096.5593%2051.9934%2090.2693%2051.9934Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M139.401%2017.3984C127.331%2017.3984%20117.811%2026.8334%20117.811%2039.4984C117.811%2052.1634%20126.141%2061.5984%20139.741%2061.5984C150.876%2061.5984%20158.016%2054.8834%20160.226%2047.3184H149.431C148.071%2050.4634%20144.246%2052.6734%20139.656%2052.6734C133.961%2052.6734%20129.626%2048.6784%20128.606%2042.9834H160.736V38.6484C160.736%2027.0884%20152.661%2017.3984%20139.401%2017.3984ZM128.691%2035.1634C129.881%2029.8084%20134.301%2026.3234%20139.656%2026.3234C145.351%2026.3234%20149.686%2030.0634%20150.196%2035.1634H128.691Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M190.145%2017.3984C185.215%2017.3984%20180.03%2019.6084%20177.65%2023.2634V18.2484H166.6V60.7484H177.65V37.8834C177.65%2031.2534%20181.22%2026.9184%20187%2026.9184C192.355%2026.9184%20195.245%2030.9984%20195.245%2036.6934V60.7484H206.295V34.9084C206.295%2024.3684%20199.835%2017.3984%20190.145%2017.3984Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M234.596%201.25L210.541%2060.75H222.356L227.456%2047.745H254.826L259.926%2060.75H271.911L248.026%201.25H234.596ZM231.281%2037.885L241.141%2012.98L250.916%2037.885H231.281Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M287.636%201.25H276.416V60.75H287.636V1.25Z'%20fill='white'%3e%3c/path%3e%3c/svg%3e)
+
+NVIDIA
+
+![Tencent Cloud logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/440a0c7f-e7da-4ca8-b7ce-550b81a75385/tencent-cloud.png)
+
+![Microsoft for Startups logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/4c651740-63a5-41b3-bf19-b227fa08557d/microsoft-for-startups.png)
+
+![Google for Developers logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/890b0ff2-fe97-4908-91d7-07d1862dd7f1/googledev.svg)
+
+![Qwen logo](<Base64-Image-Removed>)
+
+![Kimi logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/8e72c274-cf2f-4b78-9962-ba28f1e7c747/kimi.svg)
+
+![Agora logo](https://agenticaibuildweek.genaifund.ai/assets/agora-QnjCbkeX.png)
+
+![n8n logo](data:image/svg+xml,%3csvg%20width='444'%20height='120'%20viewBox='0%200%20444%20120'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M204%2048C192.817%2048%20183.42%2040.3514%20180.756%2030H153.248C147.382%2030%20142.376%2034.241%20141.412%2040.0272L140.425%2045.9456C139.489%2051.5648%20136.646%2056.4554%20132.626%2060C136.646%2063.5446%20139.489%2068.4352%20140.425%2074.0544L141.412%2079.9728C142.376%2085.759%20147.382%2090%20153.248%2090H156.756C159.42%2079.6486%20168.817%2072%20180%2072C193.255%2072%20204%2082.7452%20204%2096C204%20109.255%20193.255%20120%20180%20120C168.817%20120%20159.42%20112.351%20156.756%20102H153.248C141.516%20102%20131.504%2093.5181%20129.575%2081.9456L128.588%2076.0272C127.624%2070.241%20122.618%2066%20116.752%2066H107.244C104.58%2076.3514%2095.183%2084%2084%2084C72.817%2084%2063.4204%2076.3514%2060.7561%2066H47.2439C44.5796%2076.3514%2035.183%2084%2024%2084C10.7452%2084%200%2073.2548%200%2060C0%2046.7452%2010.7452%2036%2024%2036C35.183%2036%2044.5796%2043.6486%2047.2439%2054H60.7561C63.4204%2043.6486%2072.817%2036%2084%2036C95.183%2036%20104.58%2043.6486%20107.244%2054H116.752C122.618%2054%20127.624%2049.759%20128.588%2043.9728L129.575%2038.0544C131.504%2026.4819%20141.516%2018%20153.248%2018H180.756C183.42%207.64864%20192.817%200%20204%200C217.255%200%20228%2010.7452%20228%2024C228%2037.2548%20217.255%2048%20204%2048ZM204%2036C210.627%2036%20216%2030.6274%20216%2024C216%2017.3726%20210.627%2012%20204%2012C197.373%2012%20192%2017.3726%20192%2024C192%2030.6274%20197.373%2036%20204%2036ZM24%2072C30.6274%2072%2036%2066.6274%2036%2060C36%2053.3726%2030.6274%2048%2024%2048C17.3726%2048%2012%2053.3726%2012%2060C12%2066.6274%2017.3726%2072%2024%2072ZM96%2060C96%2066.6274%2090.6274%2072%2084%2072C77.3726%2072%2072%2066.6274%2072%2060C72%2053.3726%2077.3726%2048%2084%2048C90.6274%2048%2096%2053.3726%2096%2060ZM192%2096C192%20102.627%20186.627%20108%20180%20108C173.373%20108%20168%20102.627%20168%2096C168%2089.3726%20173.373%2084%20180%2084C186.627%2084%20192%2089.3726%20192%2096Z'%20fill='%23EA4B71'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M372.017%2051.8874V51.3155C376.204%2049.2187%20380.391%2045.5969%20380.391%2038.4487C380.391%2028.1552%20371.922%2021.96%20360.218%2021.96C348.228%2021.96%20339.664%2028.5364%20339.664%2038.6393C339.664%2045.5016%20343.66%2049.2187%20348.038%2051.3155V51.8874C343.185%2053.603%20337.38%2058.7497%20337.38%2067.3276C337.38%2077.7164%20345.944%2084.96%20360.123%2084.96C374.301%2084.96%20382.58%2077.7164%20382.58%2067.3276C382.58%2058.7497%20376.87%2053.6983%20372.017%2051.8874ZM360.123%2030.7286C364.881%2030.7286%20368.401%2033.7785%20368.401%2038.9252C368.401%2044.072%20364.785%2047.1219%20360.123%2047.1219C355.46%2047.1219%20351.559%2044.072%20351.559%2038.9252C351.559%2033.6832%20355.27%2030.7286%20360.123%2030.7286ZM360.123%2075.8102C354.604%2075.8102%20350.131%2072.2838%20350.131%2066.2792C350.131%2060.8466%20353.842%2056.7482%20360.028%2056.7482C366.118%2056.7482%20369.829%2060.7512%20369.829%2066.4699C369.829%2072.2838%20365.547%2075.8102%20360.123%2075.8102Z'%20fill='white'/%3e%3cpath%20d='M397.26%2084.0069H409.44V58.1779C409.44%2049.6953%20414.579%2045.9782%20420.383%2045.9782C426.093%2045.9782%20430.565%2049.7906%20430.565%2057.606V84.0069H442.745V55.128C442.745%2042.6423%20435.513%2035.3988%20424.19%2035.3988C417.053%2035.3988%20413.056%2038.2581%20410.201%2041.9752H409.44L408.393%2036.3519H397.26V84.0069Z'%20fill='white'/%3e%3cpath%20d='M289.44%2084.0069H277.26V36.3519H288.393L289.44%2041.9752H290.201C293.056%2038.2581%20297.053%2035.3988%20304.19%2035.3988C315.513%2035.3988%20322.745%2042.6423%20322.745%2055.128V84.0069H310.565V57.606C310.565%2049.7906%20306.093%2045.9782%20300.383%2045.9782C294.579%2045.9782%20289.44%2049.6953%20289.44%2058.1779V84.0069Z'%20fill='white'/%3e%3c/svg%3e)
+
+![Daytona logo](https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png)
+
+![TRAE logo](https://agenticaibuildweek.genaifund.ai/assets/trae-BnVBAW92.png)
+
+![Notion logo](https://agenticaibuildweek.genaifund.ai/assets/notion-BaFL5GEk.png)
+
+![ZenRows logo](https://agenticaibuildweek.genaifund.ai/assets/zenrows-13sqiRlW.png)
+
+![BytePlus logo](https://agenticaibuildweek.genaifund.ai/assets/byteplus-DpblwXad.svg)
+
+![Bright Data logo](https://agenticaibuildweek.genaifund.ai/assets/brightdata-C9KCI4WK.png)
+
+![Apify logo](data:image/svg+xml,%3csvg%20width='658'%20height='287'%20viewBox='0%200%20658%20287'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_341_4172)'%3e%3cpath%20d='M153.782%2073H211.73C212.909%2073%20213.865%2073.9556%20213.865%2075.1343V163.693C213.865%20165.815%20211.106%20166.637%20209.944%20164.862L151.996%2076.303C151.068%2074.8835%20152.086%2073%20153.782%2073Z'%20fill='%23246DFF'/%3e%3cpath%20d='M133.083%2073H75.1343C73.9556%2073%2073%2073.9556%2073%2075.1343V163.693C73%20165.815%2075.7588%20166.637%2076.9203%20164.862L134.869%2076.303C135.798%2074.8835%20134.779%2073%20133.083%2073Z'%20fill='%2320A34E'/%3e%3cpath%20d='M142.439%20143.903L76.6101%20210.228C75.2733%20211.575%2076.2273%20213.866%2078.1249%20213.866H208.793C210.683%20213.866%20211.641%20211.591%20210.32%20210.239L145.48%20143.915C144.648%20143.063%20143.279%20143.058%20142.439%20143.903Z'%20fill='%23F86606'/%3e%3cpath%20d='M525.792%2092.3785H501.134C493.419%2092.3785%20490.113%2096.2354%20490.113%20103.261V110.011L526.04%20110.012L546.565%20157.399L567.092%20110.012H585L542.019%20209.059H524.386L537.611%20178.477L513.028%20124.888H490.113V179.716H472.481V124.888H453.332V110.011H472.481V99.8174C472.481%2086.3173%20479.919%2078.3271%20495.761%2078.3271H525.792V92.3785Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M385.456%20108.497C403.639%20108.497%20418.517%20122.135%20418.517%20144.865C418.517%20167.732%20403.639%20181.232%20385.456%20181.232C370.302%20181.232%20362.725%20171.865%20361.348%20169.11V208.922H343.99V110.012H361.485V121.033C362.725%20118.416%20370.302%20108.497%20385.456%20108.497ZM380.909%20123.926C368.924%20123.926%20361.21%20132.88%20361.21%20144.865C361.21%20156.712%20368.924%20165.804%20380.909%20165.804C393.031%20165.804%20400.746%20156.712%20400.746%20144.865C400.746%20132.88%20393.031%20123.926%20380.909%20123.926Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M298.259%20108.221C319.886%20108.221%20331.871%20119.517%20331.871%20136.047V159.604C331.871%20163.737%20333.386%20165.665%20337.381%20165.94V180.129H331.871C323.193%20179.991%20317.544%20176.685%20315.616%20170.486C312.172%20175.445%20305.009%20181.232%20293.024%20181.232C276.631%20181.232%20264.232%20171.864%20264.232%20157.675C264.233%20143.624%20274.84%20136.047%20292.059%20136.047H314.927C314.927%20127.644%20308.452%20122.272%20298.259%20122.272C288.616%20122.272%20284.758%20127.506%20283.794%20129.297H266.023C267.401%20121.858%20276.356%20108.221%20298.259%20108.221ZM294.952%20148.032C286.824%20148.032%20281.589%20151.063%20281.589%20157.4C281.59%20164.15%20287.927%20168.145%20296.743%20168.145C306.662%20168.144%20314.927%20163.185%20314.927%20153.956V148.032H294.952Z'%20fill='white'/%3e%3cpath%20d='M444.943%20179.716H427.311V110.012H444.943V179.716Z'%20fill='white'/%3e%3cpath%20d='M445.218%2098.854H426.896V77.915H445.218V98.854Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_341_4172'%3e%3crect%20width='512'%20height='141'%20fill='white'%20transform='translate(73%2073)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e)
+
+![TinyFish logo](https://agenticaibuildweek.genaifund.ai/assets/tinyfish-ux5kSZ0w.png)
+
+![Antitech logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/abba628c-3ec8-4772-a3c1-ef2448a1f871/antitech.png)
+
+Venue Sponsors
+
+![Novaland logo](https://agenticaibuildweek.genaifund.ai/assets/novaland-HY_6hW9d.svg)
+
+![RMIT University logo](https://agenticaibuildweek.genaifund.ai/assets/rmit-C5wvFzzs.png)
+
+![Saigon AI Hub logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png)
+
+Enterprise Partners
+
+![VNG Games logo](<Base64-Image-Removed>)
+
+![Gamota logo](https://agenticaibuildweek.genaifund.ai/assets/gamota-BwuC_vlt.png)
+
+![KFC logo](data:image/svg+xml,%3csvg%20version='1.1'%20id='Layer_1'%20width='184.2'%20height='57.9'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%20184.2%2057.9'%20style='enable-background:new%200%200%20184.2%2057.9;'%20xml:space='preserve'%3e%3cstyle%20type='text/css'%3e%20.st0{fill-rule:evenodd;clip-rule:evenodd;fill:%23F40027;}%20%3c/style%3e%3cg%3e%3cpath%20class='st0'%20d='M121.3,17.5c-0.8,0-1.5-0.7-1.4-1.6c0-0.1,0-0.1,0-0.2c0.2-3.5-1-5.6-4.9-5.6h-12.2l-3.3,14.9H117%20c0.9,0,1.6,0.8,1.4,1.7l-1.7,7.7c-0.1,0.6-0.7,1.1-1.4,1.1H97.2c0,0-2,9.1-2.1,9.5c-0.7,2.9,1.4,4.5,2.7,5.1c0.1,0,0.1,0.1,0.2,0.1%20c0.6,0.3,0.9,0.9,0.7,1.5L97.8,56c-0.1,0.6-0.7,1.1-1.4,1.1H75.1c-0.9,0-1.5-0.8-1.4-1.7l9.3-42.1c0.9-3.7-1.2-5.2-2.8-5.8%20l-0.2-0.1c-0.7-0.2-1.1-1-0.9-1.7L80,2.1c0.1-0.7,0.8-1.2,1.5-1.2h47.4c0.9,0,1.6,0.8,1.4,1.7l-3.1,13.8c-0.1,0.7-0.7,1.1-1.4,1.1%20H121.3'%3e%3c/path%3e%3cpath%20class='st0'%20d='M50,2.1c0.1-0.7,0.8-1.2,1.5-1.2h23.2c0.9,0,1.6,0.8,1.4,1.7l-0.8,3.6c-0.1,0.6-0.6,1-1.3,1.1%20c-0.1,0-0.1,0-0.2,0c-1.7,0.2-4.9,0.8-7.5,2.8l-19.3,16v0l14.8,20.1c2.9,3.7,4.3,4.4,7.2,4.4c0.9,0,1.6,0.9,1.4,1.8L69.7,56%20c-0.1,0.6-0.7,1.1-1.4,1.1H56.8c-12.8,0-16.3-5.6-27-25.1l-3.1,14.2c-0.5,2.2,1.4,3.4,2.7,3.9l0.2,0.1c0.7,0.2,1,0.9,0.9,1.6%20L29.6,56c-0.1,0.6-0.7,1.1-1.4,1.1H1.5c-0.9,0-1.6-0.9-1.4-1.8l0.8-3.6c0.1-0.6,0.7-1.1,1.3-1.2h0.1c2.5-0.3,5-1.8,6.6-9.4%20l6.1-27.8c0.8-3.7-1.1-5.1-2.7-5.7c-0.1,0-0.2-0.1-0.2-0.1c-0.7-0.2-1.1-1-1-1.8l0.8-3.7c0.2-0.7,0.8-1.2,1.5-1.2h25.4%20c0.9,0,1.5,0.8,1.4,1.7l-0.8,3.7c-0.1,0.5-0.5,1-1.1,1.1l-0.2,0c-1.2,0.4-3.1,1.4-3.7,3.7L31,26.6c0,0,0,0,0,0l19.7-16.4%20c1.2-1,0.9-2.3-0.5-2.8h0c-0.8-0.2-1.2-1-1.1-1.8L50,2.1'%3e%3c/path%3e%3cpath%20class='st0'%20d='M183,2.1c0.8,0.2,1.4,1.1,1.2,2l-3,13.5c-0.1,0.6-0.7,1.1-1.4,1.1h-4.3c-0.8,0-1.4-0.7-1.4-1.5%20c0-0.1,0-0.2,0-0.3c0.2-4.4-2.6-7.7-8.9-7.7c-10.5,0-18.1,8.6-19.1,19.9c-1,11.7,7.1,18.4,18.4,18.4c5.8,0,10.4-1.1,12.9-1.9%20c1-0.3,2,0.6,1.8,1.6l-1.3,7c-0.1,0.6-0.5,1.1-1.1,1.3c-2.3,0.7-8.8,2.5-18.7,2.5c-23.6,0-33.1-13.6-31.7-27.4%20C127.8,18.1,135.9,0,168,0C174.2,0,179.1,1,183,2.1'%3e%3c/path%3e%3c/g%3e%3c/svg%3e)
+
+![PhongVu.vn logo](https://agenticaibuildweek.genaifund.ai/assets/phongvu-Bha3YM4y.png)
+
+![TASCO logo](https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png)
+
+![Galaxy Holdings logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png)
+
+![Vietjet logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/b5aa08a9-0a34-4b87-99ef-7c4913dc1bd1/vietjet.svg)
+
+![Guardian logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/af97ca2b-cf11-4f5c-a56d-af0ab40ae084/guardian.png)
+
+Community Partners
+
+![MOR Software logo](https://agenticaibuildweek.genaifund.ai/assets/mor-FcKguY6i.png)
+
+![Sota Media logo](<Base64-Image-Removed>)
+
+![NghienAI logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/4370ed68-9953-438e-a1dd-2f83feccc00a/nghienai.svg)
+
+![Team1 Vietnam logo](data:image/svg+xml,%3c?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3e%3csvg%20id=%27katman_2%27%20data-name=%27katman%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%271026.79%27%20height=%27288.98%27%20viewBox=%270%200%201026.79%20288.98%27%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23fff;%20}%20.cls-2%20{%20fill:%20%23ff394a;%20}%20%3c/style%3e%3c/defs%3e%3cg%20id=%27katman_1%27%20data-name=%27katman%201%27%3e%3cg%3e%3cpath%20class=%27cls-1%27%20d=%27M608.94,283.33V85.36c0-3.5,2.82-6.35,6.32-6.39l43.25-.45c3.55-.04,6.46,2.84,6.46,6.39v13.95c9.77-7.47,20.4-13.36,31.89-17.67,11.78-4.31,24.42-6.46,37.93-6.46,14.37,0,25.43,2.15,33.19,6.46,8.04,4.31,14.22,10.49,18.53,18.53,9.48-7.47,20.26-13.5,32.33-18.1,12.36-4.6,26.86-6.9,43.53-6.9,23.56,0,40.95,6.18,52.15,18.53,11.21,12.07,16.81,30.6,16.81,55.6v134.47h-57.32v-128.01c0-13.5-2.87-23.13-8.62-28.88-5.75-6.03-14.94-9.05-27.58-9.05-17.24,0-29.45,6.18-40.95,18.53,0,6.8-.13,11.06,0,17.67v129.73h-54.3v-128.01c0-12.64-2.16-22.12-6.47-28.45-4.31-6.32-12.64-9.48-25-9.48-8.62,0-16.81,2.3-24.57,6.9-7.47,4.31-14.22,9.34-20.26,15.09v143.95h-57.32Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M447.44,287.64c-12.93,0-25-2.3-36.2-6.9-10.92-4.88-19.83-11.92-26.72-21.12-6.61-9.48-9.91-21.26-9.91-35.34,0-20.11,7.04-36.2,21.12-48.27,14.37-12.07,35.48-18.1,63.36-18.1h60.34v-5.6c0-12.64-3.59-21.55-10.77-26.72-6.9-5.17-20.97-7.76-42.24-7.76s-39.83,2.72-58.77,8.15c-4.19,1.2-8.47-1.88-8.47-6.24v-27.73c0-2.63,1.6-5,4.08-5.87,8.64-3.04,18.78-5.55,30.4-7.53,13.79-2.59,28.73-3.88,44.82-3.88,30.75,0,54.45,6.32,71.12,18.96,16.95,12.36,25.43,32.33,25.43,59.91v129.73l-53.44-.81v-17.73c-8.05,7.18-17.96,12.79-29.74,16.81-11.78,4.02-26.58,6.04-44.39,6.04ZM463.38,249.28c12.93,0,24.14-2.16,33.62-6.47,9.48-4.31,16.95-9.77,22.41-16.38v-32.33h-59.05c-22.7,0-34.05,9.34-34.05,28.02s12.36,27.15,37.07,27.15Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M269.01,287.64c-35.34,0-63.36-8.76-84.05-26.29-20.69-17.82-31.03-44.68-31.03-80.6,0-32.47,8.62-58.19,25.86-77.15,17.53-19.25,43.53-28.88,78.01-28.88,31.61,0,55.74,8.33,72.41,25,16.95,16.38,25.43,37.93,25.43,64.65v32.81c0,2.35-1.91,4.26-4.26,4.26h-143.57c3.16,16.38,10.63,27.58,22.41,33.62,12.07,6.04,29.02,9.05,50.86,9.05,10.92,0,21.98-1.01,33.19-3.02,7.56-1.32,14.37-2.9,20.44-4.72,4.31-1.29,8.87,1.83,8.87,6.34v29.25c0,1.67-.97,3.2-2.51,3.84-8.91,3.75-19.13,6.55-30.67,8.38-12.64,2.3-26.43,3.45-41.38,3.45ZM207.8,165.66h96.98v-11.21c0-11.78-3.45-20.98-10.34-27.58-6.9-6.9-18.53-10.34-34.91-10.34-19.25,0-32.76,3.88-40.51,11.64-7.47,7.76-11.21,20.26-11.21,37.5Z%27/%3e%3cpath%20class=%27cls-2%27%20d=%27M1020.91,181.07h-46.78c-3.25,0-5.88-2.63-5.88-5.88V63.4c0-3.25-2.63-5.88-5.88-5.88h-25.57c-3.25,0-5.88-2.63-5.88-5.88V5.88c0-3.25,2.63-5.88,5.88-5.88h84.1c3.25,0,5.88,2.63,5.88,5.88v169.31c0,3.25-2.63,5.88-5.88,5.88Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M98.27,288.98c-23.56,0-41.09-6.18-52.58-18.53-11.21-12.36-16.81-29.16-16.81-50.43v-90.56c0-2.35-1.91-4.26-4.26-4.26H6.39c-3.53,0-6.39-2.86-6.39-6.39v-32.04c0-3.53,2.86-6.39,6.39-6.39h16.1c3.53,0,6.39-2.86,6.39-6.39V25.56c0-3.53,2.86-6.39,6.39-6.39h45.4c3.53,0,6.39,2.86,6.39,6.39v48.42c0,3.53,2.86,6.39,6.39,6.39h38.43c3.72,0,6.66,3.17,6.37,6.88l-2.46,32.04c-.26,3.33-3.03,5.9-6.37,5.9h-35.96c-3.53,0-6.39,2.86-6.39,6.39v84.55c0,11.21,2.59,18.97,7.76,23.28,5.17,4.02,13.22,6.03,24.14,6.03,5.36,0,10.85-.64,16.46-1.91,4.25-.97,8.53,2.11,8.53,6.47v28.36c0,1.73-1.04,3.3-2.67,3.9-5.58,2.06-11.59,3.58-18.02,4.57-7.47,1.44-15.8,2.16-25,2.16Z%27/%3e%3c/g%3e%3c/g%3e%3c/svg%3e)
+
+![Twendee Software logo](https://agenticaibuildweek.genaifund.ai/assets/twendee-MH3uLVOG.png)
+
+![StartupX logo](https://agenticaibuildweek.genaifund.ai/assets/startupx-jJy0HNYZ.avif)
+
+![AI Leaders logo](https://agenticaibuildweek.genaifund.ai/assets/aileaders-DD40xmQ6.png)
+
+![VinUni E-Lab logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/40a9a992-5fba-4af0-9054-46666aa72560/vinuni-elab.png)
+
+![AI and Quantum International Hub logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/067b1abe-15a0-4fa7-a745-915013eef979/aiquant.png)
+
+![Techshake logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/7c3af5ab-692a-4e83-9bd4-fede254d7cd4/techshake.png)
+
+![ContextBoxAI logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/d75ce25a-a6af-40af-a475-90e88dcf99b5/contextboxai.png)
+
+![Devtee Labs logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/8d3628e4-361d-43b1-b4fe-8a0535b145b7/devtee-labs.png)
+
+More partners will be announced soon
+
+The Scale
+
+2,000+
+
+AI Builders
+
+$1M+
+
+Prize Pool
+
+5
+
+Days of Building
+
+30+
+
+Agentic AI Workshops
+
+10
+
+Enterprise Partners
+
+100+
+
+Tech Partners
+
+The Programme
+
+## 5 Days. Enable → Integrate → Design → Build → Demo.
+
+July 8 – 12, 2026 · Ho Chi Minh City
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/tasco-office.webp)
+
+
+
+
+
+
+
+
+
+
+
+Wed · July 8
+
+
+
+### Day 01:Enable
+
+
+
+
+
+
+
+
+
+Workshops
+
+
+
+
+
+
+
+
+
+![BytePlus logo](https://agenticaibuildweek.genaifund.ai/assets/byteplus-DpblwXad.svg)
+
+
+
+
+
+
+
+
+
+
+
+![NVIDIA logo](https://agenticaibuildweek.genaifund.ai/assets/nvidia-5AcRFX3u.png)
+
+
+
+
+
+
+
+
+
+
+
+![TRAE logo](https://agenticaibuildweek.genaifund.ai/assets/trae-BnVBAW92.png)
+
+
+
+
+
+
+
+
+
+
+
+![Apify logo](data:image/svg+xml,%3csvg%20width='658'%20height='287'%20viewBox='0%200%20658%20287'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_341_4172)'%3e%3cpath%20d='M153.782%2073H211.73C212.909%2073%20213.865%2073.9556%20213.865%2075.1343V163.693C213.865%20165.815%20211.106%20166.637%20209.944%20164.862L151.996%2076.303C151.068%2074.8835%20152.086%2073%20153.782%2073Z'%20fill='%23246DFF'/%3e%3cpath%20d='M133.083%2073H75.1343C73.9556%2073%2073%2073.9556%2073%2075.1343V163.693C73%20165.815%2075.7588%20166.637%2076.9203%20164.862L134.869%2076.303C135.798%2074.8835%20134.779%2073%20133.083%2073Z'%20fill='%2320A34E'/%3e%3cpath%20d='M142.439%20143.903L76.6101%20210.228C75.2733%20211.575%2076.2273%20213.866%2078.1249%20213.866H208.793C210.683%20213.866%20211.641%20211.591%20210.32%20210.239L145.48%20143.915C144.648%20143.063%20143.279%20143.058%20142.439%20143.903Z'%20fill='%23F86606'/%3e%3cpath%20d='M525.792%2092.3785H501.134C493.419%2092.3785%20490.113%2096.2354%20490.113%20103.261V110.011L526.04%20110.012L546.565%20157.399L567.092%20110.012H585L542.019%20209.059H524.386L537.611%20178.477L513.028%20124.888H490.113V179.716H472.481V124.888H453.332V110.011H472.481V99.8174C472.481%2086.3173%20479.919%2078.3271%20495.761%2078.3271H525.792V92.3785Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M385.456%20108.497C403.639%20108.497%20418.517%20122.135%20418.517%20144.865C418.517%20167.732%20403.639%20181.232%20385.456%20181.232C370.302%20181.232%20362.725%20171.865%20361.348%20169.11V208.922H343.99V110.012H361.485V121.033C362.725%20118.416%20370.302%20108.497%20385.456%20108.497ZM380.909%20123.926C368.924%20123.926%20361.21%20132.88%20361.21%20144.865C361.21%20156.712%20368.924%20165.804%20380.909%20165.804C393.031%20165.804%20400.746%20156.712%20400.746%20144.865C400.746%20132.88%20393.031%20123.926%20380.909%20123.926Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M298.259%20108.221C319.886%20108.221%20331.871%20119.517%20331.871%20136.047V159.604C331.871%20163.737%20333.386%20165.665%20337.381%20165.94V180.129H331.871C323.193%20179.991%20317.544%20176.685%20315.616%20170.486C312.172%20175.445%20305.009%20181.232%20293.024%20181.232C276.631%20181.232%20264.232%20171.864%20264.232%20157.675C264.233%20143.624%20274.84%20136.047%20292.059%20136.047H314.927C314.927%20127.644%20308.452%20122.272%20298.259%20122.272C288.616%20122.272%20284.758%20127.506%20283.794%20129.297H266.023C267.401%20121.858%20276.356%20108.221%20298.259%20108.221ZM294.952%20148.032C286.824%20148.032%20281.589%20151.063%20281.589%20157.4C281.59%20164.15%20287.927%20168.145%20296.743%20168.145C306.662%20168.144%20314.927%20163.185%20314.927%20153.956V148.032H294.952Z'%20fill='white'/%3e%3cpath%20d='M444.943%20179.716H427.311V110.012H444.943V179.716Z'%20fill='white'/%3e%3cpath%20d='M445.218%2098.854H426.896V77.915H445.218V98.854Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_341_4172'%3e%3crect%20width='512'%20height='141'%20fill='white'%20transform='translate(73%2073)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e)
+
+
+
+
+
+
+
+
+
+
+
+Venue: Tasco Office
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/aws-office.webp)
+
+
+
+
+
+
+
+
+
+
+
+Thu · July 9
+
+
+
+### Day 02:Integrate
+
+
+
+
+
+
+
+
+
+Workshops
+
+
+
+
+
+
+
+
+
+![AWS logo](https://agenticaibuildweek.genaifund.ai/assets/aws-C2UkUU-W.png)
+
+
+
+
+
+
+
+
+
+
+
+Venue: AWS Office, Bitexco Tower
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/vng-campus.webp)
+
+
+
+
+
+
+
+
+
+
+
+Fri · July 10
+
+
+
+### Day 03:Design
+
+
+
+
+
+
+
+
+
+Workshops
+
+
+
+
+
+
+
+
+
+![Agora logo](https://agenticaibuildweek.genaifund.ai/assets/agora-QnjCbkeX.png)
+
+
+
+
+
+
+
+
+
+
+
+![Google for Developers logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/890b0ff2-fe97-4908-91d7-07d1862dd7f1/googledev.svg)
+
+
+
+
+
+
+
+
+
+
+
+![TinyFish logo](https://agenticaibuildweek.genaifund.ai/assets/tinyfish-ux5kSZ0w.png)
+
+
+
+
+
+
+
+
+
+
+
+Venue: VNG Campus
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp)
+
+
+
+
+
+
+
+
+
+
+
+Sat · July 11
+
+
+
+### Day 04:Build
+
+
+
+
+
+
+
+
+
+  - Keynotes
+  - Networking
+  - Late-night build
+
+Venue: Galaxy Innovation Park
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp)
+
+
+
+
+
+
+
+
+
+
+
+Sun · July 12
+
+
+
+### Day 05:Demo
+
+
+
+
+
+
+
+
+
+  - Demo Day
+  - Award Ceremony
+
+Venue: Galaxy Innovation Park
+
+Daily Schedule
+
+Times are indicative · sessions still being finalised
+
+Day 01EnableWed · July 8Day 02IntegrateThu · July 9Day 03DesignFri · July 10Day 04BuildSat · July 11Day 05DemoSun · July 12
+
+Day 01 · EnableWed · July 8
+
+Tasco Office
+
+1. 09:00Registration & Welcome
+2. ![](https://agenticaibuildweek.genaifund.ai/workshops/byteplus.png)
+
+
+10:00–12:00·BytePlus
+
+
+
+Render the Next Era of Creation with BytePlus AI Stack
+
+
+
+[RSVP](https://luma.com/gaf-vbkf)
+
+3. 12:00Lunch
+4. ![](https://agenticaibuildweek.genaifund.ai/workshops/nvidia.png)
+
+
+14:00–14:45·NVIDIA
+
+
+
+Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally
+
+
+
+[RSVP](https://luma.com/gaf-t4bs)
+
+5. ![](https://agenticaibuildweek.genaifund.ai/workshops/trae.png)
+
+
+15:00–16:00·TRAE
+
+
+
+TRAE in Your Professional Workflow
+
+
+
+[RSVP](https://luma.com/gaf-jpy4)
+
+
+Referral Programme
+
+## See the top builders bringing the ecosystem together.
+
+Live rankings of referrals driving Agentic AI Build Week.
+
+[View Referral Programme](https://agenticaibuildweek.genaifund.ai/leaderboard)
+
+FAQ
+
+### Do I need Discord to claim referral rewards?
+
+Yes. Join Discord to verify your tier and get access to rewards.
+
+[Join Discord](https://discord.gg/CC7ByXWRc)
+
+## July 8–12, 2026.  Ho Chi Minh City.  Your build. Real enterprise problems.  Real deployment conversations.
+
+2,000+ Builders. $1M+ Prize Pool. One Week.
+
+[Register on Luma →](https://luma.com/gaf-hm61?utm_source=landing_page)
+
+
+---
+
+# Agentic AI Build Week | GenAI Fund
+
+Source: https://agenticaibuildweek.genaifund.ai/builder-experience-track
+
+Pre-Event Mini-Buildathon
+
+Builder Experience Track
+
+# Build it in a week.  **Used by thousands.**
+
+Ship an AI tool for builders before AABW. Win, and we deploy it live to the entire crowd.
+
+**$900** \+ AABW tee up for grabs — winner ships LIVE to thousands.
+
+[Enter on Devpost →](https://agentic-ai-build-week-2026.devpost.com/) [Read the brief](https://drive.google.com/file/d/1Sh-GyxtdVSRvmczUaTeEzmcyDiap2DpF/view?usp=sharing)
+
+Scroll to explore↓
+
+Most hackathons end at the demo. **Yours ships.**
+
+You build
+
+1 week
+
+A weekend's focus. Solo or a small team.
+
+→
+
+We deploy
+
+Live
+
+Runs in production during Build Week.
+
+→
+
+They use it
+
+Thousands
+
+Real builders. Your name on it.
+
+01The Brief
+
+### An AI tool that makes the builder experience **better**.
+
+An agent, tool, or workflow that makes the builder experience better during AABW — helping builders connect, navigate, and ship faster.
+
+✓ Fair game
+
+Teammate matchingEvent copilotsSchedule navigatorsVenue & map helpersPerk discoverySupport botsDeadline remindersMentor matching
+
+✕ Disqualified
+
+Chatbot wrappersStatic promptsOff-topic toolsClones / repackagedMockups, no demoRelabeled chat UIs
+
+→ Self-contained data   → Configurable + README
+
+Building with AI?
+
+### Feed it the brief. **Start in seconds.**
+
+[▦ builder-experience-track-brief.md\\
+\# Builder Experience Track\\
+\\
+Build an AI tool that helps builders\\
+\## Prize  $900 + deployed live to thousands\\
+\## Rules  self-contained data · configurable…\\
+\\
+↓ Download .mdDrop into Claude · Cursor · ChatGPT](https://drive.google.com/file/d/1Sh-GyxtdVSRvmczUaTeEzmcyDiap2DpF/view?usp=sharing)
+
+02Prizes
+
+$900
+
+\+ AABW T-Shirt
+
+up for grabs
+
+And the winner is deployed LIVE across AABW.
+
+Plus — People's Choice tee · stickers for every team that ships.
+
+03The Path
+
+60 teams. First come, first served. Timeline TBC.
+
+Jun 12
+
+Track opens
+
+Claim your Devpost spot — placeholder OK.
+
+~1 week
+
+Build it
+
+Own, public, or mock data. Share in Discord.
+
+Jun 20
+
+Submissions close
+
+Ship a ≤2 min demo, live link, repo + stack.
+
+Jun 20–22
+
+Round 1 · Discord vote
+
+Community shortlists the field.
+
+Jun 23
+
+Top 20 · public voting opens
+
+Round 2 begins.
+
+Jun 29
+
+Round 2 ends · 11:59pm
+
+Public vote closes.
+
+Jul 1
+
+Winner announced
+
+$900 + your tool goes live.
+
+Jul 8–12
+
+Deployed live across AABW
+
+Used by thousands. Your name on it.
+
+New to Devpost?
+
+Watch how to sign up and lock your track + team — 2 minutes.
+
+How to Join Agentic AI Build Week on DevPost
+
+[Enter on Devpost →](https://agentic-ai-build-week-2026.devpost.com/)
+
+## Build it. **Ship it live.**
+
+[Enter on Devpost →](https://agentic-ai-build-week-2026.devpost.com/) [Join Discord](https://discord.gg/CC7ByXWRc) [Read the brief](https://drive.google.com/file/d/1Sh-GyxtdVSRvmczUaTeEzmcyDiap2DpF/view?usp=sharing)
+
+
+---
+
+# Agentic AI Build Week | GenAI Fund
+
+Source: https://agenticaibuildweek.genaifund.ai/leaderboard
+
+[Back to home](https://agenticaibuildweek.genaifund.ai/)
+
+Referral Leaderboard
+
+# Top referrers moving AABW forward.
+
+View rewards [Start referring](https://luma.com/gaf-hm61?utm_source=landing_page) [Join Discord to verify rewards](https://discord.gg/CC7ByXWRc)
+
+Status
+
+Fallback standings
+
+Top 10 referrals
+
+273
+
+Leader
+
+Trần Văn Công
+
+1 referral
+
+Entry reward
+
+5 referrals
+
+Bonus tier
+
+10 referrals
+
+Top rewards
+
+Live Standings
+
+## Top 3 referrers
+
+Champion
+
+#1
+
+### Trần Văn Công
+
+134referrals
+
+Runner-up
+
+#2
+
+### Hoàng Xuân Thành
+
+39referrals
+
+Third
+
+#3
+
+### Đạt
+
+22referrals
+
+### Ranks 04-10
+
+1. 04
+
+
+
+
+Thu Nguyen
+
+
+
+19
+
+
+
+
+
+
+
+
+
+
+
+
+
+19
+
+2. 05
+
+
+
+
+Hoàng Trọng Trà
+
+
+
+15
+
+
+
+
+
+
+
+
+
+
+
+
+
+15
+
+3. 06
+
+
+
+
+Vo Minh Long
+
+
+
+13
+
+
+
+
+
+
+
+
+
+
+
+
+
+13
+
+4. 07
+
+
+
+
+Cuong Tran
+
+
+
+9
+
+
+
+
+
+
+
+
+
+
+
+
+
+9
+
+5. 08
+
+
+
+
+Ky-Nam
+
+
+
+8
+
+
+
+
+
+
+
+
+
+
+
+
+
+8
+
+6. 09
+
+
+
+
+Nguyen Duy Tam
+
+
+
+7
+
+
+
+
+
+
+
+
+
+
+
+
+
+7
+
+7. 10
+
+
+
+
+PHAM TUAN
+
+
+
+7
+
+
+
+
+
+
+
+
+
+
+
+
+
+7
+
+
+FAQ
+
+### How do I verify my referral tier?
+
+Join Discord to verify your tier and get access to the rewards.
+
+[Join Discord](https://discord.gg/CC7ByXWRc)
+
+
+---
+
+# Agentic AI Build Week | GenAI Fund
+
+Source: https://agenticaibuildweek.genaifund.ai/partners
+
+[Back to home](https://agenticaibuildweek.genaifund.ai/)
+
+AABW Ecosystem
+
+# Partners, ambassadors, and community backers.
+
+Partners
+
+## The ecosystem behind Agentic AI Build Week.
+
+## Strategic Partner
+
+![AWS logo](https://agenticaibuildweek.genaifund.ai/assets/aws-C2UkUU-W.png)
+
+## Technology Partners
+
+![OpenAI logo](data:image/svg+xml,%3csvg%20width='180'%20height='49'%20viewBox='0%200%20288%2078'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M30.6%200.398438C13.77%200.398438%200%2014.1684%200%2030.9984C0%2047.8284%2013.77%2061.5984%2030.6%2061.5984C47.43%2061.5984%2061.2%2047.9134%2061.2%2030.9984C61.2%2014.0834%2047.515%200.398438%2030.6%200.398438ZM30.6%2050.6334C20.145%2050.6334%2011.73%2042.0484%2011.73%2030.9984C11.73%2019.9484%2020.145%2011.3634%2030.6%2011.3634C41.055%2011.3634%2049.47%2019.9484%2049.47%2030.9984C49.47%2042.0484%2041.055%2050.6334%2030.6%2050.6334Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M92.1393%2017.3984C86.6143%2017.3984%2081.2593%2019.6084%2078.4543%2023.3484V18.2484H67.4043V77.7484H78.4543V56.2434C81.2593%2059.7284%2086.4443%2061.5984%2092.1393%2061.5984C104.039%2061.5984%20113.389%2052.2484%20113.389%2039.4984C113.389%2026.7484%20104.039%2017.3984%2092.1393%2017.3984ZM90.2693%2051.9934C83.9793%2051.9934%2078.3693%2047.0634%2078.3693%2039.4984C78.3693%2031.9334%2083.9793%2027.0034%2090.2693%2027.0034C96.5593%2027.0034%20102.169%2031.9334%20102.169%2039.4984C102.169%2047.0634%2096.5593%2051.9934%2090.2693%2051.9934Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M139.401%2017.3984C127.331%2017.3984%20117.811%2026.8334%20117.811%2039.4984C117.811%2052.1634%20126.141%2061.5984%20139.741%2061.5984C150.876%2061.5984%20158.016%2054.8834%20160.226%2047.3184H149.431C148.071%2050.4634%20144.246%2052.6734%20139.656%2052.6734C133.961%2052.6734%20129.626%2048.6784%20128.606%2042.9834H160.736V38.6484C160.736%2027.0884%20152.661%2017.3984%20139.401%2017.3984ZM128.691%2035.1634C129.881%2029.8084%20134.301%2026.3234%20139.656%2026.3234C145.351%2026.3234%20149.686%2030.0634%20150.196%2035.1634H128.691Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M190.145%2017.3984C185.215%2017.3984%20180.03%2019.6084%20177.65%2023.2634V18.2484H166.6V60.7484H177.65V37.8834C177.65%2031.2534%20181.22%2026.9184%20187%2026.9184C192.355%2026.9184%20195.245%2030.9984%20195.245%2036.6934V60.7484H206.295V34.9084C206.295%2024.3684%20199.835%2017.3984%20190.145%2017.3984Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M234.596%201.25L210.541%2060.75H222.356L227.456%2047.745H254.826L259.926%2060.75H271.911L248.026%201.25H234.596ZM231.281%2037.885L241.141%2012.98L250.916%2037.885H231.281Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M287.636%201.25H276.416V60.75H287.636V1.25Z'%20fill='white'%3e%3c/path%3e%3c/svg%3e)
+
+NVIDIA
+
+![Tencent Cloud logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/440a0c7f-e7da-4ca8-b7ce-550b81a75385/tencent-cloud.png)
+
+![Microsoft for Startups logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/4c651740-63a5-41b3-bf19-b227fa08557d/microsoft-for-startups.png)
+
+![Google for Developers logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/890b0ff2-fe97-4908-91d7-07d1862dd7f1/googledev.svg)
+
+![Qwen logo](<Base64-Image-Removed>)
+
+![Kimi logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/8e72c274-cf2f-4b78-9962-ba28f1e7c747/kimi.svg)
+
+![Agora logo](https://agenticaibuildweek.genaifund.ai/assets/agora-QnjCbkeX.png)
+
+![n8n logo](data:image/svg+xml,%3csvg%20width='444'%20height='120'%20viewBox='0%200%20444%20120'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M204%2048C192.817%2048%20183.42%2040.3514%20180.756%2030H153.248C147.382%2030%20142.376%2034.241%20141.412%2040.0272L140.425%2045.9456C139.489%2051.5648%20136.646%2056.4554%20132.626%2060C136.646%2063.5446%20139.489%2068.4352%20140.425%2074.0544L141.412%2079.9728C142.376%2085.759%20147.382%2090%20153.248%2090H156.756C159.42%2079.6486%20168.817%2072%20180%2072C193.255%2072%20204%2082.7452%20204%2096C204%20109.255%20193.255%20120%20180%20120C168.817%20120%20159.42%20112.351%20156.756%20102H153.248C141.516%20102%20131.504%2093.5181%20129.575%2081.9456L128.588%2076.0272C127.624%2070.241%20122.618%2066%20116.752%2066H107.244C104.58%2076.3514%2095.183%2084%2084%2084C72.817%2084%2063.4204%2076.3514%2060.7561%2066H47.2439C44.5796%2076.3514%2035.183%2084%2024%2084C10.7452%2084%200%2073.2548%200%2060C0%2046.7452%2010.7452%2036%2024%2036C35.183%2036%2044.5796%2043.6486%2047.2439%2054H60.7561C63.4204%2043.6486%2072.817%2036%2084%2036C95.183%2036%20104.58%2043.6486%20107.244%2054H116.752C122.618%2054%20127.624%2049.759%20128.588%2043.9728L129.575%2038.0544C131.504%2026.4819%20141.516%2018%20153.248%2018H180.756C183.42%207.64864%20192.817%200%20204%200C217.255%200%20228%2010.7452%20228%2024C228%2037.2548%20217.255%2048%20204%2048ZM204%2036C210.627%2036%20216%2030.6274%20216%2024C216%2017.3726%20210.627%2012%20204%2012C197.373%2012%20192%2017.3726%20192%2024C192%2030.6274%20197.373%2036%20204%2036ZM24%2072C30.6274%2072%2036%2066.6274%2036%2060C36%2053.3726%2030.6274%2048%2024%2048C17.3726%2048%2012%2053.3726%2012%2060C12%2066.6274%2017.3726%2072%2024%2072ZM96%2060C96%2066.6274%2090.6274%2072%2084%2072C77.3726%2072%2072%2066.6274%2072%2060C72%2053.3726%2077.3726%2048%2084%2048C90.6274%2048%2096%2053.3726%2096%2060ZM192%2096C192%20102.627%20186.627%20108%20180%20108C173.373%20108%20168%20102.627%20168%2096C168%2089.3726%20173.373%2084%20180%2084C186.627%2084%20192%2089.3726%20192%2096Z'%20fill='%23EA4B71'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M372.017%2051.8874V51.3155C376.204%2049.2187%20380.391%2045.5969%20380.391%2038.4487C380.391%2028.1552%20371.922%2021.96%20360.218%2021.96C348.228%2021.96%20339.664%2028.5364%20339.664%2038.6393C339.664%2045.5016%20343.66%2049.2187%20348.038%2051.3155V51.8874C343.185%2053.603%20337.38%2058.7497%20337.38%2067.3276C337.38%2077.7164%20345.944%2084.96%20360.123%2084.96C374.301%2084.96%20382.58%2077.7164%20382.58%2067.3276C382.58%2058.7497%20376.87%2053.6983%20372.017%2051.8874ZM360.123%2030.7286C364.881%2030.7286%20368.401%2033.7785%20368.401%2038.9252C368.401%2044.072%20364.785%2047.1219%20360.123%2047.1219C355.46%2047.1219%20351.559%2044.072%20351.559%2038.9252C351.559%2033.6832%20355.27%2030.7286%20360.123%2030.7286ZM360.123%2075.8102C354.604%2075.8102%20350.131%2072.2838%20350.131%2066.2792C350.131%2060.8466%20353.842%2056.7482%20360.028%2056.7482C366.118%2056.7482%20369.829%2060.7512%20369.829%2066.4699C369.829%2072.2838%20365.547%2075.8102%20360.123%2075.8102Z'%20fill='white'/%3e%3cpath%20d='M397.26%2084.0069H409.44V58.1779C409.44%2049.6953%20414.579%2045.9782%20420.383%2045.9782C426.093%2045.9782%20430.565%2049.7906%20430.565%2057.606V84.0069H442.745V55.128C442.745%2042.6423%20435.513%2035.3988%20424.19%2035.3988C417.053%2035.3988%20413.056%2038.2581%20410.201%2041.9752H409.44L408.393%2036.3519H397.26V84.0069Z'%20fill='white'/%3e%3cpath%20d='M289.44%2084.0069H277.26V36.3519H288.393L289.44%2041.9752H290.201C293.056%2038.2581%20297.053%2035.3988%20304.19%2035.3988C315.513%2035.3988%20322.745%2042.6423%20322.745%2055.128V84.0069H310.565V57.606C310.565%2049.7906%20306.093%2045.9782%20300.383%2045.9782C294.579%2045.9782%20289.44%2049.6953%20289.44%2058.1779V84.0069Z'%20fill='white'/%3e%3c/svg%3e)
+
+![Daytona logo](https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png)
+
+![TRAE logo](https://agenticaibuildweek.genaifund.ai/assets/trae-BnVBAW92.png)
+
+![Notion logo](https://agenticaibuildweek.genaifund.ai/assets/notion-BaFL5GEk.png)
+
+![ZenRows logo](https://agenticaibuildweek.genaifund.ai/assets/zenrows-13sqiRlW.png)
+
+![BytePlus logo](https://agenticaibuildweek.genaifund.ai/assets/byteplus-DpblwXad.svg)
+
+![Bright Data logo](https://agenticaibuildweek.genaifund.ai/assets/brightdata-C9KCI4WK.png)
+
+![Apify logo](data:image/svg+xml,%3csvg%20width='658'%20height='287'%20viewBox='0%200%20658%20287'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_341_4172)'%3e%3cpath%20d='M153.782%2073H211.73C212.909%2073%20213.865%2073.9556%20213.865%2075.1343V163.693C213.865%20165.815%20211.106%20166.637%20209.944%20164.862L151.996%2076.303C151.068%2074.8835%20152.086%2073%20153.782%2073Z'%20fill='%23246DFF'/%3e%3cpath%20d='M133.083%2073H75.1343C73.9556%2073%2073%2073.9556%2073%2075.1343V163.693C73%20165.815%2075.7588%20166.637%2076.9203%20164.862L134.869%2076.303C135.798%2074.8835%20134.779%2073%20133.083%2073Z'%20fill='%2320A34E'/%3e%3cpath%20d='M142.439%20143.903L76.6101%20210.228C75.2733%20211.575%2076.2273%20213.866%2078.1249%20213.866H208.793C210.683%20213.866%20211.641%20211.591%20210.32%20210.239L145.48%20143.915C144.648%20143.063%20143.279%20143.058%20142.439%20143.903Z'%20fill='%23F86606'/%3e%3cpath%20d='M525.792%2092.3785H501.134C493.419%2092.3785%20490.113%2096.2354%20490.113%20103.261V110.011L526.04%20110.012L546.565%20157.399L567.092%20110.012H585L542.019%20209.059H524.386L537.611%20178.477L513.028%20124.888H490.113V179.716H472.481V124.888H453.332V110.011H472.481V99.8174C472.481%2086.3173%20479.919%2078.3271%20495.761%2078.3271H525.792V92.3785Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M385.456%20108.497C403.639%20108.497%20418.517%20122.135%20418.517%20144.865C418.517%20167.732%20403.639%20181.232%20385.456%20181.232C370.302%20181.232%20362.725%20171.865%20361.348%20169.11V208.922H343.99V110.012H361.485V121.033C362.725%20118.416%20370.302%20108.497%20385.456%20108.497ZM380.909%20123.926C368.924%20123.926%20361.21%20132.88%20361.21%20144.865C361.21%20156.712%20368.924%20165.804%20380.909%20165.804C393.031%20165.804%20400.746%20156.712%20400.746%20144.865C400.746%20132.88%20393.031%20123.926%20380.909%20123.926Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M298.259%20108.221C319.886%20108.221%20331.871%20119.517%20331.871%20136.047V159.604C331.871%20163.737%20333.386%20165.665%20337.381%20165.94V180.129H331.871C323.193%20179.991%20317.544%20176.685%20315.616%20170.486C312.172%20175.445%20305.009%20181.232%20293.024%20181.232C276.631%20181.232%20264.232%20171.864%20264.232%20157.675C264.233%20143.624%20274.84%20136.047%20292.059%20136.047H314.927C314.927%20127.644%20308.452%20122.272%20298.259%20122.272C288.616%20122.272%20284.758%20127.506%20283.794%20129.297H266.023C267.401%20121.858%20276.356%20108.221%20298.259%20108.221ZM294.952%20148.032C286.824%20148.032%20281.589%20151.063%20281.589%20157.4C281.59%20164.15%20287.927%20168.145%20296.743%20168.145C306.662%20168.144%20314.927%20163.185%20314.927%20153.956V148.032H294.952Z'%20fill='white'/%3e%3cpath%20d='M444.943%20179.716H427.311V110.012H444.943V179.716Z'%20fill='white'/%3e%3cpath%20d='M445.218%2098.854H426.896V77.915H445.218V98.854Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_341_4172'%3e%3crect%20width='512'%20height='141'%20fill='white'%20transform='translate(73%2073)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e)
+
+![TinyFish logo](https://agenticaibuildweek.genaifund.ai/assets/tinyfish-ux5kSZ0w.png)
+
+![Antitech logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/abba628c-3ec8-4772-a3c1-ef2448a1f871/antitech.png)
+
+[Be Our Partner](mailto:general@genaifund.ai?subject=AABW%202026%20Partnership)
+
+## Venue Sponsors
+
+![Novaland logo](https://agenticaibuildweek.genaifund.ai/assets/novaland-HY_6hW9d.svg)
+
+![RMIT University logo](https://agenticaibuildweek.genaifund.ai/assets/rmit-C5wvFzzs.png)
+
+![Saigon AI Hub logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png)
+
+## Enterprise Partners
+
+![VNG Games logo](<Base64-Image-Removed>)
+
+![Gamota logo](https://agenticaibuildweek.genaifund.ai/assets/gamota-BwuC_vlt.png)
+
+![KFC logo](data:image/svg+xml,%3csvg%20version='1.1'%20id='Layer_1'%20width='184.2'%20height='57.9'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%20184.2%2057.9'%20style='enable-background:new%200%200%20184.2%2057.9;'%20xml:space='preserve'%3e%3cstyle%20type='text/css'%3e%20.st0{fill-rule:evenodd;clip-rule:evenodd;fill:%23F40027;}%20%3c/style%3e%3cg%3e%3cpath%20class='st0'%20d='M121.3,17.5c-0.8,0-1.5-0.7-1.4-1.6c0-0.1,0-0.1,0-0.2c0.2-3.5-1-5.6-4.9-5.6h-12.2l-3.3,14.9H117%20c0.9,0,1.6,0.8,1.4,1.7l-1.7,7.7c-0.1,0.6-0.7,1.1-1.4,1.1H97.2c0,0-2,9.1-2.1,9.5c-0.7,2.9,1.4,4.5,2.7,5.1c0.1,0,0.1,0.1,0.2,0.1%20c0.6,0.3,0.9,0.9,0.7,1.5L97.8,56c-0.1,0.6-0.7,1.1-1.4,1.1H75.1c-0.9,0-1.5-0.8-1.4-1.7l9.3-42.1c0.9-3.7-1.2-5.2-2.8-5.8%20l-0.2-0.1c-0.7-0.2-1.1-1-0.9-1.7L80,2.1c0.1-0.7,0.8-1.2,1.5-1.2h47.4c0.9,0,1.6,0.8,1.4,1.7l-3.1,13.8c-0.1,0.7-0.7,1.1-1.4,1.1%20H121.3'%3e%3c/path%3e%3cpath%20class='st0'%20d='M50,2.1c0.1-0.7,0.8-1.2,1.5-1.2h23.2c0.9,0,1.6,0.8,1.4,1.7l-0.8,3.6c-0.1,0.6-0.6,1-1.3,1.1%20c-0.1,0-0.1,0-0.2,0c-1.7,0.2-4.9,0.8-7.5,2.8l-19.3,16v0l14.8,20.1c2.9,3.7,4.3,4.4,7.2,4.4c0.9,0,1.6,0.9,1.4,1.8L69.7,56%20c-0.1,0.6-0.7,1.1-1.4,1.1H56.8c-12.8,0-16.3-5.6-27-25.1l-3.1,14.2c-0.5,2.2,1.4,3.4,2.7,3.9l0.2,0.1c0.7,0.2,1,0.9,0.9,1.6%20L29.6,56c-0.1,0.6-0.7,1.1-1.4,1.1H1.5c-0.9,0-1.6-0.9-1.4-1.8l0.8-3.6c0.1-0.6,0.7-1.1,1.3-1.2h0.1c2.5-0.3,5-1.8,6.6-9.4%20l6.1-27.8c0.8-3.7-1.1-5.1-2.7-5.7c-0.1,0-0.2-0.1-0.2-0.1c-0.7-0.2-1.1-1-1-1.8l0.8-3.7c0.2-0.7,0.8-1.2,1.5-1.2h25.4%20c0.9,0,1.5,0.8,1.4,1.7l-0.8,3.7c-0.1,0.5-0.5,1-1.1,1.1l-0.2,0c-1.2,0.4-3.1,1.4-3.7,3.7L31,26.6c0,0,0,0,0,0l19.7-16.4%20c1.2-1,0.9-2.3-0.5-2.8h0c-0.8-0.2-1.2-1-1.1-1.8L50,2.1'%3e%3c/path%3e%3cpath%20class='st0'%20d='M183,2.1c0.8,0.2,1.4,1.1,1.2,2l-3,13.5c-0.1,0.6-0.7,1.1-1.4,1.1h-4.3c-0.8,0-1.4-0.7-1.4-1.5%20c0-0.1,0-0.2,0-0.3c0.2-4.4-2.6-7.7-8.9-7.7c-10.5,0-18.1,8.6-19.1,19.9c-1,11.7,7.1,18.4,18.4,18.4c5.8,0,10.4-1.1,12.9-1.9%20c1-0.3,2,0.6,1.8,1.6l-1.3,7c-0.1,0.6-0.5,1.1-1.1,1.3c-2.3,0.7-8.8,2.5-18.7,2.5c-23.6,0-33.1-13.6-31.7-27.4%20C127.8,18.1,135.9,0,168,0C174.2,0,179.1,1,183,2.1'%3e%3c/path%3e%3c/g%3e%3c/svg%3e)
+
+![PhongVu.vn logo](https://agenticaibuildweek.genaifund.ai/assets/phongvu-Bha3YM4y.png)
+
+![TASCO logo](https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png)
+
+![Galaxy Holdings logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png)
+
+![Vietjet logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/b5aa08a9-0a34-4b87-99ef-7c4913dc1bd1/vietjet.svg)
+
+![Guardian logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/af97ca2b-cf11-4f5c-a56d-af0ab40ae084/guardian.png)
+
+## Community Partners
+
+![MOR Software logo](https://agenticaibuildweek.genaifund.ai/assets/mor-FcKguY6i.png)
+
+![Sota Media logo](<Base64-Image-Removed>)
+
+![NghienAI logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/4370ed68-9953-438e-a1dd-2f83feccc00a/nghienai.svg)
+
+![Team1 Vietnam logo](data:image/svg+xml,%3c?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3e%3csvg%20id=%27katman_2%27%20data-name=%27katman%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%271026.79%27%20height=%27288.98%27%20viewBox=%270%200%201026.79%20288.98%27%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23fff;%20}%20.cls-2%20{%20fill:%20%23ff394a;%20}%20%3c/style%3e%3c/defs%3e%3cg%20id=%27katman_1%27%20data-name=%27katman%201%27%3e%3cg%3e%3cpath%20class=%27cls-1%27%20d=%27M608.94,283.33V85.36c0-3.5,2.82-6.35,6.32-6.39l43.25-.45c3.55-.04,6.46,2.84,6.46,6.39v13.95c9.77-7.47,20.4-13.36,31.89-17.67,11.78-4.31,24.42-6.46,37.93-6.46,14.37,0,25.43,2.15,33.19,6.46,8.04,4.31,14.22,10.49,18.53,18.53,9.48-7.47,20.26-13.5,32.33-18.1,12.36-4.6,26.86-6.9,43.53-6.9,23.56,0,40.95,6.18,52.15,18.53,11.21,12.07,16.81,30.6,16.81,55.6v134.47h-57.32v-128.01c0-13.5-2.87-23.13-8.62-28.88-5.75-6.03-14.94-9.05-27.58-9.05-17.24,0-29.45,6.18-40.95,18.53,0,6.8-.13,11.06,0,17.67v129.73h-54.3v-128.01c0-12.64-2.16-22.12-6.47-28.45-4.31-6.32-12.64-9.48-25-9.48-8.62,0-16.81,2.3-24.57,6.9-7.47,4.31-14.22,9.34-20.26,15.09v143.95h-57.32Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M447.44,287.64c-12.93,0-25-2.3-36.2-6.9-10.92-4.88-19.83-11.92-26.72-21.12-6.61-9.48-9.91-21.26-9.91-35.34,0-20.11,7.04-36.2,21.12-48.27,14.37-12.07,35.48-18.1,63.36-18.1h60.34v-5.6c0-12.64-3.59-21.55-10.77-26.72-6.9-5.17-20.97-7.76-42.24-7.76s-39.83,2.72-58.77,8.15c-4.19,1.2-8.47-1.88-8.47-6.24v-27.73c0-2.63,1.6-5,4.08-5.87,8.64-3.04,18.78-5.55,30.4-7.53,13.79-2.59,28.73-3.88,44.82-3.88,30.75,0,54.45,6.32,71.12,18.96,16.95,12.36,25.43,32.33,25.43,59.91v129.73l-53.44-.81v-17.73c-8.05,7.18-17.96,12.79-29.74,16.81-11.78,4.02-26.58,6.04-44.39,6.04ZM463.38,249.28c12.93,0,24.14-2.16,33.62-6.47,9.48-4.31,16.95-9.77,22.41-16.38v-32.33h-59.05c-22.7,0-34.05,9.34-34.05,28.02s12.36,27.15,37.07,27.15Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M269.01,287.64c-35.34,0-63.36-8.76-84.05-26.29-20.69-17.82-31.03-44.68-31.03-80.6,0-32.47,8.62-58.19,25.86-77.15,17.53-19.25,43.53-28.88,78.01-28.88,31.61,0,55.74,8.33,72.41,25,16.95,16.38,25.43,37.93,25.43,64.65v32.81c0,2.35-1.91,4.26-4.26,4.26h-143.57c3.16,16.38,10.63,27.58,22.41,33.62,12.07,6.04,29.02,9.05,50.86,9.05,10.92,0,21.98-1.01,33.19-3.02,7.56-1.32,14.37-2.9,20.44-4.72,4.31-1.29,8.87,1.83,8.87,6.34v29.25c0,1.67-.97,3.2-2.51,3.84-8.91,3.75-19.13,6.55-30.67,8.38-12.64,2.3-26.43,3.45-41.38,3.45ZM207.8,165.66h96.98v-11.21c0-11.78-3.45-20.98-10.34-27.58-6.9-6.9-18.53-10.34-34.91-10.34-19.25,0-32.76,3.88-40.51,11.64-7.47,7.76-11.21,20.26-11.21,37.5Z%27/%3e%3cpath%20class=%27cls-2%27%20d=%27M1020.91,181.07h-46.78c-3.25,0-5.88-2.63-5.88-5.88V63.4c0-3.25-2.63-5.88-5.88-5.88h-25.57c-3.25,0-5.88-2.63-5.88-5.88V5.88c0-3.25,2.63-5.88,5.88-5.88h84.1c3.25,0,5.88,2.63,5.88,5.88v169.31c0,3.25-2.63,5.88-5.88,5.88Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M98.27,288.98c-23.56,0-41.09-6.18-52.58-18.53-11.21-12.36-16.81-29.16-16.81-50.43v-90.56c0-2.35-1.91-4.26-4.26-4.26H6.39c-3.53,0-6.39-2.86-6.39-6.39v-32.04c0-3.53,2.86-6.39,6.39-6.39h16.1c3.53,0,6.39-2.86,6.39-6.39V25.56c0-3.53,2.86-6.39,6.39-6.39h45.4c3.53,0,6.39,2.86,6.39,6.39v48.42c0,3.53,2.86,6.39,6.39,6.39h38.43c3.72,0,6.66,3.17,6.37,6.88l-2.46,32.04c-.26,3.33-3.03,5.9-6.37,5.9h-35.96c-3.53,0-6.39,2.86-6.39,6.39v84.55c0,11.21,2.59,18.97,7.76,23.28,5.17,4.02,13.22,6.03,24.14,6.03,5.36,0,10.85-.64,16.46-1.91,4.25-.97,8.53,2.11,8.53,6.47v28.36c0,1.73-1.04,3.3-2.67,3.9-5.58,2.06-11.59,3.58-18.02,4.57-7.47,1.44-15.8,2.16-25,2.16Z%27/%3e%3c/g%3e%3c/g%3e%3c/svg%3e)
+
+![Twendee Software logo](https://agenticaibuildweek.genaifund.ai/assets/twendee-MH3uLVOG.png)
+
+![StartupX logo](https://agenticaibuildweek.genaifund.ai/assets/startupx-jJy0HNYZ.avif)
+
+![AI Leaders logo](https://agenticaibuildweek.genaifund.ai/assets/aileaders-DD40xmQ6.png)
+
+![VinUni E-Lab logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/40a9a992-5fba-4af0-9054-46666aa72560/vinuni-elab.png)
+
+![AI and Quantum International Hub logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/067b1abe-15a0-4fa7-a745-915013eef979/aiquant.png)
+
+![Techshake logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/7c3af5ab-692a-4e83-9bd4-fede254d7cd4/techshake.png)
+
+![ContextBoxAI logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/d75ce25a-a6af-40af-a475-90e88dcf99b5/contextboxai.png)
+
+![Devtee Labs logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/8d3628e4-361d-43b1-b4fe-8a0535b145b7/devtee-labs.png)
+
+[Be Our Community Partner](https://drive.google.com/file/d/1bjYFPWrKmNtY8Zx37EWNH_VBlYp54SpJ/view?usp=drive_link)
+
+Ambassadors
+
+## Builders bringing the network in.
+
+![Tam ambassador profile](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/85eeec1b-b54e-4102-a087-bb2269730e91/tam.png)
+
+Ambassador
+
+### Tam
+
+Vietnam
+
+![Leo ambassador profile](https://agenticaibuildweek.genaifund.ai/assets/default-lobster-avatar-C_oD7kDb.webp)
+
+Ambassador
+
+### Leo
+
+Vietnam
+
+![Joy ambassador profile](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9493bd7b-bf36-40f1-bd88-fc826eec8f8c/joy.png)
+
+Ambassador
+
+### Joy
+
+Vietnam
+
+![Justin ambassador profile](https://agenticaibuildweek.genaifund.ai/assets/default-lobster-avatar-C_oD7kDb.webp)
+
+Ambassador
+
+### Justin
+
+Vietnam
+
+![Hoang Trong Tra ambassador profile](https://agenticaibuildweek.genaifund.ai/assets/default-lobster-avatar-C_oD7kDb.webp)
+
+Ambassador
+
+### Hoang Trong Tra
+
+Vietnam
+
+![Prairie Koh ambassador profile](https://agenticaibuildweek.genaifund.ai/assets/default-lobster-avatar-C_oD7kDb.webp)
+
+Ambassador
+
+### Prairie Koh
+
+Vietnam
+
+![Pham Toan ambassador profile](https://agenticaibuildweek.genaifund.ai/assets/default-lobster-avatar-C_oD7kDb.webp)
+
+Ambassador
+
+### Pham Toan
+
+Vietnam
+
+![Emma He ambassador profile](https://agenticaibuildweek.genaifund.ai/assets/default-lobster-avatar-C_oD7kDb.webp)
+
+Ambassador
+
+### Emma He
+
+![Vera Zeng ambassador profile](https://agenticaibuildweek.genaifund.ai/assets/default-lobster-avatar-C_oD7kDb.webp)
+
+Ambassador
+
+### Vera Zeng
+
+[I want to be AABW Ambassador](https://drive.google.com/file/d/1ES45mGnymkPcK0m92YMQXlP3w2uJt0gZ/view?usp=drive_link)
+
+Top Referrers Hall of Fame
+
+## Public recognition for the builders bringing the most people into AABW.
+
+Top Referrer
+
+#1
+
+### Trần Văn Công
+
+134 referrals
+
+Second Place
+
+#2
+
+### Hoàng Xuân Thành
+
+39 referrals
+
+Third Place
+
+#3
+
+### Đạt
+
+22 referrals
+
+[View full referral leaderboard](https://agenticaibuildweek.genaifund.ai/leaderboard) View referral rewards
+
+### Ambassador
+
+Apply, share your AABW post, and get featured as a community signal.
+
+[I want to be AABW Ambassador](https://drive.google.com/file/d/1ES45mGnymkPcK0m92YMQXlP3w2uJt0gZ/view?usp=drive_link)
+
+### Community Partner
+
+Amplify the event to your builder network and appear on the partner page.
+
+[Be Our Community Partner](https://drive.google.com/file/d/1bjYFPWrKmNtY8Zx37EWNH_VBlYp54SpJ/view?usp=drive_link)
+
+### Referral
+
+Use your Luma invite link to climb the referral leaderboard and unlock rewards.
+
+View referral rewards
+
+
+---
+
+# Backed by the AI Stack Building the Future
+
+Source: https://agenticaibuildweek.genaifund.ai/#partners_preview
+
+Backed by the AI Stack Building the Future
+
+Strategic Partner
+
+![AWS logo](https://agenticaibuildweek.genaifund.ai/assets/aws-C2UkUU-W.png)
+
+Technology Partners
+
+![OpenAI logo](data:image/svg+xml,%3csvg%20width='180'%20height='49'%20viewBox='0%200%20288%2078'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M30.6%200.398438C13.77%200.398438%200%2014.1684%200%2030.9984C0%2047.8284%2013.77%2061.5984%2030.6%2061.5984C47.43%2061.5984%2061.2%2047.9134%2061.2%2030.9984C61.2%2014.0834%2047.515%200.398438%2030.6%200.398438ZM30.6%2050.6334C20.145%2050.6334%2011.73%2042.0484%2011.73%2030.9984C11.73%2019.9484%2020.145%2011.3634%2030.6%2011.3634C41.055%2011.3634%2049.47%2019.9484%2049.47%2030.9984C49.47%2042.0484%2041.055%2050.6334%2030.6%2050.6334Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M92.1393%2017.3984C86.6143%2017.3984%2081.2593%2019.6084%2078.4543%2023.3484V18.2484H67.4043V77.7484H78.4543V56.2434C81.2593%2059.7284%2086.4443%2061.5984%2092.1393%2061.5984C104.039%2061.5984%20113.389%2052.2484%20113.389%2039.4984C113.389%2026.7484%20104.039%2017.3984%2092.1393%2017.3984ZM90.2693%2051.9934C83.9793%2051.9934%2078.3693%2047.0634%2078.3693%2039.4984C78.3693%2031.9334%2083.9793%2027.0034%2090.2693%2027.0034C96.5593%2027.0034%20102.169%2031.9334%20102.169%2039.4984C102.169%2047.0634%2096.5593%2051.9934%2090.2693%2051.9934Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M139.401%2017.3984C127.331%2017.3984%20117.811%2026.8334%20117.811%2039.4984C117.811%2052.1634%20126.141%2061.5984%20139.741%2061.5984C150.876%2061.5984%20158.016%2054.8834%20160.226%2047.3184H149.431C148.071%2050.4634%20144.246%2052.6734%20139.656%2052.6734C133.961%2052.6734%20129.626%2048.6784%20128.606%2042.9834H160.736V38.6484C160.736%2027.0884%20152.661%2017.3984%20139.401%2017.3984ZM128.691%2035.1634C129.881%2029.8084%20134.301%2026.3234%20139.656%2026.3234C145.351%2026.3234%20149.686%2030.0634%20150.196%2035.1634H128.691Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M190.145%2017.3984C185.215%2017.3984%20180.03%2019.6084%20177.65%2023.2634V18.2484H166.6V60.7484H177.65V37.8834C177.65%2031.2534%20181.22%2026.9184%20187%2026.9184C192.355%2026.9184%20195.245%2030.9984%20195.245%2036.6934V60.7484H206.295V34.9084C206.295%2024.3684%20199.835%2017.3984%20190.145%2017.3984Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M234.596%201.25L210.541%2060.75H222.356L227.456%2047.745H254.826L259.926%2060.75H271.911L248.026%201.25H234.596ZM231.281%2037.885L241.141%2012.98L250.916%2037.885H231.281Z'%20fill='white'%3e%3c/path%3e%3cpath%20d='M287.636%201.25H276.416V60.75H287.636V1.25Z'%20fill='white'%3e%3c/path%3e%3c/svg%3e)
+
+NVIDIA
+
+![Tencent Cloud logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/440a0c7f-e7da-4ca8-b7ce-550b81a75385/tencent-cloud.png)
+
+![Microsoft for Startups logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/4c651740-63a5-41b3-bf19-b227fa08557d/microsoft-for-startups.png)
+
+![Google for Developers logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/890b0ff2-fe97-4908-91d7-07d1862dd7f1/googledev.svg)
+
+![Qwen logo](<Base64-Image-Removed>)
+
+![Kimi logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/8e72c274-cf2f-4b78-9962-ba28f1e7c747/kimi.svg)
+
+![Agora logo](https://agenticaibuildweek.genaifund.ai/assets/agora-QnjCbkeX.png)
+
+![n8n logo](data:image/svg+xml,%3csvg%20width='444'%20height='120'%20viewBox='0%200%20444%20120'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M204%2048C192.817%2048%20183.42%2040.3514%20180.756%2030H153.248C147.382%2030%20142.376%2034.241%20141.412%2040.0272L140.425%2045.9456C139.489%2051.5648%20136.646%2056.4554%20132.626%2060C136.646%2063.5446%20139.489%2068.4352%20140.425%2074.0544L141.412%2079.9728C142.376%2085.759%20147.382%2090%20153.248%2090H156.756C159.42%2079.6486%20168.817%2072%20180%2072C193.255%2072%20204%2082.7452%20204%2096C204%20109.255%20193.255%20120%20180%20120C168.817%20120%20159.42%20112.351%20156.756%20102H153.248C141.516%20102%20131.504%2093.5181%20129.575%2081.9456L128.588%2076.0272C127.624%2070.241%20122.618%2066%20116.752%2066H107.244C104.58%2076.3514%2095.183%2084%2084%2084C72.817%2084%2063.4204%2076.3514%2060.7561%2066H47.2439C44.5796%2076.3514%2035.183%2084%2024%2084C10.7452%2084%200%2073.2548%200%2060C0%2046.7452%2010.7452%2036%2024%2036C35.183%2036%2044.5796%2043.6486%2047.2439%2054H60.7561C63.4204%2043.6486%2072.817%2036%2084%2036C95.183%2036%20104.58%2043.6486%20107.244%2054H116.752C122.618%2054%20127.624%2049.759%20128.588%2043.9728L129.575%2038.0544C131.504%2026.4819%20141.516%2018%20153.248%2018H180.756C183.42%207.64864%20192.817%200%20204%200C217.255%200%20228%2010.7452%20228%2024C228%2037.2548%20217.255%2048%20204%2048ZM204%2036C210.627%2036%20216%2030.6274%20216%2024C216%2017.3726%20210.627%2012%20204%2012C197.373%2012%20192%2017.3726%20192%2024C192%2030.6274%20197.373%2036%20204%2036ZM24%2072C30.6274%2072%2036%2066.6274%2036%2060C36%2053.3726%2030.6274%2048%2024%2048C17.3726%2048%2012%2053.3726%2012%2060C12%2066.6274%2017.3726%2072%2024%2072ZM96%2060C96%2066.6274%2090.6274%2072%2084%2072C77.3726%2072%2072%2066.6274%2072%2060C72%2053.3726%2077.3726%2048%2084%2048C90.6274%2048%2096%2053.3726%2096%2060ZM192%2096C192%20102.627%20186.627%20108%20180%20108C173.373%20108%20168%20102.627%20168%2096C168%2089.3726%20173.373%2084%20180%2084C186.627%2084%20192%2089.3726%20192%2096Z'%20fill='%23EA4B71'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M372.017%2051.8874V51.3155C376.204%2049.2187%20380.391%2045.5969%20380.391%2038.4487C380.391%2028.1552%20371.922%2021.96%20360.218%2021.96C348.228%2021.96%20339.664%2028.5364%20339.664%2038.6393C339.664%2045.5016%20343.66%2049.2187%20348.038%2051.3155V51.8874C343.185%2053.603%20337.38%2058.7497%20337.38%2067.3276C337.38%2077.7164%20345.944%2084.96%20360.123%2084.96C374.301%2084.96%20382.58%2077.7164%20382.58%2067.3276C382.58%2058.7497%20376.87%2053.6983%20372.017%2051.8874ZM360.123%2030.7286C364.881%2030.7286%20368.401%2033.7785%20368.401%2038.9252C368.401%2044.072%20364.785%2047.1219%20360.123%2047.1219C355.46%2047.1219%20351.559%2044.072%20351.559%2038.9252C351.559%2033.6832%20355.27%2030.7286%20360.123%2030.7286ZM360.123%2075.8102C354.604%2075.8102%20350.131%2072.2838%20350.131%2066.2792C350.131%2060.8466%20353.842%2056.7482%20360.028%2056.7482C366.118%2056.7482%20369.829%2060.7512%20369.829%2066.4699C369.829%2072.2838%20365.547%2075.8102%20360.123%2075.8102Z'%20fill='white'/%3e%3cpath%20d='M397.26%2084.0069H409.44V58.1779C409.44%2049.6953%20414.579%2045.9782%20420.383%2045.9782C426.093%2045.9782%20430.565%2049.7906%20430.565%2057.606V84.0069H442.745V55.128C442.745%2042.6423%20435.513%2035.3988%20424.19%2035.3988C417.053%2035.3988%20413.056%2038.2581%20410.201%2041.9752H409.44L408.393%2036.3519H397.26V84.0069Z'%20fill='white'/%3e%3cpath%20d='M289.44%2084.0069H277.26V36.3519H288.393L289.44%2041.9752H290.201C293.056%2038.2581%20297.053%2035.3988%20304.19%2035.3988C315.513%2035.3988%20322.745%2042.6423%20322.745%2055.128V84.0069H310.565V57.606C310.565%2049.7906%20306.093%2045.9782%20300.383%2045.9782C294.579%2045.9782%20289.44%2049.6953%20289.44%2058.1779V84.0069Z'%20fill='white'/%3e%3c/svg%3e)
+
+![Daytona logo](https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png)
+
+![TRAE logo](https://agenticaibuildweek.genaifund.ai/assets/trae-BnVBAW92.png)
+
+![Notion logo](https://agenticaibuildweek.genaifund.ai/assets/notion-BaFL5GEk.png)
+
+![ZenRows logo](https://agenticaibuildweek.genaifund.ai/assets/zenrows-13sqiRlW.png)
+
+![BytePlus logo](https://agenticaibuildweek.genaifund.ai/assets/byteplus-DpblwXad.svg)
+
+![Bright Data logo](https://agenticaibuildweek.genaifund.ai/assets/brightdata-C9KCI4WK.png)
+
+![Apify logo](data:image/svg+xml,%3csvg%20width='658'%20height='287'%20viewBox='0%200%20658%20287'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_341_4172)'%3e%3cpath%20d='M153.782%2073H211.73C212.909%2073%20213.865%2073.9556%20213.865%2075.1343V163.693C213.865%20165.815%20211.106%20166.637%20209.944%20164.862L151.996%2076.303C151.068%2074.8835%20152.086%2073%20153.782%2073Z'%20fill='%23246DFF'/%3e%3cpath%20d='M133.083%2073H75.1343C73.9556%2073%2073%2073.9556%2073%2075.1343V163.693C73%20165.815%2075.7588%20166.637%2076.9203%20164.862L134.869%2076.303C135.798%2074.8835%20134.779%2073%20133.083%2073Z'%20fill='%2320A34E'/%3e%3cpath%20d='M142.439%20143.903L76.6101%20210.228C75.2733%20211.575%2076.2273%20213.866%2078.1249%20213.866H208.793C210.683%20213.866%20211.641%20211.591%20210.32%20210.239L145.48%20143.915C144.648%20143.063%20143.279%20143.058%20142.439%20143.903Z'%20fill='%23F86606'/%3e%3cpath%20d='M525.792%2092.3785H501.134C493.419%2092.3785%20490.113%2096.2354%20490.113%20103.261V110.011L526.04%20110.012L546.565%20157.399L567.092%20110.012H585L542.019%20209.059H524.386L537.611%20178.477L513.028%20124.888H490.113V179.716H472.481V124.888H453.332V110.011H472.481V99.8174C472.481%2086.3173%20479.919%2078.3271%20495.761%2078.3271H525.792V92.3785Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M385.456%20108.497C403.639%20108.497%20418.517%20122.135%20418.517%20144.865C418.517%20167.732%20403.639%20181.232%20385.456%20181.232C370.302%20181.232%20362.725%20171.865%20361.348%20169.11V208.922H343.99V110.012H361.485V121.033C362.725%20118.416%20370.302%20108.497%20385.456%20108.497ZM380.909%20123.926C368.924%20123.926%20361.21%20132.88%20361.21%20144.865C361.21%20156.712%20368.924%20165.804%20380.909%20165.804C393.031%20165.804%20400.746%20156.712%20400.746%20144.865C400.746%20132.88%20393.031%20123.926%20380.909%20123.926Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M298.259%20108.221C319.886%20108.221%20331.871%20119.517%20331.871%20136.047V159.604C331.871%20163.737%20333.386%20165.665%20337.381%20165.94V180.129H331.871C323.193%20179.991%20317.544%20176.685%20315.616%20170.486C312.172%20175.445%20305.009%20181.232%20293.024%20181.232C276.631%20181.232%20264.232%20171.864%20264.232%20157.675C264.233%20143.624%20274.84%20136.047%20292.059%20136.047H314.927C314.927%20127.644%20308.452%20122.272%20298.259%20122.272C288.616%20122.272%20284.758%20127.506%20283.794%20129.297H266.023C267.401%20121.858%20276.356%20108.221%20298.259%20108.221ZM294.952%20148.032C286.824%20148.032%20281.589%20151.063%20281.589%20157.4C281.59%20164.15%20287.927%20168.145%20296.743%20168.145C306.662%20168.144%20314.927%20163.185%20314.927%20153.956V148.032H294.952Z'%20fill='white'/%3e%3cpath%20d='M444.943%20179.716H427.311V110.012H444.943V179.716Z'%20fill='white'/%3e%3cpath%20d='M445.218%2098.854H426.896V77.915H445.218V98.854Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_341_4172'%3e%3crect%20width='512'%20height='141'%20fill='white'%20transform='translate(73%2073)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e)
+
+![TinyFish logo](https://agenticaibuildweek.genaifund.ai/assets/tinyfish-ux5kSZ0w.png)
+
+![Antitech logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/abba628c-3ec8-4772-a3c1-ef2448a1f871/antitech.png)
+
+Venue Sponsors
+
+![Novaland logo](https://agenticaibuildweek.genaifund.ai/assets/novaland-HY_6hW9d.svg)
+
+![RMIT University logo](https://agenticaibuildweek.genaifund.ai/assets/rmit-C5wvFzzs.png)
+
+![Saigon AI Hub logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png)
+
+Enterprise Partners
+
+![VNG Games logo](<Base64-Image-Removed>)
+
+![Gamota logo](https://agenticaibuildweek.genaifund.ai/assets/gamota-BwuC_vlt.png)
+
+![KFC logo](data:image/svg+xml,%3csvg%20version='1.1'%20id='Layer_1'%20width='184.2'%20height='57.9'%20xmlns='http://www.w3.org/2000/svg'%20xmlns:xlink='http://www.w3.org/1999/xlink'%20x='0px'%20y='0px'%20viewBox='0%200%20184.2%2057.9'%20style='enable-background:new%200%200%20184.2%2057.9;'%20xml:space='preserve'%3e%3cstyle%20type='text/css'%3e%20.st0{fill-rule:evenodd;clip-rule:evenodd;fill:%23F40027;}%20%3c/style%3e%3cg%3e%3cpath%20class='st0'%20d='M121.3,17.5c-0.8,0-1.5-0.7-1.4-1.6c0-0.1,0-0.1,0-0.2c0.2-3.5-1-5.6-4.9-5.6h-12.2l-3.3,14.9H117%20c0.9,0,1.6,0.8,1.4,1.7l-1.7,7.7c-0.1,0.6-0.7,1.1-1.4,1.1H97.2c0,0-2,9.1-2.1,9.5c-0.7,2.9,1.4,4.5,2.7,5.1c0.1,0,0.1,0.1,0.2,0.1%20c0.6,0.3,0.9,0.9,0.7,1.5L97.8,56c-0.1,0.6-0.7,1.1-1.4,1.1H75.1c-0.9,0-1.5-0.8-1.4-1.7l9.3-42.1c0.9-3.7-1.2-5.2-2.8-5.8%20l-0.2-0.1c-0.7-0.2-1.1-1-0.9-1.7L80,2.1c0.1-0.7,0.8-1.2,1.5-1.2h47.4c0.9,0,1.6,0.8,1.4,1.7l-3.1,13.8c-0.1,0.7-0.7,1.1-1.4,1.1%20H121.3'%3e%3c/path%3e%3cpath%20class='st0'%20d='M50,2.1c0.1-0.7,0.8-1.2,1.5-1.2h23.2c0.9,0,1.6,0.8,1.4,1.7l-0.8,3.6c-0.1,0.6-0.6,1-1.3,1.1%20c-0.1,0-0.1,0-0.2,0c-1.7,0.2-4.9,0.8-7.5,2.8l-19.3,16v0l14.8,20.1c2.9,3.7,4.3,4.4,7.2,4.4c0.9,0,1.6,0.9,1.4,1.8L69.7,56%20c-0.1,0.6-0.7,1.1-1.4,1.1H56.8c-12.8,0-16.3-5.6-27-25.1l-3.1,14.2c-0.5,2.2,1.4,3.4,2.7,3.9l0.2,0.1c0.7,0.2,1,0.9,0.9,1.6%20L29.6,56c-0.1,0.6-0.7,1.1-1.4,1.1H1.5c-0.9,0-1.6-0.9-1.4-1.8l0.8-3.6c0.1-0.6,0.7-1.1,1.3-1.2h0.1c2.5-0.3,5-1.8,6.6-9.4%20l6.1-27.8c0.8-3.7-1.1-5.1-2.7-5.7c-0.1,0-0.2-0.1-0.2-0.1c-0.7-0.2-1.1-1-1-1.8l0.8-3.7c0.2-0.7,0.8-1.2,1.5-1.2h25.4%20c0.9,0,1.5,0.8,1.4,1.7l-0.8,3.7c-0.1,0.5-0.5,1-1.1,1.1l-0.2,0c-1.2,0.4-3.1,1.4-3.7,3.7L31,26.6c0,0,0,0,0,0l19.7-16.4%20c1.2-1,0.9-2.3-0.5-2.8h0c-0.8-0.2-1.2-1-1.1-1.8L50,2.1'%3e%3c/path%3e%3cpath%20class='st0'%20d='M183,2.1c0.8,0.2,1.4,1.1,1.2,2l-3,13.5c-0.1,0.6-0.7,1.1-1.4,1.1h-4.3c-0.8,0-1.4-0.7-1.4-1.5%20c0-0.1,0-0.2,0-0.3c0.2-4.4-2.6-7.7-8.9-7.7c-10.5,0-18.1,8.6-19.1,19.9c-1,11.7,7.1,18.4,18.4,18.4c5.8,0,10.4-1.1,12.9-1.9%20c1-0.3,2,0.6,1.8,1.6l-1.3,7c-0.1,0.6-0.5,1.1-1.1,1.3c-2.3,0.7-8.8,2.5-18.7,2.5c-23.6,0-33.1-13.6-31.7-27.4%20C127.8,18.1,135.9,0,168,0C174.2,0,179.1,1,183,2.1'%3e%3c/path%3e%3c/g%3e%3c/svg%3e)
+
+![PhongVu.vn logo](https://agenticaibuildweek.genaifund.ai/assets/phongvu-Bha3YM4y.png)
+
+![TASCO logo](https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png)
+
+![Galaxy Holdings logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png)
+
+![Vietjet logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/b5aa08a9-0a34-4b87-99ef-7c4913dc1bd1/vietjet.svg)
+
+![Guardian logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/af97ca2b-cf11-4f5c-a56d-af0ab40ae084/guardian.png)
+
+Community Partners
+
+![MOR Software logo](https://agenticaibuildweek.genaifund.ai/assets/mor-FcKguY6i.png)
+
+![Sota Media logo](<Base64-Image-Removed>)
+
+![NghienAI logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/4370ed68-9953-438e-a1dd-2f83feccc00a/nghienai.svg)
+
+![Team1 Vietnam logo](data:image/svg+xml,%3c?xml%20version=%271.0%27%20encoding=%27UTF-8%27?%3e%3csvg%20id=%27katman_2%27%20data-name=%27katman%202%27%20xmlns=%27http://www.w3.org/2000/svg%27%20width=%271026.79%27%20height=%27288.98%27%20viewBox=%270%200%201026.79%20288.98%27%3e%3cdefs%3e%3cstyle%3e%20.cls-1%20{%20fill:%20%23fff;%20}%20.cls-2%20{%20fill:%20%23ff394a;%20}%20%3c/style%3e%3c/defs%3e%3cg%20id=%27katman_1%27%20data-name=%27katman%201%27%3e%3cg%3e%3cpath%20class=%27cls-1%27%20d=%27M608.94,283.33V85.36c0-3.5,2.82-6.35,6.32-6.39l43.25-.45c3.55-.04,6.46,2.84,6.46,6.39v13.95c9.77-7.47,20.4-13.36,31.89-17.67,11.78-4.31,24.42-6.46,37.93-6.46,14.37,0,25.43,2.15,33.19,6.46,8.04,4.31,14.22,10.49,18.53,18.53,9.48-7.47,20.26-13.5,32.33-18.1,12.36-4.6,26.86-6.9,43.53-6.9,23.56,0,40.95,6.18,52.15,18.53,11.21,12.07,16.81,30.6,16.81,55.6v134.47h-57.32v-128.01c0-13.5-2.87-23.13-8.62-28.88-5.75-6.03-14.94-9.05-27.58-9.05-17.24,0-29.45,6.18-40.95,18.53,0,6.8-.13,11.06,0,17.67v129.73h-54.3v-128.01c0-12.64-2.16-22.12-6.47-28.45-4.31-6.32-12.64-9.48-25-9.48-8.62,0-16.81,2.3-24.57,6.9-7.47,4.31-14.22,9.34-20.26,15.09v143.95h-57.32Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M447.44,287.64c-12.93,0-25-2.3-36.2-6.9-10.92-4.88-19.83-11.92-26.72-21.12-6.61-9.48-9.91-21.26-9.91-35.34,0-20.11,7.04-36.2,21.12-48.27,14.37-12.07,35.48-18.1,63.36-18.1h60.34v-5.6c0-12.64-3.59-21.55-10.77-26.72-6.9-5.17-20.97-7.76-42.24-7.76s-39.83,2.72-58.77,8.15c-4.19,1.2-8.47-1.88-8.47-6.24v-27.73c0-2.63,1.6-5,4.08-5.87,8.64-3.04,18.78-5.55,30.4-7.53,13.79-2.59,28.73-3.88,44.82-3.88,30.75,0,54.45,6.32,71.12,18.96,16.95,12.36,25.43,32.33,25.43,59.91v129.73l-53.44-.81v-17.73c-8.05,7.18-17.96,12.79-29.74,16.81-11.78,4.02-26.58,6.04-44.39,6.04ZM463.38,249.28c12.93,0,24.14-2.16,33.62-6.47,9.48-4.31,16.95-9.77,22.41-16.38v-32.33h-59.05c-22.7,0-34.05,9.34-34.05,28.02s12.36,27.15,37.07,27.15Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M269.01,287.64c-35.34,0-63.36-8.76-84.05-26.29-20.69-17.82-31.03-44.68-31.03-80.6,0-32.47,8.62-58.19,25.86-77.15,17.53-19.25,43.53-28.88,78.01-28.88,31.61,0,55.74,8.33,72.41,25,16.95,16.38,25.43,37.93,25.43,64.65v32.81c0,2.35-1.91,4.26-4.26,4.26h-143.57c3.16,16.38,10.63,27.58,22.41,33.62,12.07,6.04,29.02,9.05,50.86,9.05,10.92,0,21.98-1.01,33.19-3.02,7.56-1.32,14.37-2.9,20.44-4.72,4.31-1.29,8.87,1.83,8.87,6.34v29.25c0,1.67-.97,3.2-2.51,3.84-8.91,3.75-19.13,6.55-30.67,8.38-12.64,2.3-26.43,3.45-41.38,3.45ZM207.8,165.66h96.98v-11.21c0-11.78-3.45-20.98-10.34-27.58-6.9-6.9-18.53-10.34-34.91-10.34-19.25,0-32.76,3.88-40.51,11.64-7.47,7.76-11.21,20.26-11.21,37.5Z%27/%3e%3cpath%20class=%27cls-2%27%20d=%27M1020.91,181.07h-46.78c-3.25,0-5.88-2.63-5.88-5.88V63.4c0-3.25-2.63-5.88-5.88-5.88h-25.57c-3.25,0-5.88-2.63-5.88-5.88V5.88c0-3.25,2.63-5.88,5.88-5.88h84.1c3.25,0,5.88,2.63,5.88,5.88v169.31c0,3.25-2.63,5.88-5.88,5.88Z%27/%3e%3cpath%20class=%27cls-1%27%20d=%27M98.27,288.98c-23.56,0-41.09-6.18-52.58-18.53-11.21-12.36-16.81-29.16-16.81-50.43v-90.56c0-2.35-1.91-4.26-4.26-4.26H6.39c-3.53,0-6.39-2.86-6.39-6.39v-32.04c0-3.53,2.86-6.39,6.39-6.39h16.1c3.53,0,6.39-2.86,6.39-6.39V25.56c0-3.53,2.86-6.39,6.39-6.39h45.4c3.53,0,6.39,2.86,6.39,6.39v48.42c0,3.53,2.86,6.39,6.39,6.39h38.43c3.72,0,6.66,3.17,6.37,6.88l-2.46,32.04c-.26,3.33-3.03,5.9-6.37,5.9h-35.96c-3.53,0-6.39,2.86-6.39,6.39v84.55c0,11.21,2.59,18.97,7.76,23.28,5.17,4.02,13.22,6.03,24.14,6.03,5.36,0,10.85-.64,16.46-1.91,4.25-.97,8.53,2.11,8.53,6.47v28.36c0,1.73-1.04,3.3-2.67,3.9-5.58,2.06-11.59,3.58-18.02,4.57-7.47,1.44-15.8,2.16-25,2.16Z%27/%3e%3c/g%3e%3c/g%3e%3c/svg%3e)
+
+![Twendee Software logo](https://agenticaibuildweek.genaifund.ai/assets/twendee-MH3uLVOG.png)
+
+![StartupX logo](https://agenticaibuildweek.genaifund.ai/assets/startupx-jJy0HNYZ.avif)
+
+![AI Leaders logo](https://agenticaibuildweek.genaifund.ai/assets/aileaders-DD40xmQ6.png)
+
+![VinUni E-Lab logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/40a9a992-5fba-4af0-9054-46666aa72560/vinuni-elab.png)
+
+![AI and Quantum International Hub logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/067b1abe-15a0-4fa7-a745-915013eef979/aiquant.png)
+
+![Techshake logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/7c3af5ab-692a-4e83-9bd4-fede254d7cd4/techshake.png)
+
+![ContextBoxAI logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/d75ce25a-a6af-40af-a475-90e88dcf99b5/contextboxai.png)
+
+![Devtee Labs logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/8d3628e4-361d-43b1-b4fe-8a0535b145b7/devtee-labs.png)
+
+More partners will be announced soon
+
+
+---
+
+# The Scale
+
+Source: https://agenticaibuildweek.genaifund.ai/#scale
+
+The Scale
+
+2,000+
+
+AI Builders
+
+$1M+
+
+Prize Pool
+
+5
+
+Days of Building
+
+30+
+
+Agentic AI Workshops
+
+10
+
+Enterprise Partners
+
+100+
+
+Tech Partners
+
+
+---
+
+# The Programme
+
+Source: https://agenticaibuildweek.genaifund.ai/#programme
+
+The Programme
+
+## 5 Days. Enable → Integrate → Design → Build → Demo.
+
+July 8 – 12, 2026 · Ho Chi Minh City
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/tasco-office.webp)
+
+
+
+
+
+
+
+
+
+
+
+Wed · July 8
+
+
+
+### Day 01:Enable
+
+
+
+
+
+
+
+
+
+Workshops
+
+
+
+
+
+
+
+
+
+![BytePlus logo](https://agenticaibuildweek.genaifund.ai/assets/byteplus-DpblwXad.svg)
+
+
+
+
+
+
+
+
+
+
+
+![NVIDIA logo](https://agenticaibuildweek.genaifund.ai/assets/nvidia-5AcRFX3u.png)
+
+
+
+
+
+
+
+
+
+
+
+![TRAE logo](https://agenticaibuildweek.genaifund.ai/assets/trae-BnVBAW92.png)
+
+
+
+
+
+
+
+
+
+
+
+![Apify logo](data:image/svg+xml,%3csvg%20width='658'%20height='287'%20viewBox='0%200%20658%20287'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20clip-path='url(%23clip0_341_4172)'%3e%3cpath%20d='M153.782%2073H211.73C212.909%2073%20213.865%2073.9556%20213.865%2075.1343V163.693C213.865%20165.815%20211.106%20166.637%20209.944%20164.862L151.996%2076.303C151.068%2074.8835%20152.086%2073%20153.782%2073Z'%20fill='%23246DFF'/%3e%3cpath%20d='M133.083%2073H75.1343C73.9556%2073%2073%2073.9556%2073%2075.1343V163.693C73%20165.815%2075.7588%20166.637%2076.9203%20164.862L134.869%2076.303C135.798%2074.8835%20134.779%2073%20133.083%2073Z'%20fill='%2320A34E'/%3e%3cpath%20d='M142.439%20143.903L76.6101%20210.228C75.2733%20211.575%2076.2273%20213.866%2078.1249%20213.866H208.793C210.683%20213.866%20211.641%20211.591%20210.32%20210.239L145.48%20143.915C144.648%20143.063%20143.279%20143.058%20142.439%20143.903Z'%20fill='%23F86606'/%3e%3cpath%20d='M525.792%2092.3785H501.134C493.419%2092.3785%20490.113%2096.2354%20490.113%20103.261V110.011L526.04%20110.012L546.565%20157.399L567.092%20110.012H585L542.019%20209.059H524.386L537.611%20178.477L513.028%20124.888H490.113V179.716H472.481V124.888H453.332V110.011H472.481V99.8174C472.481%2086.3173%20479.919%2078.3271%20495.761%2078.3271H525.792V92.3785Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M385.456%20108.497C403.639%20108.497%20418.517%20122.135%20418.517%20144.865C418.517%20167.732%20403.639%20181.232%20385.456%20181.232C370.302%20181.232%20362.725%20171.865%20361.348%20169.11V208.922H343.99V110.012H361.485V121.033C362.725%20118.416%20370.302%20108.497%20385.456%20108.497ZM380.909%20123.926C368.924%20123.926%20361.21%20132.88%20361.21%20144.865C361.21%20156.712%20368.924%20165.804%20380.909%20165.804C393.031%20165.804%20400.746%20156.712%20400.746%20144.865C400.746%20132.88%20393.031%20123.926%20380.909%20123.926Z'%20fill='white'/%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M298.259%20108.221C319.886%20108.221%20331.871%20119.517%20331.871%20136.047V159.604C331.871%20163.737%20333.386%20165.665%20337.381%20165.94V180.129H331.871C323.193%20179.991%20317.544%20176.685%20315.616%20170.486C312.172%20175.445%20305.009%20181.232%20293.024%20181.232C276.631%20181.232%20264.232%20171.864%20264.232%20157.675C264.233%20143.624%20274.84%20136.047%20292.059%20136.047H314.927C314.927%20127.644%20308.452%20122.272%20298.259%20122.272C288.616%20122.272%20284.758%20127.506%20283.794%20129.297H266.023C267.401%20121.858%20276.356%20108.221%20298.259%20108.221ZM294.952%20148.032C286.824%20148.032%20281.589%20151.063%20281.589%20157.4C281.59%20164.15%20287.927%20168.145%20296.743%20168.145C306.662%20168.144%20314.927%20163.185%20314.927%20153.956V148.032H294.952Z'%20fill='white'/%3e%3cpath%20d='M444.943%20179.716H427.311V110.012H444.943V179.716Z'%20fill='white'/%3e%3cpath%20d='M445.218%2098.854H426.896V77.915H445.218V98.854Z'%20fill='white'/%3e%3c/g%3e%3cdefs%3e%3cclipPath%20id='clip0_341_4172'%3e%3crect%20width='512'%20height='141'%20fill='white'%20transform='translate(73%2073)'/%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e)
+
+
+
+
+
+
+
+
+
+
+
+Venue: Tasco Office
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/aws-office.webp)
+
+
+
+
+
+
+
+
+
+
+
+Thu · July 9
+
+
+
+### Day 02:Integrate
+
+
+
+
+
+
+
+
+
+Workshops
+
+
+
+
+
+
+
+
+
+![AWS logo](https://agenticaibuildweek.genaifund.ai/assets/aws-C2UkUU-W.png)
+
+
+
+
+
+
+
+
+
+
+
+Venue: AWS Office, Bitexco Tower
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/vng-campus.webp)
+
+
+
+
+
+
+
+
+
+
+
+Fri · July 10
+
+
+
+### Day 03:Design
+
+
+
+
+
+
+
+
+
+Workshops
+
+
+
+
+
+
+
+
+
+![Agora logo](https://agenticaibuildweek.genaifund.ai/assets/agora-QnjCbkeX.png)
+
+
+
+
+
+
+
+
+
+
+
+![Google for Developers logo](https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/890b0ff2-fe97-4908-91d7-07d1862dd7f1/googledev.svg)
+
+
+
+
+
+
+
+
+
+
+
+![TinyFish logo](https://agenticaibuildweek.genaifund.ai/assets/tinyfish-ux5kSZ0w.png)
+
+
+
+
+
+
+
+
+
+
+
+Venue: VNG Campus
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp)
+
+
+
+
+
+
+
+
+
+
+
+Sat · July 11
+
+
+
+### Day 04:Build
+
+
+
+
+
+
+
+
+
+  - Keynotes
+  - Networking
+  - Late-night build
+
+Venue: Galaxy Innovation Park
+
+- ![](https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp)
+
+
+
+
+
+
+
+
+
+
+
+Sun · July 12
+
+
+
+### Day 05:Demo
+
+
+
+
+
+
+
+
+
+  - Demo Day
+  - Award Ceremony
+
+Venue: Galaxy Innovation Park
+
+
+---
+
+# Daily Schedule
+
+Source: https://agenticaibuildweek.genaifund.ai/#daily_schedule
+
+Daily Schedule
+
+Times are indicative · sessions still being finalised
+
+Day 01EnableWed · July 8Day 02IntegrateThu · July 9Day 03DesignFri · July 10Day 04BuildSat · July 11Day 05DemoSun · July 12
+
+Day 01 · EnableWed · July 8
+
+Tasco Office
+
+1. 09:00Registration & Welcome
+2. ![](https://agenticaibuildweek.genaifund.ai/workshops/byteplus.png)
+
+
+10:00–12:00·BytePlus
+
+
+
+Render the Next Era of Creation with BytePlus AI Stack
+
+
+
+[RSVP](https://luma.com/gaf-vbkf)
+
+3. 12:00Lunch
+4. ![](https://agenticaibuildweek.genaifund.ai/workshops/nvidia.png)
+
+
+14:00–14:45·NVIDIA
+
+
+
+Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally
+
+
+
+[RSVP](https://luma.com/gaf-t4bs)
+
+5. ![](https://agenticaibuildweek.genaifund.ai/workshops/trae.png)
+
+
+15:00–16:00·TRAE
+
+
+
+TRAE in Your Professional Workflow
+
+
+
+[RSVP](https://luma.com/gaf-jpy4)
+
+
+---
+
+# Referral Programme
+
+Source: https://agenticaibuildweek.genaifund.ai/#referral_programme
+
+Referral Programme
+
+## See the top builders bringing the ecosystem together.
+
+Live rankings of referrals driving Agentic AI Build Week.
+
+[View Referral Programme](https://agenticaibuildweek.genaifund.ai/leaderboard)
+
+
+---
+
+# FAQ
+
+Source: https://agenticaibuildweek.genaifund.ai/#faq
+
+FAQ
+
+### Do I need Discord to claim referral rewards?
+
+Yes. Join Discord to verify your tier and get access to rewards.
+
+[Join Discord](https://discord.gg/CC7ByXWRc)
+
+## July 8–12, 2026.  Ho Chi Minh City.  Your build. Real enterprise problems.  Real deployment conversations.
+
+2,000+ Builders. $1M+ Prize Pool. One Week.
+
+[Register on Luma →](https://luma.com/gaf-hm61?utm_source=landing_page)

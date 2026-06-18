@@ -1,0 +1,361 @@
+{
+  "generated_at": "2026-06-18T16:05:57.196926",
+  "programme_days": 5,
+  "events_total": 30,
+  "events_with_registration": 7,
+  "events_with_coordinates": 7,
+  "events_incomplete": 11,
+  "events_full": 6,
+  "events_partial": 0,
+  "events_summary_only": 23,
+  "events_changed": 3,
+  "events_content_changed": 0,
+  "events_schedule_changed": 3,
+  "events_stale": 0,
+  "external_event_pages_checked": 6,
+  "external_event_pages_skipped_unchanged": 6,
+  "external_event_pages_skipped_by_ttl": 6,
+  "summary_only_days": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "events": [
+    {
+      "id": "day01-registration-and-welcome",
+      "title": "Registration & Welcome",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": [
+        "summary-only event from homepage"
+      ]
+    },
+    {
+      "id": "day01-byteplus",
+      "title": "Render the Next Era of Creation with BytePlus AI Stack",
+      "completeness_score": 1.0,
+      "quality_level": "full",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day01-lunch",
+      "title": "Lunch",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": [
+        "summary-only event from homepage"
+      ]
+    },
+    {
+      "id": "day01-nvidia",
+      "title": "Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally",
+      "completeness_score": 1.0,
+      "quality_level": "full",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day01-trae",
+      "title": "TRAE in Your Professional Workflow",
+      "completeness_score": 1.0,
+      "quality_level": "full",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day02-aws",
+      "title": "AWS",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day02-agora",
+      "title": "Agora",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day02-lunch",
+      "title": "Lunch",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day02-aws",
+      "title": "AWS",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day02-tiny-fish",
+      "title": "Tiny Fish",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day02-aws",
+      "title": "AWS",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day02-ai-gaming-night",
+      "title": "AI × Gaming Night",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day03-registration-and-welcome",
+      "title": "Registration & Welcome",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day03-apify",
+      "title": "Build, Deploy & Monetize AI Agents: The Future of the Developer Economy",
+      "completeness_score": 1.0,
+      "quality_level": "full",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day03-langfuse-clickhouse",
+      "title": "Langfuse × ClickHouse",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day03-google-developer-experts",
+      "title": "Beyond Autocomplete: How Agentic AI Solves the Enterprise Design Bottleneck",
+      "completeness_score": 1.0,
+      "quality_level": "full",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day03-tencent-cloud",
+      "title": "Tencent Cloud",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day03-builder-night",
+      "title": "Builder Night",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day04-opening-ceremony-keynotes",
+      "title": "Opening Ceremony + Keynotes",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day04-lunch",
+      "title": "Lunch",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day04-on-site-build-sprint",
+      "title": "On-site Build Sprint",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day04-expert-parade",
+      "title": "Expert Parade",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day04-networking-night",
+      "title": "Networking Night",
+      "completeness_score": 1.0,
+      "quality_level": "full",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day04-late-night-build",
+      "title": "Late Night Build",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day05-submission-deadline",
+      "title": "Submission Deadline",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day05-demo-pitches",
+      "title": "Demo Pitches",
+      "completeness_score": 0.54,
+      "quality_level": "summary_only",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day05-lunch",
+      "title": "Lunch",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day05-awards-ceremony",
+      "title": "Awards Ceremony",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day05-networking-night",
+      "title": "Networking Night",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day04-agentic-ai-build-week-networking-night",
+      "title": "Agentic AI Build Week Networking Night",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    }
+  ]
+}

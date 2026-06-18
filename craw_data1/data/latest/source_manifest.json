@@ -1,0 +1,52 @@
+{
+  "sources": {
+    "luma_gaf-vbkf": {
+      "url": "https://luma.com/gaf-vbkf",
+      "type": "external_event",
+      "raw_hash": "d5f67ab6c79d71cfa782492882aab235a81e59bb51fb8aff15470acbf202da00",
+      "parser_version": 4,
+      "last_scraped_at": "2026-06-18T10:53:21.809614",
+      "status": "ok"
+    },
+    "luma_gaf-t4bs": {
+      "url": "https://luma.com/gaf-t4bs",
+      "type": "external_event",
+      "raw_hash": "06a0afb2eeade9c1b601851360ce5c11bc96b9b539ec28c3274c2e745e7d5859",
+      "parser_version": 4,
+      "last_scraped_at": "2026-06-18T10:53:22.808444",
+      "status": "ok"
+    },
+    "luma_gaf-jpy4": {
+      "url": "https://luma.com/gaf-jpy4",
+      "type": "external_event",
+      "raw_hash": "41ad0e86b1d2b9b26bb585536159baf40dd3e73df0d1104ffee8ad1fc25542f3",
+      "parser_version": 4,
+      "last_scraped_at": "2026-06-18T10:53:23.813111",
+      "status": "ok"
+    },
+    "luma_gaf-u7gd": {
+      "url": "https://luma.com/gaf-u7gd",
+      "type": "external_event",
+      "raw_hash": "ff3834c626a5ed04dbd0542876d4a7f0e97bb20417f31ec85ca0819ae8d2cf59",
+      "parser_version": 4,
+      "last_scraped_at": "2026-06-18T13:11:31.327261",
+      "status": "ok"
+    },
+    "luma_gaf-umu5": {
+      "url": "https://luma.com/gaf-umu5",
+      "type": "external_event",
+      "raw_hash": "32f44f72503b9b81a79d93514de128b975d4626e14dc193e4bafa5d5a4cc7b38",
+      "parser_version": 4,
+      "last_scraped_at": "2026-06-18T15:26:47.440384",
+      "status": "ok"
+    },
+    "luma_gaf-idob": {
+      "url": "https://luma.com/gaf-idob",
+      "type": "external_event",
+      "raw_hash": "a564052c62a1733454d1bd197eee32986b08b28108b89944e94e7b556e327f68",
+      "parser_version": 4,
+      "last_scraped_at": "2026-06-18T15:27:05.765693",
+      "status": "ok"
+    }
+  }
+}

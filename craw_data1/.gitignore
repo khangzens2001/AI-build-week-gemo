@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+tests/__pycache__/
+*.pyc
+logs/
+.env
+data/https___*.json
+data/history/202606*/

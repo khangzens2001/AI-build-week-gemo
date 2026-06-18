@@ -1,0 +1,247 @@
+[
+  {
+    "url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track",
+    "type": "internal_page",
+    "text_variants": [
+      "Pre-Event TrackBuilder Experience Track — win $900 & ship it liveEnter Now"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      }
+    ]
+  },
+  {
+    "url": "https://luma.com/gaf-vbkf",
+    "type": "registration",
+    "text_variants": [
+      "RSVP"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_daily_schedule",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+      }
+    ]
+  },
+  {
+    "url": "https://luma.com/gaf-t4bs",
+    "type": "registration",
+    "text_variants": [
+      "RSVP"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_daily_schedule",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+      }
+    ]
+  },
+  {
+    "url": "https://luma.com/gaf-jpy4",
+    "type": "registration",
+    "text_variants": [
+      "RSVP"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_daily_schedule",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+      }
+    ]
+  },
+  {
+    "url": "https://agenticaibuildweek.genaifund.ai/leaderboard",
+    "type": "internal_page",
+    "text_variants": [
+      "View Referral Programme",
+      "View full referral leaderboard"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "partners",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+      },
+      {
+        "source": "section_referral_programme",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#referral_programme"
+      }
+    ]
+  },
+  {
+    "url": "https://discord.gg/CC7ByXWRc",
+    "type": "community",
+    "text_variants": [
+      "Join Discord",
+      "Join Discord to verify rewards"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      },
+      {
+        "source": "leaderboard",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/leaderboard"
+      },
+      {
+        "source": "leaderboard",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/leaderboard"
+      },
+      {
+        "source": "section_faq",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#faq"
+      }
+    ]
+  },
+  {
+    "url": "https://luma.com/gaf-hm61?utm_source=landing_page",
+    "type": "registration",
+    "text_variants": [
+      "Register on Luma →",
+      "Start referring"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "leaderboard",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/leaderboard"
+      },
+      {
+        "source": "section_faq",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#faq"
+      }
+    ]
+  },
+  {
+    "url": "https://agentic-ai-build-week-2026.devpost.com/",
+    "type": "devpost",
+    "text_variants": [
+      "Enter on Devpost →"
+    ],
+    "appearances": [
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      },
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      },
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      }
+    ]
+  },
+  {
+    "url": "https://drive.google.com/file/d/1Sh-GyxtdVSRvmczUaTeEzmcyDiap2DpF/view?usp=sharing",
+    "type": "document",
+    "text_variants": [
+      "Read the brief",
+      "▦ builder-experience-track-brief.md\\\\ \\# Builder Experience Track\\\\ \\\\ Build an AI tool that helps builders\\\\ \\## Prize $900 + deployed live to thousands\\\\ \\## Rules self-contained data · configurable…\\\\ \\\\ ↓ Download .mdDrop into Claude · Cursor · ChatGPT"
+    ],
+    "appearances": [
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      },
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      },
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      }
+    ]
+  },
+  {
+    "url": "https://agenticaibuildweek.genaifund.ai/",
+    "type": "internal_page",
+    "text_variants": [
+      "Back to home"
+    ],
+    "appearances": [
+      {
+        "source": "leaderboard",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/leaderboard"
+      },
+      {
+        "source": "partners",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+      }
+    ]
+  },
+  {
+    "url": "mailto:general@genaifund.ai?subject=AABW%202026%20Partnership",
+    "type": "email",
+    "text_variants": [
+      "Be Our Partner"
+    ],
+    "appearances": [
+      {
+        "source": "partners",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+      }
+    ]
+  },
+  {
+    "url": "https://drive.google.com/file/d/1bjYFPWrKmNtY8Zx37EWNH_VBlYp54SpJ/view?usp=drive_link",
+    "type": "document",
+    "text_variants": [
+      "Be Our Community Partner"
+    ],
+    "appearances": [
+      {
+        "source": "partners",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+      },
+      {
+        "source": "partners",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+      }
+    ]
+  },
+  {
+    "url": "https://drive.google.com/file/d/1ES45mGnymkPcK0m92YMQXlP3w2uJt0gZ/view?usp=drive_link",
+    "type": "document",
+    "text_variants": [
+      "I want to be AABW Ambassador"
+    ],
+    "appearances": [
+      {
+        "source": "partners",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+      },
+      {
+        "source": "partners",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+      }
+    ]
+  }
+]
