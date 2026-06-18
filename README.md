@@ -10,7 +10,7 @@ Dự án hiện ở giai đoạn **pre-implementation**. Repository đang chứa
 |---|---|
 | `Builder-Experience-Award-Brief.md` | Brief gốc của track Builder Experience Award |
 | `Event-Copilot-Build-Checklist.md` | Build plan chi tiết, là nguồn sự thật chính cho kiến trúc và phase build |
-| `AGENTS.md` | Hướng dẫn ngắn cho các phiên OpenCode sau |
+| `AGENTS.md` | Hướng dẫn ngắn cho các phiên làm việc sau |
 | `apps/*/AGENTS.md`, `workers/*/AGENTS.md`, `packages/*/AGENTS.md` | Quy ước riêng cho từng vùng trong monorepo dự kiến |
 
 ## Bài toán
