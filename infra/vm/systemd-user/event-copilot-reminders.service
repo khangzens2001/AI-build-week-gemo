@@ -1,0 +1,16 @@
+# Reminder sweep trigger (replaces Vercel Cron). Calls the web container's
+# /api/cron/reminders with the Bearer CRON_SECRET every 5 min. Without this,
+# reminders never fire. Plain systemd --user units (NOT Quadlet) → live in
+# ~/.config/systemd/user/. CRON_SECRET is read from the same web.env the web
+# container uses, so the secret stays in one place.
+[Unit]
+Description=Event Copilot — reminder sweep (curl /api/cron/reminders)
+After=web.service
+Requires=web.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/srv/event-copilot/shared/web.env
+# -fsS: fail on HTTP error, silent but show errors. The route returns 401 unless
+# the Bearer matches CRON_SECRET.
+ExecStart=/usr/bin/curl -fsS -m 55 -H "Authorization: Bearer ${CRON_SECRET}" http://127.0.0.1:3000/api/cron/reminders

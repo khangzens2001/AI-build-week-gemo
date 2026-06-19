@@ -1,0 +1,8 @@
+# Restarts the web container when the bundle changes (triggered by the .path unit).
+[Unit]
+Description=Event Copilot — restart web after bundle update
+After=web.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/systemctl --user restart web.service

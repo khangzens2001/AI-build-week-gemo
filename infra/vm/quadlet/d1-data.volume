@@ -1,0 +1,5 @@
+# Persistent sqlite for the D1 shim. Generates `d1-data-volume.service`;
+# real podman volume is named `systemd-d1-data`. Holds app.sqlite (+ -wal/-shm).
+[Volume]
+VolumeName=d1-data
+Label=app=event-copilot

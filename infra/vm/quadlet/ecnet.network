@@ -1,0 +1,11 @@
+# Podman network for the Event Copilot stack (rootless, user `zens`).
+# Generates `ecnet-network.service`. Containers on this net resolve each other
+# by container name via aardvark-dns (web → http://chroma:8000, http://d1shim:8787).
+[Unit]
+Description=Event Copilot container network
+
+[Network]
+NetworkName=ecnet
+
+[Install]
+WantedBy=default.target
