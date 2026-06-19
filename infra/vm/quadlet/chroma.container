@@ -8,7 +8,8 @@ Requires=ecnet-network.service chroma-data-volume.service
 
 [Container]
 ContainerName=chroma
-Image=docker.io/chromadb/chroma:1.5.3
+# Pinned to digest (tag was :1.5.3) for a stable demo window.
+Image=docker.io/chromadb/chroma:1.5.3@sha256:171f27f6e475852e2b78d1010a75189ccdffd0bda87944b4792d4f219f0c817c
 PublishPort=127.0.0.1:8000:8000
 Volume=chroma-data.volume:/data
 Network=ecnet.network

@@ -14,7 +14,8 @@ Requires=ecnet-network.service d1-data-volume.service
 
 [Container]
 ContainerName=d1shim
-Image=docker.io/oven/bun:debian
+# Pinned to digest (tag was oven/bun:debian) for a stable demo window.
+Image=docker.io/oven/bun:debian@sha256:431b37ce1acfed987e4f5b6c86a9f210ff63285a912fc5f21e18aeac0cb067ef
 PublishPort=127.0.0.1:8787:8787
 Volume=d1-data.volume:/data
 # Repo scripts mounted read-only; WorkingDir must keep scripts/ as a subdir so

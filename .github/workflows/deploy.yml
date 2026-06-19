@@ -25,7 +25,10 @@ on:
 
 concurrency:
   group: deploy-vm
-  cancel-in-progress: true
+  # Never cancel a deploy mid-flight: the rsync is an in-place --delete into the
+  # live read-mount, so a cancelled deploy could leave a half-synced bundle the
+  # running container then serves. Queue instead — each deploy runs to completion.
+  cancel-in-progress: false
 
 jobs:
   deploy:

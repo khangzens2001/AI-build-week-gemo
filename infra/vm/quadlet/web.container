@@ -5,12 +5,18 @@
 [Unit]
 Description=Event Copilot — web (Next.js standalone)
 After=ecnet-network.service chroma.service d1shim.service
+# Requires only the network (hard dep); chroma/d1shim are Wants (soft) so a
+# transient data-container outage doesn't take the whole web app down — the
+# routes that don't need them keep serving, and RAG/reminders recover when they
+# come back.
 Requires=ecnet-network.service
 Wants=chroma.service d1shim.service
 
 [Container]
 ContainerName=web
-Image=docker.io/library/node:22-slim
+# Pinned to digest (was node:22-slim) so a surprise upstream re-pull can't shift
+# runtime behavior during the demo window.
+Image=docker.io/library/node:22-slim@sha256:d9f850096136edbc402debdd8729579a288aac64574ada0ff4db26b6ae58b0b2
 PublishPort=127.0.0.1:3000:3000
 # The packaged standalone root (contains apps/web/server.js, node_modules, packages).
 Volume=/srv/event-copilot/app:/app:ro,Z
