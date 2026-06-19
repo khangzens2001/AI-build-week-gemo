@@ -26,9 +26,9 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Event Copilot — AABW",
+  title: "Cue — AABW",
   description:
-    "Your real-time copilot for Agentic AI Build Week: what's on now, where, and what to do next.",
+    "Cue is your real-time guide to Agentic AI Build Week: what's on now, where, and what to do next.",
   manifest: "/manifest.webmanifest",
   icons: {
     icon: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" }],
   },
-  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Event Copilot" },
+  appleWebApp: { capable: true, statusBarStyle: "black-translucent", title: "Cue" },
 };
 
 export const viewport: Viewport = {
@@ -47,6 +47,9 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
+  // Android Chrome: shrink the layout viewport when the keyboard opens so the
+  // chat composer stays visible. iOS ignores this (handled via visualViewport).
+  interactiveWidget: "resizes-content",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

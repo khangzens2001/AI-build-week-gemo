@@ -1,6 +1,6 @@
-# Event Copilot cho Agentic AI Build Week
+# Cue cho Agentic AI Build Week
 
-Event Copilot là bản kế hoạch sản phẩm và kiến trúc cho một PWA mobile-first phục vụ Builder Experience Award của Agentic AI Build Week. Mục tiêu là giúp builder trong sự kiện trả lời nhanh ba câu hỏi quan trọng: **đang có gì**, **ở đâu**, và **tôi nên làm gì tiếp**.
+Cue là bản kế hoạch sản phẩm và kiến trúc cho một PWA mobile-first phục vụ Builder Experience Award của Agentic AI Build Week. Mục tiêu là giúp builder trong sự kiện trả lời nhanh ba câu hỏi quan trọng: **đang có gì**, **ở đâu**, và **tôi nên làm gì tiếp**.
 
 Dự án hiện ở giai đoạn **pre-implementation**. Repository đang chứa brief, build plan, và các file hướng dẫn agent theo từng thư mục. Chưa có source code, package manifest, hay git workspace config trong thư mục làm việc hiện tại.
 
@@ -15,7 +15,7 @@ Dự án hiện ở giai đoạn **pre-implementation**. Repository đang chứa
 
 ## Bài toán
 
-Trong Agentic AI Build Week, builder phải xử lý nhiều thông tin cùng lúc: workshop nhiều địa điểm, lịch trình, teammate, deadline, perks, mentor, judging và di chuyển. Event Copilot tập trung giải quyết sự lẫn lộn này bằng một trải nghiệm AI có hành động thật, không chỉ là chatbot hỏi đáp.
+Trong Agentic AI Build Week, builder phải xử lý nhiều thông tin cùng lúc: workshop nhiều địa điểm, lịch trình, teammate, deadline, perks, mentor, judging và di chuyển. Cue tập trung giải quyết sự lẫn lộn này bằng một trải nghiệm AI có hành động thật, không chỉ là chatbot hỏi đáp.
 
 Các tình huống chính:
 
@@ -28,13 +28,13 @@ Các tình huống chính:
 
 ## Sản phẩm đề xuất
 
-Event Copilot là một PWA gồm các module:
+Cue là một PWA gồm các module:
 
 | Module | Mục đích |
 |---|---|
 | Home Now/Next | Hiển thị việc đang diễn ra và việc sắp diễn ra |
 | Google Login | Đăng nhập nhanh bằng Google để lưu profile, sở thích và nhắc nhở |
-| Chat Copilot | Hỏi đáp bằng AI, stream câu trả lời, gọi tool khi cần |
+| Cue Chat | Hỏi đáp bằng AI, stream câu trả lời, gọi tool khi cần |
 | Schedule Navigator | Lọc lịch theo ngày, track, partner, chủ đề |
 | Venue Map | Xem địa điểm và mở chỉ đường |
 | Perks | Xem tài nguyên, credits, benefits và cách claim |
@@ -158,7 +158,7 @@ flowchart TD
     L --> B["Onboarding ngắn: skill, sở thích, trạng thái team"]
     B --> C["Home: Now / Next"]
     C --> D{"Builder cần gì?"}
-    D -->|"Hỏi nhanh"| E["Chat Copilot"]
+    D -->|"Hỏi nhanh"| E["Cue Chat"]
     D -->|"Xem lịch"| F["Schedule Navigator"]
     D -->|"Tìm đường"| G["Venue Map"]
     D -->|"Claim tài nguyên"| H["Perks"]
@@ -369,7 +369,7 @@ flowchart TD
 
 ```mermaid
 gantt
-    title Kế hoạch build MVP Event Copilot
+    title Kế hoạch build MVP Cue
     dateFormat YYYY-MM-DD
     axisFormat %d/%m
     section Nền tảng

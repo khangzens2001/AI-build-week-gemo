@@ -7,6 +7,10 @@ import { SendIcon } from "../icons";
 /**
  * Pinned chat composer. Auto-grows up to a few lines, sends on Enter (Shift+Enter
  * for newline), and disables while a response is streaming.
+ *
+ * Bottom spacing + keyboard lift are owned by the chat `<main>` (it reserves the
+ * TabBar/safe area and the iOS keyboard inset), so this only adds a small inner
+ * gap — no safe-area padding or transform here.
  */
 export function ChatInput({
   onSend,
@@ -34,10 +38,7 @@ export function ChatInput({
   };
 
   return (
-    <div
-      className="border-t border-line-soft bg-bg/80 px-3 pt-2.5 backdrop-blur"
-      style={{ paddingBottom: "calc(0.625rem + env(safe-area-inset-bottom))" }}
-    >
+    <div className="border-t border-line-soft bg-bg/80 px-3 pb-2.5 pt-2.5 backdrop-blur">
       <div className="flex items-end gap-2 rounded-3xl border border-line bg-surface p-1.5 pl-4">
         <textarea
           ref={ref}
@@ -52,7 +53,7 @@ export function ChatInput({
             }
           }}
           placeholder="Ask about sessions, perks, directions…"
-          aria-label="Message the copilot"
+          aria-label="Message Cue"
           className="no-scrollbar max-h-[120px] flex-1 resize-none bg-transparent py-2 text-[15px] text-foreground outline-none placeholder:text-faint"
         />
         <button
@@ -61,7 +62,7 @@ export function ChatInput({
           disabled={disabled || value.trim() === ""}
           aria-label="Send message"
           className={cn(
-            "flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl transition active:scale-90",
+            "flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl transition active:scale-90",
             value.trim() === "" || disabled
               ? "bg-surface-2 text-faint"
               : "bg-accent text-accent-ink",

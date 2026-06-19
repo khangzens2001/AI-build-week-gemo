@@ -1,4 +1,4 @@
-# AGENTS.md — Event Copilot (AABW Builder Experience Award)
+# AGENTS.md — Cue (AABW Builder Experience Award)
 
 ## Status
 Pre-implementation. The repo currently contains planning/docs only:
@@ -9,7 +9,7 @@ Pre-implementation. The repo currently contains planning/docs only:
 No source code, git repo, or package manifests exist yet. The folder tree below is scaffolding for the planned monorepo; each folder has its own `AGENTS.md` with specifics.
 
 ## What we're building
-A mobile-first **PWA "Event Copilot"** for Agentic AI Build Week that answers *"what's on now / where / what next"* with **Hybrid RAG + agent actions** (reminders, directions, perks).
+A mobile-first **PWA "Cue"** for Agentic AI Build Week that answers *"what's on now / where / what next"* with **Hybrid RAG + agent actions** (reminders, directions, perks).
 
 ## Stack (chosen — do not silently swap)
 Bun (toolchain) · Next.js App Router (→ Vercel) · **Vercel AI SDK v5 + Gemini 3** (`@ai-sdk/google`) · Cloudflare **D1** + Drizzle · **Chroma** (vector) · **Firecrawl** (ingest) · **Podman** (local) · Vercel (deploy).

@@ -94,6 +94,12 @@ export const ArrowRightIcon = (p: IconProps) => (
   </Base>
 );
 
+export const ArrowDownIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 5v14M6 13l6 6 6-6" />
+  </Base>
+);
+
 export const SendIcon = (p: IconProps) => (
   <Base {...p}>
     <path d="M4 12 20 4l-5 16-4-7-7-1Z" />

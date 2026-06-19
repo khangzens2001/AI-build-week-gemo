@@ -1,7 +1,7 @@
 import { integer, real, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 /**
- * Cloudflare D1 (SQLite) schema for Event Copilot.
+ * Cloudflare D1 (SQLite) schema for Cue.
  *
  * Design notes (per build plan §8 + architecture review):
  * - Static event data (sessions/venues/perks/deadlines) is the system-of-record

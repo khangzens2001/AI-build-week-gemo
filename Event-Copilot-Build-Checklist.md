@@ -1,7 +1,7 @@
-# Event Copilot — Build Plan (chi tiết)
+# Cue — Build Plan (chi tiết)
 
 > **Track:** Builder Experience Award — Agentic AI Build Week (Jul 8–12, HCMC)
-> **Concept:** Event Copilot — trợ lý real-time trả lời *"đang có gì, ở đâu, tôi nên làm gì tiếp"*; tổng hợp lịch / workshop / venue / perk / deadline và **gợi ý hành động** (đặt nhắc, mở map, lưu).
+> **Concept:** Cue — trợ lý real-time trả lời *"đang có gì, ở đâu, tôi nên làm gì tiếp"*; tổng hợp lịch / workshop / venue / perk / deadline và **gợi ý hành động** (đặt nhắc, mở map, lưu).
 > **Platform:** Web app PWA, mobile-first. **AI:** Hybrid RAG + Agent.
 > **Stack chốt:** Bun (toolchain) · Firecrawl (ingest) · **Cloudflare D1** (structured) · **Chroma** (vector) · **Vercel AI SDK v5 + Gemini 3** (`@ai-sdk/google`, LLM + embeddings) · **Auth.js + Google Login** · **Podman** (local dev) · **Vercel** (deploy).
 >
@@ -21,7 +21,7 @@ Stack bạn chọn rất hay nhưng có vài điểm va chạm về runtime. Tô
 | **Podman ↔ Vercel** | Vercel **không deploy container**, build từ source | Podman dùng cho **local dev** (Chroma, môi trường tái lập, integration test), **không** phải artifact deploy lên Vercel. |
 | **Google Login ↔ D1** | Auth.js chạy trong Next.js/Vercel; D1 binding chỉ có trong Worker | Next.js giữ OAuth/session. Khi cần lưu user/reminder, route server xác thực `auth()` rồi gọi Worker Data API bằng `DATA_API_TOKEN` + `x-user-id`. Client không gọi Worker trực tiếp. |
 | **AI SDK v5 ↔ v4** | v5 đổi API: `tool({inputSchema})`, `stopWhen: stepCountIs()`, `toUIMessageStreamResponse()`, `useChat` từ `@ai-sdk/react` + message `parts` | Dùng **toàn bộ AI SDK v5** (xem mục 10.1). Provider Gemini 3 = **`@ai-sdk/google`**. |
-| **Gemini 3 thinking** | Gemini 3 bật *dynamic thinking*, mặc định `thinkingLevel: "high"` | Copilot cần nhanh → set `thinkingLevel: "low"` cho hỏi đáp ngắn; nâng `high` cho tác vụ lập kế hoạch phức tạp. |
+| **Gemini 3 thinking** | Gemini 3 bật *dynamic thinking*, mặc định `thinkingLevel: "high"` | Cue cần nhanh → set `thinkingLevel: "low"` cho hỏi đáp ngắn; nâng `high` cho tác vụ lập kế hoạch phức tạp. |
 
 > 🟢 **Phân chia nền tảng theo thế mạnh:** Cloudflare = dữ liệu + cron ingest (D1 + Worker). Vercel = PWA + AI (chat/agent, RAG). Chroma Cloud = vector. Gemini 3 = model (qua AI SDK v5). Firecrawl = nguồn dữ liệu.
 
@@ -410,7 +410,7 @@ export async function POST(req: Request) {
   const result = streamText({
     model: google(process.env.GEMINI_CHAT_MODEL!),
     system:
-      "Bạn là Event Copilot cho Agentic AI Build Week. Luôn xét giờ hiện tại, vị trí và profile builder. " +
+      "Bạn là Cue cho Agentic AI Build Week. Luôn xét giờ hiện tại, vị trí và profile builder. " +
       "Trả lời NGẮN + actionable, BẮT BUỘC trích nguồn từ searchKnowledge; nếu thiếu data thì nói rõ, KHÔNG bịa.",
     messages: convertToModelMessages(messages),
     stopWhen: stepCountIs(5),            // multi-step agent (v5)
@@ -451,7 +451,7 @@ export default function Chat() {
     <div className="mx-auto flex w-full max-w-md flex-col p-4">
       {messages.map((m) => (
         <div key={m.id} className="whitespace-pre-wrap">
-          <b>{m.role === "user" ? "Bạn: " : "Copilot: "}</b>
+          <b>{m.role === "user" ? "Bạn: " : "Cue: "}</b>
           {m.parts.map((p, i) =>
             p.type === "text" ? <span key={i}>{p.text}</span> : null,
           )}
