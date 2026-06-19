@@ -1,0 +1,25 @@
+# Chroma vector DB (RAG store). Rootless, published to loopback only; the host
+# nginx never proxies this — only the `web` container reaches it by name on ecnet.
+# Pinned tag + /data persist path are intentional (see infra notes / deepwork).
+[Unit]
+Description=Event Copilot — Chroma vector DB
+After=ecnet-network.service chroma-data-volume.service
+Requires=ecnet-network.service chroma-data-volume.service
+
+[Container]
+ContainerName=chroma
+# Pinned to digest (tag was :1.5.3) for a stable demo window.
+Image=docker.io/chromadb/chroma:1.5.3@sha256:171f27f6e475852e2b78d1010a75189ccdffd0bda87944b4792d4f219f0c817c
+PublishPort=127.0.0.1:8000:8000
+Volume=chroma-data.volume:/data
+Network=ecnet.network
+# NOTE: the chromadb 1.x (Rust) image ships no curl/wget, so a HealthCmd that
+# shells out can't run. We rely on Restart=on-failure + the app's own retry; the
+# heartbeat endpoint (/api/v2/heartbeat) is verified from the host during deploy.
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=300
+
+[Install]
+WantedBy=default.target

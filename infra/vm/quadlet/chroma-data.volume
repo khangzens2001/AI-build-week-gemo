@@ -1,0 +1,5 @@
+# Persistent vector store for Chroma. Generates `chroma-data-volume.service`;
+# the real podman volume is named `systemd-chroma-data`.
+[Volume]
+VolumeName=chroma-data
+Label=app=event-copilot

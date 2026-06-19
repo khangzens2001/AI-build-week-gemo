@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 /**
- * Single source of truth for Event Copilot data shapes (plan convention: Zod
+ * Single source of truth for Cue data shapes (plan convention: Zod
  * schemas defined once in @event/core, reused by the seed transform, the
  * bundled snapshot reader, agent `tool().inputSchema`, and API validation).
  *

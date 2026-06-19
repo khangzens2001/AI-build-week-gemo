@@ -31,7 +31,7 @@ export async function GET(req: Request) {
   for (const t of targets) {
     const result = await sendPush(
       { endpoint: t.endpoint, p256dh: t.p256dh, auth: t.auth },
-      { title: "Event Copilot", body: t.label, url: "/" },
+      { title: "Cue", body: t.label, url: "/" },
     );
     if (result === "sent") {
       await markReminderSent(t.reminder_id);

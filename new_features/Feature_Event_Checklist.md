@@ -78,7 +78,7 @@ The following UI mockups illustrate the specific layout, styling, and flow.
 *Figure 2: Custom Todo & Notes Interface. Users can create custom tasks, track status, and expand items to write rich markdown notes.*
 <!-- slide -->
 ![UI: Chat Add Schedule](file:///Users/thinhpld0/.gemini/antigravity-ide/brain/4a6d0af7-b3df-414e-9d27-18b8f0d7fb92/chat_add_schedule_ui_1781858956251.png)
-*Figure 3: AI Chat Integration. The Event Copilot can add items directly to the checklist on behalf of the user using tool-calling.*
+*Figure 3: AI Chat Integration. Cue can add items directly to the checklist on behalf of the user using tool-calling.*
 <!-- slide -->
 ![UI: Push Notification](file:///Users/thinhpld0/.gemini/antigravity-ide/brain/4a6d0af7-b3df-414e-9d27-18b8f0d7fb92/ai_push_notification_ui_1781858974558.png)
 *Figure 4: Automated Reminders. Web Push notification triggered prior to bookmarked session start times to prevent FOMO.*
@@ -138,7 +138,7 @@ flowchart TD
 
     subgraph EntryPoints["Entry Points to Checklist"]
         U1["Explore Schedule (Full List)"]:::user
-        U2["AI Chat Copilot ('Add X to schedule')"]:::user
+        U2["Cue Chat ('Add X to schedule')"]:::user
         U3["Manual Checklist Input ('Add custom todo')"]:::user
     end
 

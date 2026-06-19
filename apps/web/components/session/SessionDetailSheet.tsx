@@ -120,7 +120,7 @@ function SessionDetailSheetInner({
           </a>
         )}
 
-        {/* Copilot bridge — fills the gap where descriptions live in RAG */}
+        {/* Cue bridge — fills the gap where descriptions live in RAG */}
         <Link
           href={`/chat?q=${encodeURIComponent(`Tell me about "${session.title}"`)}`}
           onClick={onClose}
@@ -130,7 +130,7 @@ function SessionDetailSheetInner({
             <ChatIcon className="h-4.5 w-4.5" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="text-sm font-semibold">Ask the copilot</p>
+            <p className="text-sm font-semibold">Ask Cue</p>
             <p className="truncate text-xs text-muted">Speakers, what to bring, and how to join</p>
           </div>
         </Link>

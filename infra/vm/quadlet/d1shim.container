@@ -1,0 +1,36 @@
+# D1 shim — bun:sqlite HTTP server speaking the Cloudflare D1 REST contract.
+# Promoted from dev-only to the demo's real user-data store (reminders/push/prefs).
+# Unauthenticated arbitrary-SQL by design → ONLY reachable by `web` on ecnet and
+# published to host loopback only. Bind D1_LOCAL_HOST=0.0.0.0 so sibling
+# containers reach it (container netns is the isolation boundary).
+#
+# Needs the repo's scripts/ mounted (d1-local.ts + local-db-path.ts). The sqlite
+# file lives on the d1-data volume via D1_LOCAL_DB. Seed it ONCE before first
+# start with the seed one-shot (see infra/vm/seed-d1shim.sh) — never on deploy.
+[Unit]
+Description=Event Copilot — D1 sqlite shim (bun)
+After=ecnet-network.service d1-data-volume.service
+Requires=ecnet-network.service d1-data-volume.service
+
+[Container]
+ContainerName=d1shim
+# Pinned to digest (tag was oven/bun:debian) for a stable demo window.
+Image=docker.io/oven/bun:debian@sha256:431b37ce1acfed987e4f5b6c86a9f210ff63285a912fc5f21e18aeac0cb067ef
+PublishPort=127.0.0.1:8787:8787
+Volume=d1-data.volume:/data
+# Repo scripts mounted read-only; WorkingDir must keep scripts/ as a subdir so
+# local-db-path.ts resolves repoRoot = <workdir> (it does `resolve(import.meta.dir, "..")`).
+Volume=/srv/event-copilot/repo:/app:ro,Z
+WorkingDir=/app
+Network=ecnet.network
+Environment=D1_LOCAL_HOST=0.0.0.0
+Environment=D1_LOCAL_PORT=8787
+Environment=D1_LOCAL_DB=/data/app.sqlite
+Exec=bun run scripts/d1-local.ts
+
+[Service]
+Restart=on-failure
+TimeoutStartSec=120
+
+[Install]
+WantedBy=default.target

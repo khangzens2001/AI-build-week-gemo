@@ -1,0 +1,84 @@
+name: Deploy to VM
+
+# Auto-deploys apps/web to the GCE VM (ai-program-week) on push to main.
+# Builds the Next.js standalone bundle on the GitHub-hosted (glibc) runner, then
+# rsyncs it to the VM via a command-restricted deploy key. The VM's web-reload
+# .path unit notices the bundle change and restarts the `web` Podman container.
+#
+# Secrets (set via gh, account zane-tv):
+#   VM_SSH_KEY          - private ed25519 key; authorized on the VM with a forced
+#                         command (rsync into /srv/event-copilot/app + touch marker)
+#   VM_HOST             - 35.229.228.183
+#   VM_USER             - zens
+#   VM_SSH_KNOWN_HOSTS  - ssh-keyscan output pinning the VM host key
+
+on:
+  push:
+    branches: [main]
+    # Only redeploy when something that affects the bundle changes.
+    paths:
+      - "apps/web/**"
+      - "packages/**"
+      - "scripts/package-standalone.sh"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch: {}
+
+concurrency:
+  group: deploy-vm
+  # Never cancel a deploy mid-flight: the rsync is an in-place --delete into the
+  # live read-mount, so a cancelled deploy could leave a half-synced bundle the
+  # running container then serves. Queue instead — each deploy runs to completion.
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build (Next.js standalone)
+        run: bun run build
+
+      - name: Package standalone bundle
+        run: bash scripts/package-standalone.sh dist/standalone
+
+      - name: Configure SSH
+        run: |
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "${{ secrets.VM_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          printf '%s\n' "${{ secrets.VM_SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+          chmod 600 ~/.ssh/known_hosts
+
+      - name: Deploy bundle to VM
+        env:
+          VM_HOST: ${{ secrets.VM_HOST }}
+          VM_USER: ${{ secrets.VM_USER }}
+        run: |
+          RSH="ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts"
+          # Sync the freshly packaged bundle. --delete keeps the remote dir in
+          # lockstep with the build (no stale chunks). The deploy key is forced
+          # to rsync-into-/srv/event-copilot/app only.
+          rsync -az --delete -e "$RSH" dist/standalone/ "${VM_USER}@${VM_HOST}:/srv/event-copilot/app/"
+          # Touch the marker → the VM's web-reload .path unit restarts the web container.
+          $RSH "${VM_USER}@${VM_HOST}" 'touch /srv/event-copilot/app/.deployed'
+
+      - name: Verify site is up
+        env:
+          VM_HOST: ${{ secrets.VM_HOST }}
+        run: |
+          # Give the container a few seconds to restart, then check the public URL.
+          sleep 12
+          code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 https://aabw.devlab.vn/api/now)
+          echo "https://aabw.devlab.vn/api/now -> $code"
+          test "$code" = "200"

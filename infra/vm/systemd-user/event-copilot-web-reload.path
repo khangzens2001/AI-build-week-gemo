@@ -1,0 +1,15 @@
+# Watches the deployed bundle dir; when CI rsyncs a new build, the marker file's
+# mtime changes and systemd restarts the web container. This lets the CI deploy
+# key be rsync-only (no remote `systemctl` over SSH, no XDG_RUNTIME_DIR/DBUS
+# plumbing). Enable with:
+#   systemctl --user enable --now event-copilot-web-reload.path
+[Unit]
+Description=Event Copilot — watch app bundle, restart web on change
+
+[Path]
+# CI touches/writes this marker as the last rsync step.
+PathChanged=/srv/event-copilot/app/.deployed
+Unit=event-copilot-web-reload.service
+
+[Install]
+WantedBy=default.target

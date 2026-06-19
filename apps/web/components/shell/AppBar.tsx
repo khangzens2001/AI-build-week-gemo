@@ -30,7 +30,7 @@ function Wordmark() {
     <div className="flex items-center gap-2.5">
       <MascotBadge size={32} className="rounded-[10px]" />
       <div className="leading-none">
-        <p className="font-display text-[15px] font-bold tracking-tight">Event Copilot</p>
+        <p className="font-display text-[15px] font-bold tracking-tight">Cue</p>
         <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-faint">
           AABW · HCMC
         </p>

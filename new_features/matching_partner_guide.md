@@ -1,4 +1,4 @@
-# Hướng dẫn Matching Partner - Event Copilot
+# Hướng dẫn Matching Partner - Cue
 
 ## 1. Kiến trúc Tổng thể Hệ thống
 

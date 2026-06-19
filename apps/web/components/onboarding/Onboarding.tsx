@@ -17,7 +17,7 @@ const POINTS = [
   },
   {
     Icon: ChatIcon,
-    title: "Ask the copilot",
+    title: "Ask Cue",
     body: "Find workshops, perks, directions and deadlines. Every answer cites its source.",
   },
   {
@@ -63,7 +63,7 @@ export function Onboarding() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-text">
             Welcome to
           </p>
-          <h2 className="font-display text-2xl font-bold tracking-tight">Event Copilot</h2>
+          <h2 className="font-display text-2xl font-bold tracking-tight">Cue</h2>
           <p className="mt-1 text-sm text-muted">
             Your guide to Agentic AI Build Week — Jul 8–12, Ho Chi Minh City.
           </p>

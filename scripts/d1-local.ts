@@ -39,9 +39,12 @@ function normalizeParams(params: unknown): (string | number | null)[] {
 
 const server = Bun.serve({
   port,
-  // Loopback only — this is an unauthenticated arbitrary-SQL dev endpoint and
-  // must never be reachable from the LAN (e.g. shared conference wifi).
-  hostname: "127.0.0.1",
+  // Loopback only by default — this is an unauthenticated arbitrary-SQL endpoint
+  // and must never be reachable from the LAN (e.g. shared conference wifi).
+  // Override with D1_LOCAL_HOST=0.0.0.0 ONLY when running inside a container whose
+  // port is itself published to 127.0.0.1 on the host (the container netns is the
+  // isolation boundary; sibling containers reach it by name over the private net).
+  hostname: process.env.D1_LOCAL_HOST ?? "127.0.0.1",
   async fetch(req) {
     const url = new URL(req.url);
     if (req.method === "GET" && url.pathname === "/health") {
