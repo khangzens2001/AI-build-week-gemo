@@ -1,0 +1,35 @@
+{
+  "name": "event-copilot",
+  "private": true,
+  "type": "module",
+  "workspaces": ["apps/*", "packages/*", "workers/*"],
+  "scripts": {
+    "dev": "bun --filter '@event/web' dev",
+    "build": "bun --filter '@event/web' build",
+    "seed": "bun run packages/ingest/src/seed/run.ts",
+    "embed": "bun run packages/ingest/src/seed/embed.ts",
+    "fetch:images": "bun run scripts/fetch-images.ts",
+    "ingest:devpost": "bun --filter '@aabw/ingest' crawl:devpost",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply aabw --local",
+    "db:migrate": "wrangler d1 migrations apply aabw --remote",
+    "d1:local": "bun run scripts/d1-local.ts",
+    "db:reset:local": "bun run scripts/db-reset-local.ts",
+    "dev:local": "bun run scripts/dev-local.ts",
+    "chroma:up": "podman start chroma 2>/dev/null || podman run -d --name chroma -p 8000:8000 docker.io/chromadb/chroma:latest",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "typecheck": "tsc -b --noEmit || tsc --noEmit",
+    "check": "biome check . && bun run typecheck",
+    "test": "bun test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.3.14",
+    "@types/node": "^20.19.0",
+    "drizzle-kit": "^0.31.10",
+    "drizzle-orm": "^0.45.0",
+    "typescript": "^5.9.0",
+    "wrangler": "^3.114.0"
+  }
+}

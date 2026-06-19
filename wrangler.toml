@@ -1,0 +1,22 @@
+# Cloudflare D1 config for CLI use only (Option B — all-Vercel, no Worker deploy).
+#
+# This file exists so `wrangler d1 migrations apply` and `wrangler d1 execute`
+# can target the `aabw` database. We do NOT deploy a Worker here (the app runs on
+# Vercel and reaches D1 via the REST helper in packages/core/d1.ts). The Worker
+# Data API (Option A) is deferred — see workers/data-api/ if/when adopted.
+#
+# Usage:
+#   wrangler d1 create aabw            # once; copy the database_id below + into .env
+#   wrangler d1 migrations apply aabw --local     # dev
+#   wrangler d1 migrations apply aabw --remote     # prod
+#   wrangler d1 execute aabw --remote --file=drizzle/seed.sql   # load seed rows
+
+name = "aabw-d1"
+compatibility_date = "2024-12-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aabw"
+# Replace with the id from `wrangler d1 create aabw` (also set D1_DATABASE_ID in .env).
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "drizzle/migrations"

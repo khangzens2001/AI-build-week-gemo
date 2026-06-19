@@ -1,0 +1,378 @@
+@import "tailwindcss";
+
+/* ----------------------------------------------------------------------------
+   Event Copilot — design system
+   Aesthetic: near-black ink canvas, a confident vermillion-red brand accent
+   (matching agenticaibuildweek.genaifund.ai), cyan for "live", warm amber for
+   time-pressure, characterful display type. App-like, mobile-first.
+
+   Signal discipline — three hues, never crossed:
+     • brand / primary action  → red   (#E9301C fill, white ink)
+     • "happening now" / live   → cyan  (--color-live)
+     • urgent / time-pressure   → amber (--color-warn)
+   Red as small TEXT on dark fails AA, so colored text/icons use
+   --color-accent-text (#FF6A4D); raw brand red is reserved for FILLS.
+---------------------------------------------------------------------------- */
+
+@theme {
+  /* Surfaces — layered ink */
+  --color-bg: #0a0a0a;
+  --color-surface: #131319;
+  --color-surface-2: #1a1a22;
+  --color-elevated: #20202a;
+  --color-line: #272730;
+  --color-line-soft: #1d1d25;
+
+  /* Text */
+  --color-foreground: #f5f5f7;
+  --color-muted: #9b9ba6;
+  --color-faint: #6a6a76;
+
+  /* Brand + signals */
+  --color-accent: #e9301c; /* vermillion brand — FILLS only (buttons, FAB, pins) */
+  --color-accent-soft: #c8281a;
+  --color-accent-ink: #ffffff; /* text that sits ON the red accent */
+  --color-accent-text: #ff6a4d; /* brighter vermillion — colored TEXT/icons on dark (AA-safe) */
+  --color-warn: #ffb454; /* urgency amber */
+  --color-warn-soft: #4a3414;
+  --color-live: #2de2e6; /* cyan — "happening now" / live pulse */
+  --color-info: #7dd3fc;
+
+  /* Type */
+  --font-display: var(--ff-display), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--ff-sans), ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: var(--ff-mono), ui-monospace, "SF Mono", monospace;
+
+  /* Radii */
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.5rem;
+
+  /* Motion */
+  --animate-rise: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-shimmer: shimmer 1.4s linear infinite;
+  --animate-pulse-ring: pulse-ring 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  --animate-blink: blink 1.2s steps(2, start) infinite;
+  --animate-digit-pop: digit-pop 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-glow-breathe: glow-breathe 6s ease-in-out infinite;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(45, 226, 230, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(45, 226, 230, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(45, 226, 230, 0);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* Seconds digit "tick": a quick lift + settle so the count feels alive without
+   flashing colour. Re-mounting the digit each second replays this. */
+@keyframes digit-pop {
+  0% {
+    transform: translateY(-42%);
+    opacity: 0;
+  }
+  45% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slow, atmospheric breathing of the hero's brand glow. */
+@keyframes glow-breathe {
+  0%,
+  100% {
+    opacity: 0.32;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+:root {
+  --appbar-h: 3.25rem;
+  --tabbar-h: 4.25rem;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  /* Atmospheric depth: a quiet vermillion glow up top, fading into ink. */
+  background-image: radial-gradient(120% 70% at 85% -10%, rgba(233, 48, 28, 0.1), transparent 55%),
+    radial-gradient(90% 60% at 0% 0%, rgba(45, 226, 230, 0.05), transparent 50%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Fine grain overlay for tactile depth (kept very subtle, non-interactive). */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Headings carry the display face. */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Tabular, mono numerals for clocks and countdowns. */
+.tnum {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+@layer utilities {
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .mb-safe {
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+  .h-safe-bottom {
+    height: env(safe-area-inset-bottom);
+  }
+
+  /* Frosted card surface used across the app. */
+  .card {
+    background: color-mix(in oklab, var(--color-surface) 88%, transparent);
+    border: 1px solid var(--color-line);
+    border-radius: var(--radius-xl);
+    backdrop-filter: blur(8px);
+  }
+
+  /* Skeleton shimmer */
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      var(--color-surface-2) 25%,
+      var(--color-elevated) 37%,
+      var(--color-surface-2) 63%
+    );
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 0 1px rgba(233, 48, 28, 0.18), 0 12px 40px -12px rgba(233, 48, 28, 0.35);
+  }
+
+  /* Staggered reveal helpers — set --i on children for cascade timing. */
+  .stagger > * {
+    animation: var(--animate-rise);
+    animation-delay: calc(var(--i, 0) * 60ms);
+  }
+}
+
+/* Visible, on-brand focus ring for keyboard users. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* MapLibre GL: dark popup chrome + a pulsing highlight pin for venues. */
+.maplibregl-map {
+  background: var(--color-surface) !important;
+  font-family: var(--font-sans) !important;
+}
+/* Dark-tune the OpenFreeMap (light) tiles to match the ink theme. The filter
+   only touches the WebGL canvas; DOM markers/popups overlay it and stay bright. */
+.maplibregl-canvas {
+  filter: invert(0.92) hue-rotate(180deg) brightness(0.92) contrast(0.92) saturate(0.7);
+}
+.maplibregl-popup-content {
+  background: var(--color-elevated) !important;
+  color: var(--color-foreground) !important;
+  border: 1px solid var(--color-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 18px 50px -12px rgba(0, 0, 0, 0.7) !important;
+  padding: 12px 14px !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: var(--color-elevated) !important;
+  border-bottom-color: var(--color-elevated) !important;
+}
+.maplibregl-popup-close-button {
+  color: var(--color-muted) !important;
+  font-size: 18px !important;
+  padding-right: 6px !important;
+}
+.maplibregl-ctrl-group {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-line) !important;
+}
+.maplibregl-ctrl-group button + button {
+  border-top-color: var(--color-line) !important;
+}
+.maplibregl-ctrl-attrib {
+  background: color-mix(in oklab, var(--color-bg) 70%, transparent) !important;
+}
+.maplibregl-ctrl-attrib a {
+  color: var(--color-muted) !important;
+}
+
+.vm-popup__name {
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0;
+}
+.vm-popup__addr {
+  font-size: 12px;
+  color: var(--color-muted);
+  margin: 2px 0 0;
+}
+.vm-popup__link {
+  display: inline-flex;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+/* Venue marker. Default = small lime dot; active = larger raised pin + ring. */
+.vm-pin {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.vm-pin__dot {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.6);
+}
+.vm-pin--active {
+  width: 24px;
+  height: 24px;
+  z-index: 10;
+}
+.vm-pin--active .vm-pin__dot {
+  width: 22px;
+  height: 22px;
+  background: var(--color-accent);
+  border-width: 3px;
+  box-shadow: 0 8px 22px -4px rgba(233, 48, 28, 0.7);
+}
+.vm-pin__ring {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.55;
+  animation: vm-pulse 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+@keyframes vm-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

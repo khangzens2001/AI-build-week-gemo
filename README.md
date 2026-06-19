@@ -33,6 +33,7 @@ Event Copilot là một PWA gồm các module:
 | Module | Mục đích |
 |---|---|
 | Home Now/Next | Hiển thị việc đang diễn ra và việc sắp diễn ra |
+| Google Login | Đăng nhập nhanh bằng Google để lưu profile, sở thích và nhắc nhở |
 | Chat Copilot | Hỏi đáp bằng AI, stream câu trả lời, gọi tool khi cần |
 | Schedule Navigator | Lọc lịch theo ngày, track, partner, chủ đề |
 | Venue Map | Xem địa điểm và mở chỉ đường |
@@ -73,20 +74,24 @@ flowchart TB
         E3["AI SDK v5 agent + tools"]
         E4["RAG retriever"]
         E5["Web Push / reminders"]
+        E6["Auth.js: Google Login + session"]
     end
 
     G["Gemini 3 qua @ai-sdk/google"]
+    O["Google OAuth"]
 
     A1 & A2 & A3 & A4 --> B1 --> B2 --> B3
     B3 --> C2 --> C3
     B3 --> D1
     B4 -. "đổi lịch" .-> C2
+    E1 --> E6 --> O
     E1 --> E2 --> E3
     E3 --> G
     E3 --> E4
     E4 --> G
     E4 --> D1
     E4 --> C1 --> C3
+    E6 -. "server route: x-user-id" .-> C1
     E5 --> E1
 ```
 
@@ -149,7 +154,8 @@ sequenceDiagram
 
 ```mermaid
 flowchart TD
-    A(["Builder mở PWA"]) --> B["Onboarding ngắn: skill, sở thích, trạng thái team"]
+    A(["Builder mở PWA"]) --> L["Google Login"]
+    L --> B["Onboarding ngắn: skill, sở thích, trạng thái team"]
     B --> C["Home: Now / Next"]
     C --> D{"Builder cần gì?"}
     D -->|"Hỏi nhanh"| E["Chat Copilot"]
@@ -184,6 +190,7 @@ flowchart LR
         P4["Chroma Cloud"]
         P5["Gemini 3 API"]
         P6["Firecrawl API"]
+        P7["Google OAuth"]
     end
 
     L1 --> L2
@@ -194,6 +201,7 @@ flowchart LR
     P1 --> P2 --> P3
     P1 --> P4
     P1 --> P5
+    P1 --> P7
     P2 --> P6
 ```
 
@@ -205,6 +213,7 @@ flowchart LR
 | Web app | Next.js App Router | Deploy lên Vercel Node runtime. |
 | UI | Tailwind CSS + shadcn/ui | Mobile-first, nhanh cho MVP. |
 | PWA | Serwist | Service worker, manifest, offline cache lịch. |
+| Auth | Auth.js / NextAuth.js v5 + Google Provider | Google Login trong Next.js App Router; MVP không thêm email/password. |
 | AI framework | Vercel AI SDK v5 | Dùng `streamText`, `tool({ inputSchema })`, `stopWhen: stepCountIs(n)`, `useChat`. |
 | LLM | Gemini 3 qua `@ai-sdk/google` | Model id để trong env vì preview có thể đổi. |
 | Embeddings | Gemini embedding qua AI SDK | Ưu tiên `gemini-embedding-001`. |
@@ -241,6 +250,7 @@ event-copilot/
 | Bun là toolchain, không phải runtime production | Vercel Functions chạy Node/Edge, không chạy Bun server runtime. |
 | Không dùng `drizzle-orm/d1` trong Next.js route | D1 binding chỉ tồn tại trong Cloudflare Worker. |
 | Không lưu vector trong D1 | D1 lưu dữ liệu có cấu trúc; vector nằm trong Chroma. |
+| Không gọi Worker trực tiếp từ client cho dữ liệu user | Next.js route phải xác thực `auth()`, rồi gọi Worker bằng `DATA_API_TOKEN` và `x-user-id`. |
 | Không deploy Podman lên Vercel | Vercel build từ source, không nhận container app từ Podman. |
 | Dùng AI SDK v5, không dùng API v4 | v5 đổi `tool({ inputSchema })`, `stopWhen`, `useChat`, `message.parts`. |
 | RAG phải trích nguồn | Agent không được bịa lịch, venue, perk hoặc deadline. |
@@ -265,6 +275,7 @@ Agent dự kiến có các tool sau:
 
 | Bảng | Dữ liệu |
 |---|---|
+| `users` | Profile Google tối thiểu, preferences, trạng thái onboarding |
 | `sessions` | Workshop, meetup, kickoff, demo, hoạt động theo lịch |
 | `venues` | Tên địa điểm, địa chỉ, tọa độ, link bản đồ |
 | `perks` | Tài nguyên, credits, benefits, cách claim |
@@ -276,6 +287,12 @@ Vector chunks nằm ở Chroma với metadata như `sourceUrl`, `kind`, `session
 ## Biến môi trường
 
 ```bash
+# Auth.js + Google Login
+AUTH_SECRET=...
+AUTH_GOOGLE_ID=...
+AUTH_GOOGLE_SECRET=...
+AUTH_URL=http://localhost:3000
+
 # Firecrawl
 FIRECRAWL_API_KEY=fc-...
 
@@ -306,6 +323,8 @@ VAPID_PRIVATE_KEY=...
 VAPID_SUBJECT=mailto:you@example.com
 ```
 
+Google OAuth callback cần khai báo trong Google Cloud Console: `https://<domain>/api/auth/callback/google` và local `http://localhost:3000/api/auth/callback/google`.
+
 ## Lệnh phát triển dự kiến
 
 ```bash
@@ -335,7 +354,7 @@ bunx biome check . && bunx tsc --noEmit && bun test
 
 ```mermaid
 flowchart TD
-    A["Chuẩn bị env production"] --> B["Tạo / cấu hình D1"]
+    A["Chuẩn bị env production + Google OAuth callback"] --> B["Tạo / cấu hình D1"]
     B --> C["Generate migration bằng Drizzle"]
     C --> D["Apply migration bằng wrangler"]
     D --> E["Deploy Worker data-api"]
@@ -362,7 +381,7 @@ gantt
     section AI
     P4 RAG + Agent AI SDK v5 :p4, after p3, 1d
     section Ứng dụng
-    P5 API routes            :p5, after p4, 1d
+    P5 Auth + API routes     :p5, after p4, 1d
     P6 PWA frontend          :p6, after p4, 2d
     section Demo
     P7 Push + monitor        :p7, after p6, 1d
@@ -374,6 +393,7 @@ gantt
 - Có live demo link.
 - Có video demo ngắn giải thích pain, hỏi đáp, hành động và nhắc nhở.
 - App chạy được bằng hướng dẫn rõ ràng.
+- Google Login chạy được trên local và production; nhắc nhở/sở thích gắn đúng user.
 - PWA dùng tốt trên điện thoại.
 - Chat không chỉ là wrapper LLM, mà có RAG và agent tools.
 - Câu trả lời có nguồn khi dùng dữ liệu sự kiện.
@@ -388,8 +408,9 @@ gantt
 | Chroma không chạy trong serverless | Production dùng Chroma Cloud; local dùng Podman. |
 | Firecrawl thiếu dữ liệu hoặc bị chặn | Duy trì mock data đúng schema. |
 | LLM bịa thông tin | System prompt bắt buộc trích nguồn; thiếu dữ liệu thì nói rõ. |
+| OAuth callback/env sai | Set `AUTH_URL`, Google callback `/api/auth/callback/google`, test local và Vercel preview. |
 | Venue mạng yếu | PWA cache offline lịch và dữ liệu quan trọng. |
 
 ## Tài liệu sâu hơn
 
-Đọc `Event-Copilot-Build-Checklist.md` để xem plan chi tiết hơn, bao gồm code snippets đã đối chiếu Context7 cho AI SDK v5, Gemini 3, D1 REST, Chroma JS và các phase build cụ thể.
+Đọc `Event-Copilot-Build-Checklist.md` để xem plan chi tiết hơn, bao gồm code snippets đã đối chiếu Context7 cho Auth.js, AI SDK v5, Gemini 3, D1 REST, Chroma JS và các phase build cụ thể.

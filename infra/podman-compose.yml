@@ -1,0 +1,22 @@
+# Local dev only (Podman). NOT a deploy artifact — Vercel builds from source and
+# the app reaches Chroma Cloud in prod. This brings up a local Chroma server so
+# the embed/seed step and RAG retrieval work offline during development.
+#
+# Usage:
+#   podman-compose -f infra/podman-compose.yml up -d
+#   # or the convenience script: bun run chroma:up
+#
+# Chroma listens on :8000 (matches CHROMA_HOST=localhost / CHROMA_PORT=8000).
+
+services:
+  chroma:
+    image: docker.io/chromadb/chroma:latest
+    container_name: aabw-chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - chroma-data:/data
+    restart: unless-stopped
+
+volumes:
+  chroma-data:

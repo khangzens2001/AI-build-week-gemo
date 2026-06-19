@@ -3,9 +3,9 @@
 > **Track:** Builder Experience Award — Agentic AI Build Week (Jul 8–12, HCMC)
 > **Concept:** Event Copilot — trợ lý real-time trả lời *"đang có gì, ở đâu, tôi nên làm gì tiếp"*; tổng hợp lịch / workshop / venue / perk / deadline và **gợi ý hành động** (đặt nhắc, mở map, lưu).
 > **Platform:** Web app PWA, mobile-first. **AI:** Hybrid RAG + Agent.
-> **Stack chốt:** Bun (toolchain) · Firecrawl (ingest) · **Cloudflare D1** (structured) · **Chroma** (vector) · **Vercel AI SDK v5 + Gemini 3** (`@ai-sdk/google`, LLM + embeddings) · **Podman** (local dev) · **Vercel** (deploy).
+> **Stack chốt:** Bun (toolchain) · Firecrawl (ingest) · **Cloudflare D1** (structured) · **Chroma** (vector) · **Vercel AI SDK v5 + Gemini 3** (`@ai-sdk/google`, LLM + embeddings) · **Auth.js + Google Login** · **Podman** (local dev) · **Vercel** (deploy).
 >
-> ✅ Code tích hợp dưới đây đã được **đối chiếu tài liệu chính chủ qua Context7**: AI SDK **v5** (`/vercel/ai` @ ai_5_0_0), **Gemini 3** (ai.google.dev), Cloudflare **D1** REST, **Chroma** JS client.
+> ✅ Code tích hợp dưới đây đã được **đối chiếu tài liệu chính chủ qua Context7**: AI SDK **v5** (`/vercel/ai` @ ai_5_0_0), **Gemini 3** (ai.google.dev), **Auth.js / NextAuth.js v5** (`/nextauthjs/next-auth`), Cloudflare **D1** REST, **Chroma** JS client.
 
 ---
 
@@ -19,6 +19,7 @@ Stack bạn chọn rất hay nhưng có vài điểm va chạm về runtime. Tô
 | **D1 ↔ Vercel** | D1 gắn chặt với Cloudflare Workers (binding). REST API có nhưng **dính global rate limit**, CF khuyến cáo chỉ cho admin | **Option A (khuyến nghị):** 1 **Worker mỏng** (D1 binding + Drizzle + cron ingest) làm Data API; Vercel gọi vào. **Option B (MVP nhanh):** gọi thẳng **D1 REST API** từ Vercel route. |
 | **Chroma ↔ serverless** | Chroma cần server đang chạy, không nhúng in-process trên Vercel | **Prod:** `CloudClient()` → **Chroma Cloud**. **Local:** chạy Chroma server bằng **Podman**. |
 | **Podman ↔ Vercel** | Vercel **không deploy container**, build từ source | Podman dùng cho **local dev** (Chroma, môi trường tái lập, integration test), **không** phải artifact deploy lên Vercel. |
+| **Google Login ↔ D1** | Auth.js chạy trong Next.js/Vercel; D1 binding chỉ có trong Worker | Next.js giữ OAuth/session. Khi cần lưu user/reminder, route server xác thực `auth()` rồi gọi Worker Data API bằng `DATA_API_TOKEN` + `x-user-id`. Client không gọi Worker trực tiếp. |
 | **AI SDK v5 ↔ v4** | v5 đổi API: `tool({inputSchema})`, `stopWhen: stepCountIs()`, `toUIMessageStreamResponse()`, `useChat` từ `@ai-sdk/react` + message `parts` | Dùng **toàn bộ AI SDK v5** (xem mục 10.1). Provider Gemini 3 = **`@ai-sdk/google`**. |
 | **Gemini 3 thinking** | Gemini 3 bật *dynamic thinking*, mặc định `thinkingLevel: "high"` | Copilot cần nhanh → set `thinkingLevel: "low"` cho hỏi đáp ngắn; nâng `high` cho tác vụ lập kế hoạch phức tạp. |
 
@@ -36,6 +37,7 @@ Stack bạn chọn rất hay nhưng có vài điểm va chạm về runtime. Tô
 | App framework | **Next.js (App Router)** | All-in-one PWA + API routes + streaming, hạng nhất trên Vercel | Alt: Hono + Vite nếu muốn tách |
 | UI | **Tailwind + shadcn/ui** | đẹp nhanh, accessible, mobile-first | |
 | PWA | **Serwist** (`@serwist/next`) | service worker + offline + installable cho Next | Alt: next-pwa |
+| Auth | **Auth.js / NextAuth.js v5 + Google Provider** | Google Login nhanh, chuẩn OAuth, hợp Next App Router/Vercel | MVP chỉ Google; không email/password |
 | **AI framework** | **Vercel AI SDK v5** (`ai` + `@ai-sdk/react`) | `streamText`, tools, `useChat`, streaming chuẩn cho Hybrid RAG+Agent | dùng **toàn bộ** v5 |
 | **LLM + embeddings** | **Gemini 3** qua **`@ai-sdk/google`** | flagship mới, thinking config; embeddings cùng provider | chat `gemini-3-pro-preview` / `gemini-3-flash`; embed `gemini-embedding-001` |
 | Structured DB | **Cloudflare D1** | SQLite serverless, hợp lịch/venue/perk | Truy cập qua Worker (A) hoặc REST (B) |
@@ -104,16 +106,20 @@ flowchart TB
         N3["Agent + tools (AI SDK v5)"]
         N4["RAG retriever"]
         N5["Vercel Cron → Web Push"]
+        N6["Auth.js: Google Login + session"]
     end
 
     GEM["Gemini 3 (@ai-sdk/google)"]
+    GOOG["Google OAuth"]
 
     S1 & S2 --> FC1 --> W1 --> D1
     FC1 --> V1
     FC2 -.->|"đổi lịch"| W1
+    N1 --> N6 --> GOOG
     N1 --> N2 --> N3 --> N4
     N4 --> V1
     N4 --> W2 --> D1
+    N6 -.->|"server route: x-user-id"| W2
     N3 --> GEM
     N4 --> GEM
     N5 --> N1
@@ -191,11 +197,13 @@ flowchart LR
         P3["Chroma Cloud"]
         P4["Gemini 3 API"]
         P5["Firecrawl API"]
+        P6["Google OAuth"]
     end
     Dev ==>|"vercel deploy / wrangler deploy"| Prod
     P1 --> P2
     P1 --> P3
     P1 --> P4
+    P1 --> P6
     P2 --> P5
 ```
 
@@ -205,7 +213,8 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    Start(["Builder mở app"]) --> Onboard["Onboarding: skill, sở thích, team status"]
+    Start(["Builder mở app"]) --> Login["Google Login (Auth.js)"]
+    Login --> Onboard["Onboarding: skill, sở thích, team status"]
     Onboard --> Home["Home: Now / Next"]
     Home --> Q{"Cần gì?"}
     Q -->|"Hỏi"| Chat["Chat copilot"]
@@ -237,7 +246,7 @@ gantt
     section AI
     P4 RAG + Agent (AI SDK v5):p4, after p3, 1d
     section App
-    P5 API routes            :p5, after p4, 1d
+    P5 Auth + API routes     :p5, after p4, 1d
     P6 PWA frontend          :p6, after p4, 2d
     section Live
     P7 Push + monitor        :p7, after p6, 1d
@@ -263,6 +272,17 @@ export const sessions = sqliteTable("sessions", {
   track: text("track"),
   tags: text("tags"),               // JSON string
   sourceUrl: text("source_url"),
+});
+
+export const users = sqliteTable("users", {
+  id: text("id").primaryKey(),          // stable app user id, derived from Google account
+  email: text("email").notNull().unique(),
+  name: text("name"),
+  image: text("image"),
+  googleSub: text("google_sub").notNull().unique(),
+  preferences: text("preferences"),     // JSON string: skills, topics, team status
+  createdAt: integer("created_at").notNull(),
+  updatedAt: integer("updated_at").notNull(),
 });
 
 export const venues = sqliteTable("venues", {
@@ -293,19 +313,25 @@ export const deadlines = sqliteTable("deadlines", {
 
 export const reminders = sqliteTable("reminders", {
   id: text("id").primaryKey(),
-  userId: text("user_id"),
+  userId: text("user_id").notNull().references(() => users.id),
   targetId: text("target_id"),
   fireAt: integer("fire_at"),
   sent: integer("sent").default(0),
 });
 ```
-> Vector chunks (text + metadata `sourceUrl`) **không** lưu ở D1 mà ở **Chroma**. D1 giữ dữ liệu có cấu trúc để query nhanh/chính xác.
+> Vector chunks (text + metadata `sourceUrl`) **không** lưu ở D1 mà ở **Chroma**. D1 giữ dữ liệu có cấu trúc để query nhanh/chính xác. `users` chỉ lưu profile tối thiểu từ Google + preferences; không lưu OAuth access token nếu MVP không cần gọi Google API thay user.
 
 ---
 
 ## 9. Biến môi trường (`.env`)
 
 ```bash
+# Auth.js + Google Login (Next.js/Vercel)
+AUTH_SECRET=...
+AUTH_GOOGLE_ID=...
+AUTH_GOOGLE_SECRET=...
+AUTH_URL=http://localhost:3000
+
 # Firecrawl
 FIRECRAWL_API_KEY=fc-...
 
@@ -336,10 +362,11 @@ VAPID_PRIVATE_KEY=...
 VAPID_SUBJECT=mailto:you@example.com
 ```
 > ⚠️ **Xác nhận tên model Gemini 3** tại `ai.google.dev/gemini-api/docs/gemini-3` (naming preview có thể đổi). Vì để trong env nên đổi **1 chỗ**.
+> Google OAuth callback cho Next.js: `https://<domain>/api/auth/callback/google` (local: `http://localhost:3000/api/auth/callback/google`).
 
 ---
 
-## 10. Code tích hợp (AI SDK v5 + Gemini 3 — đã verify qua Context7)
+## 10. Code tích hợp (Auth.js + AI SDK v5 + Gemini 3 — đã verify qua Context7)
 
 ### 10.1 LLM + embeddings — `@ai-sdk/google` (Gemini 3)
 ```ts
@@ -569,20 +596,74 @@ podman-compose -f infra/podman-compose.yml up
 ```
 > Container này chỉ cho **local dev/test**. Vercel build từ source (không nhận container); Worker deploy bằng `wrangler` (không phải container).
 
+### 10.9 Google Login — Auth.js / NextAuth.js v5 + Google Provider
+```ts
+// apps/web/auth.ts
+import NextAuth from "next-auth";
+import Google from "next-auth/providers/google";
+
+export const { handlers, auth, signIn, signOut } = NextAuth({
+  providers: [Google],
+  callbacks: {
+    async jwt({ token, account }) {
+      if (account?.provider === "google") token.googleSub = account.providerAccountId;
+      return token;
+    },
+    async session({ session, token }) {
+      return {
+        ...session,
+        user: {
+          ...session.user,
+          id: String(token.googleSub ?? token.sub ?? ""),
+        },
+      };
+    },
+  },
+});
+```
+```ts
+// apps/web/app/api/auth/[...nextauth]/route.ts
+import { handlers } from "@/auth";
+
+export const { GET, POST } = handlers;
+```
+```ts
+// apps/web/app/api/reminders/route.ts (server boundary; client không gọi Worker trực tiếp)
+import { auth } from "@/auth";
+
+export async function POST(req: Request) {
+  const session = await auth();
+  if (!session?.user?.id) return new Response("Unauthorized", { status: 401 });
+
+  const res = await fetch(`${process.env.DATA_API_URL}/reminders`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${process.env.DATA_API_TOKEN}`,
+      "x-user-id": session.user.id,
+    },
+    body: await req.text(),
+  });
+  return new Response(res.body, { status: res.status, headers: res.headers });
+}
+```
+> Nếu TypeScript báo `session.user.id` / `token.googleSub`, thêm module augmentation cho `next-auth` và `next-auth/jwt`. MVP chỉ dùng Google OAuth để định danh user, cá nhân hoá onboarding, saved/reminders; không thêm email/password hay role admin.
+
 ---
 
 ## Phase 0 — Setup & Foundation 🔴
 - [ ] `bun init` monorepo (workspaces: `apps/*`, `workers/*`, `packages/*`)
 - [ ] `bun create next-app apps/web` (App Router, TS, Tailwind) — chạy bằng `bun run dev`
-- [ ] Cài: `bun add ai @ai-sdk/google @ai-sdk/react chromadb drizzle-orm zod web-push leaflet @tanstack/react-query zustand`
+- [ ] Cài: `bun add ai @ai-sdk/google @ai-sdk/react next-auth chromadb drizzle-orm zod web-push leaflet @tanstack/react-query zustand`
 - [ ] Dev: `bun add -d drizzle-kit wrangler @biomejs/biome @serwist/next serwist`
 - [ ] shadcn/ui init + Biome config + `bun test` smoke
 - [ ] Tạo `.env` đủ key (mục 9); `.env.example` để README
+- [ ] Tạo Google OAuth app, khai báo callback `/api/auth/callback/google`, set `AUTH_*` env
 - [ ] Khởi tạo Worker: `workers/data-api` + `wrangler.toml`
 - [ ] Tạo D1: `wrangler d1 create aabw` → điền `database_id`
 
 ## Phase 1 — D1 + Drizzle schema 🔴
-- [ ] Viết `drizzle/schema.ts` (sessions/venues/perks/deadlines/reminders)
+- [ ] Viết `drizzle/schema.ts` (users/sessions/venues/perks/deadlines/reminders)
 - [ ] `drizzle.config.ts` (dialect sqlite, driver d1-http hoặc local)
 - [ ] `bunx drizzle-kit generate` → migration SQL
 - [ ] Apply: `wrangler d1 migrations apply aabw` (remote) + `--local` (dev)
@@ -614,9 +695,10 @@ podman-compose -f infra/podman-compose.yml up
 - [ ] 🟡 Eval 10–15 câu hỏi mẫu
 
 ## Phase 5 — API routes (Vercel) 🔴
+- [ ] Auth.js Google Login: `auth.ts` + `app/api/auth/[...nextauth]/route.ts`
 - [ ] `POST /api/chat` → `streamText(...).toUIMessageStreamResponse()`
 - [ ] `GET /api/now|next|schedule|venues|perks|deadlines` (gọi Worker A hoặc `d1Query` B)
-- [ ] `POST /api/reminders`, `POST /api/push/subscribe`
+- [ ] `POST /api/reminders`, `POST /api/push/subscribe` kiểm tra `auth()` trước khi ghi dữ liệu user
 - [ ] 🟡 Vercel Cron quét reminders đến hạn → Web Push (nếu theo Option B)
 
 ## Phase 6 — PWA Frontend 🔴
@@ -626,7 +708,8 @@ podman-compose -f infra/podman-compose.yml up
 - [ ] **Schedule navigator** lọc ngày/track/partner
 - [ ] **Venue map** Leaflet + chỉ đường
 - [ ] **Perks** list + cách claim
-- [ ] Onboarding (skill/sở thích → localStorage cá nhân hoá)
+- [ ] Login screen + account menu đơn giản (Google sign in/sign out)
+- [ ] Onboarding (skill/sở thích → `users.preferences`; localStorage chỉ là fallback)
 - [ ] PWA: Serwist manifest + service worker (installable + offline cache lịch)
 - [ ] 🟡 empty/error/loading states
 
@@ -671,6 +754,7 @@ flowchart LR
 - [ ] Chạy 1 lệnh + README rõ
 - [ ] **Live demo link** + **video demo**
 - [ ] AI có ý nghĩa: RAG có **nguồn trích dẫn** + agent **hành động** (không phải chatbox suông)
+- [ ] Google Login hoạt động trên local + production callback; reminders/sở thích gắn với đúng user
 - [ ] Self-contained (own/public/mock data)
 - [ ] Mobile PWA cài được, dùng nhanh tại sự kiện
 - [ ] Giải đúng 1 pain rõ ràng *trong* tuần sự kiện
@@ -687,6 +771,7 @@ flowchart LR
 | AI SDK v5 đổi accessor embedding | Dùng `google.textEmbedding(...)`; nếu lỗi đổi `google.textEmbeddingModel(...)` |
 | Site nguồn chặn crawl | Mock data đúng schema + Firecrawl `extract` có schema |
 | LLM bịa | Bắt buộc trích nguồn từ RAG; trả "không có data" khi thiếu |
+| OAuth callback/env sai | Set `AUTH_URL`, Google callback `/api/auth/callback/google`; test local + Vercel preview trước prod |
 | Deadline gấp | Làm hết 🔴 + chạy **Option B** all-Vercel; cắt 🟡/🟢 |
 | Chi phí/độ trễ token | `gemini-3-flash` + `thinkingLevel: "low"` + cache embeddings (hash text) |
 | Mạng yếu tại venue | PWA offline cache lịch |
@@ -706,7 +791,7 @@ flowchart LR
 # monorepo + app
 bun init -y
 bun create next-app apps/web
-bun add ai @ai-sdk/google @ai-sdk/react chromadb drizzle-orm zod web-push leaflet @tanstack/react-query zustand
+bun add ai @ai-sdk/google @ai-sdk/react next-auth chromadb drizzle-orm zod web-push leaflet @tanstack/react-query zustand
 bun add -d drizzle-kit wrangler @biomejs/biome @serwist/next serwist
 
 # D1
@@ -731,5 +816,6 @@ vercel deploy --prod        # Vercel app
 ### Phụ lục — nguồn đã đối chiếu (Context7)
 - **Vercel AI SDK v5** (`/vercel/ai` @ ai_5_0_0): `streamText`, `tool({ inputSchema })`, `stopWhen: stepCountIs(n)`, `convertToModelMessages`, `toUIMessageStreamResponse()`, `useChat` từ `@ai-sdk/react` (message `parts`), `embed`/`embedMany`.
 - **Gemini 3** (`ai.google.dev/gemini-api/docs/gemini-3`, `/thinking`): dynamic thinking, `thinkingLevel` (mặc định `high`; set `low` cho độ trễ thấp); embeddings `gemini-embedding-001`.
+- **Auth.js / NextAuth.js v5** (`/nextauthjs/next-auth`): root `auth.ts`, `handlers/auth/signIn/signOut`, Google Provider, `app/api/auth/[...nextauth]/route.ts`, env `AUTH_SECRET`, `AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET`.
 - **Cloudflare D1**: REST `POST /accounts/{id}/d1/database/{db}/query`; khuyến cáo dùng **proxy Worker** cho app (REST hợp admin do global rate limit).
 - **Chroma JS** (`chromadb`): `CloudClient` (Cloud) / `ChromaClient({host,port})`, `getOrCreateCollection`, `add`, `query({queryEmbeddings,nResults})`.
