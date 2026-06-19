@@ -3,7 +3,7 @@
 ## Status
 Pre-implementation. The repo currently contains planning/docs only:
 - `Builder-Experience-Award-Brief.md` — hackathon brief (requirements, dates, judging).
-- `Event-Copilot-Build-Checklist.md` — **canonical build spec** (architecture, verified API snippets, phases). Treat as source of truth; keep code and this spec in sync.
+- `new_features/` — feature PRDs and specs (replaces the previous `Event-Copilot-Build-Checklist.md`).
 - `README.md` — Vietnamese product/architecture overview with Mermaid charts.
 
 No source code, git repo, or package manifests exist yet. The folder tree below is scaffolding for the planned monorepo; each folder has its own `AGENTS.md` with specifics.

@@ -9,7 +9,7 @@ Dự án hiện ở giai đoạn **pre-implementation**. Repository đang chứa
 | File | Vai trò |
 |---|---|
 | `Builder-Experience-Award-Brief.md` | Brief gốc của track Builder Experience Award |
-| `Event-Copilot-Build-Checklist.md` | Build plan chi tiết, là nguồn sự thật chính cho kiến trúc và phase build |
+| `new_features/` | PRD và spec theo từng feature |
 | `AGENTS.md` | Hướng dẫn ngắn cho các phiên làm việc sau |
 | `apps/*/AGENTS.md`, `workers/*/AGENTS.md`, `packages/*/AGENTS.md` | Quy ước riêng cho từng vùng trong monorepo dự kiến |
 
@@ -239,7 +239,7 @@ event-copilot/
 ├─ infra/                  # Podman local Chroma và dev infra
 ├─ drizzle/                # D1 schema + migrations
 ├─ Builder-Experience-Award-Brief.md
-├─ Event-Copilot-Build-Checklist.md
+├─ new_features/           # PRD và spec theo từng feature
 └─ README.md
 ```
 
@@ -413,4 +413,4 @@ gantt
 
 ## Tài liệu sâu hơn
 
-Đọc `Event-Copilot-Build-Checklist.md` để xem plan chi tiết hơn, bao gồm code snippets đã đối chiếu Context7 cho Auth.js, AI SDK v5, Gemini 3, D1 REST, Chroma JS và các phase build cụ thể.
+Đọc các tài liệu trong `new_features/` để xem chi tiết từng feature.
