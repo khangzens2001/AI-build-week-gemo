@@ -51,41 +51,44 @@ export function TabBar() {
               aria-current={active ? "page" : undefined}
               className="group relative flex flex-1 flex-col items-center justify-center gap-1"
             >
-              {isChat ? (
-                <span
-                  className={cn(
-                    "flex h-11 w-11 -translate-y-3 items-center justify-center rounded-2xl transition",
-                    "shadow-lg shadow-black/40 active:scale-90",
-                    active
-                      ? "bg-accent text-accent-ink glow-accent"
-                      : "bg-elevated text-foreground ring-1 ring-line",
-                  )}
-                >
-                  <tab.Icon className="h-[22px] w-[22px]" />
-                </span>
-              ) : (
-                <span
-                  className={cn(
-                    "flex flex-col items-center gap-1 transition",
-                    active ? "text-accent-text" : "text-faint group-active:text-muted",
-                  )}
-                >
-                  <tab.Icon className="h-[22px] w-[22px]" />
-                  <span className="text-[10px] font-semibold tracking-wide">{tab.label}</span>
-                </span>
-              )}
-              {isChat && (
-                <span
-                  className={cn(
-                    "text-[10px] font-semibold tracking-wide transition",
-                    active ? "text-accent-text" : "text-faint",
-                  )}
-                >
-                  {tab.label}
-                </span>
-              )}
+              {/* Fixed-height icon slot keeps every label on the same baseline.
+                  The Chat tab's raised circle is absolutely positioned inside it,
+                  so it floats above the bar without nudging the label below. */}
+              <span className="relative flex h-[26px] w-12 items-center justify-center">
+                {isChat ? (
+                  <span
+                    className={cn(
+                      "absolute left-1/2 top-1/2 flex h-11 w-11 items-center justify-center rounded-2xl transition",
+                      "-translate-x-1/2 -translate-y-[calc(50%+11px)]",
+                      "shadow-lg shadow-black/40 active:scale-90",
+                      active
+                        ? "bg-accent text-accent-ink glow-accent"
+                        : "bg-elevated text-foreground ring-1 ring-line",
+                    )}
+                  >
+                    <tab.Icon className="h-[22px] w-[22px]" />
+                  </span>
+                ) : (
+                  <tab.Icon
+                    className={cn(
+                      "h-[22px] w-[22px] transition",
+                      active ? "text-accent-text" : "text-faint group-active:text-muted",
+                    )}
+                  />
+                )}
+              </span>
+
+              <span
+                className={cn(
+                  "text-[10px] font-semibold tracking-wide transition",
+                  active ? "text-accent-text" : "text-faint",
+                )}
+              >
+                {tab.label}
+              </span>
+
               {active && !isChat && (
-                <span className="absolute -bottom-0 h-1 w-1 rounded-full bg-accent" />
+                <span className="absolute bottom-0 h-1 w-1 rounded-full bg-accent" />
               )}
             </Link>
           );

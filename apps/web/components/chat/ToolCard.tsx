@@ -7,6 +7,8 @@
  * citations wherever the tool provides them (the agent must never fabricate).
  */
 
+import { useAddChecklistItem } from "@/hooks/useChecklist";
+import { useBookOfficeHours } from "@/hooks/useMentors";
 import { useCreateReminder } from "@/hooks/useReminders";
 import { cn } from "@/lib/cn";
 import { signIn, useSession } from "next-auth/react";
@@ -51,6 +53,10 @@ const TOOL_LABELS: Record<string, string> = {
   getDeadlines: "Checking deadlines",
   searchKnowledge: "Searching the knowledge base",
   setReminder: "Preparing a reminder",
+  getAnnouncements: "Checking live updates",
+  addChecklistItem: "Preparing a checklist item",
+  findMentor: "Finding a mentor",
+  bookOfficeHours: "Preparing a booking",
 };
 
 export function ToolCard({ part }: { part: ToolPart }) {
@@ -97,6 +103,16 @@ export function ToolCard({ part }: { part: ToolPart }) {
       return <KnowledgeResult chunks={(out?.chunks as ChunkOut[]) ?? []} />;
     case "setReminder":
       return <ReminderResult out={out} />;
+    case "getAnnouncements":
+      return (
+        <AnnouncementsResult announcements={(out?.announcements as AnnouncementOut[]) ?? []} />
+      );
+    case "addChecklistItem":
+      return <ChecklistIntentResult out={out} />;
+    case "findMentor":
+      return <MentorsResult mentors={(out?.mentors as MentorOut[]) ?? []} />;
+    case "bookOfficeHours":
+      return <BookingIntentResult out={out} />;
     default:
       return null;
   }
@@ -410,6 +426,304 @@ function ReminderResult({ out }: { out: Record<string, unknown> }) {
               : create.isPending
                 ? "Setting…"
                 : "Set reminder"}
+        </button>
+      </div>
+    </ResultShell>
+  );
+}
+
+/* ---- Cue Pulse announcements -------------------------------------------- */
+
+type AnnouncementOut = {
+  title?: string;
+  body?: string;
+  kind?: string;
+  severity?: string;
+  sourceUrl?: string | null;
+};
+
+function AnnouncementsResult({ announcements }: { announcements: AnnouncementOut[] }) {
+  if (announcements.length === 0) {
+    return (
+      <ResultShell icon={<BellIcon className="h-4 w-4" />} title="Live updates">
+        <p className="px-1 py-1 text-[13px] text-muted">No announcements yet.</p>
+      </ResultShell>
+    );
+  }
+  return (
+    <ResultShell icon={<BellIcon className="h-4 w-4" />} title="Live updates">
+      <div className="space-y-1.5">
+        {announcements.slice(0, 8).map((a, i) => (
+          <div key={a.title ?? i} className="rounded-xl bg-surface-2 p-3">
+            <div className="flex items-center justify-between gap-2">
+              <span
+                className={cn(
+                  "text-[11px] font-bold uppercase tracking-wide",
+                  a.severity === "urgent"
+                    ? "text-warn"
+                    : a.severity === "important"
+                      ? "text-accent-text"
+                      : "text-faint",
+                )}
+              >
+                {a.kind ?? "update"}
+              </span>
+              {a.sourceUrl && <CitationLink url={a.sourceUrl} />}
+            </div>
+            <p className="mt-1 text-[14px] font-semibold leading-snug">{a.title}</p>
+            {a.body && <p className="mt-0.5 text-[12px] text-muted">{a.body}</p>}
+          </div>
+        ))}
+      </div>
+    </ResultShell>
+  );
+}
+
+/* ---- Checklist add intent (tap to confirm → /api/checklist) ------------- */
+
+type ChecklistIntentOut = {
+  intent?: {
+    title?: string;
+    targetId?: string | null;
+    targetType?: "session" | "deadline" | "perk" | "submission" | "custom";
+    notes?: string | null;
+    fireAt?: number | null;
+  };
+  confirmable?: boolean;
+  message?: string;
+};
+
+function ChecklistIntentResult({ out }: { out: Record<string, unknown> }) {
+  const data = out as ChecklistIntentOut;
+  const { status } = useSession();
+  const add = useAddChecklistItem();
+  const [done, setDone] = useState(false);
+  const intent = data.intent;
+
+  if (!data.confirmable || !intent?.title) {
+    return (
+      <ResultShell icon={<CheckIcon className="h-4 w-4" />} title="Checklist">
+        <p className="px-1 py-1 text-[13px] text-muted">
+          {data.message ?? "Couldn't prepare that item."}
+        </p>
+      </ResultShell>
+    );
+  }
+
+  const onConfirm = () => {
+    if (status !== "authenticated") {
+      signIn("google");
+      return;
+    }
+    add.mutate(
+      {
+        title: intent.title as string,
+        notes: intent.notes ?? null,
+        targetId: intent.targetId ?? null,
+        targetType: intent.targetType ?? "custom",
+        fireAt: intent.fireAt ?? null,
+      },
+      { onSuccess: () => setDone(true) },
+    );
+  };
+
+  return (
+    <ResultShell icon={<CheckIcon className="h-4 w-4" />} title="Add to checklist">
+      <div className="rounded-xl bg-surface-2 p-3">
+        <p className="text-[14px] font-semibold">{intent.title}</p>
+        {intent.notes && <p className="mt-0.5 text-[12px] text-muted">{intent.notes}</p>}
+        <button
+          type="button"
+          onClick={onConfirm}
+          disabled={add.isPending || done}
+          className={cn(
+            "mt-2.5 flex w-full items-center justify-center gap-1.5 rounded-xl py-2 text-[13px] font-bold transition active:scale-[0.98]",
+            done
+              ? "bg-accent/15 text-accent-text ring-1 ring-accent/30"
+              : "bg-accent text-accent-ink disabled:opacity-60",
+          )}
+        >
+          {done ? <CheckIcon className="h-4 w-4" /> : <SparkIcon className="h-4 w-4" />}
+          {done
+            ? "Added to checklist"
+            : status !== "authenticated"
+              ? "Sign in to add"
+              : add.isPending
+                ? "Adding…"
+                : "Add to checklist"}
+        </button>
+      </div>
+    </ResultShell>
+  );
+}
+
+/* ---- Mentors (findMentor read) ------------------------------------------ */
+
+type MentorOut = {
+  id?: string;
+  name?: string;
+  title?: string | null;
+  org?: string | null;
+  expertise?: string[];
+  slots?: { id: string; startsAt: number; endsAt: number }[];
+  sourceUrl?: string | null;
+};
+
+function fmtSlotRange(startsAt: number, endsAt: number): string {
+  const day = new Intl.DateTimeFormat("en-GB", {
+    weekday: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Ho_Chi_Minh",
+  }).format(new Date(startsAt));
+  const end = new Intl.DateTimeFormat("en-GB", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Ho_Chi_Minh",
+  }).format(new Date(endsAt));
+  return `${day}–${end}`;
+}
+
+function MentorsResult({ mentors }: { mentors: MentorOut[] }) {
+  if (mentors.length === 0) {
+    return (
+      <ResultShell icon={<SparkIcon className="h-4 w-4" />} title="Mentors">
+        <p className="px-1 py-1 text-[13px] text-muted">No mentors matched that topic.</p>
+      </ResultShell>
+    );
+  }
+  return (
+    <ResultShell icon={<SparkIcon className="h-4 w-4" />} title="Mentors">
+      <div className="space-y-1.5">
+        {mentors.slice(0, 5).map((m, i) => (
+          <div key={m.id ?? i} className="rounded-xl bg-surface-2 p-3">
+            <div className="flex items-center justify-between gap-2">
+              <p className="text-[14px] font-semibold">{m.name}</p>
+              {m.sourceUrl && <CitationLink url={m.sourceUrl} />}
+            </div>
+            {(m.title || m.org) && (
+              <p className="text-[12px] text-faint">
+                {[m.title, m.org].filter(Boolean).join(" · ")}
+              </p>
+            )}
+            {m.expertise && m.expertise.length > 0 && (
+              <div className="mt-1.5 flex flex-wrap gap-1">
+                {m.expertise.slice(0, 5).map((e) => (
+                  <span
+                    key={e}
+                    className="rounded-full bg-accent/10 px-2 py-0.5 text-[11px] font-medium text-accent-text"
+                  >
+                    {e}
+                  </span>
+                ))}
+              </div>
+            )}
+            {m.slots && m.slots.length > 0 && (
+              <p className="mt-1.5 text-[12px] text-muted">
+                Free:{" "}
+                {m.slots
+                  .slice(0, 2)
+                  .map((s) => fmtSlotRange(s.startsAt, s.endsAt))
+                  .join(", ")}
+              </p>
+            )}
+          </div>
+        ))}
+        <p className="px-1 pt-0.5 text-[11px] text-faint">
+          Open Mentors to book a slot, or ask Cue to book one.
+        </p>
+      </div>
+    </ResultShell>
+  );
+}
+
+/* ---- Book office hours intent (tap to confirm → /api/office-hours/book) - */
+
+type BookingIntentOut = {
+  intent?: {
+    mentorId?: string;
+    slotId?: string;
+    topic?: string | null;
+    mentorName?: string | null;
+    slot?: { id: string; startsAt: number; endsAt: number } | null;
+  };
+  confirmable?: boolean;
+  message?: string;
+};
+
+function BookingIntentResult({ out }: { out: Record<string, unknown> }) {
+  const data = out as BookingIntentOut;
+  const { status } = useSession();
+  const book = useBookOfficeHours();
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const intent = data.intent;
+
+  if (!data.confirmable || !intent?.mentorId || !intent?.slotId) {
+    return (
+      <ResultShell icon={<ClockIcon className="h-4 w-4" />} title="Office hours">
+        <p className="px-1 py-1 text-[13px] text-muted">
+          {data.message ?? "That slot isn't available."}
+        </p>
+      </ResultShell>
+    );
+  }
+
+  const onConfirm = () => {
+    if (status !== "authenticated") {
+      signIn("google");
+      return;
+    }
+    setError(null);
+    book.mutate(
+      {
+        mentorId: intent.mentorId as string,
+        slotId: intent.slotId as string,
+        topic: intent.topic ?? null,
+      },
+      {
+        onSuccess: () => setDone(true),
+        onError: (e) =>
+          setError(
+            (e as { status?: number }).status === 409
+              ? "That slot was just taken."
+              : "Couldn't book that slot.",
+          ),
+      },
+    );
+  };
+
+  return (
+    <ResultShell icon={<ClockIcon className="h-4 w-4" />} title="Book office hours">
+      <div className="rounded-xl bg-surface-2 p-3">
+        <p className="text-[14px] font-semibold">{intent.mentorName ?? "Mentor"}</p>
+        {intent.slot && (
+          <p className="mt-0.5 text-[12px] text-muted">
+            {fmtSlotRange(intent.slot.startsAt, intent.slot.endsAt)}
+          </p>
+        )}
+        {error && <p className="mt-1 text-[12px] text-warn">{error}</p>}
+        <button
+          type="button"
+          onClick={onConfirm}
+          disabled={book.isPending || done}
+          className={cn(
+            "mt-2.5 flex w-full items-center justify-center gap-1.5 rounded-xl py-2 text-[13px] font-bold transition active:scale-[0.98]",
+            done
+              ? "bg-accent/15 text-accent-text ring-1 ring-accent/30"
+              : "bg-accent text-accent-ink disabled:opacity-60",
+          )}
+        >
+          {done ? <CheckIcon className="h-4 w-4" /> : <ClockIcon className="h-4 w-4" />}
+          {done
+            ? "Booked"
+            : status !== "authenticated"
+              ? "Sign in to book"
+              : book.isPending
+                ? "Booking…"
+                : "Book this slot"}
         </button>
       </div>
     </ResultShell>

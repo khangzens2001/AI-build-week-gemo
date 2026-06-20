@@ -67,8 +67,14 @@ function ChatView() {
               <ChatEmpty onPick={(q) => sendMessage({ text: q })} />
             ) : (
               <>
-                {messages.map((m) => (
-                  <ChatMessage key={m.id} message={m} />
+                {messages.map((m, i) => (
+                  <ChatMessage
+                    key={m.id}
+                    message={m}
+                    isStreaming={
+                      status === "streaming" && i === messages.length - 1 && m.role === "assistant"
+                    }
+                  />
                 ))}
                 {showTyping && <TypingIndicator />}
                 {status === "error" && (

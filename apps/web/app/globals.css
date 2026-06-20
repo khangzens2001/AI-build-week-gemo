@@ -142,6 +142,20 @@
   }
 }
 
+/* Streaming caret: a thin vermillion bar that blinks at the tail of the text
+   currently being generated. Pure CSS (reuses the blink timing) so it costs
+   nothing per token — no JS timers, no layout thrash. */
+.stream-caret {
+  display: inline-block;
+  width: 2px;
+  height: 1.05em;
+  margin-left: 1px;
+  vertical-align: -0.18em;
+  border-radius: 1px;
+  background: var(--color-accent-text);
+  animation: var(--animate-blink);
+}
+
 :root {
   --appbar-h: 3.25rem;
   --tabbar-h: 4.25rem;
@@ -248,6 +262,17 @@ h3 {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
   border-radius: 6px;
+}
+
+/* The chat composer shows its focus state on the pill container (a focus-within
+   ring that inherits the pill's radius), so the textarea itself opts out of the
+   global ring — otherwise the forced `border-radius: 6px` above would square the
+   field's corners and trace a rounded-rect that doesn't match the pill. This
+   rule is intentionally unlayered so it beats the unlayered `:focus-visible`. */
+.composer-field:focus,
+.composer-field:focus-visible {
+  outline: none;
+  border-radius: inherit;
 }
 
 /* MapLibre GL: dark popup chrome + a pulsing highlight pin for venues. */

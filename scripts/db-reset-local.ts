@@ -49,6 +49,17 @@ for (const file of migrations) {
 db.exec(readFileSync(seedFile, "utf8"));
 console.log("[db:reset:local] applied drizzle/seed.sql");
 
+// Load hand-written feature seed (mock account, announcements, mentors, teams).
+// Runs AFTER seed.sql since it references users/teams. Optional — skip if absent.
+const featureSeedFile = join(root, "drizzle", "seed-features.sql");
+try {
+  db.exec(readFileSync(featureSeedFile, "utf8"));
+  console.log("[db:reset:local] applied drizzle/seed-features.sql");
+} catch (err) {
+  if ((err as NodeJS.ErrnoException).code !== "ENOENT") throw err;
+  console.log("[db:reset:local] no seed-features.sql — skipped");
+}
+
 const count = (t: string) => (db.query(`SELECT COUNT(*) AS n FROM ${t}`).get() as { n: number }).n;
 console.log(
   `[db:reset:local] done → sessions ${count("sessions")}, venues ${count("venues")}, ` +

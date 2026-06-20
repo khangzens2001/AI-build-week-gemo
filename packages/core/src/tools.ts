@@ -13,6 +13,9 @@ import {
 } from "./data";
 import { retrieve } from "./retrieve";
 import { formatTimeLabel, getCurrentTime } from "./time";
+import { announcementTools } from "./tools/announcements";
+import { checklistTools } from "./tools/checklist";
+import { mentorTools } from "./tools/mentors";
 
 /**
  * Agent tools (AI SDK v6: `tool({ description, inputSchema, execute })`).
@@ -240,6 +243,13 @@ export const tools = {
       };
     },
   }),
+
+  // Feature tools (Cue Pulse, Checklist, Mentors) live in ./tools/* and are
+  // merged here so the agent sees one flat tool set. Each group keeps its own
+  // file so feature lanes never edit this barrel in parallel.
+  ...announcementTools,
+  ...checklistTools,
+  ...mentorTools,
 };
 
 export type EventTools = typeof tools;

@@ -422,6 +422,46 @@ export function buildDeadlines(
 // Retrieval chunks — base corpus + event descriptions + perk brief + FAQ.
 // ---------------------------------------------------------------------------
 
+/**
+ * On-the-ground logistics ("Survival Pack") — the small, high-frequency
+ * questions builders ask at the venue (wifi, food, badge, parking, charging,
+ * support). These are stable across the event, so they're authored here as a
+ * static knowledge pack rather than crawled, and embedded alongside the rest so
+ * `searchKnowledge` / the logistics quick-chips answer them with a citation.
+ */
+const LOGISTICS_SOURCE = "https://agenticaibuildweek.genaifund.ai/#faq";
+
+const LOGISTICS_CHUNKS: { id: string; text: string }[] = [
+  {
+    id: "logistics-wifi",
+    text: "Wifi at Agentic AI Build Week: each venue has builder wifi. The network name and password are printed on your badge and on signage at the registration/welcome desk. If you can't connect, ask a staff member at the front desk or in the Discord #support channel.",
+  },
+  {
+    id: "logistics-food",
+    text: "Food & drinks: lunch and coffee are provided at the venue on workshop days, served near the main hall (lunch around 12:00). Water and snacks are available throughout the day. On the on-site build day there is late-night food for builders working through the evening.",
+  },
+  {
+    id: "logistics-badge",
+    text: "Badges & check-in: collect your badge at the Registration & Welcome desk on Day 1 from 09:00 at Tasco Office. Wear your badge at all times — it's your entry to sessions and shows your builder tier. Lost your badge? Go back to the registration desk for a replacement.",
+  },
+  {
+    id: "logistics-toilet",
+    text: "Restrooms / toilets are on every floor of each venue, signposted near the lifts. Ask any staff member or check the venue signage if you can't find them.",
+  },
+  {
+    id: "logistics-parking",
+    text: "Getting there & parking: venues are in Ho Chi Minh City (Tasco Office, AWS Office at Bitexco Tower, VNG Campus, Galaxy Innovation Park). Use the in-app map and the Google Maps link on each session for directions. Grab/taxi is the easiest way between venues; motorbike parking is available at each venue.",
+  },
+  {
+    id: "logistics-charging",
+    text: "Power & charging: bring your laptop charger and a power strip if you can — outlets fill up fast during build sessions. Charging stations and extra outlets are set up near the work areas. A portable battery is handy when moving between venues.",
+  },
+  {
+    id: "logistics-support",
+    text: "Getting help / support: for any issue during the event — schedule questions, lost items, technical help, or finding a room — ask a staff member at the desk or post in the Discord #support channel. The Cue app's Pulse feed also shows live announcements and room changes.",
+  },
+];
+
 export function buildChunks(
   retrievalChunks: RawRetrievalChunk[],
   events: RawEvent[],
@@ -485,6 +525,11 @@ export function buildChunks(
       sourceUrl: faqSource,
     });
   });
+
+  // 5) Logistics / Survival Pack — static on-the-ground knowledge.
+  for (const l of LOGISTICS_CHUNKS) {
+    push({ id: l.id, type: "logistics", text: l.text, sourceUrl: LOGISTICS_SOURCE });
+  }
 
   return chunks;
 }

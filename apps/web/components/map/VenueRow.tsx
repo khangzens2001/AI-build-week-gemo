@@ -46,10 +46,13 @@ export function VenueRow({
             <Image
               src={venue.imageUrl}
               alt=""
-              width={48}
-              height={48}
+              fill
+              // The thumbnail renders at 48px CSS; request 96px so it stays
+              // crisp on 2× retina displays (a 48px candidate looked blurry).
+              sizes="96px"
+              quality={90}
               onError={() => setImgOk(false)}
-              className="h-full w-full object-cover"
+              className="object-cover"
             />
           </span>
         ) : (

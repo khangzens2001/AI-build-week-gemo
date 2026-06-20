@@ -1,5 +1,6 @@
 "use client";
 
+import { devAuthEnabled } from "@/lib/devAuth";
 import { signIn } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
@@ -82,6 +83,18 @@ export function Onboarding() {
             >
               <GoogleIcon className="h-4 w-4" />
               Continue with Google
+            </button>
+          )}
+          {status !== "authenticated" && devAuthEnabled() && (
+            <button
+              type="button"
+              onClick={() => {
+                dismiss();
+                signIn("mock");
+              }}
+              className="w-full rounded-2xl py-2 text-[13px] font-semibold text-faint transition hover:text-muted active:scale-[0.98]"
+            >
+              Continue as Demo Builder (dev)
             </button>
           )}
           <button

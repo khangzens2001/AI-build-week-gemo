@@ -108,3 +108,99 @@ export const pushSubscriptions = sqliteTable("push_subscriptions", {
   auth: text("auth").notNull(),
   createdAt: integer("created_at").notNull(),
 });
+
+// -------------------------------------------------------------------------
+// Feature tables (Cue Pulse, Checklist, Mentors, Teams). Times are epoch ms
+// (GMT+7). Booleans stored as integer 0/1. Vectors still live in Chroma.
+// -------------------------------------------------------------------------
+
+/** Cue Pulse — live announcements (schedule changes, room moves, perk drops). */
+export const announcements = sqliteTable("announcements", {
+  id: text("id").primaryKey(),
+  kind: text("kind").notNull().default("general"), // schedule | venue | perk | deadline | general
+  title: text("title").notNull(),
+  body: text("body").notNull(),
+  severity: text("severity").notNull().default("info"), // info | important | urgent
+  targetId: text("target_id"), // related session/venue/perk/deadline id
+  sourceUrl: text("source_url"), // citation — never fabricate
+  createdAt: integer("created_at").notNull(),
+});
+
+/** Unified checklist: bookmarks + custom tasks + submission-readiness items. */
+export const checklistItems = sqliteTable("checklist_items", {
+  id: text("id").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  title: text("title").notNull(),
+  notes: text("notes"),
+  completed: integer("completed").notNull().default(0),
+  targetId: text("target_id"), // session/deadline/perk id, null for custom
+  targetType: text("target_type").notNull().default("custom"), // session|deadline|perk|submission|custom
+  fireAt: integer("fire_at"), // push reminder time (epoch ms)
+  sent: integer("sent").notNull().default(0),
+  createdAt: integer("created_at").notNull(),
+  updatedAt: integer("updated_at").notNull(),
+});
+
+/** Mentors — expertise + availability slots folded in as a JSON array. */
+export const mentors = sqliteTable("mentors", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(),
+  title: text("title"),
+  org: text("org"),
+  bio: text("bio"),
+  avatarUrl: text("avatar_url"),
+  expertise: text("expertise"), // JSON string[]
+  slots: text("slots"), // JSON MentorSlot[]: {id, startsAt, endsAt}
+  sourceUrl: text("source_url"),
+});
+
+/** The single mentor write table — a booked office-hours slot. */
+export const officeHoursBookings = sqliteTable("office_hours_bookings", {
+  id: text("id").primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  mentorId: text("mentor_id")
+    .notNull()
+    .references(() => mentors.id),
+  slotId: text("slot_id").notNull(),
+  topic: text("topic"),
+  createdAt: integer("created_at").notNull(),
+});
+
+/** Team room (lean): a team, its members, and a public text-only build log. */
+export const teams = sqliteTable("teams", {
+  id: text("id").primaryKey(),
+  name: text("name").notNull(),
+  tagline: text("tagline"),
+  lookingFor: text("looking_for"), // JSON string[]
+  createdBy: text("created_by")
+    .notNull()
+    .references(() => users.id),
+  createdAt: integer("created_at").notNull(),
+});
+
+export const teamMembers = sqliteTable("team_members", {
+  teamId: text("team_id")
+    .notNull()
+    .references(() => teams.id),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  role: text("role"),
+  joinedAt: integer("joined_at").notNull(),
+});
+
+export const buildLogs = sqliteTable("build_logs", {
+  id: text("id").primaryKey(),
+  teamId: text("team_id")
+    .notNull()
+    .references(() => teams.id),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id),
+  body: text("body").notNull(),
+  createdAt: integer("created_at").notNull(),
+});

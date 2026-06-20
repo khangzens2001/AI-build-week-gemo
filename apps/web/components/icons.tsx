@@ -132,6 +132,55 @@ export const CheckIcon = (p: IconProps) => (
   </Base>
 );
 
+export const PlusIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 5v14M5 12h14" />
+  </Base>
+);
+
+export const TrashIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M4 6.5h16M9 6.5V4.5h6v2M6.5 6.5 7.5 20h9l1-13.5" />
+    <path d="M10 10.5v6M14 10.5v6" />
+  </Base>
+);
+
+export const SearchIcon = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="11" cy="11" r="6.5" />
+    <path d="m20 20-3.5-3.5" />
+  </Base>
+);
+
+export const UsersIcon = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="9" cy="8" r="3.25" />
+    <path d="M3.5 19.5a5.5 5.5 0 0 1 11 0" />
+    <path d="M16 5.5a3 3 0 0 1 0 5.8M17.5 19.5a5.5 5.5 0 0 0-2.2-4.4" />
+  </Base>
+);
+
+export const MicIcon = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="9" y="3" width="6" height="11" rx="3" />
+    <path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7" />
+  </Base>
+);
+
+export const PulseIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M3 12h4l2.5-6 4 13L16.5 12H21" />
+  </Base>
+);
+
+export const RocketIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M14 4c3.5 0 6 2.5 6 6 0 4-3.5 7-7.5 9L11 17l-3-3c2-4 5-7.5 9-7.5Z" />
+    <circle cx="14.5" cy="9.5" r="1.5" />
+    <path d="M8 14c-2 0-3 1-3.5 3.5C7 17 8 16 8 14ZM10 16c0 2-1 3-3.5 3.5C7 17 8 16 10 16Z" />
+  </Base>
+);
+
 export const GoogleIcon = (p: IconProps) => (
   <svg viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="Google" {...p}>
     <title>Google</title>

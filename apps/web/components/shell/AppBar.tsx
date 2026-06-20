@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/cn";
+import { devAuthEnabled } from "@/lib/devAuth";
 import { signIn, signOut, useSession } from "next-auth/react";
 import { useEffect, useRef, useState } from "react";
 import { GoogleIcon } from "../icons";
@@ -60,14 +61,25 @@ function AccountButton() {
 
   if (!session?.user) {
     return (
-      <button
-        type="button"
-        onClick={() => signIn("google")}
-        className="flex h-8 items-center gap-1.5 rounded-full bg-accent px-3.5 text-[13px] font-semibold text-accent-ink transition active:scale-95"
-      >
-        <GoogleIcon className="h-3.5 w-3.5" />
-        Sign in
-      </button>
+      <div className="flex items-center gap-1.5">
+        {devAuthEnabled() && (
+          <button
+            type="button"
+            onClick={() => signIn("mock")}
+            className="h-8 rounded-full px-2.5 text-[12px] font-semibold text-faint transition hover:text-muted active:scale-95"
+          >
+            Demo
+          </button>
+        )}
+        <button
+          type="button"
+          onClick={() => signIn("google")}
+          className="flex h-8 items-center gap-1.5 rounded-full bg-accent px-3.5 text-[13px] font-semibold text-accent-ink transition active:scale-95"
+        >
+          <GoogleIcon className="h-3.5 w-3.5" />
+          Sign in
+        </button>
+      </div>
     );
   }
 
