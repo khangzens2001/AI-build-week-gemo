@@ -1,2 +1,0 @@
-#!/bin/sh
-node "/Volumes/KhangSSD/ZENS/AI-build-week-gemo/luma_devpost/node_modules/firebase-tools/lib/bin/firebase.js" "$@"
