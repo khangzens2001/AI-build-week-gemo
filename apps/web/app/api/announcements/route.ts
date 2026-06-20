@@ -25,8 +25,13 @@ export const dynamic = "force-dynamic";
 /** GET — public read. `?limit=` clamps to 1..50 (default 50). */
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
-  const raw = Number(searchParams.get("limit"));
-  const limit = Number.isFinite(raw) ? Math.min(50, Math.max(1, Math.trunc(raw))) : 50;
+  // Default to 50 when the param is absent or non-numeric. Note: a missing param
+  // is `null`, and `Number(null)` is 0 (which IS finite) — so we read the raw
+  // string and only parse when it's actually present, otherwise the no-param
+  // case would clamp to 1 instead of 50.
+  const rawParam = searchParams.get("limit");
+  const parsed = rawParam === null ? Number.NaN : Number(rawParam);
+  const limit = Number.isFinite(parsed) ? Math.min(50, Math.max(1, Math.trunc(parsed))) : 50;
 
   const rows = await listAnnouncements(limit);
   return Response.json({
