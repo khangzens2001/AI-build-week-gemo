@@ -51,9 +51,23 @@ mkdir -p "$OUT/node_modules/chromadb" "$OUT/node_modules/semver"
 cp -RL "$CHROMADB_SRC"/. "$OUT/node_modules/chromadb"/
 cp -RL "$SEMVER_SRC"/.   "$OUT/node_modules/semver"/
 
-echo "==> Sanity: required-server-files + chromadb present"
+echo "==> Link firebase-admin at the standalone node_modules root (server-side FCM)"
+# firebase-admin is server-only; Next's tracer pulls its files into the bundle's
+# bun store (node_modules/.bun/firebase-admin@*) but does NOT create the bare
+# top-level `node_modules/firebase-admin` entry the generated server.js resolves.
+# A relative symlink into the bun store fixes resolution AND keeps firebase-admin's
+# full dep closure (google-auth-library, jws, …) intact (those are siblings inside
+# the same store dir). rsync -a / cp -R preserve the relative link.
+FB_STORE="$(ls -d "$OUT"/node_modules/.bun/firebase-admin@*/node_modules/firebase-admin 2>/dev/null | head -1 || true)"
+[[ -n "${FB_STORE:-}" && -d "$FB_STORE" ]] || { echo "ERROR: firebase-admin not traced into the standalone bun store" >&2; exit 1; }
+# Compute the path relative to $OUT/node_modules so the link is portable.
+FB_REL="${FB_STORE#"$OUT"/node_modules/}"
+ln -sfn "$FB_REL" "$OUT/node_modules/firebase-admin"
+
+echo "==> Sanity: required-server-files + chromadb + firebase-admin present"
 test -f "$OUT/apps/web/server.js"
 test -d "$OUT/node_modules/chromadb"
+test -e "$OUT/node_modules/firebase-admin/package.json"
 test -d "$OUT/apps/web/.next/static"
 test -d "$OUT/apps/web/public"
 
