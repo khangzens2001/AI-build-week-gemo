@@ -29,6 +29,17 @@ export function optionalEnv(name: string): string | undefined {
   return read(name);
 }
 
+/**
+ * Whether dev-only conveniences are allowed (e.g. the seeded "mock account"
+ * Credentials sign-in used to test authed flows without Google OAuth). NEVER in
+ * production — there, only real Google sign-in exists.
+ */
+export function isDevAuthEnabled(): boolean {
+  if (read("NODE_ENV") === "production") return false;
+  // On by default in dev; opt out with CUE_DEV_AUTH=0.
+  return read("CUE_DEV_AUTH") !== "0";
+}
+
 /** Gemini model + embedding configuration. */
 export const llmConfig = {
   get chatModel(): string {

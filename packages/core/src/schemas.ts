@@ -101,3 +101,126 @@ export const UserPreferencesSchema = z.object({
   teamStatus: z.enum(["solo", "has_team", "looking"]).nullable().default(null),
 });
 export type UserPreferences = z.infer<typeof UserPreferencesSchema>;
+
+// ===========================================================================
+// New feature schemas (Cue Pulse, Checklist, Demo Coach, Mentors, Teams).
+// Single source of truth — reused by API route validation, agent tool
+// inputSchema, and the seed. Times are epoch ms (GMT+7) per the time model.
+// ===========================================================================
+
+/**
+ * Cue Pulse — a live announcement (schedule change, room move, perk drop). The
+ * AI summary restates a diff only and MUST carry the source URL so the UI can
+ * render a citation; never fabricate facts in `body`.
+ */
+export const AnnouncementSchema = z.object({
+  id: z.string(),
+  kind: z.enum(["schedule", "venue", "perk", "deadline", "general"]).default("general"),
+  title: z.string(),
+  body: z.string(),
+  severity: z.enum(["info", "important", "urgent"]).default("info"),
+  targetId: z.string().nullable().optional(), // related session/venue/perk/deadline id
+  sourceUrl: z.string().nullable().optional(),
+  createdAt: z.number().int(),
+});
+export type Announcement = z.infer<typeof AnnouncementSchema>;
+
+/**
+ * Checklist item ("FOMO Killer") — unified bookmarks + custom tasks + submission
+ * items. `targetType` discriminates; submission-readiness rows use "submission".
+ */
+export const ChecklistTargetType = z.enum(["session", "deadline", "perk", "submission", "custom"]);
+export type ChecklistTargetType = z.infer<typeof ChecklistTargetType>;
+
+export const ChecklistItemSchema = z.object({
+  id: z.string(),
+  userId: z.string(),
+  title: z.string(),
+  notes: z.string().nullable().optional(),
+  completed: z.boolean().default(false),
+  targetId: z.string().nullable().optional(),
+  targetType: ChecklistTargetType.default("custom"),
+  fireAt: z.number().int().nullable().optional(), // push reminder time (epoch ms)
+  sent: z.boolean().default(false),
+  createdAt: z.number().int(),
+  updatedAt: z.number().int(),
+});
+export type ChecklistItem = z.infer<typeof ChecklistItemSchema>;
+
+/** Pitch Coach — stateless structured review (NOT persisted). generateObject shape. */
+export const PitchReviewSchema = z.object({
+  overallScore: z.number().int().min(0).max(100),
+  criteria: z
+    .array(
+      z.object({
+        name: z.string(),
+        score: z.number().int().min(0).max(10),
+        feedback: z.string(),
+      }),
+    )
+    .default([]),
+  fixes: z.array(z.string()).default([]),
+  practiceQuestions: z.array(z.string()).default([]),
+});
+export type PitchReview = z.infer<typeof PitchReviewSchema>;
+
+/** Office-hours slot, stored as JSON inside `mentors.slots`. */
+export const MentorSlotSchema = z.object({
+  id: z.string(),
+  startsAt: z.number().int(), // epoch ms (GMT+7)
+  endsAt: z.number().int(),
+});
+export type MentorSlot = z.infer<typeof MentorSlotSchema>;
+
+/** Mentor — matched by expertise; availability folded in as a slots JSON array. */
+export const MentorSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  title: z.string().nullable().optional(),
+  org: z.string().nullable().optional(),
+  bio: z.string().nullable().optional(),
+  avatarUrl: z.string().nullable().optional(),
+  expertise: z.array(z.string()).default([]),
+  slots: z.array(MentorSlotSchema).default([]),
+  sourceUrl: z.string().nullable().optional(),
+});
+export type Mentor = z.infer<typeof MentorSchema>;
+
+/** A booked office-hours slot (the only mentor write table). */
+export const OfficeHoursBookingSchema = z.object({
+  id: z.string(),
+  userId: z.string(),
+  mentorId: z.string(),
+  slotId: z.string(),
+  topic: z.string().nullable().optional(),
+  createdAt: z.number().int(),
+});
+export type OfficeHoursBooking = z.infer<typeof OfficeHoursBookingSchema>;
+
+/** Team room — lean: a team, its members, and a public text-only build log. */
+export const TeamSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  tagline: z.string().nullable().optional(),
+  lookingFor: z.array(z.string()).default([]),
+  createdBy: z.string(),
+  createdAt: z.number().int(),
+});
+export type Team = z.infer<typeof TeamSchema>;
+
+export const TeamMemberSchema = z.object({
+  teamId: z.string(),
+  userId: z.string(),
+  role: z.string().nullable().optional(),
+  joinedAt: z.number().int(),
+});
+export type TeamMember = z.infer<typeof TeamMemberSchema>;
+
+export const BuildLogSchema = z.object({
+  id: z.string(),
+  teamId: z.string(),
+  userId: z.string(),
+  body: z.string(),
+  createdAt: z.number().int(),
+});
+export type BuildLog = z.infer<typeof BuildLogSchema>;

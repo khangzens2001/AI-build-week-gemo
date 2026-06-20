@@ -56,7 +56,7 @@ function renderInline(text: string, keyPrefix: string): ReactNode[] {
   return nodes;
 }
 
-export function ChatMarkdown({ text }: { text: string }) {
+export function ChatMarkdown({ text, caret }: { text: string; caret?: boolean }) {
   const lines = text.split("\n");
   const blocks: ReactNode[] = [];
   let bullets: string[] = [];
@@ -94,6 +94,13 @@ export function ChatMarkdown({ text }: { text: string }) {
     );
   });
   flushBullets("ul-end");
+
+  // While streaming, tack a blinking caret onto the very end of the prose so the
+  // reply reads as if it's being typed. Appended as its own node so it never
+  // disturbs the markdown layout.
+  if (caret) {
+    blocks.push(<span key="stream-caret" className="stream-caret" aria-hidden />);
+  }
 
   return <div className="space-y-1.5 text-[15px]">{blocks}</div>;
 }

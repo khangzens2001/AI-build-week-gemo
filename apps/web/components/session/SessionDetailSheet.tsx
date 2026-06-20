@@ -9,6 +9,7 @@ import { ChatIcon, ExternalIcon, PinIcon } from "../icons";
 import { CountdownBadge } from "../ui/CountdownBadge";
 import { Sheet } from "../ui/Sheet";
 import { TypeBadge } from "../ui/TypeBadge";
+import { BookmarkButton } from "./BookmarkButton";
 import { RemindButton } from "./RemindButton";
 
 /**
@@ -61,7 +62,12 @@ function SessionDetailSheetInner({
           <h2 className="font-display text-xl font-bold leading-tight">{session.title}</h2>
         </div>
       }
-      footer={<RemindButton targetId={session.id} disabled={!hasTime} />}
+      footer={
+        <div className="space-y-2">
+          <RemindButton targetId={session.id} disabled={!hasTime} />
+          <BookmarkButton sessionId={session.id} title={session.title} />
+        </div>
+      }
     >
       <div className="space-y-4 py-1">
         {/* Cover hero — only the partner workshops carry one */}

@@ -9,8 +9,17 @@ import { ToolCard } from "./ToolCard";
  * One chat turn. User turns are right-aligned bubbles; assistant turns render
  * their ordered `parts` — interleaving prose (markdown) with rich tool cards so
  * a card always appears next to the sentence that introduces it.
+ *
+ * `isStreaming` is set only for the last assistant message while tokens are
+ * still arriving; it drives the blinking caret on the final text part.
  */
-export function ChatMessage({ message }: { message: UIMessage }) {
+export function ChatMessage({
+  message,
+  isStreaming,
+}: {
+  message: UIMessage;
+  isStreaming?: boolean;
+}) {
   const isUser = message.role === "user";
 
   if (isUser) {
@@ -27,12 +36,19 @@ export function ChatMessage({ message }: { message: UIMessage }) {
     );
   }
 
+  // Index of the last text part — the caret only belongs at the very tail.
+  let lastTextIndex = -1;
+  message.parts.forEach((p, i) => {
+    if (p.type === "text" && p.text.trim()) lastTextIndex = i;
+  });
+
   return (
     <div className="flex flex-col gap-2" style={{ animation: "var(--animate-rise)" }}>
       {message.parts.map((part, i) => {
         const key = `${message.id}-${i}`;
         if (part.type === "text") {
           if (!part.text.trim()) return null;
+          const caret = isStreaming === true && i === lastTextIndex;
           return (
             <div
               key={key}
@@ -40,7 +56,7 @@ export function ChatMessage({ message }: { message: UIMessage }) {
                 "max-w-[88%] self-start rounded-3xl rounded-bl-lg border border-line bg-surface px-4 py-3 text-foreground",
               )}
             >
-              <ChatMarkdown text={part.text} />
+              <ChatMarkdown text={part.text} caret={caret} />
             </div>
           );
         }

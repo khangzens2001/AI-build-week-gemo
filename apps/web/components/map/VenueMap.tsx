@@ -39,8 +39,16 @@ export default function VenueMap({
   const mapRef = useRef<maplibregl.Map | null>(null);
   const markersRef = useRef<Map<string, maplibregl.Marker>>(new Map());
   const loadedRef = useRef(false);
+  // Keep the latest onSelect/activeId in refs so the init effect can stay
+  // venues-only — otherwise selecting a venue (activeId change) would re-run
+  // init, tear the map down (cleanup → map.remove()) and rebuild it, which both
+  // flickers and lets the load-time fit() override the flyTo we want.
+  const onSelectRef = useRef(onSelect);
+  const activeIdRef = useRef(activeId);
+  onSelectRef.current = onSelect;
+  activeIdRef.current = activeId;
 
-  // Init the map once.
+  // Init the map once per venue set (NOT on activeId/onSelect changes).
   useEffect(() => {
     if (!ref.current || mapRef.current) return;
 
@@ -99,17 +107,32 @@ export default function VenueMap({
         );
       }
 
-      // Place markers + fit once the style is ready.
+      // Place markers, then frame: fly to the already-selected venue if there is
+      // one, otherwise fit all pins.
       placeMarkers();
-      fit();
+      const preselected = activeIdRef.current
+        ? pts.find((v) => v.id === activeIdRef.current)
+        : undefined;
+      if (preselected) {
+        map.flyTo({
+          center: [preselected.lng as number, preselected.lat as number],
+          zoom: 16,
+          pitch: 60,
+          bearing: -18,
+          essential: true,
+        });
+        markersRef.current.get(preselected.id)?.togglePopup();
+      } else {
+        fit();
+      }
     });
 
     function placeMarkers() {
       for (const v of pts) {
-        const el = pinElement(v.id === activeId);
+        const el = pinElement(v.id === activeIdRef.current);
         el.addEventListener("click", (e) => {
           e.stopPropagation();
-          onSelect?.(v.id);
+          onSelectRef.current?.(v.id);
         });
         const popup = new maplibregl.Popup({ offset: 24, closeButton: true }).setHTML(
           `<div class="vm-popup">
@@ -155,9 +178,11 @@ export default function VenueMap({
       mapRef.current = null;
       loadedRef.current = false;
     };
-  }, [venues, activeId, onSelect]);
+  }, [venues]);
 
   // React to the externally-selected venue: swap marker styling + fly to it.
+  // Guarded on the map being loaded so a selection that arrives before the
+  // style finishes still flies once ready (handled by the init load handler).
   useEffect(() => {
     const map = mapRef.current;
     if (!map) return;
@@ -169,20 +194,23 @@ export default function VenueMap({
       el.innerHTML = `<span class="vm-pin__dot"></span>${
         isActive ? '<span class="vm-pin__ring"></span>' : ""
       }`;
-      el.addEventListener("click", (e) => {
-        e.stopPropagation();
-        onSelect?.(id);
-      });
     }
 
-    if (activeId) {
+    if (activeId && loadedRef.current) {
       const v = venues.find((x) => x.id === activeId);
       if (v?.lat != null && v?.lng != null) {
-        map.flyTo({ center: [v.lng, v.lat], zoom: 16, pitch: 60, speed: 0.9, essential: true });
+        map.flyTo({
+          center: [v.lng, v.lat],
+          zoom: 16,
+          pitch: 60,
+          bearing: -18,
+          speed: 0.9,
+          essential: true,
+        });
         markersRef.current.get(activeId)?.togglePopup();
       }
     }
-  }, [activeId, venues, onSelect]);
+  }, [activeId, venues]);
 
   return <div ref={ref} className="h-full w-full" aria-label="3D map of event venues" />;
 }

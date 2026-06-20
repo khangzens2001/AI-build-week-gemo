@@ -86,6 +86,24 @@ export function relativePhrase(target: number, from: number = clockSeed()): stri
   return c.past ? "just now" : "any moment";
 }
 
+/**
+ * Short "time ago" label for a past epoch ms: "now", "12m ago", "3h ago",
+ * "2d ago". Demo-clock aware via `from` (defaults to the frozen seed). Used by
+ * the Pulse feed and the build log where rows carry a `createdAt`.
+ */
+export function timeAgo(epochMs: number, from: number = clockSeed()): string {
+  const diff = from - epochMs;
+  if (diff < 45_000) return "now";
+  const mins = Math.round(diff / 60_000);
+  if (mins < 60) return `${mins}m ago`;
+  const hours = Math.round(mins / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.round(hours / 24);
+  if (days < 7) return `${days}d ago`;
+  const weeks = Math.round(days / 7);
+  return `${weeks}w ago`;
+}
+
 /** "1:23:45" / "12:05" clock string for a countdown, days folded into hours. */
 export function clockString(c: Countdown): string {
   const totalHours = c.days * 24 + c.hours;
