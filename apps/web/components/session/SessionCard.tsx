@@ -7,6 +7,8 @@ import { useState } from "react";
 import { PinIcon } from "../icons";
 import { TypeBadge } from "../ui/TypeBadge";
 
+const SESSION_FALLBACK_IMAGE = "/covers/session-fallback.png";
+
 /** The minimum a card needs — both /api/now and /api/schedule rows satisfy it. */
 export type SessionCardData = {
   id: string;
@@ -39,27 +41,25 @@ export function SessionCard({
   const { title, partner, venue, type, tone, startTimeLabel, endTimeLabel } = session;
   const coverImage = session.coverImage ?? null;
   const [coverOk, setCoverOk] = useState(true);
+  const imageSrc = coverImage && coverOk ? coverImage : SESSION_FALLBACK_IMAGE;
 
   const inner = (
     <>
-      {/* cover thumbnail — only the ~6 partner workshops carry one */}
-      {coverImage && coverOk && (
-        <span
-          className={cn(
-            "relative h-14 w-14 shrink-0 overflow-hidden rounded-xl ring-1",
-            accent ? "ring-accent/40" : "ring-line",
-          )}
-        >
-          <Image
-            src={coverImage}
-            alt=""
-            width={56}
-            height={56}
-            onError={() => setCoverOk(false)}
-            className="h-full w-full object-cover"
-          />
-        </span>
-      )}
+      <span
+        className={cn(
+          "relative h-14 w-14 shrink-0 overflow-hidden rounded-xl ring-1",
+          accent ? "ring-accent/40" : "ring-line",
+        )}
+      >
+        <Image
+          src={imageSrc}
+          alt=""
+          width={56}
+          height={56}
+          onError={() => coverImage && setCoverOk(false)}
+          className="h-full w-full object-cover"
+        />
+      </span>
 
       {/* time rail */}
       <div className="flex w-12 shrink-0 flex-col items-start pt-0.5">

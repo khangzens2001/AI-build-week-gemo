@@ -173,6 +173,41 @@ export const PulseIcon = (p: IconProps) => (
   </Base>
 );
 
+export const BroadcastIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M8.5 12a3.5 3.5 0 0 1 7 0" />
+    <path d="M5.5 15a7.5 7.5 0 0 1 13 0" />
+    <path d="M3.5 18.5a11 11 0 0 1 17 0" />
+    <circle cx="12" cy="12" r="1.5" />
+  </Base>
+);
+
+export const PresentationIcon = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="4" y="4" width="16" height="11" rx="2" />
+    <path d="M8 20h8M12 15v5" />
+    <path d="M8 10.5h3l2-3 3 5" />
+  </Base>
+);
+
+export const MentorIcon = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="8.5" cy="8" r="3" />
+    <path d="M3.5 19.5a5 5 0 0 1 10 0" />
+    <path d="M16 7.5h4.5M16 11.5h3" />
+    <path d="M15 16.5h5.5" />
+  </Base>
+);
+
+export const TeamBuildIcon = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="4" y="4" width="6.5" height="6.5" rx="1.5" />
+    <rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5" />
+    <rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5" />
+    <path d="M13.5 16.75H20M16.75 13.5V20" />
+  </Base>
+);
+
 export const RocketIcon = (p: IconProps) => (
   <Base {...p}>
     <path d="M14 4c3.5 0 6 2.5 6 6 0 4-3.5 7-7.5 9L11 17l-3-3c2-4 5-7.5 9-7.5Z" />

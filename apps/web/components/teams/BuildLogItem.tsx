@@ -4,6 +4,43 @@ import { useNowTick } from "@/hooks/useNowTick";
 import type { BuildLog } from "@/hooks/useTeams";
 import { timeAgo } from "@/lib/time";
 
+const URL_RE = /\bhttps?:\/\/[^\s<>()]+/gi;
+
+function trimTrailingPunctuation(url: string): { href: string; suffix: string } {
+  const match = url.match(/[.,!?;:]+$/);
+  if (!match) return { href: url, suffix: "" };
+  return { href: url.slice(0, -match[0].length), suffix: match[0] };
+}
+
+function LinkedText({ text }: { text: string }) {
+  const parts: React.ReactNode[] = [];
+  let lastIndex = 0;
+
+  for (const match of text.matchAll(URL_RE)) {
+    const rawUrl = match[0];
+    const index = match.index ?? 0;
+    const { href, suffix } = trimTrailingPunctuation(rawUrl);
+
+    if (index > lastIndex) parts.push(text.slice(lastIndex, index));
+    parts.push(
+      <a
+        key={`${href}-${index}`}
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="break-all font-semibold text-accent-text underline decoration-accent/30 underline-offset-2 transition hover:decoration-accent-text"
+      >
+        {href}
+      </a>,
+    );
+    if (suffix) parts.push(suffix);
+    lastIndex = index + rawUrl.length;
+  }
+
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return <>{parts}</>;
+}
+
 /** A single build-log entry: author, team, body and relative time. */
 export function BuildLogItem({ log, showTeam = true }: { log: BuildLog; showTeam?: boolean }) {
   const tick = useNowTick(60_000);
@@ -31,7 +68,9 @@ export function BuildLogItem({ log, showTeam = true }: { log: BuildLog; showTeam
           {timeAgo(log.created_at, tick)}
         </span>
       </div>
-      <p className="mt-2.5 whitespace-pre-wrap text-sm leading-snug text-muted">{log.body}</p>
+      <p className="mt-2.5 whitespace-pre-wrap text-sm leading-snug text-muted">
+        <LinkedText text={log.body} />
+      </p>
     </article>
   );
 }

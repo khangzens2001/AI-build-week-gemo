@@ -92,11 +92,13 @@ export function AddTaskSheet({ open, onClose }: { open: boolean; onClose: () => 
 /** A single checklist row with a checkbox, title, notes preview and delete. */
 export function ChecklistRow({
   item,
+  metaLabel,
   onToggle,
   onDelete,
   pending,
 }: {
   item: ChecklistItem;
+  metaLabel?: string;
   onToggle: (item: ChecklistItem) => void;
   onDelete: (id: string) => void;
   pending?: boolean;
@@ -124,6 +126,11 @@ export function ChecklistRow({
       </button>
 
       <div className="min-w-0 flex-1">
+        {metaLabel && (
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-faint">
+            {metaLabel}
+          </p>
+        )}
         <p
           className={cn(
             "text-[15px] font-semibold leading-snug",
