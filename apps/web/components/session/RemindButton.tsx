@@ -1,5 +1,6 @@
 "use client";
 
+import { usePushPermission } from "@/components/push/PushPermissionProvider";
 import { useCreateReminder } from "@/hooks/useReminders";
 import { cn } from "@/lib/cn";
 import { signIn, useSession } from "next-auth/react";
@@ -9,7 +10,9 @@ import { BellIcon, CheckIcon } from "../icons";
 /**
  * "Remind me" action. Posts to /api/reminders; if the user is signed out we
  * prompt Google sign-in instead. Reflects success inline so the user gets
- * immediate feedback without leaving the sheet.
+ * immediate feedback without leaving the sheet. On success we also nudge the
+ * user to enable push notifications (no-op if already granted) so the reminder
+ * can actually reach them.
  */
 export function RemindButton({
   targetId,
@@ -26,6 +29,7 @@ export function RemindButton({
 }) {
   const { status } = useSession();
   const create = useCreateReminder();
+  const { requestPushPermission } = usePushPermission();
   const [done, setDone] = useState(false);
 
   const onClick = () => {
@@ -33,7 +37,15 @@ export function RemindButton({
       signIn("google");
       return;
     }
-    create.mutate({ targetId, targetKind, minutesBefore }, { onSuccess: () => setDone(true) });
+    create.mutate(
+      { targetId, targetKind, minutesBefore },
+      {
+        onSuccess: () => {
+          setDone(true);
+          requestPushPermission(`${minutesBefore} minutes before this ${targetKind} starts`);
+        },
+      },
+    );
   };
 
   const label = done

@@ -1,4 +1,4 @@
-import { integer, real, sqliteTable, text } from "drizzle-orm/sqlite-core";
+import { index, integer, real, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
 /**
  * Cloudflare D1 (SQLite) schema for Cue.
@@ -108,6 +108,30 @@ export const pushSubscriptions = sqliteTable("push_subscriptions", {
   auth: text("auth").notNull(),
   createdAt: integer("created_at").notNull(),
 });
+
+/**
+ * FCM registration tokens (one row per browser/device). Replaces the raw
+ * Web Push `push_subscriptions` flow: the server sends via the Firebase Admin
+ * SDK to each token. One user may have many tokens (multiple devices); a token
+ * is unique and re-registering the same device upserts (and reassigns user_id
+ * if a different user signs in on that device). Dead tokens are pruned at
+ * send time when FCM reports `registration-token-not-registered`.
+ */
+export const pushTokens = sqliteTable(
+  "push_tokens",
+  {
+    id: text("id").primaryKey(),
+    userId: text("user_id")
+      .notNull()
+      .references(() => users.id),
+    token: text("token").notNull().unique(),
+    createdAt: integer("created_at").notNull(),
+    lastSeen: integer("last_seen").notNull(),
+  },
+  (t) => ({
+    userIdx: index("idx_push_tokens_user").on(t.userId),
+  }),
+);
 
 // -------------------------------------------------------------------------
 // Feature tables (Cue Pulse, Checklist, Mentors, Teams). Times are epoch ms

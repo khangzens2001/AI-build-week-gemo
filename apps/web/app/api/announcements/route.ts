@@ -1,12 +1,12 @@
 import {
   type CreateAnnouncementInput,
-  allPushSubscriptions,
+  allPushTokens,
   createAnnouncement,
-  deletePushSubscription,
+  deletePushToken,
   listAnnouncements,
 } from "@event/core";
 import { z } from "zod";
-import { sendPush } from "../_lib/push";
+import { sendFcm } from "../_lib/fcm";
 
 export const runtime = "nodejs";
 // Reads live D1 (announcements change at runtime via the ingest hook / Cue Pulse),
@@ -82,19 +82,20 @@ export async function POST(req: Request) {
   };
   const id = await createAnnouncement(input);
 
-  // Fan a push out to every subscription so all builders see the change live.
-  // Best-effort: a failed/throwing send (e.g. VAPID unset) must NOT fail the
+  // Fan a push out to every device token so all builders see the change live.
+  // Best-effort: a failed/throwing send (e.g. FCM creds unset) must NOT fail the
   // request now that the announcement is already persisted.
-  const subs = await allPushSubscriptions();
+  const tokens = await allPushTokens();
   let pushed = 0;
-  for (const s of subs) {
+  for (const token of tokens) {
     try {
-      const result = await sendPush(
-        { endpoint: s.endpoint, p256dh: s.p256dh, auth: s.auth },
-        { title: `Cue · ${input.title}`, body: input.body, url: "/pulse" },
-      );
+      const result = await sendFcm(token, {
+        title: `Cue · ${input.title}`,
+        body: input.body,
+        url: "/pulse",
+      });
       if (result === "sent") pushed++;
-      else if (result === "expired") await deletePushSubscription(s.endpoint);
+      else if (result === "expired") await deletePushToken(token);
     } catch {
       // Swallow — the announcement is saved; push delivery is best-effort.
     }
