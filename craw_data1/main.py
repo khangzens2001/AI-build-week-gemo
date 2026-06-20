@@ -130,6 +130,7 @@ def run_scrape_job():
 
     # 3. Check for changes and save only valid pages
     changed_count = 0
+    changed_pages = []
     saved_pages = {}
     skipped = {}
     for page_name, data in results.items():
@@ -146,6 +147,7 @@ def run_scrape_job():
         saved_pages[page_name] = data
         if changed:
             changed_count += 1
+            changed_pages.append(page_name)
             logger.info(f"[UPDATE] {page_name}")
         else:
             logger.info(f"[NO CHANGE] {page_name}")
@@ -168,6 +170,12 @@ def run_scrape_job():
     if event_outputs:
         aggregates["report"]["event_report"] = event_outputs["event_report"]
         aggregates["site_index"]["event_report"] = event_outputs["event_report"]
+    # Persist the per-cycle page-change signal into report.json so the VM's
+    # crawl-ingest one-shot can decide (after re-embedding) whether to POST the
+    # /api/ingest/hook re-ingest webhook. We own the signal in the shell, not
+    # here, so this module stays a pure scraper with no webhook/HTTP concerns.
+    aggregates["report"]["changed_count"] = changed_count
+    aggregates["report"]["changed_pages"] = changed_pages
     save_json(os.path.join(config.LATEST_DIR, "all_links.json"), aggregates["all_links"])
     save_json(os.path.join(config.LATEST_DIR, "assets.json"), aggregates["assets"])
     save_json(os.path.join(config.LATEST_DIR, "site_index.json"), aggregates["site_index"])

@@ -1,6 +1,8 @@
 import { listMentors } from "@event/core";
 
 export const runtime = "nodejs";
+// Reads live D1 (mentors/office-hours change at runtime), so never prerender.
+export const dynamic = "force-dynamic";
 
 /**
  * Mentors directory API.

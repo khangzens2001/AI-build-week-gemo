@@ -9,6 +9,9 @@ import { z } from "zod";
 import { sendPush } from "../_lib/push";
 
 export const runtime = "nodejs";
+// Reads live D1 (announcements change at runtime via the ingest hook / Cue Pulse),
+// so this must never be statically prerendered/cached at build time.
+export const dynamic = "force-dynamic";
 
 /**
  * Cue Pulse announcements API.

@@ -49,7 +49,10 @@ import {
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = join(here, "..", "..", "..", ".."); // packages/ingest/src/seed → repo
-const dataDir = join(repoRoot, "craw_data1", "data", "latest");
+// Input crawl JSON dir. Defaults to the in-repo crawl output, but can be pointed
+// at a mounted crawl-data volume (`CRAWL_LATEST_DIR`) by the VM auto-ingest loop,
+// where the repo is mounted read-only and the fresh crawl lives on a volume.
+const dataDir = process.env.CRAWL_LATEST_DIR ?? join(repoRoot, "craw_data1", "data", "latest");
 const coreDataDir = join(repoRoot, "packages", "core", "data");
 const drizzleDir = join(repoRoot, "drizzle");
 

@@ -1,0 +1,30 @@
+# Auto-crawl + re-ingest sweep (triggered by event-copilot-crawl-ingest.timer).
+# Runs infra/vm/crawl-ingest.sh, which drives the whole pipeline in throwaway
+# Podman containers: crawl (Firecrawl) → seed → embed → Chroma, then signals the
+# /api/ingest/hook (Cue Pulse) if content changed. Plain systemd --user unit (NOT
+# Quadlet) → lives in ~/.config/systemd/user/, mirroring the reminders sweep.
+#
+# Secrets (FIRECRAWL_API_KEY, INGEST_HOOK_TOKEN, GOOGLE_GENERATIVE_AI_API_KEY,
+# GEMINI_EMBED_*, CHROMA_*) come from the same web.env the containers use — the
+# script sources it itself, but we also set EnvironmentFile so the unit log shows
+# a clear failure if it's missing.
+[Unit]
+Description=Event Copilot — auto-crawl + re-ingest sweep
+# Needs the network + chroma (embed target) and the web container (signal target).
+# Soft deps (Wants) so a transient outage of one doesn't block the sweep from
+# trying. If chroma is down, `bun run embed` fails and `set -e` aborts BEFORE the
+# signal step — the correct failure mode (never push "content changed!" before RAG
+# is re-embedded); the next timer tick retries. (The script's stage-0 baseline
+# fallback is for missing crawl INPUT, a separate concern.)
+# Wants/After the Quadlet-managed crawl-data volume so the labeled volume the
+# pipeline writes to is materialized before the sweep (the script no longer
+# creates it itself — the .volume unit is the single owner).
+After=chroma.service web.service crawl-data-volume.service
+Wants=chroma.service web.service crawl-data-volume.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/srv/event-copilot/shared/web.env
+# A full crawl + corpus re-embed can take a few minutes; allow headroom.
+TimeoutStartSec=900
+ExecStart=/srv/event-copilot/repo/infra/vm/crawl-ingest.sh
