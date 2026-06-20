@@ -6,6 +6,7 @@ export * from "./schemas";
 export * from "./llm";
 export * from "./vector";
 export * from "./d1";
+export * from "./migrate";
 export * from "./userdata";
 export * from "./data";
 export * from "./retrieve";
