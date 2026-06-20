@@ -26,7 +26,7 @@ const nextConfig: NextConfig = {
   // Next's file tracer can't pull it into the standalone bundle. The deploy
   // packaging step copies the resolved `chromadb` (+ `semver`) into
   // `.next/standalone/node_modules/` (see scripts/package-standalone.sh).
-  serverExternalPackages: ["chromadb"],
+  serverExternalPackages: ["chromadb", "firebase-admin"],
   experimental: {
     // Allow importing the bundled seed snapshot JSON from outside apps/web.
     externalDir: true,

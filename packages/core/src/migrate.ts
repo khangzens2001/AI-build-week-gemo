@@ -2,7 +2,7 @@ import { d1Execute } from "./d1";
 
 /**
  * Idempotent, boot-time schema bootstrap for the feature tables (Cue Pulse,
- * checklist, mentors/office-hours, teams/build-log).
+ * checklist, mentors/office-hours, teams/build-log, FCM push tokens).
  *
  * WHY this exists (and isn't just `wrangler d1 migrations apply`):
  * - In the VM/Podman deploy, the only mutable store is the `d1shim` bun:sqlite
@@ -19,8 +19,9 @@ import { d1Execute } from "./d1";
  * - Every statement is `IF NOT EXISTS`, so this is safe to run on every boot and
  *   never touches existing rows (no DELETE/seed here — demo seed is a one-shot,
  *   see drizzle/seed-features.sql).
- * - Mirrors drizzle/migrations/0002_supreme_wallflower.sql. When you add tables
- *   to that migration, add the matching `CREATE TABLE IF NOT EXISTS` here.
+ * - Mirrors drizzle/migrations/0002_supreme_wallflower.sql (feature tables) and
+ *   0003_marvelous_ghost_rider.sql (push_tokens). When you add tables to those
+ *   migrations, add the matching `CREATE TABLE IF NOT EXISTS` here.
  */
 
 const FEATURE_TABLES: string[] = [
@@ -95,6 +96,17 @@ const FEATURE_TABLES: string[] = [
     FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE no action ON DELETE no action,
     FOREIGN KEY (mentor_id) REFERENCES mentors(id) ON UPDATE no action ON DELETE no action
   )`,
+  // FCM registration tokens (one row per device). The CREATE INDEX is a SEPARATE
+  // entry below because the d1shim executes one statement per request.
+  `CREATE TABLE IF NOT EXISTS push_tokens (
+    id text PRIMARY KEY NOT NULL,
+    user_id text NOT NULL,
+    token text NOT NULL UNIQUE,
+    created_at integer NOT NULL,
+    last_seen integer NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON UPDATE no action ON DELETE no action
+  )`,
+  "CREATE INDEX IF NOT EXISTS idx_push_tokens_user ON push_tokens(user_id)",
 ];
 
 let ran = false;

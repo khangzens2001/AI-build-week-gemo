@@ -103,23 +103,35 @@ export async function listReminders(userId: string): Promise<ReminderRow[]> {
   );
 }
 
-export interface SavePushSubscriptionInput {
+// ---- FCM push tokens (Firebase Cloud Messaging) --------------------------
+// Replaces the raw Web Push subscription flow. One row per browser/device;
+// `token` is unique. Re-registering the same device upserts and REASSIGNS
+// user_id (so a shared device that switches accounts attaches to the current
+// user). Dead tokens are pruned at send time on `registration-token-not-registered`.
+
+export interface SavePushTokenInput {
   userId: string;
-  endpoint: string;
-  p256dh: string;
-  auth: string;
+  token: string;
 }
 
-export async function savePushSubscription(input: SavePushSubscriptionInput): Promise<void> {
+export async function savePushToken(input: SavePushTokenInput): Promise<void> {
+  const now = Date.now();
   await d1Execute(
-    "INSERT INTO push_subscriptions (id, user_id, endpoint, p256dh, auth, created_at) VALUES (?, ?, ?, ?, ?, ?) ON CONFLICT(endpoint) DO UPDATE SET p256dh = excluded.p256dh, auth = excluded.auth",
-    [newId(), input.userId, input.endpoint, input.p256dh, input.auth, Date.now()],
+    "INSERT INTO push_tokens (id, user_id, token, created_at, last_seen) VALUES (?, ?, ?, ?, ?) " +
+      "ON CONFLICT(token) DO UPDATE SET user_id = excluded.user_id, last_seen = excluded.last_seen",
+    [newId(), input.userId, input.token, now, now],
   );
 }
 
-/** Remove a push subscription by endpoint (called when a send returns 404/410). */
-export async function deletePushSubscription(endpoint: string): Promise<void> {
-  await d1Execute("DELETE FROM push_subscriptions WHERE endpoint = ?", [endpoint]);
+/** Remove an FCM token (called when a send reports the token is unregistered). */
+export async function deletePushToken(token: string): Promise<void> {
+  await d1Execute("DELETE FROM push_tokens WHERE token = ?", [token]);
+}
+
+/** Every FCM token (used to fan a Cue Pulse announcement out to all devices). */
+export async function allPushTokens(): Promise<string[]> {
+  const rows = await d1Query<{ token: string }>("SELECT token FROM push_tokens");
+  return rows.map((r) => r.token);
 }
 
 // ===========================================================================
@@ -173,13 +185,6 @@ export async function createAnnouncement(input: CreateAnnouncementInput): Promis
     ],
   );
   return id;
-}
-
-/** Every push subscription (used to fan out a Pulse announcement to all users). */
-export async function allPushSubscriptions(): Promise<
-  { endpoint: string; p256dh: string; auth: string }[]
-> {
-  return d1Query("SELECT endpoint, p256dh, auth FROM push_subscriptions");
 }
 
 // ---- Checklist items ------------------------------------------------------
@@ -292,30 +297,27 @@ export async function deleteChecklistItem(userId: string, id: string): Promise<v
 
 /**
  * Notifications due at/before `now` that haven't been sent, joined to the user's
- * push subscriptions. UNIONs reminders + checklist items so a single cron sweep
- * covers both. `kind`/`source_id` let the cron mark the right row sent.
+ * FCM push tokens. UNIONs reminders + checklist items so a single cron sweep
+ * covers both. `kind`/`source_id` let the cron mark the right row sent. One row
+ * per (notification × device token) — every device fires.
  */
 export interface DueNotification {
   kind: "reminder" | "checklist";
   source_id: string;
   label: string;
-  endpoint: string;
-  p256dh: string;
-  auth: string;
+  token: string;
 }
 
 export async function dueNotifications(now: number): Promise<DueNotification[]> {
   return d1Query<DueNotification>(
-    `SELECT 'reminder' AS kind, r.id AS source_id, r.label AS label,
-            p.endpoint AS endpoint, p.p256dh AS p256dh, p.auth AS auth
+    `SELECT 'reminder' AS kind, r.id AS source_id, r.label AS label, t.token AS token
        FROM reminders r
-       JOIN push_subscriptions p ON p.user_id = r.user_id
+       JOIN push_tokens t ON t.user_id = r.user_id
       WHERE r.sent = 0 AND r.fire_at IS NOT NULL AND r.fire_at <= ?
      UNION ALL
-     SELECT 'checklist' AS kind, c.id AS source_id, c.title AS label,
-            p.endpoint AS endpoint, p.p256dh AS p256dh, p.auth AS auth
+     SELECT 'checklist' AS kind, c.id AS source_id, c.title AS label, t.token AS token
        FROM checklist_items c
-       JOIN push_subscriptions p ON p.user_id = c.user_id
+       JOIN push_tokens t ON t.user_id = c.user_id
       WHERE c.sent = 0 AND c.completed = 0 AND c.fire_at IS NOT NULL AND c.fire_at <= ?`,
     [now, now],
   );

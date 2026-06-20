@@ -1,5 +1,6 @@
 "use client";
 
+import { usePushPermission } from "@/components/push/PushPermissionProvider";
 import type { Mentor, MentorSlot } from "@/hooks/useMentors";
 import { useBookOfficeHours } from "@/hooks/useMentors";
 import { cn } from "@/lib/cn";
@@ -28,6 +29,7 @@ export function MentorCard({
   bookedSlotIds: Set<string>;
 }) {
   const book = useBookOfficeHours();
+  const { requestPushPermission } = usePushPermission();
   const [active, setActive] = useState<MentorSlot | null>(null);
   const [topic, setTopic] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -48,6 +50,7 @@ export function MentorCard({
         onSuccess: () => {
           setActive(null);
           setTopic("");
+          requestPushPermission("before your office-hours slot");
         },
         onError: (e) => {
           const status = (e as Error & { status?: number }).status;

@@ -1,5 +1,6 @@
 "use client";
 
+import { usePushPermission } from "@/components/push/PushPermissionProvider";
 import { useAddChecklistItem, useChecklist } from "@/hooks/useChecklist";
 import { cn } from "@/lib/cn";
 import { signIn, useSession } from "next-auth/react";
@@ -23,6 +24,7 @@ export function BookmarkButton({
   const { status } = useSession();
   const { data } = useChecklist();
   const add = useAddChecklistItem();
+  const { requestPushPermission } = usePushPermission();
   const [justAdded, setJustAdded] = useState(false);
 
   const already =
@@ -37,7 +39,12 @@ export function BookmarkButton({
     if (already) return;
     add.mutate(
       { title, targetId: sessionId, targetType: "session" },
-      { onSuccess: () => setJustAdded(true) },
+      {
+        onSuccess: () => {
+          setJustAdded(true);
+          requestPushPermission("when it's time for sessions on your checklist");
+        },
+      },
     );
   };
 

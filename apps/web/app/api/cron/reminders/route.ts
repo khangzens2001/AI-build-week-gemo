@@ -1,10 +1,10 @@
 import {
-  deletePushSubscription,
+  deletePushToken,
   dueNotifications,
   getCurrentTime,
   markNotificationSent,
 } from "@event/core";
-import { sendPush } from "../../_lib/push";
+import { sendFcm } from "../../_lib/fcm";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -12,8 +12,8 @@ export const maxDuration = 60;
 /**
  * Notification sweep — intended to be hit by Vercel Cron on a short interval.
  * Finds reminders AND checklist items due at/before now (joined to the user's
- * push subscriptions via `dueNotifications`), sends a notification for each, and
- * marks the right row sent. Protected by CRON_SECRET via the
+ * FCM tokens via `dueNotifications`, one row per device token), sends a push for
+ * each, and marks the right row sent. Protected by CRON_SECRET via the
  * `Authorization: Bearer` header that Vercel Cron sends.
  */
 function authorized(req: Request): boolean {
@@ -35,13 +35,10 @@ export async function GET(req: Request) {
   let errored = 0;
 
   for (const t of targets) {
-    // A throwing send (e.g. VAPID unset) must not abort the whole sweep.
+    // A throwing send (e.g. FCM creds unset) must not abort the whole sweep.
     let result: "sent" | "expired" | "error";
     try {
-      result = await sendPush(
-        { endpoint: t.endpoint, p256dh: t.p256dh, auth: t.auth },
-        { title: "Cue", body: t.label, url: "/" },
-      );
+      result = await sendFcm(t.token, { title: "Cue", body: t.label, url: "/" });
     } catch {
       result = "error";
     }
@@ -50,8 +47,8 @@ export async function GET(req: Request) {
       await markNotificationSent(t.kind, t.source_id);
       sent++;
     } else if (result === "expired") {
-      // Drop dead endpoints so we don't retry them every sweep forever.
-      await deletePushSubscription(t.endpoint);
+      // Drop dead tokens so we don't retry them every sweep forever.
+      await deletePushToken(t.token);
       expired++;
     } else {
       errored++;

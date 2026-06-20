@@ -1,6 +1,6 @@
-import { allPushSubscriptions, chatModel, createAnnouncement } from "@event/core";
+import { allPushTokens, chatModel, createAnnouncement, deletePushToken } from "@event/core";
 import { generateText } from "ai";
-import { sendPush } from "../../_lib/push";
+import { sendFcm } from "../../_lib/fcm";
 
 export const runtime = "nodejs";
 
@@ -84,15 +84,15 @@ async function publishPulse(payload: ChangePayload): Promise<{ id: string; pushe
     sourceUrl: payload.url ?? null,
   });
 
-  const subs = await allPushSubscriptions();
-  for (const s of subs) {
-    await sendPush(
-      { endpoint: s.endpoint, p256dh: s.p256dh, auth: s.auth },
-      { title: `Cue · ${title}`, body: summary, url: "/pulse" },
-    );
+  const tokens = await allPushTokens();
+  let pushed = 0;
+  for (const token of tokens) {
+    const result = await sendFcm(token, { title: `Cue · ${title}`, body: summary, url: "/pulse" });
+    if (result === "sent") pushed++;
+    else if (result === "expired") await deletePushToken(token);
   }
 
-  return { id, pushed: subs.length };
+  return { id, pushed };
 }
 
 export async function POST(req: Request) {

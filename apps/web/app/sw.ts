@@ -1,3 +1,4 @@
+import { parsePushPayload } from "@/lib/pushPayload";
 import { defaultCache } from "@serwist/next/worker";
 import type { PrecacheEntry, SerwistGlobalConfig } from "serwist";
 import { Serwist } from "serwist";
@@ -18,21 +19,24 @@ const serwist = new Serwist({
   runtimeCaching: defaultCache,
 });
 
-// Web Push: show a notification when the server sends a push (Phase 7).
+// Web Push (Firebase Cloud Messaging). We send DATA-ONLY messages and render the
+// notification here (no Firebase SDK in this SW). `parsePushPayload` tolerates
+// both our top-level {title,body,url} and FCM's notification shape.
 self.addEventListener("push", (event) => {
   if (!event.data) return;
-  let payload: { title?: string; body?: string; url?: string } = {};
+  let raw: unknown;
   try {
-    payload = event.data.json();
+    raw = event.data.json();
   } catch {
-    payload = { body: event.data.text() };
+    raw = { body: event.data.text() };
   }
+  const { title, body, url } = parsePushPayload(raw);
   event.waitUntil(
-    self.registration.showNotification(payload.title ?? "Cue", {
-      body: payload.body ?? "",
+    self.registration.showNotification(title, {
+      body,
       icon: "/icons/icon-192.png",
       badge: "/icons/icon-192.png",
-      data: { url: payload.url ?? "/" },
+      data: { url },
     }),
   );
 });
