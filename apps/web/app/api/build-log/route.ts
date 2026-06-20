@@ -3,6 +3,8 @@ import { createBuildLog, isTeamMember, listBuildLogs, upsertUser } from "@event/
 import { z } from "zod";
 
 export const runtime = "nodejs";
+// Reads live D1 (build-log feed changes at runtime), so never prerender.
+export const dynamic = "force-dynamic";
 
 /** Public build-log feed (newest first), optionally scoped to one team. */
 export async function GET(req: Request) {

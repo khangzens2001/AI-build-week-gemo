@@ -15,12 +15,17 @@ name: Deploy to VM
 on:
   push:
     branches: [main]
-    # Only redeploy when something that affects the bundle changes.
+    # Redeploy when the bundle OR the VM-side pipeline source changes.
     paths:
       - "apps/web/**"
       - "packages/**"
-      - "scripts/package-standalone.sh"
       - ".github/workflows/deploy.yml"
+      # crawl-ingest pipeline source synced to /srv/event-copilot/repo
+      # (scripts/** covers package-standalone.sh too):
+      - "craw_data1/**"
+      - "scripts/**"
+      - "drizzle/**"
+      - "infra/vm/**"
   workflow_dispatch: {}
 
 concurrency:
@@ -67,11 +72,48 @@ jobs:
         run: |
           RSH="ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts"
           # Sync the freshly packaged bundle. --delete keeps the remote dir in
-          # lockstep with the build (no stale chunks). The deploy key is forced
-          # to rsync-into-/srv/event-copilot/app only.
-          rsync -az --delete -e "$RSH" dist/standalone/ "${VM_USER}@${VM_HOST}:/srv/event-copilot/app/"
-          # Touch the marker → the VM's web-reload .path unit restarts the web container.
+          # lockstep with the build (no stale chunks). The deploy key's forced
+          # command runs rrsync confined to /srv/event-copilot, so dest paths are
+          # RELATIVE to that root — `app/` resolves to /srv/event-copilot/app/.
+          rsync -az --delete -e "$RSH" dist/standalone/ "${VM_USER}@${VM_HOST}:app/"
+          # Touch the marker → the VM's web-reload .path unit restarts the web
+          # container. (Separate forced-command branch; not via rrsync.)
           $RSH "${VM_USER}@${VM_HOST}" 'touch /srv/event-copilot/app/.deployed'
+
+      - name: Sync pipeline source to VM (/srv/event-copilot/repo)
+        env:
+          VM_HOST: ${{ secrets.VM_HOST }}
+          VM_USER: ${{ secrets.VM_USER }}
+        run: |
+          RSH="ssh -i ~/.ssh/deploy_key -o IdentitiesOnly=yes -o UserKnownHostsFile=~/.ssh/known_hosts"
+          # The crawl-ingest one-shot, d1shim, and seed scripts all run from the
+          # repo source mounted at /srv/event-copilot/repo. Keep it in lockstep
+          # with main so a deploy also ships pipeline/script/migration changes.
+          # The deploy key's forced command runs rrsync confined to
+          # /srv/event-copilot, so the dest is RELATIVE (`repo/`).
+          #
+          # EXCLUDES are critical:
+          #  - runtime/build junk (node_modules, .next, dist, .venv, __pycache__)
+          #  - craw_data1/data/history + logs: ephemeral crawl artifacts.
+          #  - We KEEP craw_data1/data/latest (committed last-known-good baseline
+          #    used by crawl-ingest.sh to prime the crawl-data volume).
+          # --delete is safe here: the live crawl output lives on the `crawl-data`
+          # podman VOLUME, never inside repo/, so it can't be nuked. We do NOT pass
+          # --delete-excluded, so VM-side history/logs/.venv are also protected.
+          rsync -az --delete -e "$RSH" \
+            --exclude '.git' \
+            --exclude 'node_modules' \
+            --exclude '.next' \
+            --exclude 'dist' \
+            --exclude '**/__pycache__' \
+            --exclude '*.pyc' \
+            --exclude 'craw_data1/.venv' \
+            --exclude 'craw_data1/logs' \
+            --exclude 'craw_data1/data/history' \
+            --exclude '.slim' \
+            --relative \
+            ./craw_data1 ./packages ./scripts ./drizzle ./infra/vm ./package.json ./bun.lock ./tsconfig.base.json ./biome.json \
+            "${VM_USER}@${VM_HOST}:repo/"
 
       - name: Verify site is up
         env:

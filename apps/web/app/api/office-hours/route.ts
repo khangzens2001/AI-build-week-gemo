@@ -2,6 +2,8 @@ import { auth } from "@/auth";
 import { getUserIdByGoogleSub, listBookings } from "@event/core";
 
 export const runtime = "nodejs";
+// Reads live D1 (office-hours bookings change at runtime), so never prerender.
+export const dynamic = "force-dynamic";
 
 /** List the signed-in user's office-hours bookings. Read-only — no write on GET. */
 export async function GET() {

@@ -3,6 +3,8 @@ import { createTeam, listTeams, upsertUser } from "@event/core";
 import { z } from "zod";
 
 export const runtime = "nodejs";
+// Reads live D1 (teams change at runtime), so never prerender.
+export const dynamic = "force-dynamic";
 
 /** Public list of all teams, newest first. No auth required. */
 export async function GET() {

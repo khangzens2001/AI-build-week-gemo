@@ -1,0 +1,19 @@
+# Fires the auto-crawl → re-ingest sweep every 30 min. Re-crawls the event
+# sources (Firecrawl), re-seeds + re-embeds into Chroma, and signals a Cue Pulse
+# when content changed. Enable with:
+#   systemctl --user enable --now event-copilot-crawl-ingest.timer
+#
+# 30 min (not the crawler's old 15) because each cycle re-embeds the full corpus
+# (Gemini cost) — see crawl-ingest.sh. OnBootSec starts one sweep shortly after
+# boot; OnUnitActiveSec re-anchors from each start (singleton service → runs can
+# never overlap, even if one cycle exceeds 30 min).
+[Unit]
+Description=Event Copilot — auto-crawl + re-ingest every 30 min
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSec=30min
+AccuracySec=1min
+
+[Install]
+WantedBy=timers.target

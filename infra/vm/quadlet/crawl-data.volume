@@ -1,0 +1,8 @@
+# Persistent crawl output for the auto-crawl → re-ingest pipeline. Generates
+# `crawl-data-volume.service`; the real podman volume is named `crawl-data`
+# (VolumeName overrides the systemd- prefix), matching what crawl-ingest.sh and
+# its podman runs mount. Holds craw_data1/data/{latest,history} between cycles so
+# change-detection has a prior snapshot to diff against.
+[Volume]
+VolumeName=crawl-data
+Label=app=event-copilot
