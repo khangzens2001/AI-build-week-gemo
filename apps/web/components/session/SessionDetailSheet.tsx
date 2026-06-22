@@ -1,6 +1,5 @@
 "use client";
 
-import { SessionCoverFallback } from "@/lib/sessionCover";
 import { dateLabel } from "@/lib/time";
 import type { ScheduleSession } from "@/lib/types";
 import Image from "next/image";
@@ -12,6 +11,8 @@ import { Sheet } from "../ui/Sheet";
 import { TypeBadge } from "../ui/TypeBadge";
 import { BookmarkButton } from "./BookmarkButton";
 import { RemindButton } from "./RemindButton";
+
+const SESSION_FALLBACK_IMAGE = "/covers/session-fallback.png";
 
 /**
  * Detail view for a session. The schedule API returns metadata (time, venue,
@@ -42,7 +43,8 @@ function SessionDetailSheetInner({
 }) {
   const hasTime = session.startsAt != null;
   const [coverOk, setCoverOk] = useState(true);
-  const showCover = Boolean(session.coverImage) && coverOk;
+  const imageSrc =
+    session.coverImage && coverOk ? session.coverImage : SESSION_FALLBACK_IMAGE;
   return (
     <Sheet
       open={open}
@@ -71,20 +73,16 @@ function SessionDetailSheetInner({
       }
     >
       <div className="space-y-4 py-1">
-        {/* Cover hero — real image when present, else a deterministic gradient tile */}
+        {/* Cover hero — real image when present, else the shared fallback image */}
         <div className="relative aspect-[16/11] w-full overflow-hidden rounded-2xl ring-1 ring-line">
-          {showCover && session.coverImage ? (
-            <Image
-              src={session.coverImage}
-              alt=""
-              fill
-              sizes="(max-width: 448px) 100vw, 448px"
-              onError={() => setCoverOk(false)}
-              className="object-cover"
-            />
-          ) : (
-            <SessionCoverFallback session={session} iconClassName="h-16 w-16" />
-          )}
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            sizes="(max-width: 448px) 100vw, 448px"
+            onError={() => session.coverImage && setCoverOk(false)}
+            className="object-cover"
+          />
           <div
             className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent"
             aria-hidden
