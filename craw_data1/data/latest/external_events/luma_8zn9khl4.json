@@ -1,0 +1,130 @@
+{
+  "url": "https://luma.com/8zn9khl4",
+  "title": "LLM Observability & Evals with Langfuse — Hands-On Workshop",
+  "markdown": "![Cover Image for LLM Observability & Evals with Langfuse — Hands-On Workshop](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/dk/02c96f8a-7ac0-4009-9d64-5ad774eb1748.png)\n\n![Cover Image for LLM Observability & Evals with Langfuse — Hands-On Workshop](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/dk/02c96f8a-7ac0-4009-9d64-5ad774eb1748.png)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\n[Kai Yong](https://luma.com/user/kaiyong)\n\n[Johan Nguyen](https://luma.com/user/usr-IU81nKofEVwjKgK)\n\n[Joshua Si](https://luma.com/user/usr-CheV1d8HyQYSCE0)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)\n\n# LLM Observability & Evals with Langfuse — Hands-On Workshop\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nJul\n\n10\n\nFriday, July 10\n\n12:00 PM - 2:00 PM GMT+7\n\nRegister to See Address\n\nWelcome! Please choose your desired ticket type:\n\nRequest to Join\n\nYou will be asked to verify token ownership with your wallet.\n\nAbout Event\n\nYou're building fast. Prompts tweaked, model versions swapped, tools added and removed — and after every change, you're doing the same gut-check: _does this feel better?_\n\nBecause you have no other way to tell.\n\nThat's not iteration. That's guessing with extra steps. And on Day 4 of Agentic AI Build Week, when you're mid-build and things start behaving strangely, guessing is what kills your demo.\n\nThis workshop changes that.\n\n* * *\n\n **What this is**\n\nA 2-hour hands-on session on LLM observability and evals with Langfuse — the open-source engineering platform used by thousands of AI teams to get full visibility into what their agents are actually doing.\n\nIn 120 minutes, you will:\n\n- Set up **full trace visibility** across every step and tool call in your LLM agent\n\n- **Version and deploy prompts** outside your codebase so every change is trackable and reversible\n\n- Build a **monitoring layer** that catches failure modes automatically — before your users do\n\n- Run your first **eval experiment** and create a reusable dataset you can take into every future build\n\nFor hackathon builders specifically: while other teams are guessing why their agent broke, you'll have trace data, versioned prompts, and an eval loop that tells you in minutes whether your last change helped or hurt. That's the difference between a demo that impresses judges and one that barely holds together.\n\n* * *\n\n **Who this is for**\n\nThis workshop is for you if:\n\n- You're building LLM-powered applications and want a structured, repeatable way to improve them\n\n- You're competing in the [Agentic AI Build Week](https://luma.com/gaf-hm61) hackathon and want a real edge on Day 4\n\n- You're a tech lead evaluating observability tooling before taking an AI product to production\n\nThis is NOT for you if you're planning to evaluate your agent's performance by running it and hoping for the best.\n\nYou should be comfortable reading TypeScript. No prior Langfuse experience needed.\n\n* * *\n\n **Delivered by**\n\n **Muhammad Ali** — Specialist Solutions Architect, Langfuse/ClickHouse\n\nLangfuse is the leading open-source LLM observability platform, trusted by thousands of engineering teams building production-grade AI applications.\n\n* * *\n\n **Part of Agentic AI Build Week**\n\nThis workshop is one of 10+ technical sessions happening across [Agentic AI Build Week](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, July 8–12 in Ho Chi Minh City, organised by GenAI Fund.\n\nNot registered for the main event yet? [Apply for Agentic AI Build Week](https://luma.com/gaf-hm61) — 2,000+ builders, $1M+ in prizes, 5 days of workshops and a Demo Day.\n\n* * *\n\n **Come prepared**\n\nBring these and you'll hit the ground running:\n\n- Node.js 18+ installed on your laptop\n\n- A free [Langfuse Cloud](https://cloud.langfuse.com/?utm_source=luma) account (sign up takes 2 minutes)\n\n- An OpenAI API key (a temporary one will also be provided on the day)\n\n* * *\n\nJoin the [AABW builder community on Discord](https://discord.gg/pb7njVhVb?utm_source=luma) — that's where build teams are forming and pre-workshop prep is happening.\n\nLocation\n\nPlease register to see the exact location of this event.\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\n[Kai Yong](https://luma.com/user/kaiyong)\n\n[Johan Nguyen](https://luma.com/user/usr-IU81nKofEVwjKgK)\n\n[Joshua Si](https://luma.com/user/usr-CheV1d8HyQYSCE0)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)",
+  "status": "ok",
+  "status_reason": "",
+  "description": "You're building fast. Prompts tweaked, model versions swapped, tools added and removed — and after every change, you're doing the same gut-check: _does this feel better?_\n\nBecause you have no other way to tell.\n\nThat's not iteration. That's guessing with extra steps. And on Day 4 of Agentic AI Build Week, when you're mid-build and things start behaving strangely, guessing is what kills your demo.\n\nThis workshop changes that.\n\n* * *\n\n **What this is**\n\nA 2-hour hands-on session on LLM observability and evals with Langfuse — the open-source engineering platform used by thousands of AI teams to get full visibility into what their agents are actually doing.\n\nIn 120 minutes, you will:\n\n- Set up **full trace visibility** across every step and tool call in your LLM agent\n\n- **Version and deploy prompts** outside your codebase so every change is trackable and reversible\n\n- Build a **monitoring layer** that catches failure modes automatically — before your users do\n\n- Run your first **eval experiment** and create a reusable dataset you can take into every future build\n\nFor hackathon builders specifically: while other teams are guessing why their agent broke, you'll have trace data, versioned prompts, and an eval loop that tells you in minutes whether your last change helped or hurt. That's the difference between a demo that impresses judges and one that barely holds together.\n\n* * *\n\n **Who this is for**\n\nThis workshop is for you if:\n\n- You're building LLM-powered applications and want a structured, repeatable way to improve them\n\n- You're competing in the [Agentic AI Build Week](https://luma.com/gaf-hm61) hackathon and want a real edge on Day 4\n\n- You're a tech lead evaluating observability tooling before taking an AI product to production\n\nThis is NOT for you if you're planning to evaluate your agent's performance by running it and hoping for the best.\n\nYou should be comfortable reading TypeScript. No prior Langfuse experience needed.\n\n* * *\n\n **Delivered by**\n\n **Muhammad Ali** — Specialist Solutions Architect, Langfuse/ClickHouse\n\nLangfuse is the leading open-source LLM observability platform, trusted by thousands of engineering teams building production-grade AI applications.\n\n* * *\n\n **Part of Agentic AI Build Week**\n\nThis workshop is one of 10+ technical sessions happening across [Agentic AI Build Week](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, July 8–12 in Ho Chi Minh City, organised by GenAI Fund.\n\nNot registered for the main event yet? [Apply for Agentic AI Build Week](https://luma.com/gaf-hm61) — 2,000+ builders, $1M+ in prizes, 5 days of workshops and a Demo Day.\n\n* * *\n\n **Come prepared**\n\nBring these and you'll hit the ground running:\n\n- Node.js 18+ installed on your laptop\n\n- A free [Langfuse Cloud](https://cloud.langfuse.com/?utm_source=luma) account (sign up takes 2 minutes)\n\n- An OpenAI API key (a temporary one will also be provided on the day)\n\n* * *\n\nJoin the [AABW builder community on Discord](https://discord.gg/pb7njVhVb?utm_source=luma) — that's where build teams are forming and pre-workshop prep is happening.",
+  "takeaways": [],
+  "speakers": [],
+  "requirements": [],
+  "date_text": "",
+  "date": null,
+  "time_text": "",
+  "location_text": "",
+  "google_maps_url": null,
+  "latitude": null,
+  "longitude": null,
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/dk/02c96f8a-7ac0-4009-9d64-5ad774eb1748.png",
+  "links": [
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "Kai Yong",
+      "url": "https://luma.com/user/kaiyong",
+      "type": "registration"
+    },
+    {
+      "text": "Johan Nguyen",
+      "url": "https://luma.com/user/usr-IU81nKofEVwjKgK",
+      "type": "registration"
+    },
+    {
+      "text": "Joshua Si",
+      "url": "https://luma.com/user/usr-CheV1d8HyQYSCE0",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Agentic AI Build Week",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "Agentic AI Build Week",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "Apply for Agentic AI Build Week",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "Langfuse Cloud",
+      "url": "https://cloud.langfuse.com/?utm_source=luma",
+      "type": "external"
+    },
+    {
+      "text": "AABW builder community on Discord",
+      "url": "https://discord.gg/pb7njVhVb?utm_source=luma",
+      "type": "community"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "Kai Yong",
+      "url": "https://luma.com/user/kaiyong",
+      "type": "registration"
+    },
+    {
+      "text": "Johan Nguyen",
+      "url": "https://luma.com/user/usr-IU81nKofEVwjKgK",
+      "type": "registration"
+    },
+    {
+      "text": "Joshua Si",
+      "url": "https://luma.com/user/usr-CheV1d8HyQYSCE0",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    }
+  ],
+  "images": [
+    {
+      "alt": "Cover Image for LLM Observability & Evals with Langfuse — Hands-On Workshop",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/dk/02c96f8a-7ac0-4009-9d64-5ad774eb1748.png"
+    },
+    {
+      "alt": "Cover Image for LLM Observability & Evals with Langfuse — Hands-On Workshop",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/dk/02c96f8a-7ac0-4009-9d64-5ad774eb1748.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    }
+  ],
+  "raw_hash": "34d67100e052f5664ae7d7ff57208a95352a81caed6b9c083ed6d13747f8d581"
+}

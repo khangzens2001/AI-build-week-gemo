@@ -24,16 +24,16 @@
     "source": "luma"
   },
   {
-    "event_id": "day01-lunch",
+    "event_id": "day01-tencent-cloud",
     "venue_name": "Tasco Office",
-    "address_visibility": "public_summary",
-    "address_text": "Tasco Office",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Tasco, HCMC",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
-    "latitude": null,
-    "longitude": null,
-    "google_maps_url": null,
-    "source": "homepage"
+    "latitude": 10.824279189707388,
+    "longitude": 106.63026859814754,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.824279189707388%2C106.63026859814754",
+    "source": "luma"
   },
   {
     "event_id": "day01-nvidia",
@@ -60,16 +60,28 @@
     "source": "luma"
   },
   {
-    "event_id": "day02-aws",
-    "venue_name": "AWS Office, Bitexco Tower",
-    "address_visibility": "public_summary",
-    "address_text": "AWS Office, Bitexco Tower",
+    "event_id": "day01-openclaw",
+    "venue_name": "Tasco Office",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Ho Chi Minh City",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
-    "latitude": null,
-    "longitude": null,
-    "google_maps_url": null,
-    "source": "homepage"
+    "latitude": 10.821162133326679,
+    "longitude": 106.63122394688185,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.821162133326679%2C106.63122394688185",
+    "source": "luma"
+  },
+  {
+    "event_id": "day02-aws",
+    "venue_name": "AWS Office, Bitexco Tower",
+    "address_visibility": "register_to_see_address",
+    "address_text": "AWS Ho Chi Minh City Office (300–400 pax capacity)",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.773031946105222,
+    "longitude": 106.70524889595842,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.773031946105222%2C106.70524889595842",
+    "source": "luma"
   },
   {
     "event_id": "day02-agora",
@@ -84,7 +96,7 @@
     "source": "homepage"
   },
   {
-    "event_id": "day02-lunch",
+    "event_id": "day02-lunch-break",
     "venue_name": "AWS Office, Bitexco Tower",
     "address_visibility": "public_summary",
     "address_text": "AWS Office, Bitexco Tower",
@@ -98,14 +110,14 @@
   {
     "event_id": "day02-aws",
     "venue_name": "AWS Office, Bitexco Tower",
-    "address_visibility": "public_summary",
-    "address_text": "AWS Office, Bitexco Tower",
+    "address_visibility": "register_to_see_address",
+    "address_text": "AWS Ho Chi Minh City Office (300–400 pax capacity)",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
-    "latitude": null,
-    "longitude": null,
-    "google_maps_url": null,
-    "source": "homepage"
+    "latitude": 10.773031946105222,
+    "longitude": 106.70524889595842,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.773031946105222%2C106.70524889595842",
+    "source": "luma"
   },
   {
     "event_id": "day02-tiny-fish",
@@ -120,34 +132,34 @@
     "source": "homepage"
   },
   {
+    "event_id": "day02-teabreak",
+    "venue_name": "AWS Office, Bitexco Tower",
+    "address_visibility": "public_summary",
+    "address_text": "AWS Office, Bitexco Tower",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
     "event_id": "day02-aws",
     "venue_name": "AWS Office, Bitexco Tower",
-    "address_visibility": "public_summary",
-    "address_text": "AWS Office, Bitexco Tower",
+    "address_visibility": "register_to_see_address",
+    "address_text": "AWS Ho Chi Minh City Office (300–400 pax capacity)",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
-    "latitude": null,
-    "longitude": null,
-    "google_maps_url": null,
-    "source": "homepage"
+    "latitude": 10.773031946105222,
+    "longitude": 106.70524889595842,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.773031946105222%2C106.70524889595842",
+    "source": "luma"
   },
   {
-    "event_id": "day02-ai-gaming-night",
+    "event_id": "day02-welcome-builders-night",
     "venue_name": "AWS Office, Bitexco Tower",
     "address_visibility": "public_summary",
     "address_text": "AWS Office, Bitexco Tower",
-    "city": "Ho Chi Minh City",
-    "country": "Vietnam",
-    "latitude": null,
-    "longitude": null,
-    "google_maps_url": null,
-    "source": "homepage"
-  },
-  {
-    "event_id": "day03-registration-and-welcome",
-    "venue_name": "VNG Campus",
-    "address_visibility": "public_summary",
-    "address_text": "VNG Campus",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
     "latitude": null,
@@ -192,19 +204,19 @@
     "source": "luma"
   },
   {
-    "event_id": "day03-tencent-cloud",
+    "event_id": "day03-antitech",
     "venue_name": "VNG Campus",
-    "address_visibility": "public_summary",
-    "address_text": "VNG Campus",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Ho Chi Minh City",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
-    "latitude": null,
-    "longitude": null,
-    "google_maps_url": null,
-    "source": "homepage"
+    "latitude": 10.757589818537754,
+    "longitude": 106.74807853388879,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.757589818537754%2C106.74807853388879",
+    "source": "luma"
   },
   {
-    "event_id": "day03-builder-night",
+    "event_id": "day03-builder-night-special-announcements",
     "venue_name": "VNG Campus",
     "address_visibility": "public_summary",
     "address_text": "VNG Campus",
@@ -228,7 +240,7 @@
     "source": "homepage"
   },
   {
-    "event_id": "day04-lunch",
+    "event_id": "day04-expert-parade-networking",
     "venue_name": "Galaxy Innovation Park",
     "address_visibility": "public_summary",
     "address_text": "Galaxy Innovation Park",
@@ -240,10 +252,202 @@
     "source": "homepage"
   },
   {
-    "event_id": "day04-on-site-build-sprint",
+    "event_id": "day04-lunch-break",
     "venue_name": "Galaxy Innovation Park",
     "address_visibility": "public_summary",
     "address_text": "Galaxy Innovation Park",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day04-vip-dinner",
+    "venue_name": "Galaxy Innovation Park",
+    "address_visibility": "public_summary",
+    "address_text": "Galaxy Innovation Park",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day04-late-night-build",
+    "venue_name": "Galaxy Innovation Park",
+    "address_visibility": "public_summary",
+    "address_text": "Galaxy Innovation Park",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day05-demo-day",
+    "venue_name": "Galaxy Innovation Park",
+    "address_visibility": "public_summary",
+    "address_text": "Galaxy Innovation Park",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day05-lunch-break",
+    "venue_name": "Galaxy Innovation Park",
+    "address_visibility": "public_summary",
+    "address_text": "Galaxy Innovation Park",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day05-awards-ceremony",
+    "venue_name": "Galaxy Innovation Park",
+    "address_visibility": "public_summary",
+    "address_text": "Galaxy Innovation Park",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day04-agentic-ai-build-week-networking-night",
+    "venue_name": "Ho Chi Minh City",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Ho Chi Minh City",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.8230989,
+    "longitude": 106.62966379999999,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.8230989%2C106.62966379999999&query_place_id=ChIJ0T2NLikpdTERKxE8d61aX_E",
+    "source": "luma"
+  },
+  {
+    "event_id": "day01-inside-the-nvidia-inception-program-how-startups-build-and-scale-ai-globally-agentic-ai-build-week-workshop",
+    "venue_name": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.820793685134667,
+    "longitude": 106.63057916592689,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.820793685134667%2C106.63057916592689",
+    "source": "luma"
+  },
+  {
+    "event_id": "day01-lunch",
+    "venue_name": "Tasco Office",
+    "address_visibility": "public_summary",
+    "address_text": "Tasco Office",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day01-the-full-stack-advantage-building-production-ready-ai-agents-with-tencent-cloud",
+    "venue_name": "Tasco, HCMC",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Tasco, HCMC",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.824279189707388,
+    "longitude": 106.63026859814754,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.824279189707388%2C106.63026859814754",
+    "source": "luma"
+  },
+  {
+    "event_id": "day02-ai-gaming-night",
+    "venue_name": "AWS Office, Bitexco Tower",
+    "address_visibility": "public_summary",
+    "address_text": "AWS Office, Bitexco Tower",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day02-lunch",
+    "venue_name": "AWS Office, Bitexco Tower",
+    "address_visibility": "public_summary",
+    "address_text": "AWS Office, Bitexco Tower",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day03-beyond-autocomplete-how-agentic-ai-solves-the-enterprise-design-bottleneck-agentic-ai-build-week-workshop",
+    "venue_name": "VNG Group JSC, Ho Chi Minh",
+    "address_visibility": "register_to_see_address",
+    "address_text": "VNG Group JSC, Ho Chi Minh",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.758415389331251,
+    "longitude": 106.74467402085305,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.758415389331251%2C106.74467402085305",
+    "source": "luma"
+  },
+  {
+    "event_id": "day03-build-deploy-and-monetize-ai-agents-the-future-of-the-developer-economy-agentic-ai-build-week-workshop",
+    "venue_name": "VNG Group JSC, Ho Chi Minh",
+    "address_visibility": "register_to_see_address",
+    "address_text": "VNG Group JSC, Ho Chi Minh",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.75730637936679,
+    "longitude": 106.74442982072918,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.75730637936679%2C106.74442982072918",
+    "source": "luma"
+  },
+  {
+    "event_id": "day03-builder-night",
+    "venue_name": "VNG Campus",
+    "address_visibility": "public_summary",
+    "address_text": "VNG Campus",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day03-registration-and-welcome",
+    "venue_name": "VNG Campus",
+    "address_visibility": "public_summary",
+    "address_text": "VNG Campus",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day03-tencent-cloud",
+    "venue_name": "VNG Campus",
+    "address_visibility": "public_summary",
+    "address_text": "VNG Campus",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
     "latitude": null,
@@ -253,6 +457,18 @@
   },
   {
     "event_id": "day04-expert-parade",
+    "venue_name": "Galaxy Innovation Park",
+    "address_visibility": "public_summary",
+    "address_text": "Galaxy Innovation Park",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
+  },
+  {
+    "event_id": "day04-lunch",
     "venue_name": "Galaxy Innovation Park",
     "address_visibility": "public_summary",
     "address_text": "Galaxy Innovation Park",
@@ -276,19 +492,7 @@
     "source": "luma"
   },
   {
-    "event_id": "day04-late-night-build",
-    "venue_name": "Galaxy Innovation Park",
-    "address_visibility": "public_summary",
-    "address_text": "Galaxy Innovation Park",
-    "city": "Ho Chi Minh City",
-    "country": "Vietnam",
-    "latitude": null,
-    "longitude": null,
-    "google_maps_url": null,
-    "source": "homepage"
-  },
-  {
-    "event_id": "day05-submission-deadline",
+    "event_id": "day04-on-site-build-sprint",
     "venue_name": "Galaxy Innovation Park",
     "address_visibility": "public_summary",
     "address_text": "Galaxy Innovation Park",
@@ -324,18 +528,6 @@
     "source": "homepage"
   },
   {
-    "event_id": "day05-awards-ceremony",
-    "venue_name": "Galaxy Innovation Park",
-    "address_visibility": "public_summary",
-    "address_text": "Galaxy Innovation Park",
-    "city": "Ho Chi Minh City",
-    "country": "Vietnam",
-    "latitude": null,
-    "longitude": null,
-    "google_maps_url": null,
-    "source": "homepage"
-  },
-  {
     "event_id": "day05-networking-night",
     "venue_name": "Galaxy Innovation Park",
     "address_visibility": "public_summary",
@@ -348,15 +540,15 @@
     "source": "homepage"
   },
   {
-    "event_id": "day04-agentic-ai-build-week-networking-night",
-    "venue_name": "Ho Chi Minh City",
-    "address_visibility": "register_to_see_address",
-    "address_text": "Ho Chi Minh City",
+    "event_id": "day05-submission-deadline",
+    "venue_name": "Galaxy Innovation Park",
+    "address_visibility": "public_summary",
+    "address_text": "Galaxy Innovation Park",
     "city": "Ho Chi Minh City",
     "country": "Vietnam",
-    "latitude": 10.8230989,
-    "longitude": 106.62966379999999,
-    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.8230989%2C106.62966379999999&query_place_id=ChIJ0T2NLikpdTERKxE8d61aX_E",
-    "source": "luma"
+    "latitude": null,
+    "longitude": null,
+    "google_maps_url": null,
+    "source": "homepage"
   }
 ]

@@ -1,0 +1,66 @@
+{
+  "id": "day01-inside-the-nvidia-inception-program-how-startups-build-and-scale-ai-globally-agentic-ai-build-week-workshop",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://luma.com/gaf-t4bs"
+  ],
+  "type": "external_event",
+  "day_number": 1,
+  "day_theme": "Enable",
+  "date": "2026-07-08",
+  "display_date": "Wed · July 8",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "Inside the NVIDIA Inception Program: How Startups Build & Scale AI Globally — Agentic AI Build Week Workshop",
+  "venue": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/gaf-t4bs",
+  "event_detail_url": "https://luma.com/gaf-t4bs",
+  "description": "Every serious AI startup eventually hits the same wall: compute, capital, and connections. **NVIDIA Inception** exists to knock it down — and in 45 focused minutes, you'll learn exactly how.\n\n **What you'll take away**\n\n- The real map from prototype to production with NVIDIA\n\n- Technical resources, startup-friendly offers, investor access, and go-to-market support members tap into\n\n- A **free NVIDIA DLI course** for every participant\n\n **Your speaker**\n\n- **Jason Pham** — NVIDIA Inception Community Manager, Southeast Asia — the person who connects the region's AI startups to the NVIDIA ecosystem\n\n **Event details**\n\n- 📅 Tuesday, July 8, 2026\n\n- 🕐 2:00 PM – 2:45 PM (Indochina Time, GMT+7)\n\n- 📍 Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date\n\n- 🎟 Part of Agentic AI Build Week (July 8–12, 2026)\n\n- ✅ Private event · approval required · limited seats\n\n **Before you apply:** You must be registered for Agentic AI Build Week — **[👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61)** if you haven't yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don't forget to **[🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma)** **.**\n\n **👉 Apply now to request your seat. Approval required, and seats are filling fast.**",
+  "takeaways": [
+    "The real map from prototype to production with NVIDIA",
+    "Technical resources, startup-friendly offers, investor access, and go-to-market support members tap into",
+    "A free NVIDIA DLI course for every participant"
+  ],
+  "speakers": [
+    "Jason Pham — NVIDIA Inception Community Manager, Southeast Asia — the person who connects the region's AI startups to the NVIDIA ecosystem"
+  ],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [
+    "Must be registered for Agentic AI Build Week",
+    "Seats are prioritised for Builder or Founding Builder ticket holders",
+    "AABW Buildathon Devpost signup is recommended",
+    "Private event; approval required; limited seats"
+  ],
+  "location": {
+    "venue_name": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.820793685134667,
+    "longitude": 106.63057916592689,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.820793685134667%2C106.63057916592689",
+    "source": "luma"
+  },
+  "status": "not_listed_on_homepage",
+  "confidence": "homepage+external",
+  "start_time": "14:00",
+  "end_time": "14:45",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/mk/6f4a09e8-81c0-4a09-ab81-4e377623a7de.png",
+  "external_time_text": "2:00 PM – 2:45 PM (Indochina Time, GMT+7)",
+  "external_location_text": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
+  "source_note": "Auto-discovered from GenAI Fund Luma page",
+  "completeness_score": 1.0,
+  "missing_fields": [],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "0cc1247e4756c122b626890855735bfa58e84c9703736b256aaf738e8334d77d",
+  "content_hash": "d8f66e52835a87cc2be5d09201e33513064aacc0905561863b2fe6b30a350e9b",
+  "quality_level": "stale",
+  "scraped_at": "2026-06-22T02:41:59.875396",
+  "last_seen_at": "2026-06-22T02:41:59.875396",
+  "marked_stale_at": "2026-06-22T08:43:57.267479"
+}

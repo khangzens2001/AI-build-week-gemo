@@ -2,14 +2,14 @@
 -- Do not edit by hand; re-run `bun run seed` to regenerate.
 
 DELETE FROM venues;
-INSERT INTO venues (id, name, address, city, country, lat, lng, map_url, image_url) VALUES ('tasco-office', 'Tasco Office', 'TBC, HCMC', 'Ho Chi Minh City', 'Vietnam', 10.824298548535092, 106.62998121126604, 'https://www.google.com/maps/search/?api=1&query=10.824298548535092%2C106.62998121126604', '/venues/tasco-office.webp');
-INSERT INTO venues (id, name, address, city, country, lat, lng, map_url, image_url) VALUES ('aws-office-bitexco-tower', 'AWS Office, Bitexco Tower', 'AWS Office, Bitexco Tower', 'Ho Chi Minh City', 'Vietnam', NULL, NULL, NULL, '/venues/aws-office.webp');
-INSERT INTO venues (id, name, address, city, country, lat, lng, map_url, image_url) VALUES ('vng-campus', 'VNG Campus', 'VNG Group JSC, Ho Chi Minh', 'Ho Chi Minh City', 'Vietnam', 10.75730637936679, 106.74442982072918, 'https://www.google.com/maps/search/?api=1&query=10.75730637936679%2C106.74442982072918', '/venues/vng-campus.webp');
-INSERT INTO venues (id, name, address, city, country, lat, lng, map_url, image_url) VALUES ('galaxy-innovation-park', 'Galaxy Innovation Park', 'Ho Chi Minh City', 'Ho Chi Minh City', 'Vietnam', 10.8230989, 106.62966379999999, 'https://www.google.com/maps/search/?api=1&query=10.8230989%2C106.62966379999999&query_place_id=ChIJ0T2NLikpdTERKxE8d61aX_E', '/venues/galaxy-innovation-park.webp');
+INSERT INTO venues (id, name, address, city, country, lat, lng, map_url, image_url) VALUES ('tasco', 'Tasco Office', 'Tasco Office, Ho Chi Minh City', 'Ho Chi Minh City', 'Vietnam', 10.8243, 106.6303, 'https://www.google.com/maps/search/?api=1&query=10.8243%2C106.6303', '/venues/tasco-office.webp');
+INSERT INTO venues (id, name, address, city, country, lat, lng, map_url, image_url) VALUES ('aws-office', 'AWS Office, Bitexco Tower', 'Bitexco Financial Tower, 2 Hải Triều, Bến Nghé, Quận 1, Ho Chi Minh City', 'Ho Chi Minh City', 'Vietnam', 10.7717, 106.7042, 'https://www.google.com/maps/search/?api=1&query=10.7717%2C106.7042', '/venues/aws-office.webp');
+INSERT INTO venues (id, name, address, city, country, lat, lng, map_url, image_url) VALUES ('vng-campus', 'VNG Campus', 'VNG Campus, Tân Thuận Đông, Quận 7, Ho Chi Minh City', 'Ho Chi Minh City', 'Vietnam', 10.7573, 106.7444, 'https://www.google.com/maps/search/?api=1&query=10.7573%2C106.7444', '/venues/vng-campus.webp');
+INSERT INTO venues (id, name, address, city, country, lat, lng, map_url, image_url) VALUES ('galaxy-innovation-park', 'Galaxy Innovation Park', 'Galaxy Innovation Park, Ho Chi Minh City', 'Ho Chi Minh City', 'Vietnam', 10.8231, 106.6297, 'https://www.google.com/maps/search/?api=1&query=10.8231%2C106.6297', '/venues/galaxy-innovation-park.webp');
 
 DELETE FROM sessions;
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-registration-welcome', 'Registration & Welcome', '2026-07-08', 1, 'Enable', 1783476000000, NULL, '09:00', NULL, 'tasco-office', NULL, 'Enable', 'administrative', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-byteplus', 'Render the Next Era of Creation with BytePlus AI Stack', '2026-07-08', 1, 'Enable', 1783479600000, 1783486800000, '10:00', '12:00', 'tasco-office', 'BytePlus', 'Enable', 'workshop', 'workshop', 'The AI stack you ship on is about to change. **BytePlus** — ByteDance''s enterprise AI arm — is opening the hood on the tools their own teams use to build at scale, live in Ho Chi Minh City as part of Agentic AI Build Week.
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-registration-welcome', 'Registration & Welcome', '2026-07-08', 1, 'Enable', 1783476000000, NULL, '09:00', NULL, 'tasco', NULL, 'Enable', 'administrative', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-byteplus', 'Render the Next Era of Creation with BytePlus AI Stack', '2026-07-08', 1, 'Enable', 1783479600000, 1783486800000, '10:00', '12:00', 'tasco', 'BytePlus', 'Enable', 'workshop', 'workshop', 'The AI stack you ship on is about to change. **BytePlus** — ByteDance''s enterprise AI arm — is opening the hood on the tools their own teams use to build at scale, live in Ho Chi Minh City as part of Agentic AI Build Week.
 
 This is hands-on and builder-first. Come build, not just watch.
 
@@ -44,8 +44,51 @@ This is hands-on and builder-first. Come build, not just watch.
  **Before you apply:** You must be registered for Agentic AI Build Week — [👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61) if you haven''t yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don''t forget to [🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma).
 
  **👉 Apply now to request your seat. Approval required, and seats are filling fast.**', '["Vu Tien Hung — Senior Manager, Enterprise Sector, BytePlus","Lam Thao — Solution Architect, BytePlus","Tran Quoc Huy — Enterprise Sales Manager, BytePlus"]', '["Must be registered for Agentic AI Build Week","Seats are prioritised for Builder or Founding Builder ticket holders","AABW Buildathon Devpost signup is recommended","Private event; approval required; limited seats"]', 'https://luma.com/gaf-vbkf', '[]', 'full', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day01-byteplus.png');
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-lunch', 'Lunch', '2026-07-08', 1, 'Enable', 1783486800000, NULL, '12:00', NULL, 'tasco-office', NULL, 'Enable', 'break', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-nvidia', 'Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally', '2026-07-08', 1, 'Enable', 1783494000000, 1783496700000, '14:00', '14:45', 'tasco-office', 'NVIDIA', 'Enable', 'workshop', 'workshop', 'Every serious AI startup eventually hits the same wall: compute, capital, and connections. **NVIDIA Inception** exists to knock it down — and in 45 focused minutes, you''ll learn exactly how.
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-tencent-cloud', 'The Full-Stack Advantage: Building Production-Ready AI Agents with Tencent Cloud', '2026-07-08', 1, 'Enable', 1783486800000, 1783494000000, '12:00', '14:00', 'tasco', 'Tencent Cloud', 'Enable', 'workshop', 'workshop', 'Your AI agent demos look great. Your production AI agents don''t.
+
+It''s not your team — it''s the stack. LLM management is a spreadsheet nightmare. R&D is bottlenecked on manual coding. Edge deployments are brittle. Real-time AI interactions feel robotic. And every "solution" you patch in adds another failure point to a toolchain that barely holds together.
+
+There''s a better way to build.
+
+ **What this is**
+
+A 2-hour hands-on technical workshop by the Tencent Cloud team, live in Ho Chi Minh City during Agentic AI Build Week. You''ll go deep on the Tencent Cloud AI & Edge Stack — the same infrastructure powering enterprise AI at scale across Asia — and walk away with practical patterns you can put to work the same week at the hackathon.
+
+Here''s what you''ll build your understanding of:
+
+- **CodeBuddy** — AI-powered code generation that breaks R&D bottlenecks and multiplies developer throughput. Stop waiting on sprint cycles. Automate the routine and ship faster.
+
+- **TokenHub** — Centralized LLM management across heterogeneous providers. One interface to control costs, usage limits, and model routing at enterprise scale.
+
+- **MPaaS AIGC** — AI-powered content creation across text, image, and video — without stitching together a fragmented pipeline or paying for five separate APIs.
+
+- **EdgeOne Pages** — Enterprise-grade security and blazing performance at the edge. Deploy AI workloads that are fast, resilient, and protected by default.
+
+- **Tencent RTC Conversational AI** — Sub-second latency. Human-like responses. Build real-time AI interactions that feel real, not robotic.
+
+This is hands-on and builder-first. Come build, not just watch.
+
+ **Who this is for**
+
+✓ Developers and engineers building or maintaining AI agents at their company
+✓ Technical founders who need production-grade infrastructure without a dedicated platform team
+✓ CTOs and engineering leads looking to consolidate a fragmented, expensive AI stack
+✗ Not for you if you''re looking for a sales pitch — this session is technical depth or nothing
+
+ **Event details**
+
+- 📅 Tuesday, July 8, 2026
+
+- 🕐 12:00 PM – 2:00 PM (Indochina Time, GMT+7)
+
+- 📍 Tasco, HCMC
+
+- 🎟 Part of Agentic AI Build Week (July 8–12, 2026)
+
+ **Before you apply:** You must be registered for Agentic AI Build Week — [👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61) if you haven''t yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don''t forget to [🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma).
+
+ **👉 Apply now to request your seat. Approval required, and seats are filling fast.**', '[]', '["Must be registered for Agentic AI Build Week","Seats are prioritised for Builder or Founding Builder ticket holders","AABW Buildathon Devpost signup is recommended","Private event; approval required; limited seats"]', 'https://luma.com/tanuxv4i', '[]', 'partial', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day01-tencent-cloud.png');
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-nvidia', 'Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally', '2026-07-08', 1, 'Enable', 1783494000000, 1783496700000, '14:00', '14:45', 'tasco', 'NVIDIA', 'Enable', 'workshop', 'workshop', 'Every serious AI startup eventually hits the same wall: compute, capital, and connections. **NVIDIA Inception** exists to knock it down — and in 45 focused minutes, you''ll learn exactly how.
 
  **What you''ll take away**
 
@@ -74,7 +117,7 @@ INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at,
  **Before you apply:** You must be registered for Agentic AI Build Week — **[👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61)** if you haven''t yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don''t forget to **[🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma)** **.**
 
  **👉 Apply now to request your seat. Approval required, and seats are filling fast.**', '["Jason Pham — NVIDIA Inception Community Manager, Southeast Asia — the person who connects the region''s AI startups to the NVIDIA ecosystem"]', '["Must be registered for Agentic AI Build Week","Seats are prioritised for Builder or Founding Builder ticket holders","AABW Buildathon Devpost signup is recommended","Private event; approval required; limited seats"]', 'https://luma.com/gaf-t4bs', '[]', 'full', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day01-nvidia.png');
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-trae', 'TRAE in Your Professional Workflow', '2026-07-08', 1, 'Enable', 1783497600000, 1783501200000, '15:00', '16:00', 'tasco-office', 'TRAE', 'Enable', 'workshop', 'workshop', 'The builders pulling ahead right now aren''t working harder. They''ve rewired how they work. **TRAE** shows you how.
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-trae', 'TRAE in Your Professional Workflow', '2026-07-08', 1, 'Enable', 1783497600000, 1783501200000, '15:00', '16:00', 'tasco', 'TRAE', 'Enable', 'workshop', 'workshop', 'The builders pulling ahead right now aren''t working harder. They''ve rewired how they work. **TRAE** shows you how.
 
  **What you''ll take away**
 
@@ -103,14 +146,375 @@ INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at,
  **Before you apply:** You must be registered for Agentic AI Build Week — [👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61) if you haven''t yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don''t forget to [🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma).
 
  **👉 Apply now to request your seat. Approval required, and seats are filling fast.**', '["Rita Huang — Product Operations Manager, TRAE"]', '["Must be registered for Agentic AI Build Week","Seats are prioritised for Builder or Founding Builder ticket holders","AABW Buildathon Devpost signup is recommended","Private event; approval required; limited seats"]', 'https://luma.com/gaf-jpy4', '[]', 'full', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day01-trae.png');
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-aws', 'AWS', '2026-07-09', 2, 'Integrate', 1783562400000, 1783567800000, '09:00', '10:30', 'aws-office-bitexco-tower', 'AWS', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-agora', 'Agora', '2026-07-09', 2, 'Integrate', 1783567800000, 1783573200000, '10:30', '12:00', 'aws-office-bitexco-tower', 'Agora', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-lunch', 'Lunch', '2026-07-09', 2, 'Integrate', 1783573200000, NULL, '12:00', NULL, 'aws-office-bitexco-tower', NULL, 'Integrate', 'break', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-aws-1300', 'AWS', '2026-07-09', 2, 'Integrate', 1783576800000, 1783582200000, '13:00', '14:30', 'aws-office-bitexco-tower', 'AWS', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-tiny-fish', 'Tiny Fish', '2026-07-09', 2, 'Integrate', 1783582200000, 1783587600000, '14:30', '16:00', 'aws-office-bitexco-tower', 'Tiny Fish', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-aws-1630', 'AWS', '2026-07-09', 2, 'Integrate', 1783589400000, 1783594800000, '16:30', '18:00', 'aws-office-bitexco-tower', 'AWS', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-ai-gaming-night', 'AI × Gaming Night', '2026-07-09', 2, 'Integrate', 1783594800000, NULL, '18:00', NULL, 'aws-office-bitexco-tower', NULL, 'Integrate', 'session', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-registration-welcome', 'Registration & Welcome', '2026-07-10', 3, 'Design', 1783648800000, NULL, '09:00', NULL, 'vng-campus', NULL, 'Design', 'administrative', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day01-openclaw', 'OpenClaw Workshop', '2026-07-08', 1, 'Enable', 1783501200000, 1783508400000, '16:00', '18:00', 'tasco', 'OpenClaw', 'Enable', 'workshop', 'workshop', '# AGENTIC AI BUILD WEEK 🤖
+
+## **The Largest Agentic AI Hackathon in ASEAN** 🌏
+
+View Event Website: **[https://aabw.genaifund.ai/](https://aabw.genaifund.ai/?utm_source=luma)**
+
+Ho Chi Minh City, Vietnam \| July 8–12, 2026
+
+* * *
+
+## **Most hackathons end with a demo.** **This one ends with a deployment conversation.**
+
+You know the drill. You build something impressive over a weekend. You demo it. Someone claps. You get a LinkedIn post out of it.
+
+Then the prototype sits in your GitHub and everyone goes back to their day jobs.
+
+That''s not what this is.
+
+ **Agentic AI Build Week is 5 days where Southeast Asia''s most serious AI builders come together to build agents that actually work — and move toward actual deployment.**
+
+No toy problems. No demo theater. Real enterprise briefs, real infrastructure, real outcomes.
+
+* * *
+
+## **🚨 This is your main registration page for Agentic AI Build Week.**
+
+Signing up here secures your place across the full week — including all workshops, the hackathon, and Demo Day. Additional workshops and partner sessions will be announced and posted on this page as they''re confirmed. Register now so you don''t miss the updates when they drop.
+
+* * *
+
+## The Room Is Already Forming
+
+Engineers, designers, and leaders from these teams have already registered:
+
+![User Uploaded Image](https://images.lumacdn.com/uploads/q5/7e50ee6e-1ac7-49d8-888b-5af2ce2cf0d2.png)
+
+These aren''t sponsors. These aren''t partner logos on a slide deck. These are the people who will be in the room — building, judging, evaluating, and having pilot conversations on Demo Day.
+
+When the engineers at AWS, NVIDIA, Apple and Google decide an event is worth five days of their time, you pay attention. When the leaders at Tasco, VNGGames, Gamota, Nova Group and Phong Vu show up to evaluate AI solutions for deployment in their enterprises, you understand what''s really at stake here.
+
+The question isn''t whether this event is worth attending. The question is whether you''ll be in the room — or watching from the outside when the recaps drop.
+
+ **Request your spot now. Approval required — and the room is filling fast.**
+
+* * *
+
+## 💰\*\*$1,000,000+ in AI Credits and Perks — Yours Just for Showing Up\*\*
+
+Every registered builder gets access to over $1,000,000 (and counting) worth of credits, tools, and infrastructure from the tech partners powering the event (OpenAI, Qwen, Agora, Trae, Notion and more). Not prize money. Not conditional rewards. Perks you can use from day one of build week.
+
+Think free platform access, API credits, developer tools, and cloud infrastructure — from the companies whose tools serious builders already reach for. The stack gets built out as partners confirm, and registered participants get first access when new perks drop.
+
+Show up ready to build. Leave with more than you came with.
+
+* * *
+
+## Why July 2026 Is the Moment That Matters
+
+2026 is the year agentic AI stops being a conference theme and becomes a business requirement.
+
+Every serious company in ASEAN is asking the same question right now: _who knows how to harness engineering — not just prompt engineering — and can build AI that works inside our actual systems?_
+
+The builders who figure this out first won''t just get jobs. They''ll land contracts, found companies, and define the next decade of enterprise software in Southeast Asia.
+
+ **The window to be an early mover is closing. July is your moment to step into it.**
+
+* * *
+
+## 👀 The AI Platforms You Build On Are Watching
+
+![User Uploaded Image](https://images.lumacdn.com/uploads/4h/447842c0-ae97-45c9-b7b0-8155c03a01e0.png)
+
+We''re not publishing the full partner roster yet.
+
+Here''s what we can tell you: **the cloud platforms, model providers, and developer infrastructure companies powering every serious AI deployment** are in active conversations to be part of this week. Not as passive logo sponsors — as partners embedding their tools into the build environment and sitting in the room on Demo Day.
+
+They''re joining because they want to find the builders worth deploying _on_ their infrastructure.
+
+When the announcement drops, you''ll want to already have your spot locked in — not be on a waitlist.
+
+ **Register now while early access is open. The partner roster lands soon.**
+
+* * *
+
+## What Makes This Different
+
+![User Uploaded Image](https://images.lumacdn.com/uploads/60/f8f7c3c2-75aa-4122-9218-049438967e32.png)
+
+Most hackathons give you a made-up problem. You build something. You demo it. You go home.
+
+This isn''t that.
+
+ **Every problem statement comes from a real enterprise partner.** Every solution is evaluated for deployment readiness. The strongest builds don''t win a trophy — they go into actual deployment conversations with companies that have real budgets and real timelines.
+
+This is the difference between building for a panel of judges and building for a signed contract.
+
+Three things separate this week from anything else happening in Southeast Asia right now:
+
+ **💡Not a traditional hackathon.**
+Real enterprise briefs. Real constraints. Real evaluators who have authority to say yes to a pilot.
+
+ **💡Production-first.**
+Builders aren''t graded on how impressive something looks in a 5-minute demo. They''re graded on whether it could actually be deployed into a working business system.
+
+ **💡Enterprise-grade outcomes.**
+Winning solutions enter deployment conversations on Demo Day. That''s the session that matters. Everything else is the warmup.
+
+* * *
+
+## The Hackathon Tracks — Two Categories. Eleven Tracks. Two Historic Firsts.
+
+## **🧑‍💻 Category 1: Consumer AI**
+
+ _Builder-defined problems. Polished, user-facing products._
+
+![User Uploaded Image](https://images.lumacdn.com/uploads/00/35470b08-9a0f-4855-92e7-e4430a02ed85.png)
+
+- 🎮 **Gaming & Interactive ★ FIRST IN SOUTHEAST ASIA** No hackathon in Southeast Asia has ever run a dedicated Gaming AI track. Not one. Gaming is one of the region''s largest digital economies — a $7B+ industry that has never had a structured AI builder format. We''re the first. If you build games, interactive experiences, or AI-native entertainment, this track was built for you and it''s never existed here before.
+
+- **📚 Education & Learning**
+
+- **✈️ Travel & Lifestyle**
+
+- **⚡ Productivity & Personal Tools**
+
+- **🎬 Creator & Media**
+
+## **🏢 Category 2: Enterprise AI**
+
+ _Real enterprise problems. Production-readiness required._
+
+![User Uploaded Image](https://images.lumacdn.com/uploads/64/04f948db-b2c8-4633-8217-9411bcc7f763.png)
+
+- 🤖 **Robotics & Physical AI ★ FIRST IN SOUTHEAST ASIA** Southeast Asia has never hosted an AI hackathon with a Robotics & Physical AI track. We''re planting that flag first. This is the frontier where agentic AI meets the physical world — autonomous systems, embodied AI, hardware-integrated agents. If you''re building in this space, HCMC in July is where you need to be.
+
+- 💰 **Fintech & Financial Services**
+
+- **🏥 Healthcare & Life Sciences**
+
+- **🏭 Manufacturing & Industry**
+
+- **🛒 Retail & E-Commerce**
+
+- **⚡ Energy & Utilities** **\+ 4 more verticals being announced shortly**
+
+ _More tracks are confirming as enterprise partners lock in. Register now to be notified first when new tracks and problem statements drop._
+
+![User Uploaded Image](https://images.lumacdn.com/uploads/4v/2189afb9-ca1d-4504-a1a2-efb8441c3b27.png)
+
+* * *
+
+## 🎙️ **The Experts in the Room**
+
+![User Uploaded Image](https://images.lumacdn.com/uploads/0p/aaaea854-33c2-42bd-9399-5326ec5f10c4.png)
+
+These aren''t keynote speakers who fly in, present, and leave. They''re operators and leaders who have deployed AI inside real organisations, and they''ll be in the room across the full week as mentors, judges, and evaluators on Demo Day.
+
+- **Hieu Hoang** — Head of Solutions Architect, AWS Vietnam
+
+- **Zenda Nguyen** — Group CIO, NovaGroup
+
+- **Kevin Duong** — CTO, Gamota
+
+- **Rizwan Khan** — Managing Partner, Acclime Vietnam
+
+- **Truong Nghe** — IT Director & CSO, Generali Vietnam Life Insurance
+
+- **Sibojyoti C.** — General Director, KFC Vietnam
+
+- **Tai Nguyen** — CEO & President, Naiscorp
+
+- **Alexander Ziehe** — Vice President SEA, Hettich Group
+
+- **Michael Lin** — COO, Phuc Long
+
+- **John Masud Parvez** — Chairman, VSHR Pro Academy
+
+- **Ho Minh Thang** — Vice Director of AI, FPT Smart Cloud
+
+More experts being confirmed. Registered participants get notified first when new names drop.
+
+* * *
+
+## Who Gets the Most Out of This Week
+
+![User Uploaded Image](https://images.lumacdn.com/uploads/bf/9d39c26a-db75-4e3a-9971-70fcbc1a4d8d.png)
+
+ **👨‍💻 Developers & AI Engineers** — Build real agentic products against real briefs with real infrastructure and API access. Free to join. No prior experience required.
+
+ **🚀 Founders & Indie Hackers** — Ship a consumer AI product or validate an enterprise use case with real users and decision-makers physically in the room.
+
+ **💼 Business & Corporate Teams** — Come with a problem. Leave with a working prototype and a shortlist of builders worth hiring or piloting with.
+
+ **🏗️ Enterprises** — Your workflow challenge becomes the builder brief. You evaluate on Demo Day. The best solutions move toward deployment.
+
+ **⚡ Tech Partners & Sponsors** — 30+ workshop slots put your tools in front of 2,000 builders before they start building. Get in early.
+
+* * *
+
+## **Three Networking Nights. Three Rooms Worth Getting Into.**
+
+The conversations that matter most don''t happen on stage. They happen after hours, in smaller rooms, with the right people.
+
+Across build week, we''re hosting three invite-only networking nights — each themed around one of AABW''s most forward-looking categories. Limited seats. Closed doors. Industry operators, investors, and builders who are actually working in the space.
+
+These aren''t mixers. Each night is built around a specific frontier — and the people in the room are the ones defining it.
+
+- 🎬 **Image & Video AI Night** 👉: [https://luma.com/p9wttcvy](https://luma.com/p9wttcvy)
+
+- 🎮 **AI x Gaming Night** 👉: [https://luma.com/5mavorcw](https://luma.com/5mavorcw)
+
+- 🤖 **Physical AI Night** 👉: [https://luma.com/blymwypq](https://luma.com/blymwypq)
+
+Seats at each night are limited and separate from your main AABW registration. Lock in early.
+
+* * *
+
+ **By the Numbers**
+
+- 👥 **2,000 AI builders** from across ASEAN
+
+- 🗂️ **500 agentic AI projects** across both themes
+
+- 🏢 **10 enterprises** contributing real problem statements
+
+- 🔧 **30 tech partners** embedded across the builder stack
+
+- 💰 **$1M+** in ecosystem perks
+
+* * *
+
+## How the Week Runs
+
+ **Days 1–3 \| July 8–10 — ENABLE**
+30+ partner workshops on agentic AI fundamentals, model integration, cloud infrastructure, and deployment patterns — across both consumer and enterprise contexts.
+
+ **Day 4 \| July 11 — BUILD**
+Hackathon kicks off. Builders self-select into themes and tracks. Mentor check-ins throughout.
+
+ **Day 5 \| July 12 — DEMO**
+Presentations · Judging · Awards · **Pilot conversations**
+
+ _(That last item is the one that matters.)_
+
+* * *
+
+## Built by the Team That Ran Vietnam''s Largest AI Hackathon
+
+ **GenAI Fund** is Southeast Asia''s first AI-focused venture fund, founded by former AWS operators. We built Vietnam''s largest AI hackathon — 1,500+ participants, 30+ partners, active across 6 ASEAN markets with 100+ enterprise AI deployments.
+
+We know the difference between events that produce outcomes and events that produce highlights reels. This is the former.
+
+* * *
+
+## Frequently Asked Questions
+
+01. **Is this free to join?** Yes — completely free for developers, founders, and indie hackers. Just request your spot and await approval. Corporate teams and enterprises joining as problem statement contributors have a separate onboarding process.
+
+02. **Do I need AI or coding experience to participate?** No prior experience is required for the builder tracks. If you can think through a problem and are willing to learn, you''ll find your place here. The workshop days (July 8–10) are specifically designed to get you up to speed before the hackathon begins.
+
+03. **Can I join as a team?** Yes. Teams are encouraged, particularly for the Enterprise Workflows track. Solo builders are equally welcome — many teams form organically during the workshop days.
+
+04. **What happens after I register?** You''ll receive a confirmation once your spot is approved. As partners and workshops are confirmed, updates will be posted here and sent directly to registered participants. Early registrants get first access to partner announcements, workshop slots, and infrastructure credits.
+
+05. **Do I have to attend all 5 days?** You''re welcome to join for the days most relevant to you. That said, builders who go through the full ENABLE → BUILD → DEMO arc consistently produce stronger projects — and stronger projects are the ones that end up in deployment conversations on Day 5.
+
+06. **What tracks are available — and which ones are truly new to Southeast Asia?** There are two categories with eleven tracks confirmed so far. In Consumer AI: Gaming & Interactive, Education & Learning, Travel & Lifestyle, Productivity & Personal Tools, and Creator & Media. In Enterprise AI: Robotics & Physical AI, Fintech & Financial Services, Healthcare & Life Sciences, Manufacturing & Industry, Retail & E-Commerce, and Energy & Utilities — plus 4 additional verticals being announced soon. Two of these tracks are **historic firsts for the region**: the Gaming & Interactive track and the Robotics & Physical AI track have never been run in Southeast Asia before. If your work sits in either of these categories, this is the first time you''ll have a dedicated structured builder format for it in ASEAN. Register now — track capacities are finite.
+
+07. **More tracks are being announced — how will I know when they drop?** All new track announcements will be posted directly to this page and shared with registered participants first. If you''re not registered, you''ll find out when the general public does — which is later, with fewer spots available.
+
+08. **Who are the partners and sponsors?** The partner roster is being confirmed and will be announced soon on this page. What we can say: the cloud platforms, model providers, and infrastructure companies that power serious AI deployments are joining — not as passive sponsors, but as active participants embedded in the build environment.
+
+09. **What can I win or walk away with?** Beyond prizes and awards on Demo Day, the most valuable outcome is the pilot conversation. Enterprise partners evaluate solutions and the strongest ones move toward paid deployment. Builders also get access to $1M+ in ecosystem perks from tech partners, including API credits, infrastructure access, and tooling.
+
+10. **I''m not a developer. Can I still participate?** Yes. Founders, product managers, and business team members are an important part of the mix — particularly on the Enterprise Workflows track, where the best teams pair technical builders with people who understand the domain problem. If you have a problem worth solving, you belong here.
+
+11. **Where exactly is the event?** Ho Chi Minh City, Vietnam. Venue details will be confirmed and shared with registered participants ahead of the event.
+
+12. **I have a question not answered here.** Reach out to the GenAI Fund team directly through the [general@genaifund.ai](https://general@genaifund.ai/?utm_source=luma). We''ll get back to you.
+
+* * *
+
+## The Mission — and Why This Moment Is Yours
+
+Southeast Asia is at an inflection point. The region''s builders are ready to move from personal AI experimentation to enterprise-grade agentic systems — and this week is where that transition gets built, demonstrated, and deployed.
+
+Two tracks making history in SEA. Eleven verticals. Real enterprise problems. A room of 2,000 builders who mean business.
+
+## Claim Your Spot — Early Roster Forming Now
+
+Spots are limited and approval is required.
+
+The builders joining now are the ones who''ll have first access to partner announcements, workshop slots, and infrastructure credits — before this goes wide.
+
+ **→ Request your place. The roster is filling.**', '[]', '["Private event; approval required; limited seats"]', 'https://luma.com/gaf-hm61', '[]', 'partial', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day01-openclaw.png');
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-aws', 'From Spec to Production Code — Kiro, Claude Code & Codex on AWS', '2026-07-09', 2, 'Integrate', 1783562400000, 1783567800000, '09:00', '10:30', 'aws-office', 'AWS', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', 'https://luma.com/1mxdg4em', '[]', NULL, 'https://agenticaibuildweek.genaifund.ai/#programme', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-agora', 'Physical AI Party: Agora ConvoAI World', '2026-07-09', 2, 'Integrate', 1783567800000, 1783573200000, '10:30', '12:00', 'aws-office', 'Agora', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', 'https://luma.com/gaf-2wor', '[]', 'partial', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-lunch-break', 'Lunch Break', '2026-07-09', 2, 'Integrate', 1783573200000, 1783576800000, '12:00', '13:00', 'aws-office', NULL, 'Integrate', 'break', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-aws-1300', 'Bedrock AgentCore — Multi-Agent Architecture for Production', '2026-07-09', 2, 'Integrate', 1783576800000, 1783582200000, '13:00', '14:30', 'aws-office', 'AWS', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', 'https://luma.com/lptsgwm6', '[]', NULL, 'https://agenticaibuildweek.genaifund.ai/#programme', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-tiny-fish', 'Give Any AI Agent Live, Production-Grade Access to the Real Web', '2026-07-09', 2, 'Integrate', 1783582200000, 1783587600000, '14:30', '16:00', 'aws-office', 'Tiny Fish', 'Integrate', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-teabreak', 'Teabreak', '2026-07-09', 2, 'Integrate', 1783587600000, 1783589400000, '16:00', '16:30', 'aws-office', NULL, 'Integrate', 'administrative', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-aws-1630', 'Design Patterns & Best Practices — Testing, Monitoring & Production Readiness', '2026-07-09', 2, 'Integrate', 1783589400000, 1783594800000, '16:30', '18:00', 'aws-office', 'AWS', 'Integrate', 'workshop', 'workshop', 'You''ve built the agent. It runs cleanly in dev. It impresses your teammates in the demo.
+
+Now try deploying it — with real traffic, real edge cases, and model drift you didn’t anticipate.
+
+That’s where most agentic AI projects quietly die. Not bad ideas. Just no production discipline.
+
+ **Design Patterns & Best Practices** is the workshop that changes that. This is AWS’s third session of the day at AABW — where engineering rigour finally meets agentic AI.
+
+* * *
+
+## 🏗 WHAT THIS IS
+
+A 90-minute hands-on workshop where you’ll build the testing, monitoring, and observability infrastructure that separates a shipped product from an impressive demo.
+
+By the end, you will:
+
+→ Master **Tool Use & ReAct loops** with the production patterns that don’t break under real load
+
+→ Apply **multi-agent orchestration** — supervisor, hierarchical, and collaborative — and know which pattern fits which problem
+
+→ Build **evaluation pipelines** and guardrails-as-code that catch failures before your users do
+
+→ Wire **end-to-end tracing and drift detection** into your system using AWS-native tooling
+
+→ Walk out with a **production-ready playbook**: tested, monitored, and continuously evaluated
+
+⚠️ This is **Workshop 3 of 3** in the AWS series at AABW. You’ll apply these patterns to the multi-agent system from Workshop 2 (Bedrock AgentCore — Multi-Agent Architecture for Production, 1:00–2:30 PM, same venue). Attending the full series gives you the highest return — but this session stands alone for builders who already have a multi-agent foundation.
+
+* * *
+
+## 👥 WHO THIS IS FOR
+
+This workshop is for you if:
+
+→ You’ve built AI agents and want to know what “production-ready” actually means — not in theory, but in your stack
+
+→ You’ve been burned by a demo that looked great until it hit real traffic or edge cases
+
+→ You’re entering the AABW hackathon and want your submission evaluated for deployment-readiness, not just demo polish
+
+This is **NOT** for you if you’re new to agentic AI frameworks — start with AWS Workshop 1: From Spec to Production Code (9:00–10:30 AM) first.
+
+* * *
+
+## 🎙 YOUR SPEAKER
+
+ **Vu Pham** — Senior Solutions Architect, Amazon Web Services
+
+Vu works directly with enterprise teams deploying production AI systems on AWS. This isn’t a slide deck — it’s a working session built from real deployments.
+
+* * *
+
+## 📋 EVENT DETAILS
+
+📅 Wednesday, 9 July 2026
+⏰ 4:30 PM – 6:00 PM (ICT)
+📍 AWS Ho Chi Minh City Office (300–400 pax capacity)
+
+Part of **[Agentic AI Build Week](https://luma.com/gaf-hm61)** — ASEAN’s largest agentic AI hackathon · July 8–12 · Ho Chi Minh City
+
+* * *
+
+## ✅ ONE REQUIREMENT
+
+To attend this workshop, you must be registered for Agentic AI Build Week.
+
+Register for AABW [here](https://luma.com/gaf-hm61), then apply for this session.', '[]', '["Must be registered for Agentic AI Build Week"]', 'https://luma.com/1nubtbgt', '[]', 'partial', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day02-aws.png');
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day02-welcome-builders-night', 'Welcome Builders Night', '2026-07-09', 2, 'Integrate', 1783594800000, 1783607400000, '18:00', '21:30', 'aws-office', NULL, 'Integrate', 'session', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
 INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-apify', 'Build, Deploy & Monetize AI Agents: The Future of the Developer Economy', '2026-07-10', 3, 'Design', 1783652400000, 1783659600000, '10:00', '12:00', 'vng-campus', 'Apify', 'Design', 'workshop', 'workshop', 'Building an AI agent is one thing. Getting it deployed, used, and **paying you** is another. This session is about the second part.
 
  **What you''ll take away**
@@ -141,8 +545,80 @@ INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at,
 
  **Before you apply:** You must be registered for Agentic AI Build Week — [👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61) if you haven''t yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don''t forget to [🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma).
 
- **👉 Apply now to request your seat. Approval required, and seats are filling fast.**', '["Saurav Jain — Senior Developer Community Manager, Apify","Jakub Drobnik — Engineering Team Lead, Apify"]', '["Must be registered for Agentic AI Build Week","Seats are prioritised for Builder or Founding Builder ticket holders","AABW Buildathon Devpost signup is recommended","Private event; approval required; limited seats"]', 'https://luma.com/gaf-umu5', '[]', 'full', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day03-apify.png');
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-langfuse-clickhouse', 'Langfuse × ClickHouse', '2026-07-10', 3, 'Design', 1783659600000, 1783666800000, '12:00', '14:00', 'vng-campus', 'Langfuse × ClickHouse', 'Design', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+ **👉 Apply now to request your seat. Approval required, and seats are filling fast.**', '["Saurav Jain — Senior Developer Community Manager, Apify","Jakub Drobnik — Engineering Team Lead, Apify"]', '["Must be registered for Agentic AI Build Week","Seats are prioritised for Builder or Founding Builder ticket holders","AABW Buildathon Devpost signup is recommended","Private event; approval required; limited seats"]', 'https://luma.com/gaf-umu5', '[]', 'stale', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day03-apify.png');
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-langfuse-clickhouse', 'Langfuse × ClickHouse', '2026-07-10', 3, 'Design', 1783659600000, 1783666800000, '12:00', '14:00', 'vng-campus', 'Langfuse × ClickHouse', 'Design', 'workshop', 'workshop', 'You''re building fast. Prompts tweaked, model versions swapped, tools added and removed — and after every change, you''re doing the same gut-check: _does this feel better?_
+
+Because you have no other way to tell.
+
+That''s not iteration. That''s guessing with extra steps. And on Day 4 of Agentic AI Build Week, when you''re mid-build and things start behaving strangely, guessing is what kills your demo.
+
+This workshop changes that.
+
+* * *
+
+ **What this is**
+
+A 2-hour hands-on session on LLM observability and evals with Langfuse — the open-source engineering platform used by thousands of AI teams to get full visibility into what their agents are actually doing.
+
+In 120 minutes, you will:
+
+- Set up **full trace visibility** across every step and tool call in your LLM agent
+
+- **Version and deploy prompts** outside your codebase so every change is trackable and reversible
+
+- Build a **monitoring layer** that catches failure modes automatically — before your users do
+
+- Run your first **eval experiment** and create a reusable dataset you can take into every future build
+
+For hackathon builders specifically: while other teams are guessing why their agent broke, you''ll have trace data, versioned prompts, and an eval loop that tells you in minutes whether your last change helped or hurt. That''s the difference between a demo that impresses judges and one that barely holds together.
+
+* * *
+
+ **Who this is for**
+
+This workshop is for you if:
+
+- You''re building LLM-powered applications and want a structured, repeatable way to improve them
+
+- You''re competing in the [Agentic AI Build Week](https://luma.com/gaf-hm61) hackathon and want a real edge on Day 4
+
+- You''re a tech lead evaluating observability tooling before taking an AI product to production
+
+This is NOT for you if you''re planning to evaluate your agent''s performance by running it and hoping for the best.
+
+You should be comfortable reading TypeScript. No prior Langfuse experience needed.
+
+* * *
+
+ **Delivered by**
+
+ **Muhammad Ali** — Specialist Solutions Architect, Langfuse/ClickHouse
+
+Langfuse is the leading open-source LLM observability platform, trusted by thousands of engineering teams building production-grade AI applications.
+
+* * *
+
+ **Part of Agentic AI Build Week**
+
+This workshop is one of 10+ technical sessions happening across [Agentic AI Build Week](https://luma.com/gaf-hm61) — Southeast Asia''s largest agentic AI hackathon, July 8–12 in Ho Chi Minh City, organised by GenAI Fund.
+
+Not registered for the main event yet? [Apply for Agentic AI Build Week](https://luma.com/gaf-hm61) — 2,000+ builders, $1M+ in prizes, 5 days of workshops and a Demo Day.
+
+* * *
+
+ **Come prepared**
+
+Bring these and you''ll hit the ground running:
+
+- Node.js 18+ installed on your laptop
+
+- A free [Langfuse Cloud](https://cloud.langfuse.com/?utm_source=luma) account (sign up takes 2 minutes)
+
+- An OpenAI API key (a temporary one will also be provided on the day)
+
+* * *
+
+Join the [AABW builder community on Discord](https://discord.gg/pb7njVhVb?utm_source=luma) — that''s where build teams are forming and pre-workshop prep is happening.', '[]', '[]', 'https://luma.com/8zn9khl4', '[]', 'partial', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day03-langfuse-clickhouse.png');
 INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-google-developer-experts', 'Beyond Autocomplete: How Agentic AI Solves the Enterprise Design Bottleneck', '2026-07-10', 3, 'Design', 1783666800000, 1783670400000, '14:00', '15:00', 'vng-campus', 'Google Developer Experts', 'Design', 'workshop', 'workshop', 'Most AI tools generate plausible pixels, not usable systems. **Linh Nguyen** shows you the difference — and why it matters for anyone building real products.
 
  **What you''ll take away**
@@ -171,66 +647,101 @@ INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at,
 
  **Before you apply:** You must be registered for Agentic AI Build Week — **[👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61)** if you haven''t yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don''t forget to [🚀](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma) **[Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma)** **.**
 
- **👉 Apply now to request your seat. Approval required, and seats are filling fast.**', '["Linh Nguyen — Google Developer Expert (AI/ML) & Head of AI at Obello. The first woman in Vietnam named to Google''s Developer Expert program for AI, with 14 years in NLP & machine learning and a Master''s from the National University of Singapore."]', '["Must be registered for Agentic AI Build Week","Seats are prioritised for Builder or Founding Builder ticket holders","AABW Buildathon Devpost signup is recommended","Private event; approval required; limited seats"]', 'https://luma.com/gaf-idob', '[]', 'full', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day03-google-developer-experts.png');
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-tencent-cloud', 'Tencent Cloud', '2026-07-10', 3, 'Design', 1783670400000, 1783677600000, '15:00', '17:00', 'vng-campus', 'Tencent Cloud', 'Design', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-builder-night', 'Builder Night', '2026-07-10', 3, 'Design', 1783681200000, NULL, '18:00', NULL, 'vng-campus', NULL, 'Design', 'session', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-opening-ceremony-keynotes', 'Opening Ceremony + Keynotes', '2026-07-11', 4, 'Build', 1783735200000, NULL, '09:00', NULL, 'galaxy-innovation-park', NULL, 'Build', 'keynote', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-lunch', 'Lunch', '2026-07-11', 4, 'Build', 1783746000000, NULL, '12:00', NULL, 'galaxy-innovation-park', NULL, 'Build', 'break', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-on-site-build-sprint', 'On-site Build Sprint', '2026-07-11', 4, 'Build', 1783749600000, NULL, '13:00', NULL, 'galaxy-innovation-park', NULL, 'Build', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-expert-parade', 'Expert Parade', '2026-07-11', 4, 'Build', 1783760400000, NULL, '16:00', NULL, 'galaxy-innovation-park', NULL, 'Build', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-networking-night', 'Networking Night', '2026-07-11', 4, 'Build', 1783767600000, NULL, '18:00', NULL, 'galaxy-innovation-park', NULL, 'Build', 'networking', 'signature', '## NOT EVERY GREAT CONVERSATION FITS INTO A THEME.
+ **👉 Apply now to request your seat. Approval required, and seats are filling fast.**', '["Linh Nguyen — Google Developer Expert (AI/ML) & Head of AI at Obello. The first woman in Vietnam named to Google''s Developer Expert program for AI, with 14 years in NLP & machine learning and a Master''s from the National University of Singapore."]', '["Must be registered for Agentic AI Build Week","Seats are prioritised for Builder or Founding Builder ticket holders","AABW Buildathon Devpost signup is recommended","Private event; approval required; limited seats"]', 'https://luma.com/gaf-idob', '[]', 'stale', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day03-google-developer-experts.png');
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-antitech', 'Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment with the Antitech SDK', '2026-07-10', 3, 'Design', 1783670400000, 1783674000000, '15:00', '16:00', 'vng-campus', 'Antitech', 'Design', 'workshop', 'workshop', '## THE JUDGES AT AABW AREN''T EVALUATING DEMOS. THEY''RE EVALUATING DEPLOYMENTS.
 
-Across Agentic AI Build Week, we ran private networking events for visual AI, gaming, and robotics. This is the one where everything — and everyone — comes together.
+Every problem statement at this hackathon comes from a real enterprise. Every project is judged on production-readiness, not demo polish.
 
-The AABW Builder Networking Night is an invitation-only closing event, curated for the most engaged builders, investors, and industry leaders from the entire week.
+That means your agent will be evaluated against the same standard a security review would apply before a company greenlights a deployment: _Can this thing be manipulated? Does it leak data? Can a user make it do something it shouldn''t?_
+
+Most builds this week won''t have an answer to those questions.
+
+This workshop is how you get one — in 60 minutes.
 
 * * *
 
-## 👋 WHAT THIS IS
+## 🔴 WHAT THIS IS
 
-A private, by-application evening gathering for a select group of practitioners from across the AI ecosystem. No agenda. No panels. No pitches.
+A hands-on AI security workshop at VNG Campus, led by **Achraf "Ash" Jday**, Co-Founder of Antitech — building the security layer for the agentic age, backed by Antler, recognised as **Best AI Solution in Japan at The Ventures 2026**.
 
-Just the kind of genuine, unhurried conversation that happens when the right people are finally in the same room — with nowhere else to be.
+In 60 minutes, you will:
 
-* * *
+- **Map the 8 attack surfaces** enterprise security teams look for first in agentic systems: prompt injection, indirect prompt injection, conversation-led attacks, memory poisoning, unsafe instruction following, data leakage, tool abuse, and policy bypass — and understand why your existing security thinking doesn''t catch any of them
 
-## 🌐 WHO''S IN THE ROOM
+- **Run real red-team checks** using the Antitech SDK against actual agent types: chatbots, workflow agents, API-connected agents, document-ingestion agents, and enterprise-style agents
 
-- Founders and builders from across the AI stack
+- **Apply blue-team hardening** in the same session: PII/data obfuscation, anti-prompt-injection defenses, safer input/output handling — patterns you can implement on your AABW build tonight
 
-- Investors and VCs active in the Southeast Asia and global AI ecosystem
+- **Generate a structured Agent Assessment Report** — the exact format enterprise evaluators use: vulnerabilities found, severity, affected components, reproduction steps, mitigations applied
 
-- Corporate and brand leaders at the frontier of AI adoption
-
-- Industry players who shaped what this week became
+ **Optional deliverable:** Teams that run the SDK assessment during Build Week can submit an Agent Assessment Report alongside their project. It documents what you found, what you fixed, and why your agent is deployment-ready. It''s the kind of evidence most teams won''t have. It''s the kind judges notice.
 
 * * *
 
-## 💡 HOW IT WORKS
+## 🔬 HOW THE SESSION IS STRUCTURED
 
-Attendance is by application and personal review. We curate every room we run — and this one is no different. Every person here was selected because they make the room better for everyone else in it.
+ **AI Security Foundations** — _25–50 min_
 
-Part of Agentic AI Build Week — Ho Chi Minh City, 8–12 July 2026.
+The agentic AI risk landscape: why traditional app security — authentication, validation, rate limiting — is not enough once your agent reads context, executes tools, and chains decisions autonomously. What goes wrong, where, and why.
 
-📅 11 July 2026
+ **Antitech SDK Walkthrough** — _30–45 min_
 
-⏰ 6:00 PM – 8:00 PM
+How to use the SDK to run red-team style assessments: test for prompt injection, memory poisoning, data leakage, tool abuse, and policy bypass. Structure your findings. Generate a report with severity ratings, reproduction steps, and remediation recommendations.
 
-📍 Ho Chi Minh City
+ **Use Cases + Q&A** — _remaining time_
 
-Close the week right. Apply to attend 👉 [**HERE**](https://luma.com/fojg38pi)
+Concrete scenarios for the builds happening at AABW this week. How to apply this to your own agent before submission closes.
 
 * * *
 
-## ONE REQUIREMENT
+## 👥 WHO THIS IS FOR
 
-To be eligible for this networking event, you must be registered for Agentic AI Build Week. Register for the main event 👉 [**HERE**](https://luma.com/t6n0irct?utm_source=luma_networkingevent)', '[]', '["Must be registered for Agentic AI Build Week","Private event; approval required; limited seats"]', 'https://luma.com/gaf-u7gd', '[]', 'full', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day04-networking-night.png');
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-late-night-build', 'Late Night Build', '2026-07-11', 4, 'Build', 1783774800000, NULL, '20:00', NULL, 'galaxy-innovation-park', NULL, 'Build', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day05-submission-deadline', 'Submission Deadline', '2026-07-12', 5, 'Demo', 1783821600000, NULL, '09:00', NULL, 'galaxy-innovation-park', NULL, 'Demo', 'session', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day05-demo-pitches', 'Demo Pitches', '2026-07-12', 5, 'Demo', 1783825200000, NULL, '10:00', NULL, 'galaxy-innovation-park', NULL, 'Demo', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day05-lunch', 'Lunch', '2026-07-12', 5, 'Demo', 1783832400000, NULL, '12:00', NULL, 'galaxy-innovation-park', NULL, 'Demo', 'break', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day05-awards-ceremony', 'Awards Ceremony', '2026-07-12', 5, 'Demo', 1783846800000, NULL, '16:00', NULL, 'galaxy-innovation-park', NULL, 'Demo', 'keynote', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
-INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day05-networking-night', 'Networking Night', '2026-07-12', 5, 'Demo', 1783854000000, NULL, '18:00', NULL, 'galaxy-innovation-park', NULL, 'Demo', 'networking', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+This is for you if:
+
+- You''re building an agent at AABW and want it to survive enterprise evaluation — not just Demo Day
+
+- You haven''t seriously asked _"what happens when someone tries to break my agent?"_ — and you know you should have
+
+- You want a submittable security artifact that demonstrates production-ready thinking to judges
+
+This is **NOT** for you if you want a general AI ethics overview. This is offensive and defensive security engineering — hands-on, for builders who are shipping real things under real constraints.
+
+* * *
+
+## 🎯 YOUR SPEAKER
+
+ **Achraf "Ash" Jday** — Co-Founder, Antitech. Backed by Antler. **Best AI Solution in Japan, The Ventures 2026.**
+
+Before Antitech, Achraf designed hundreds of infrastructure architectures, governance frameworks, and agentic interfaces for enterprise clients in banking, industrial, and space tech. He''s trained and mentored thousands of builders worldwide through programs connected to Microsoft, MIT, Stanford, and EPFL.
+
+Sorbonne MSc AI & Cybersecurity — **21/20 thesis score** on AI transformation in fintech security. NASA Space Apps France winner. WorldSkills Île-de-France Cybersecurity Champion. EPFL LauzHack winner. Top 5 in Facebook''s Cybersecurity Challenge as a teenager — the youngest competitor in the field. France''s Lead Microsoft MLSA Ambassador.
+
+His mission: _make the future''s autonomous systems harder to hack than they are to build._
+
+* * *
+
+## ⚠️ ONE REQUIREMENT
+
+You must be registered for [Agentic AI Build Week](https://luma.com/gaf-hm61) to attend. Every application is reviewed — builders actively working on something at AABW get priority.
+
+Haven''t applied yet? [Register for the main event first.](https://luma.com/gaf-hm61)
+
+* * *
+
+## THE CONTEXT
+
+This session is part of [Agentic AI Build Week (Jul 8–12)](https://luma.com/gaf-hm61) — Southeast Asia''s largest agentic AI hackathon, with 2,000+ builders, 30+ tech partners, and a $1M+ prize pool across Ho Chi Minh City.
+
+ **👉 Apply below. Build something that doesn''t just demo well — build something an enterprise would actually deploy.**', '[]', '[]', 'https://luma.com/7l5r8205', '[]', 'partial', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', '/covers/day03-antitech.png');
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day03-builder-night-special-announcements', 'Builder Night · Special Announcements', '2026-07-10', 3, 'Design', 1783681200000, 1783688400000, '18:00', '20:00', 'vng-campus', NULL, 'Design', 'session', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-opening-ceremony-keynotes', 'Opening Ceremony + Keynotes', '2026-07-11', 4, 'Build', 1783735200000, NULL, '09:00', NULL, 'galaxy-innovation-park', NULL, 'Build', 'keynote', 'signature', NULL, '[]', '[]', NULL, '[]', 'stale', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-expert-parade-networking', 'Expert Parade + Networking', '2026-07-11', 4, 'Build', 1783737000000, NULL, '09:30', NULL, 'galaxy-innovation-park', NULL, 'Build', 'networking', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-lunch-break', 'Lunch Break', '2026-07-11', 4, 'Build', 1783746000000, 1783749600000, '12:00', '13:00', 'galaxy-innovation-park', NULL, 'Build', 'break', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-vip-dinner', 'VIP Dinner', '2026-07-11', 4, 'Build', 1783767600000, 1783774800000, '18:00', '20:00', 'galaxy-innovation-park', NULL, 'Build', 'session', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day04-late-night-build', 'Late Night Build', '2026-07-11', 4, 'Build', 1783774800000, NULL, '20:00', NULL, 'galaxy-innovation-park', NULL, 'Build', 'workshop', 'workshop', NULL, '[]', '[]', NULL, '[]', 'stale', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day05-demo-day', 'Demo Day', '2026-07-12', 5, 'Demo', 1783821600000, NULL, '09:00', NULL, 'galaxy-innovation-park', NULL, 'Demo', 'session', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day05-lunch-break', 'Lunch Break', '2026-07-12', 5, 'Demo', 1783832400000, 1783836000000, '12:00', '13:00', 'galaxy-innovation-park', NULL, 'Demo', 'break', 'break', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
+INSERT INTO sessions (id, title, day, day_number, day_theme, starts_at, ends_at, start_time_label, end_time_label, venue_id, partner, track, type, tone, description, speakers, requirements, registration_url, tags, quality_level, source_url, cover_image) VALUES ('day05-awards-ceremony', 'Awards Ceremony', '2026-07-12', 5, 'Demo', 1783841400000, 1783846800000, '14:30', '16:00', 'galaxy-innovation-park', NULL, 'Demo', 'keynote', 'signature', NULL, '[]', '[]', NULL, '[]', 'summary_only', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', NULL);
 
 DELETE FROM perks;
 INSERT INTO perks (id, title, provider, value, how_to_claim, eligibility, link, expires_at, source_url) VALUES ('byteplus-v-start-global-accelerator', 'BytePlus V-START Global Accelerator', 'BytePlus', 'Up to $15,000 in AI & cloud credits', 'Qualifying startups get a path into the V-START Global Accelerator via the BytePlus workshop on Day 01.', 'Qualifying startups (apply via the BytePlus session)', 'https://luma.com/gaf-vbkf', NULL, 'https://luma.com/gaf-vbkf');
@@ -239,5 +750,4 @@ INSERT INTO perks (id, title, provider, value, how_to_claim, eligibility, link, 
 INSERT INTO perks (id, title, provider, value, how_to_claim, eligibility, link, expires_at, source_url) VALUES ('apify-platform-credits', 'Apify Platform Credits', 'Apify', '$25 in Apify platform credits (with top-ups at the Apify booth)', 'Register for the Apify workshop on Day 03; credits are granted to every registered builder.', 'Every registered builder', 'https://luma.com/gaf-umu5', NULL, 'https://luma.com/gaf-umu5');
 
 DELETE FROM deadlines;
-INSERT INTO deadlines (id, title, due_at, type, link, source_url) VALUES ('submission-deadline', 'Hackathon Submission Deadline', 1783821600000, 'submission', 'https://agentic-ai-build-week-2026.devpost.com/', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule');
 INSERT INTO deadlines (id, title, due_at, type, link, source_url) VALUES ('main-event-registration', 'Register for Agentic AI Build Week', NULL, 'rsvp', 'https://luma.com/gaf-hm61?utm_source=landing_page', 'https://luma.com/gaf-hm61?utm_source=landing_page');

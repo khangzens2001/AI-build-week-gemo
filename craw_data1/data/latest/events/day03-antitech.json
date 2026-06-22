@@ -1,0 +1,55 @@
+{
+  "id": "day03-antitech",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
+    "https://luma.com/7l5r8205"
+  ],
+  "type": "workshop",
+  "day_number": 3,
+  "day_theme": "Design",
+  "date": "2026-07-10",
+  "display_date": "Fri · July 10",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment with the Antitech SDK",
+  "venue": "VNG Campus",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/7l5r8205",
+  "event_detail_url": "https://luma.com/7l5r8205",
+  "description": "## THE JUDGES AT AABW AREN'T EVALUATING DEMOS. THEY'RE EVALUATING DEPLOYMENTS.\n\nEvery problem statement at this hackathon comes from a real enterprise. Every project is judged on production-readiness, not demo polish.\n\nThat means your agent will be evaluated against the same standard a security review would apply before a company greenlights a deployment: _Can this thing be manipulated? Does it leak data? Can a user make it do something it shouldn't?_\n\nMost builds this week won't have an answer to those questions.\n\nThis workshop is how you get one — in 60 minutes.\n\n* * *\n\n## 🔴 WHAT THIS IS\n\nA hands-on AI security workshop at VNG Campus, led by **Achraf \"Ash\" Jday**, Co-Founder of Antitech — building the security layer for the agentic age, backed by Antler, recognised as **Best AI Solution in Japan at The Ventures 2026**.\n\nIn 60 minutes, you will:\n\n- **Map the 8 attack surfaces** enterprise security teams look for first in agentic systems: prompt injection, indirect prompt injection, conversation-led attacks, memory poisoning, unsafe instruction following, data leakage, tool abuse, and policy bypass — and understand why your existing security thinking doesn't catch any of them\n\n- **Run real red-team checks** using the Antitech SDK against actual agent types: chatbots, workflow agents, API-connected agents, document-ingestion agents, and enterprise-style agents\n\n- **Apply blue-team hardening** in the same session: PII/data obfuscation, anti-prompt-injection defenses, safer input/output handling — patterns you can implement on your AABW build tonight\n\n- **Generate a structured Agent Assessment Report** — the exact format enterprise evaluators use: vulnerabilities found, severity, affected components, reproduction steps, mitigations applied\n\n **Optional deliverable:** Teams that run the SDK assessment during Build Week can submit an Agent Assessment Report alongside their project. It documents what you found, what you fixed, and why your agent is deployment-ready. It's the kind of evidence most teams won't have. It's the kind judges notice.\n\n* * *\n\n## 🔬 HOW THE SESSION IS STRUCTURED\n\n **AI Security Foundations** — _25–50 min_\n\nThe agentic AI risk landscape: why traditional app security — authentication, validation, rate limiting — is not enough once your agent reads context, executes tools, and chains decisions autonomously. What goes wrong, where, and why.\n\n **Antitech SDK Walkthrough** — _30–45 min_\n\nHow to use the SDK to run red-team style assessments: test for prompt injection, memory poisoning, data leakage, tool abuse, and policy bypass. Structure your findings. Generate a report with severity ratings, reproduction steps, and remediation recommendations.\n\n **Use Cases + Q&A** — _remaining time_\n\nConcrete scenarios for the builds happening at AABW this week. How to apply this to your own agent before submission closes.\n\n* * *\n\n## 👥 WHO THIS IS FOR\n\nThis is for you if:\n\n- You're building an agent at AABW and want it to survive enterprise evaluation — not just Demo Day\n\n- You haven't seriously asked _\"what happens when someone tries to break my agent?\"_ — and you know you should have\n\n- You want a submittable security artifact that demonstrates production-ready thinking to judges\n\nThis is **NOT** for you if you want a general AI ethics overview. This is offensive and defensive security engineering — hands-on, for builders who are shipping real things under real constraints.\n\n* * *\n\n## 🎯 YOUR SPEAKER\n\n **Achraf \"Ash\" Jday** — Co-Founder, Antitech. Backed by Antler. **Best AI Solution in Japan, The Ventures 2026.**\n\nBefore Antitech, Achraf designed hundreds of infrastructure architectures, governance frameworks, and agentic interfaces for enterprise clients in banking, industrial, and space tech. He's trained and mentored thousands of builders worldwide through programs connected to Microsoft, MIT, Stanford, and EPFL.\n\nSorbonne MSc AI & Cybersecurity — **21/20 thesis score** on AI transformation in fintech security. NASA Space Apps France winner. WorldSkills Île-de-France Cybersecurity Champion. EPFL LauzHack winner. Top 5 in Facebook's Cybersecurity Challenge as a teenager — the youngest competitor in the field. France's Lead Microsoft MLSA Ambassador.\n\nHis mission: _make the future's autonomous systems harder to hack than they are to build._\n\n* * *\n\n## ⚠️ ONE REQUIREMENT\n\nYou must be registered for [Agentic AI Build Week](https://luma.com/gaf-hm61) to attend. Every application is reviewed — builders actively working on something at AABW get priority.\n\nHaven't applied yet? [Register for the main event first.](https://luma.com/gaf-hm61)\n\n* * *\n\n## THE CONTEXT\n\nThis session is part of [Agentic AI Build Week (Jul 8–12)](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, with 2,000+ builders, 30+ tech partners, and a $1M+ prize pool across Ho Chi Minh City.\n\n **👉 Apply below. Build something that doesn't just demo well — build something an enterprise would actually deploy.**",
+  "takeaways": [],
+  "speakers": [],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [],
+  "location": {
+    "venue_name": "VNG Campus",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Ho Chi Minh City",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.757589818537754,
+    "longitude": 106.74807853388879,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.757589818537754%2C106.74807853388879",
+    "source": "luma"
+  },
+  "status": "registration_required",
+  "confidence": "homepage+external",
+  "start_time": "15:00",
+  "end_time": "16:00",
+  "organizer_or_partner": "Antitech",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/e1/4966aaa3-b03a-400d-bdff-61288c414503.png",
+  "completeness_score": 0.85,
+  "missing_fields": [
+    "speakers",
+    "requirements"
+  ],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "dff0c2952715b7c6a724439cb81371075b4d13d70285ebe12d743d0877daa7e6",
+  "content_hash": "893addb27dee7ed9cbcd6104e2e1dcdb780452d3ed68a4e3924011bb1100a826",
+  "quality_level": "partial",
+  "scraped_at": "2026-06-22T12:17:07.829164"
+}

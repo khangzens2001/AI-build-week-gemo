@@ -35,13 +35,13 @@
   },
   "status": "scheduled",
   "confidence": "bundle_schedule",
-  "start_time": "16:00",
-  "end_time": null,
+  "start_time": "14:30",
+  "end_time": "16:00",
   "completeness_score": 1.0,
   "missing_fields": [],
   "warnings": [],
-  "important_hash": "b4c281da921bd41b0da6d592afc274c7be839b12ead5bd4ee9ea7ab8df966835",
+  "important_hash": "e29006f2ea0ba40de9056c747783f0f40a8b41a019f0dfad8c4014db4699711a",
   "content_hash": "05cc300c791e9ec43ef2029085f749f40977036477730d1ebfe8abd7b2db02be",
   "quality_level": "summary_only",
-  "scraped_at": "2026-06-18T15:27:19.784339"
+  "scraped_at": "2026-06-22T12:17:07.830443"
 }

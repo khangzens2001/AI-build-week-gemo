@@ -12,7 +12,7 @@
   "display_date": "Wed · July 8",
   "timezone": "Indochina Time, GMT+7",
   "title": "Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally",
-  "venue": "Tasco Office",
+  "venue": "Tasco",
   "city": "Ho Chi Minh City",
   "country": "Vietnam",
   "registration_url": "https://luma.com/gaf-t4bs",
@@ -47,10 +47,10 @@
   },
   "status": "registration_required",
   "confidence": "homepage+external",
-  "organizer_or_partner": "NVIDIA",
   "start_time": "14:00",
   "end_time": "14:45",
-  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/ve/82109156-fac2-43b7-813c-6dffaa1be3e6.png",
+  "organizer_or_partner": "NVIDIA",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/mk/6f4a09e8-81c0-4a09-ab81-4e377623a7de.png",
   "external_time_text": "2:00 PM – 2:45 PM (Indochina Time, GMT+7)",
   "external_location_text": "Ho Chi Minh City, Vietnam — exact venue confirmed closer to the date",
   "completeness_score": 1.0,
@@ -58,8 +58,8 @@
   "warnings": [
     "exact address hidden until registration"
   ],
-  "important_hash": "272010cea8ea13ec9ad34853b78c13571339f3a3af121fe21aa9db70b3f81755",
-  "content_hash": "0ae096822bc4d1f9d0e5a1df2ce7a59b6f7975493428441fe1bad7d73add4d9a",
+  "important_hash": "ecd215a7ce9620e254089ddf72fd39744dd5aaa942548d20f6d4aec7d082065d",
+  "content_hash": "d8f66e52835a87cc2be5d09201e33513064aacc0905561863b2fe6b30a350e9b",
   "quality_level": "full",
-  "scraped_at": "2026-06-18T10:53:23.818996"
+  "scraped_at": "2026-06-22T12:17:07.823443"
 }

@@ -7,6 +7,10 @@
       "url": "https://luma.com/gaf-vbkf"
     },
     {
+      "event_id": "day01-tencent-cloud",
+      "url": "https://luma.com/tanuxv4i"
+    },
+    {
       "event_id": "day01-nvidia",
       "url": "https://luma.com/gaf-t4bs"
     },
@@ -15,19 +19,63 @@
       "url": "https://luma.com/gaf-jpy4"
     },
     {
+      "event_id": "day01-openclaw",
+      "url": "https://luma.com/gaf-hm61"
+    },
+    {
+      "event_id": "day02-aws",
+      "url": "https://luma.com/1nubtbgt"
+    },
+    {
+      "event_id": "day02-agora",
+      "url": "https://luma.com/gaf-2wor"
+    },
+    {
+      "event_id": "day02-aws",
+      "url": "https://luma.com/1nubtbgt"
+    },
+    {
+      "event_id": "day02-aws",
+      "url": "https://luma.com/1nubtbgt"
+    },
+    {
       "event_id": "day03-apify",
       "url": "https://luma.com/gaf-umu5"
+    },
+    {
+      "event_id": "day03-langfuse-clickhouse",
+      "url": "https://luma.com/8zn9khl4"
     },
     {
       "event_id": "day03-google-developer-experts",
       "url": "https://luma.com/gaf-idob"
     },
     {
-      "event_id": "day04-networking-night",
-      "url": "https://luma.com/gaf-u7gd"
+      "event_id": "day03-antitech",
+      "url": "https://luma.com/7l5r8205"
     },
     {
       "event_id": "day04-agentic-ai-build-week-networking-night",
+      "url": "https://luma.com/gaf-u7gd"
+    },
+    {
+      "event_id": "day01-inside-the-nvidia-inception-program-how-startups-build-and-scale-ai-globally-agentic-ai-build-week-workshop",
+      "url": "https://luma.com/gaf-t4bs"
+    },
+    {
+      "event_id": "day01-the-full-stack-advantage-building-production-ready-ai-agents-with-tencent-cloud",
+      "url": "https://luma.com/tanuxv4i"
+    },
+    {
+      "event_id": "day03-beyond-autocomplete-how-agentic-ai-solves-the-enterprise-design-bottleneck-agentic-ai-build-week-workshop",
+      "url": "https://luma.com/gaf-idob"
+    },
+    {
+      "event_id": "day03-build-deploy-and-monetize-ai-agents-the-future-of-the-developer-economy-agentic-ai-build-week-workshop",
+      "url": "https://luma.com/gaf-umu5"
+    },
+    {
+      "event_id": "day04-networking-night",
       "url": "https://luma.com/gaf-u7gd"
     }
   ]

@@ -45,7 +45,7 @@
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.758415389331251%2C106.74467402085305",
     "source": "luma"
   },
-  "status": "registration_required",
+  "status": "not_listed_on_homepage",
   "confidence": "homepage+external",
   "start_time": "14:00",
   "end_time": "15:00",
@@ -60,6 +60,8 @@
   ],
   "important_hash": "00a62cb8870fdf3066f87ae09812a814653942159e61419648558962f7bc6510",
   "content_hash": "558f6b7d7d03016d24e23c2f18addb3b84f2fa10358468837b4d767439fcb0c8",
-  "quality_level": "full",
-  "scraped_at": "2026-06-18T15:27:19.781471"
+  "quality_level": "stale",
+  "scraped_at": "2026-06-18T15:27:19.781471",
+  "last_seen_at": "2026-06-18T15:27:19.781471",
+  "marked_stale_at": "2026-06-20T18:16:37.202025"
 }

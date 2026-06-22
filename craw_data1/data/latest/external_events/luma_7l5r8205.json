@@ -1,0 +1,125 @@
+{
+  "url": "https://luma.com/7l5r8205",
+  "title": "Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment — Antitech Workshop",
+  "markdown": "![Cover Image for Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment — Antitech Workshop](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/e1/4966aaa3-b03a-400d-bdff-61288c414503.png)\n\n![Cover Image for Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment — Antitech Workshop](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/e1/4966aaa3-b03a-400d-bdff-61288c414503.png)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\n[Kai Yong](https://luma.com/user/kaiyong)\n\n[Johan Nguyen](https://luma.com/user/usr-IU81nKofEVwjKgK)\n\n[Joshua Si](https://luma.com/user/usr-CheV1d8HyQYSCE0)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)\n\n# Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment — Antitech Workshop\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nJul\n\n10\n\nFriday, July 10\n\n3:00 PM - 4:00 PM GMT+7\n\nRegister to See Address\n\nThành phố Hồ Chí Minh, Vietnam\n\nWelcome! Please choose your desired ticket type:\n\nRequest to Join\n\nYou will be asked to verify token ownership with your wallet.\n\nAbout Event\n\n## THE JUDGES AT AABW AREN'T EVALUATING DEMOS. THEY'RE EVALUATING DEPLOYMENTS.\n\nEvery problem statement at this hackathon comes from a real enterprise. Every project is judged on production-readiness, not demo polish.\n\nThat means your agent will be evaluated against the same standard a security review would apply before a company greenlights a deployment: _Can this thing be manipulated? Does it leak data? Can a user make it do something it shouldn't?_\n\nMost builds this week won't have an answer to those questions.\n\nThis workshop is how you get one — in 60 minutes.\n\n* * *\n\n## 🔴 WHAT THIS IS\n\nA hands-on AI security workshop at VNG Campus, led by **Achraf \"Ash\" Jday**, Co-Founder of Antitech — building the security layer for the agentic age, backed by Antler, recognised as **Best AI Solution in Japan at The Ventures 2026**.\n\nIn 60 minutes, you will:\n\n- **Map the 8 attack surfaces** enterprise security teams look for first in agentic systems: prompt injection, indirect prompt injection, conversation-led attacks, memory poisoning, unsafe instruction following, data leakage, tool abuse, and policy bypass — and understand why your existing security thinking doesn't catch any of them\n\n- **Run real red-team checks** using the Antitech SDK against actual agent types: chatbots, workflow agents, API-connected agents, document-ingestion agents, and enterprise-style agents\n\n- **Apply blue-team hardening** in the same session: PII/data obfuscation, anti-prompt-injection defenses, safer input/output handling — patterns you can implement on your AABW build tonight\n\n- **Generate a structured Agent Assessment Report** — the exact format enterprise evaluators use: vulnerabilities found, severity, affected components, reproduction steps, mitigations applied\n\n **Optional deliverable:** Teams that run the SDK assessment during Build Week can submit an Agent Assessment Report alongside their project. It documents what you found, what you fixed, and why your agent is deployment-ready. It's the kind of evidence most teams won't have. It's the kind judges notice.\n\n* * *\n\n## 🔬 HOW THE SESSION IS STRUCTURED\n\n **AI Security Foundations** — _25–50 min_\n\nThe agentic AI risk landscape: why traditional app security — authentication, validation, rate limiting — is not enough once your agent reads context, executes tools, and chains decisions autonomously. What goes wrong, where, and why.\n\n **Antitech SDK Walkthrough** — _30–45 min_\n\nHow to use the SDK to run red-team style assessments: test for prompt injection, memory poisoning, data leakage, tool abuse, and policy bypass. Structure your findings. Generate a report with severity ratings, reproduction steps, and remediation recommendations.\n\n **Use Cases + Q&A** — _remaining time_\n\nConcrete scenarios for the builds happening at AABW this week. How to apply this to your own agent before submission closes.\n\n* * *\n\n## 👥 WHO THIS IS FOR\n\nThis is for you if:\n\n- You're building an agent at AABW and want it to survive enterprise evaluation — not just Demo Day\n\n- You haven't seriously asked _\"what happens when someone tries to break my agent?\"_ — and you know you should have\n\n- You want a submittable security artifact that demonstrates production-ready thinking to judges\n\nThis is **NOT** for you if you want a general AI ethics overview. This is offensive and defensive security engineering — hands-on, for builders who are shipping real things under real constraints.\n\n* * *\n\n## 🎯 YOUR SPEAKER\n\n **Achraf \"Ash\" Jday** — Co-Founder, Antitech. Backed by Antler. **Best AI Solution in Japan, The Ventures 2026.**\n\nBefore Antitech, Achraf designed hundreds of infrastructure architectures, governance frameworks, and agentic interfaces for enterprise clients in banking, industrial, and space tech. He's trained and mentored thousands of builders worldwide through programs connected to Microsoft, MIT, Stanford, and EPFL.\n\nSorbonne MSc AI & Cybersecurity — **21/20 thesis score** on AI transformation in fintech security. NASA Space Apps France winner. WorldSkills Île-de-France Cybersecurity Champion. EPFL LauzHack winner. Top 5 in Facebook's Cybersecurity Challenge as a teenager — the youngest competitor in the field. France's Lead Microsoft MLSA Ambassador.\n\nHis mission: _make the future's autonomous systems harder to hack than they are to build._\n\n* * *\n\n## ⚠️ ONE REQUIREMENT\n\nYou must be registered for [Agentic AI Build Week](https://luma.com/gaf-hm61) to attend. Every application is reviewed — builders actively working on something at AABW get priority.\n\nHaven't applied yet? [Register for the main event first.](https://luma.com/gaf-hm61)\n\n* * *\n\n## THE CONTEXT\n\nThis session is part of [Agentic AI Build Week (Jul 8–12)](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, with 2,000+ builders, 30+ tech partners, and a $1M+ prize pool across Ho Chi Minh City.\n\n **👉 Apply below. Build something that doesn't just demo well — build something an enterprise would actually deploy.**\n\nLocation\n\nPlease register to see the exact location of this event.\n\nThành phố Hồ Chí Minh, Vietnam\n\n[View on Google Maps](https://www.google.com/maps/search/?api=1&query=10.757589818537754%2C106.74807853388879)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\n[Kai Yong](https://luma.com/user/kaiyong)\n\n[Johan Nguyen](https://luma.com/user/usr-IU81nKofEVwjKgK)\n\n[Joshua Si](https://luma.com/user/usr-CheV1d8HyQYSCE0)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)",
+  "status": "ok",
+  "status_reason": "",
+  "description": "## THE JUDGES AT AABW AREN'T EVALUATING DEMOS. THEY'RE EVALUATING DEPLOYMENTS.\n\nEvery problem statement at this hackathon comes from a real enterprise. Every project is judged on production-readiness, not demo polish.\n\nThat means your agent will be evaluated against the same standard a security review would apply before a company greenlights a deployment: _Can this thing be manipulated? Does it leak data? Can a user make it do something it shouldn't?_\n\nMost builds this week won't have an answer to those questions.\n\nThis workshop is how you get one — in 60 minutes.\n\n* * *\n\n## 🔴 WHAT THIS IS\n\nA hands-on AI security workshop at VNG Campus, led by **Achraf \"Ash\" Jday**, Co-Founder of Antitech — building the security layer for the agentic age, backed by Antler, recognised as **Best AI Solution in Japan at The Ventures 2026**.\n\nIn 60 minutes, you will:\n\n- **Map the 8 attack surfaces** enterprise security teams look for first in agentic systems: prompt injection, indirect prompt injection, conversation-led attacks, memory poisoning, unsafe instruction following, data leakage, tool abuse, and policy bypass — and understand why your existing security thinking doesn't catch any of them\n\n- **Run real red-team checks** using the Antitech SDK against actual agent types: chatbots, workflow agents, API-connected agents, document-ingestion agents, and enterprise-style agents\n\n- **Apply blue-team hardening** in the same session: PII/data obfuscation, anti-prompt-injection defenses, safer input/output handling — patterns you can implement on your AABW build tonight\n\n- **Generate a structured Agent Assessment Report** — the exact format enterprise evaluators use: vulnerabilities found, severity, affected components, reproduction steps, mitigations applied\n\n **Optional deliverable:** Teams that run the SDK assessment during Build Week can submit an Agent Assessment Report alongside their project. It documents what you found, what you fixed, and why your agent is deployment-ready. It's the kind of evidence most teams won't have. It's the kind judges notice.\n\n* * *\n\n## 🔬 HOW THE SESSION IS STRUCTURED\n\n **AI Security Foundations** — _25–50 min_\n\nThe agentic AI risk landscape: why traditional app security — authentication, validation, rate limiting — is not enough once your agent reads context, executes tools, and chains decisions autonomously. What goes wrong, where, and why.\n\n **Antitech SDK Walkthrough** — _30–45 min_\n\nHow to use the SDK to run red-team style assessments: test for prompt injection, memory poisoning, data leakage, tool abuse, and policy bypass. Structure your findings. Generate a report with severity ratings, reproduction steps, and remediation recommendations.\n\n **Use Cases + Q&A** — _remaining time_\n\nConcrete scenarios for the builds happening at AABW this week. How to apply this to your own agent before submission closes.\n\n* * *\n\n## 👥 WHO THIS IS FOR\n\nThis is for you if:\n\n- You're building an agent at AABW and want it to survive enterprise evaluation — not just Demo Day\n\n- You haven't seriously asked _\"what happens when someone tries to break my agent?\"_ — and you know you should have\n\n- You want a submittable security artifact that demonstrates production-ready thinking to judges\n\nThis is **NOT** for you if you want a general AI ethics overview. This is offensive and defensive security engineering — hands-on, for builders who are shipping real things under real constraints.\n\n* * *\n\n## 🎯 YOUR SPEAKER\n\n **Achraf \"Ash\" Jday** — Co-Founder, Antitech. Backed by Antler. **Best AI Solution in Japan, The Ventures 2026.**\n\nBefore Antitech, Achraf designed hundreds of infrastructure architectures, governance frameworks, and agentic interfaces for enterprise clients in banking, industrial, and space tech. He's trained and mentored thousands of builders worldwide through programs connected to Microsoft, MIT, Stanford, and EPFL.\n\nSorbonne MSc AI & Cybersecurity — **21/20 thesis score** on AI transformation in fintech security. NASA Space Apps France winner. WorldSkills Île-de-France Cybersecurity Champion. EPFL LauzHack winner. Top 5 in Facebook's Cybersecurity Challenge as a teenager — the youngest competitor in the field. France's Lead Microsoft MLSA Ambassador.\n\nHis mission: _make the future's autonomous systems harder to hack than they are to build._\n\n* * *\n\n## ⚠️ ONE REQUIREMENT\n\nYou must be registered for [Agentic AI Build Week](https://luma.com/gaf-hm61) to attend. Every application is reviewed — builders actively working on something at AABW get priority.\n\nHaven't applied yet? [Register for the main event first.](https://luma.com/gaf-hm61)\n\n* * *\n\n## THE CONTEXT\n\nThis session is part of [Agentic AI Build Week (Jul 8–12)](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, with 2,000+ builders, 30+ tech partners, and a $1M+ prize pool across Ho Chi Minh City.\n\n **👉 Apply below. Build something that doesn't just demo well — build something an enterprise would actually deploy.**",
+  "takeaways": [],
+  "speakers": [],
+  "requirements": [],
+  "date_text": "",
+  "date": null,
+  "time_text": "",
+  "location_text": "",
+  "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.757589818537754%2C106.74807853388879",
+  "latitude": 10.757589818537754,
+  "longitude": 106.74807853388879,
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/e1/4966aaa3-b03a-400d-bdff-61288c414503.png",
+  "links": [
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "Kai Yong",
+      "url": "https://luma.com/user/kaiyong",
+      "type": "registration"
+    },
+    {
+      "text": "Johan Nguyen",
+      "url": "https://luma.com/user/usr-IU81nKofEVwjKgK",
+      "type": "registration"
+    },
+    {
+      "text": "Joshua Si",
+      "url": "https://luma.com/user/usr-CheV1d8HyQYSCE0",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Agentic AI Build Week",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "Register for the main event first.",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "Agentic AI Build Week (Jul 8–12)",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "View on Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=10.757589818537754%2C106.74807853388879",
+      "type": "external"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "Kai Yong",
+      "url": "https://luma.com/user/kaiyong",
+      "type": "registration"
+    },
+    {
+      "text": "Johan Nguyen",
+      "url": "https://luma.com/user/usr-IU81nKofEVwjKgK",
+      "type": "registration"
+    },
+    {
+      "text": "Joshua Si",
+      "url": "https://luma.com/user/usr-CheV1d8HyQYSCE0",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    }
+  ],
+  "images": [
+    {
+      "alt": "Cover Image for Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment — Antitech Workshop",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/e1/4966aaa3-b03a-400d-bdff-61288c414503.png"
+    },
+    {
+      "alt": "Cover Image for Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment — Antitech Workshop",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/e1/4966aaa3-b03a-400d-bdff-61288c414503.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    }
+  ],
+  "raw_hash": "a667e0dc8ce117dfd1aa07e1c8e61cf4144e53fcbd855d9dec5699469e5e0e26"
+}

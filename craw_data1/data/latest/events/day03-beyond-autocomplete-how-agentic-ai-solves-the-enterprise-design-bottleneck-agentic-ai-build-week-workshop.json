@@ -1,0 +1,66 @@
+{
+  "id": "day03-beyond-autocomplete-how-agentic-ai-solves-the-enterprise-design-bottleneck-agentic-ai-build-week-workshop",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://luma.com/gaf-idob"
+  ],
+  "type": "external_event",
+  "day_number": 3,
+  "day_theme": "Design",
+  "date": "2026-07-10",
+  "display_date": "Fri · July 10",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "Beyond Autocomplete: How Agentic AI Solves the Enterprise Design Bottleneck — Agentic AI Build Week Workshop",
+  "venue": "VNG Group JSC, Ho Chi Minh",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/gaf-idob",
+  "event_detail_url": "https://luma.com/gaf-idob",
+  "description": "Most AI tools generate plausible pixels, not usable systems. **Linh Nguyen** shows you the difference — and why it matters for anyone building real products.\n\n **What you'll take away**\n\n- A demo-driven walkthrough of agentic AI that plans, executes, and self-corrects toward a result you can actually ship\n\n- How Obello treats brand guidelines as executable constraints — using their real work as the example\n\n- A new way to think about what AI systems should do for you\n\n **Your speaker**\n\n- **Linh Nguyen** — Google Developer Expert (AI/ML) & Head of AI at Obello. The first woman in Vietnam named to Google's Developer Expert program for AI, with 14 years in NLP & machine learning and a Master's from the National University of Singapore.\n\n **Event details**\n\n- 📅 Thursday, July 10, 2026\n\n- 🕐 2:00 PM – 3:00 PM (Indochina Time, GMT+7)\n\n- 📍 VNG Group JSC, Ho Chi Minh\n\n- 🎟 Part of Agentic AI Build Week (July 8–12, 2026)\n\n- ✅ Private event · approval required · limited seats\n\n **Before you apply:** You must be registered for Agentic AI Build Week — **[👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61)** if you haven't yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don't forget to [🚀](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma) **[Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma)** **.**\n\n **👉 Apply now to request your seat. Approval required, and seats are filling fast.**",
+  "takeaways": [
+    "A demo-driven walkthrough of agentic AI that plans, executes, and self-corrects toward a result you can actually ship",
+    "How Obello treats brand guidelines as executable constraints — using their real work as the example",
+    "A new way to think about what AI systems should do for you"
+  ],
+  "speakers": [
+    "Linh Nguyen — Google Developer Expert (AI/ML) & Head of AI at Obello. The first woman in Vietnam named to Google's Developer Expert program for AI, with 14 years in NLP & machine learning and a Master's from the National University of Singapore."
+  ],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [
+    "Must be registered for Agentic AI Build Week",
+    "Seats are prioritised for Builder or Founding Builder ticket holders",
+    "AABW Buildathon Devpost signup is recommended",
+    "Private event; approval required; limited seats"
+  ],
+  "location": {
+    "venue_name": "VNG Group JSC, Ho Chi Minh",
+    "address_visibility": "register_to_see_address",
+    "address_text": "VNG Group JSC, Ho Chi Minh",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.758415389331251,
+    "longitude": 106.74467402085305,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.758415389331251%2C106.74467402085305",
+    "source": "luma"
+  },
+  "status": "not_listed_on_homepage",
+  "confidence": "homepage+external",
+  "start_time": "14:00",
+  "end_time": "15:00",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/0h/b028855e-f2c0-4229-baf6-761445acf745.png",
+  "external_time_text": "2:00 PM – 3:00 PM (Indochina Time, GMT+7)",
+  "external_location_text": "VNG Group JSC, Ho Chi Minh",
+  "source_note": "Auto-discovered from GenAI Fund Luma page",
+  "completeness_score": 1.0,
+  "missing_fields": [],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "f48babea09cd9eda8d9c71467b07e682e8f22869d0478eb9ee9080b6bf3e947c",
+  "content_hash": "558f6b7d7d03016d24e23c2f18addb3b84f2fa10358468837b4d767439fcb0c8",
+  "quality_level": "stale",
+  "scraped_at": "2026-06-22T02:41:59.875171",
+  "last_seen_at": "2026-06-22T02:41:59.875171",
+  "marked_stale_at": "2026-06-22T08:43:57.268575"
+}

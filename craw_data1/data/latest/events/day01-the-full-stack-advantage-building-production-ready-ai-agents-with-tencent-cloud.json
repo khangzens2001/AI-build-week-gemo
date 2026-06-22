@@ -1,0 +1,60 @@
+{
+  "id": "day01-the-full-stack-advantage-building-production-ready-ai-agents-with-tencent-cloud",
+  "source": "homepage_daily_schedule+luma",
+  "source_urls": [
+    "https://luma.com/tanuxv4i"
+  ],
+  "type": "external_event",
+  "day_number": 1,
+  "day_theme": "Enable",
+  "date": "2026-07-08",
+  "display_date": "Wed · July 8",
+  "timezone": "Indochina Time, GMT+7",
+  "title": "The Full-Stack Advantage: Building Production-Ready AI Agents with Tencent Cloud",
+  "venue": "Tasco, HCMC",
+  "city": "Ho Chi Minh City",
+  "country": "Vietnam",
+  "registration_url": "https://luma.com/tanuxv4i",
+  "event_detail_url": "https://luma.com/tanuxv4i",
+  "description": "Your AI agent demos look great. Your production AI agents don't.\n\nIt's not your team — it's the stack. LLM management is a spreadsheet nightmare. R&D is bottlenecked on manual coding. Edge deployments are brittle. Real-time AI interactions feel robotic. And every \"solution\" you patch in adds another failure point to a toolchain that barely holds together.\n\nThere's a better way to build.\n\n **What this is**\n\nA 2-hour hands-on technical workshop by the Tencent Cloud team, live in Ho Chi Minh City during Agentic AI Build Week. You'll go deep on the Tencent Cloud AI & Edge Stack — the same infrastructure powering enterprise AI at scale across Asia — and walk away with practical patterns you can put to work the same week at the hackathon.\n\nHere's what you'll build your understanding of:\n\n- **CodeBuddy** — AI-powered code generation that breaks R&D bottlenecks and multiplies developer throughput. Stop waiting on sprint cycles. Automate the routine and ship faster.\n\n- **TokenHub** — Centralized LLM management across heterogeneous providers. One interface to control costs, usage limits, and model routing at enterprise scale.\n\n- **MPaaS AIGC** — AI-powered content creation across text, image, and video — without stitching together a fragmented pipeline or paying for five separate APIs.\n\n- **EdgeOne Pages** — Enterprise-grade security and blazing performance at the edge. Deploy AI workloads that are fast, resilient, and protected by default.\n\n- **Tencent RTC Conversational AI** — Sub-second latency. Human-like responses. Build real-time AI interactions that feel real, not robotic.\n\nThis is hands-on and builder-first. Come build, not just watch.\n\n **Who this is for**\n\n✓ Developers and engineers building or maintaining AI agents at their company\n✓ Technical founders who need production-grade infrastructure without a dedicated platform team\n✓ CTOs and engineering leads looking to consolidate a fragmented, expensive AI stack\n✗ Not for you if you're looking for a sales pitch — this session is technical depth or nothing\n\n **Event details**\n\n- 📅 Tuesday, July 8, 2026\n\n- 🕐 12:00 PM – 2:00 PM (Indochina Time, GMT+7)\n\n- 📍 Tasco, HCMC\n\n- 🎟 Part of Agentic AI Build Week (July 8–12, 2026)\n\n **Before you apply:** You must be registered for Agentic AI Build Week — [👉 Register for Agentic AI Build Week](https://luma.com/gaf-hm61) if you haven't yet. Seats are prioritised for Builder & Founding Builder ticket holders, so don't forget to [🚀 Sign up for the AABW Buildathon on Devpost](https://agentic-ai-build-week-2026.devpost.com/?utm_source=luma).\n\n **👉 Apply now to request your seat. Approval required, and seats are filling fast.**",
+  "takeaways": [],
+  "speakers": [],
+  "hosts": [],
+  "presented_by": "GenAI Fund - Official",
+  "requirements": [
+    "Must be registered for Agentic AI Build Week",
+    "Seats are prioritised for Builder or Founding Builder ticket holders",
+    "AABW Buildathon Devpost signup is recommended",
+    "Private event; approval required; limited seats"
+  ],
+  "location": {
+    "venue_name": "Tasco, HCMC",
+    "address_visibility": "register_to_see_address",
+    "address_text": "Tasco, HCMC",
+    "city": "Ho Chi Minh City",
+    "country": "Vietnam",
+    "latitude": 10.824279189707388,
+    "longitude": 106.63026859814754,
+    "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.824279189707388%2C106.63026859814754",
+    "source": "luma"
+  },
+  "status": "not_listed_on_homepage",
+  "confidence": "homepage+external",
+  "start_time": "12:00",
+  "end_time": "14:00",
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/ip/2f8955b9-8029-4ef5-a78c-4d183017e87a.png",
+  "external_time_text": "12:00 PM – 2:00 PM (Indochina Time, GMT+7)",
+  "external_location_text": "Tasco, HCMC",
+  "source_note": "Auto-discovered from GenAI Fund Luma page",
+  "completeness_score": 1.0,
+  "missing_fields": [],
+  "warnings": [
+    "exact address hidden until registration"
+  ],
+  "important_hash": "e9f5f10720cc447cffadaab5f39119ddd5df0c6d8558faed86c2e3221f72cb24",
+  "content_hash": "5c3ab02e39dde4ec5451f17ce1d493bfa9da2d7c85e580af6952aee1956ed598",
+  "quality_level": "stale",
+  "scraped_at": "2026-06-22T02:41:59.874655",
+  "last_seen_at": "2026-06-22T02:41:59.874655",
+  "marked_stale_at": "2026-06-22T08:43:57.267961"
+}

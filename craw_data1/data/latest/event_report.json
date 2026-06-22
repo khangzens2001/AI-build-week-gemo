@@ -1,20 +1,20 @@
 {
-  "generated_at": "2026-06-18T16:05:57.196926",
+  "generated_at": "2026-06-22T15:01:59.954353",
   "programme_days": 5,
-  "events_total": 30,
-  "events_with_registration": 7,
-  "events_with_coordinates": 7,
-  "events_incomplete": 11,
-  "events_full": 6,
-  "events_partial": 0,
-  "events_summary_only": 23,
-  "events_changed": 3,
+  "events_total": 46,
+  "events_with_registration": 19,
+  "events_with_coordinates": 17,
+  "events_incomplete": 14,
+  "events_full": 3,
+  "events_partial": 8,
+  "events_summary_only": 12,
+  "events_changed": 0,
   "events_content_changed": 0,
-  "events_schedule_changed": 3,
+  "events_schedule_changed": 0,
   "events_stale": 0,
-  "external_event_pages_checked": 6,
-  "external_event_pages_skipped_unchanged": 6,
-  "external_event_pages_skipped_by_ttl": 6,
+  "external_event_pages_checked": 14,
+  "external_event_pages_skipped_unchanged": 13,
+  "external_event_pages_skipped_by_ttl": 1,
   "summary_only_days": [
     2,
     3,
@@ -28,9 +28,7 @@
       "completeness_score": 1.0,
       "quality_level": "summary_only",
       "missing_fields": [],
-      "warnings": [
-        "summary-only event from homepage"
-      ]
+      "warnings": []
     },
     {
       "id": "day01-byteplus",
@@ -43,13 +41,15 @@
       ]
     },
     {
-      "id": "day01-lunch",
-      "title": "Lunch",
-      "completeness_score": 1.0,
-      "quality_level": "summary_only",
-      "missing_fields": [],
+      "id": "day01-tencent-cloud",
+      "title": "The Full-Stack Advantage: Building Production-Ready AI Agents with Tencent Cloud",
+      "completeness_score": 0.92,
+      "quality_level": "partial",
+      "missing_fields": [
+        "speakers"
+      ],
       "warnings": [
-        "summary-only event from homepage"
+        "exact address hidden until registration"
       ]
     },
     {
@@ -73,28 +73,35 @@
       ]
     },
     {
-      "id": "day02-aws",
-      "title": "AWS",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
+      "id": "day01-openclaw",
+      "title": "OpenClaw Workshop",
+      "completeness_score": 0.92,
+      "quality_level": "partial",
       "missing_fields": [
-        "registration_url",
-        "event_detail_url",
-        "description",
-        "speakers",
-        "requirements",
-        "google_maps_url"
+        "speakers"
       ],
-      "warnings": []
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day02-aws",
+      "title": "Design Patterns & Best Practices — Testing, Monitoring & Production Readiness",
+      "completeness_score": 0.92,
+      "quality_level": "partial",
+      "missing_fields": [
+        "speakers"
+      ],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
     },
     {
       "id": "day02-agora",
-      "title": "Agora",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
+      "title": "Physical AI Party: Agora ConvoAI World",
+      "completeness_score": 0.69,
+      "quality_level": "partial",
       "missing_fields": [
-        "registration_url",
-        "event_detail_url",
         "description",
         "speakers",
         "requirements",
@@ -103,8 +110,8 @@
       "warnings": []
     },
     {
-      "id": "day02-lunch",
-      "title": "Lunch",
+      "id": "day02-lunch-break",
+      "title": "Lunch Break",
       "completeness_score": 1.0,
       "quality_level": "summary_only",
       "missing_fields": [],
@@ -112,22 +119,19 @@
     },
     {
       "id": "day02-aws",
-      "title": "AWS",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
+      "title": "Design Patterns & Best Practices — Testing, Monitoring & Production Readiness",
+      "completeness_score": 0.92,
+      "quality_level": "partial",
       "missing_fields": [
-        "registration_url",
-        "event_detail_url",
-        "description",
-        "speakers",
-        "requirements",
-        "google_maps_url"
+        "speakers"
       ],
-      "warnings": []
+      "warnings": [
+        "exact address hidden until registration"
+      ]
     },
     {
       "id": "day02-tiny-fish",
-      "title": "Tiny Fish",
+      "title": "Give Any AI Agent Live, Production-Grade Access to the Real Web",
       "completeness_score": 0.54,
       "quality_level": "summary_only",
       "missing_fields": [
@@ -141,31 +145,28 @@
       "warnings": []
     },
     {
-      "id": "day02-aws",
-      "title": "AWS",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
-      "missing_fields": [
-        "registration_url",
-        "event_detail_url",
-        "description",
-        "speakers",
-        "requirements",
-        "google_maps_url"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "day02-ai-gaming-night",
-      "title": "AI × Gaming Night",
+      "id": "day02-teabreak",
+      "title": "Teabreak",
       "completeness_score": 1.0,
       "quality_level": "summary_only",
       "missing_fields": [],
       "warnings": []
     },
     {
-      "id": "day03-registration-and-welcome",
-      "title": "Registration & Welcome",
+      "id": "day02-aws",
+      "title": "Design Patterns & Best Practices — Testing, Monitoring & Production Readiness",
+      "completeness_score": 0.92,
+      "quality_level": "partial",
+      "missing_fields": [
+        "speakers"
+      ],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day02-welcome-builders-night",
+      "title": "Welcome Builders Night",
       "completeness_score": 1.0,
       "quality_level": "summary_only",
       "missing_fields": [],
@@ -175,7 +176,7 @@
       "id": "day03-apify",
       "title": "Build, Deploy & Monetize AI Agents: The Future of the Developer Economy",
       "completeness_score": 1.0,
-      "quality_level": "full",
+      "quality_level": "stale",
       "missing_fields": [],
       "warnings": [
         "exact address hidden until registration"
@@ -184,12 +185,9 @@
     {
       "id": "day03-langfuse-clickhouse",
       "title": "Langfuse × ClickHouse",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
+      "completeness_score": 0.77,
+      "quality_level": "partial",
       "missing_fields": [
-        "registration_url",
-        "event_detail_url",
-        "description",
         "speakers",
         "requirements",
         "google_maps_url"
@@ -200,30 +198,28 @@
       "id": "day03-google-developer-experts",
       "title": "Beyond Autocomplete: How Agentic AI Solves the Enterprise Design Bottleneck",
       "completeness_score": 1.0,
-      "quality_level": "full",
+      "quality_level": "stale",
       "missing_fields": [],
       "warnings": [
         "exact address hidden until registration"
       ]
     },
     {
-      "id": "day03-tencent-cloud",
-      "title": "Tencent Cloud",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
+      "id": "day03-antitech",
+      "title": "Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment with the Antitech SDK",
+      "completeness_score": 0.85,
+      "quality_level": "partial",
       "missing_fields": [
-        "registration_url",
-        "event_detail_url",
-        "description",
         "speakers",
-        "requirements",
-        "google_maps_url"
+        "requirements"
       ],
-      "warnings": []
+      "warnings": [
+        "exact address hidden until registration"
+      ]
     },
     {
-      "id": "day03-builder-night",
-      "title": "Builder Night",
+      "id": "day03-builder-night-special-announcements",
+      "title": "Builder Night · Special Announcements",
       "completeness_score": 1.0,
       "quality_level": "summary_only",
       "missing_fields": [],
@@ -233,63 +229,39 @@
       "id": "day04-opening-ceremony-keynotes",
       "title": "Opening Ceremony + Keynotes",
       "completeness_score": 1.0,
-      "quality_level": "summary_only",
+      "quality_level": "stale",
       "missing_fields": [],
       "warnings": []
     },
     {
-      "id": "day04-lunch",
-      "title": "Lunch",
+      "id": "day04-expert-parade-networking",
+      "title": "Expert Parade + Networking",
       "completeness_score": 1.0,
       "quality_level": "summary_only",
       "missing_fields": [],
       "warnings": []
     },
     {
-      "id": "day04-on-site-build-sprint",
-      "title": "On-site Build Sprint",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
-      "missing_fields": [
-        "registration_url",
-        "event_detail_url",
-        "description",
-        "speakers",
-        "requirements",
-        "google_maps_url"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "day04-expert-parade",
-      "title": "Expert Parade",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
-      "missing_fields": [
-        "registration_url",
-        "event_detail_url",
-        "description",
-        "speakers",
-        "requirements",
-        "google_maps_url"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "day04-networking-night",
-      "title": "Networking Night",
+      "id": "day04-lunch-break",
+      "title": "Lunch Break",
       "completeness_score": 1.0,
-      "quality_level": "full",
+      "quality_level": "summary_only",
       "missing_fields": [],
-      "warnings": [
-        "exact address hidden until registration"
-      ]
+      "warnings": []
+    },
+    {
+      "id": "day04-vip-dinner",
+      "title": "VIP Dinner",
+      "completeness_score": 1.0,
+      "quality_level": "summary_only",
+      "missing_fields": [],
+      "warnings": []
     },
     {
       "id": "day04-late-night-build",
       "title": "Late Night Build",
       "completeness_score": 0.54,
-      "quality_level": "summary_only",
+      "quality_level": "stale",
       "missing_fields": [
         "registration_url",
         "event_detail_url",
@@ -301,31 +273,16 @@
       "warnings": []
     },
     {
-      "id": "day05-submission-deadline",
-      "title": "Submission Deadline",
+      "id": "day05-demo-day",
+      "title": "Demo Day",
       "completeness_score": 1.0,
       "quality_level": "summary_only",
       "missing_fields": [],
       "warnings": []
     },
     {
-      "id": "day05-demo-pitches",
-      "title": "Demo Pitches",
-      "completeness_score": 0.54,
-      "quality_level": "summary_only",
-      "missing_fields": [
-        "registration_url",
-        "event_detail_url",
-        "description",
-        "speakers",
-        "requirements",
-        "google_maps_url"
-      ],
-      "warnings": []
-    },
-    {
-      "id": "day05-lunch",
-      "title": "Lunch",
+      "id": "day05-lunch-break",
+      "title": "Lunch Break",
       "completeness_score": 1.0,
       "quality_level": "summary_only",
       "missing_fields": [],
@@ -340,14 +297,6 @@
       "warnings": []
     },
     {
-      "id": "day05-networking-night",
-      "title": "Networking Night",
-      "completeness_score": 1.0,
-      "quality_level": "summary_only",
-      "missing_fields": [],
-      "warnings": []
-    },
-    {
       "id": "day04-agentic-ai-build-week-networking-night",
       "title": "Agentic AI Build Week Networking Night",
       "completeness_score": 1.0,
@@ -356,6 +305,190 @@
       "warnings": [
         "exact address hidden until registration"
       ]
+    },
+    {
+      "id": "day01-inside-the-nvidia-inception-program-how-startups-build-and-scale-ai-globally-agentic-ai-build-week-workshop",
+      "title": "Inside the NVIDIA Inception Program: How Startups Build & Scale AI Globally — Agentic AI Build Week Workshop",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day01-lunch",
+      "title": "Lunch",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": [
+        "summary-only event from homepage"
+      ]
+    },
+    {
+      "id": "day01-the-full-stack-advantage-building-production-ready-ai-agents-with-tencent-cloud",
+      "title": "The Full-Stack Advantage: Building Production-Ready AI Agents with Tencent Cloud",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day02-ai-gaming-night",
+      "title": "AI × Gaming Night",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day02-lunch",
+      "title": "Lunch",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day03-beyond-autocomplete-how-agentic-ai-solves-the-enterprise-design-bottleneck-agentic-ai-build-week-workshop",
+      "title": "Beyond Autocomplete: How Agentic AI Solves the Enterprise Design Bottleneck — Agentic AI Build Week Workshop",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day03-build-deploy-and-monetize-ai-agents-the-future-of-the-developer-economy-agentic-ai-build-week-workshop",
+      "title": "Build, Deploy & Monetize AI Agents: The Future of the Developer Economy — Agentic AI Build Week Workshop",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day03-builder-night",
+      "title": "Builder Night",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day03-registration-and-welcome",
+      "title": "Registration & Welcome",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day03-tencent-cloud",
+      "title": "Tencent Cloud",
+      "completeness_score": 0.54,
+      "quality_level": "stale",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day04-expert-parade",
+      "title": "Expert Parade",
+      "completeness_score": 0.54,
+      "quality_level": "stale",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day04-lunch",
+      "title": "Lunch",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day04-networking-night",
+      "title": "Networking Night",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": [
+        "exact address hidden until registration"
+      ]
+    },
+    {
+      "id": "day04-on-site-build-sprint",
+      "title": "On-site Build Sprint",
+      "completeness_score": 0.54,
+      "quality_level": "stale",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day05-demo-pitches",
+      "title": "Demo Pitches",
+      "completeness_score": 0.54,
+      "quality_level": "stale",
+      "missing_fields": [
+        "registration_url",
+        "event_detail_url",
+        "description",
+        "speakers",
+        "requirements",
+        "google_maps_url"
+      ],
+      "warnings": []
+    },
+    {
+      "id": "day05-lunch",
+      "title": "Lunch",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day05-networking-night",
+      "title": "Networking Night",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": []
+    },
+    {
+      "id": "day05-submission-deadline",
+      "title": "Submission Deadline",
+      "completeness_score": 1.0,
+      "quality_level": "stale",
+      "missing_fields": [],
+      "warnings": []
     }
   ]
 }

@@ -33,7 +33,7 @@
     "google_maps_url": null,
     "source": "homepage"
   },
-  "status": "scheduled",
+  "status": "not_listed_on_homepage",
   "confidence": "bundle_schedule",
   "start_time": "18:00",
   "end_time": null,
@@ -42,6 +42,8 @@
   "warnings": [],
   "important_hash": "77903804da1eb00f1d6e8728d1104198c3a10c96945132d889384b2946fdae83",
   "content_hash": "05cc300c791e9ec43ef2029085f749f40977036477730d1ebfe8abd7b2db02be",
-  "quality_level": "summary_only",
-  "scraped_at": "2026-06-18T15:27:19.784528"
+  "quality_level": "stale",
+  "scraped_at": "2026-06-18T15:27:19.784528",
+  "last_seen_at": "2026-06-18T15:27:19.784528",
+  "marked_stale_at": "2026-06-20T18:16:37.204714"
 }

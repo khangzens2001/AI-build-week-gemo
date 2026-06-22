@@ -1,43 +1,50 @@
 {
   "url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
   "title": "Daily Schedule",
-  "markdown": "Daily Schedule\n\nTimes are indicative · sessions still being finalised\n\nDay 01EnableWed · July 8Day 02IntegrateThu · July 9Day 03DesignFri · July 10Day 04BuildSat · July 11Day 05DemoSun · July 12\n\nDay 01 · EnableWed · July 8\n\nTasco Office\n\n1. 09:00Registration & Welcome\n2. ![](https://agenticaibuildweek.genaifund.ai/workshops/byteplus.png)\n\n\n10:00–12:00·BytePlus\n\n\n\nRender the Next Era of Creation with BytePlus AI Stack\n\n\n\n[RSVP](https://luma.com/gaf-vbkf)\n\n3. 12:00Lunch\n4. ![](https://agenticaibuildweek.genaifund.ai/workshops/nvidia.png)\n\n\n14:00–14:45·NVIDIA\n\n\n\nInside NVIDIA Inception Program: How Startups Build & Scale AI Globally\n\n\n\n[RSVP](https://luma.com/gaf-t4bs)\n\n5. ![](https://agenticaibuildweek.genaifund.ai/workshops/trae.png)\n\n\n15:00–16:00·TRAE\n\n\n\nTRAE in Your Professional Workflow\n\n\n\n[RSVP](https://luma.com/gaf-jpy4)",
+  "markdown": "Daily Schedule\n\nTimes are indicative · sessions still being finalised\n\nDay 01Wed · July 8Day 02Thu · July 9Day 03Fri · July 10Day 04Sat · July 11Day 05Sun · July 12\n\nDay 01 · EnableWed · July 8\n\n[Tasco](https://maps.app.goo.gl/jhfhELuEgD5DyMLU8)\n\n1. 09:00Registration & Welcome\n2. 10:0012:00\n\n\n\n\n\nRender the Next Era of Creation with BytePlus AI Stack\n\n\n\nBytePlus · Vu Tien Hung, Lam Thao, Tran Quoc Huy\n\n\n\nLimited to 200 seats only\n\n\n\nTap for details →\n\n\n\n\n\n[Sign Up](https://luma.com/gaf-vbkf?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page)\n\n3. 12:0014:00\n\n\n\n\n\nThe Full-Stack Advantage: Building Production-Ready AI Agents with Tencent Cloud\n\n\n\nTencent Cloud\n\n\n\nLimited to 200 seats only\n\n\n\nTap for details →\n\n\n\n\n\n[Sign Up](https://luma.com/tanuxv4i?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page)\n\n4. 14:0014:45\n\n\n\n\n\nInside NVIDIA Inception Program: How Startups Build & Scale AI Globally\n\n\n\nNVIDIA · Jason Pham\n\n\n\nLimited to 200 seats only\n\n\n\nTap for details →\n\n\n\n\n\n[Sign Up](https://luma.com/gaf-t4bs?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page)\n\n5. 15:0016:00\n\n\n\n\n\nTRAE in Your Professional Workflow\n\n\n\nTRAE · Rita Huang, TRAE Product Operation Manager\n\n\n\nLimited to 200 seats only\n\n\n\nTap for details →\n\n\n\n\n\n[Sign Up](https://luma.com/gaf-jpy4?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page)\n\n6. 16:0018:00\n\n\n\n\n\nOpenClaw Workshop\n\n\n\nOpenClaw\n\nCommunity\n\nLimited to 200 seats only\n\n\n\n\n\n[Sign Up](https://luma.com/gaf-hm61?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page)\n\n\nCommunity Events\n\nHosted by the local builder scene · open to all\n\n- Saturdays · biweekly\n\n\n\n### Cowork & Showcase for Tech / Growth Builders\n\n\n\nBuild Stuffs · Ky-Nam (Flowser.ai)\n\n\n\nThe Joi Factory, Cầu Ông Lãnh, HCMC\n\n\n\nFree entry🇻🇳 VN + ENCowork + demo [Sign Up](https://luma.com/oawz935f?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page)",
   "metadata": {
     "sourceURL": "https://agenticaibuildweek.genaifund.ai/",
     "section": "daily_schedule"
   },
   "links": [
     {
-      "text": "RSVP",
-      "url": "https://luma.com/gaf-vbkf",
+      "text": "Tasco",
+      "url": "https://maps.app.goo.gl/jhfhELuEgD5DyMLU8",
+      "type": "external"
+    },
+    {
+      "text": "Sign Up",
+      "url": "https://luma.com/gaf-vbkf?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
       "type": "registration"
     },
     {
-      "text": "RSVP",
-      "url": "https://luma.com/gaf-t4bs",
+      "text": "Sign Up",
+      "url": "https://luma.com/tanuxv4i?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
       "type": "registration"
     },
     {
-      "text": "RSVP",
-      "url": "https://luma.com/gaf-jpy4",
+      "text": "Sign Up",
+      "url": "https://luma.com/gaf-t4bs?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
+      "type": "registration"
+    },
+    {
+      "text": "Sign Up",
+      "url": "https://luma.com/gaf-jpy4?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
+      "type": "registration"
+    },
+    {
+      "text": "Sign Up",
+      "url": "https://luma.com/gaf-hm61?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
+      "type": "registration"
+    },
+    {
+      "text": "Sign Up",
+      "url": "https://luma.com/oawz935f?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
       "type": "registration"
     }
   ],
-  "images": [
-    {
-      "alt": "",
-      "url": "https://agenticaibuildweek.genaifund.ai/workshops/byteplus.png"
-    },
-    {
-      "alt": "",
-      "url": "https://agenticaibuildweek.genaifund.ai/workshops/nvidia.png"
-    },
-    {
-      "alt": "",
-      "url": "https://agenticaibuildweek.genaifund.ai/workshops/trae.png"
-    }
-  ],
+  "images": [],
   "status": "ok",
-  "content_hash": "273219fa80a19ff878f6e72ef7812fda901f84f44b418b009713c7ee9d64e5ea",
-  "scraped_at": "2026-06-18T10:14:33.253518"
+  "content_hash": "336997ba5527028d91fb6563602db8ea10959ac06a453bbe61122ab04e658ea0",
+  "scraped_at": "2026-06-22T11:19:01.901512"
 }

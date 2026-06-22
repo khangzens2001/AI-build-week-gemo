@@ -37,7 +37,7 @@
     "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.8230989%2C106.62966379999999&query_place_id=ChIJ0T2NLikpdTERKxE8d61aX_E",
     "source": "luma"
   },
-  "status": "registration_required",
+  "status": "not_listed_on_homepage",
   "confidence": "homepage+external",
   "start_time": "18:00",
   "end_time": null,
@@ -50,6 +50,8 @@
   ],
   "important_hash": "0c46ae0a508e416865061b8e8e35a57cb624891a8cadaaeeca181ddf41f5dd15",
   "content_hash": "1b5a33b804d12e57b23140f63292501b60301f97c17acfb2265ff50b3367f714",
-  "quality_level": "full",
-  "scraped_at": "2026-06-18T15:27:19.782741"
+  "quality_level": "stale",
+  "scraped_at": "2026-06-18T15:27:19.782741",
+  "last_seen_at": "2026-06-18T15:27:19.782741",
+  "marked_stale_at": "2026-06-20T18:16:37.203464"
 }

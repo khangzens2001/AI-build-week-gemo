@@ -49,15 +49,14 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
-    "alt": "n8n logo",
-    "type": "inline_data_uri",
-    "omitted": true,
+    "alt": "Langfuse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/f6555c0c-7487-4621-966e-b05c17bd3089/langfuse.png",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
-    "alt": "Daytona logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png",
+    "alt": "ClickHouse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/3456d093-c0fe-4ab0-85b7-52e3c29ee596/clickhouse.png",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
@@ -111,20 +110,45 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
+    "alt": "n8n logo",
+    "type": "inline_data_uri",
+    "omitted": true,
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
+    "alt": "Daytona logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png",
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
+    "alt": "Galaxy Holdings logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png",
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
     "alt": "Novaland logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/novaland-HY_6hW9d.svg",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
-    "alt": "RMIT University logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/assets/rmit-C5wvFzzs.png",
+    "alt": "Saigon AI Hub logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
-    "alt": "Saigon AI Hub logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png",
+    "alt": "TASCO logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png",
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
+    "alt": "BE logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c31beb7-567a-4c55-9684-56b23094bf56/be.png",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
@@ -156,12 +180,6 @@
   {
     "alt": "TASCO logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png",
-    "source": "home",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/"
-  },
-  {
-    "alt": "Galaxy Holdings logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
@@ -263,6 +281,12 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
+    "alt": "Tencent Cloud logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/440a0c7f-e7da-4ca8-b7ce-550b81a75385/tencent-cloud.png",
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
     "alt": "NVIDIA logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/nvidia-5AcRFX3u.png",
     "source": "home",
@@ -271,13 +295,6 @@
   {
     "alt": "TRAE logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/trae-BnVBAW92.png",
-    "source": "home",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/"
-  },
-  {
-    "alt": "Apify logo",
-    "type": "inline_data_uri",
-    "omitted": true,
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
@@ -294,32 +311,52 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
-    "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/venues/vng-campus.webp",
-    "source": "home",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/"
-  },
-  {
     "alt": "Agora logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/agora-QnjCbkeX.png",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
-    "alt": "Google for Developers logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/890b0ff2-fe97-4908-91d7-07d1862dd7f1/googledev.svg",
-    "source": "home",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/"
-  },
-  {
-    "alt": "TinyFish logo",
+    "alt": "Tiny Fish logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/tinyfish-ux5kSZ0w.png",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
     "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp",
+    "url": "https://agenticaibuildweek.genaifund.ai/venues/vng-campus.webp",
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
+    "alt": "Apify logo",
+    "type": "inline_data_uri",
+    "omitted": true,
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
+    "alt": "Langfuse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/f6555c0c-7487-4621-966e-b05c17bd3089/langfuse.png",
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
+    "alt": "ClickHouse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/3456d093-c0fe-4ab0-85b7-52e3c29ee596/clickhouse.png",
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
+    "alt": "Google for Developers logo",
+    "type": "inline_data_uri",
+    "omitted": true,
+    "source": "home",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+  },
+  {
+    "alt": "Antitech logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/abba628c-3ec8-4772-a3c1-ef2448a1f871/antitech.png",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
@@ -331,21 +368,15 @@
   },
   {
     "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/workshops/byteplus.png",
+    "url": "https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp",
     "source": "home",
     "source_url": "https://agenticaibuildweek.genaifund.ai/"
   },
   {
     "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/workshops/nvidia.png",
-    "source": "home",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/"
-  },
-  {
-    "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/workshops/trae.png",
-    "source": "home",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/"
+    "url": "https://cdn.loom.com/sessions/thumbnails/1cc7c3e4416c4673bd73fc804155d9d3-75ba0ccc59643ffa.jpg",
+    "source": "builder_experience_track",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
   },
   {
     "alt": "AWS logo",
@@ -397,15 +428,14 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
   },
   {
-    "alt": "n8n logo",
-    "type": "inline_data_uri",
-    "omitted": true,
+    "alt": "Langfuse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/f6555c0c-7487-4621-966e-b05c17bd3089/langfuse.png",
     "source": "partners",
     "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
   },
   {
-    "alt": "Daytona logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png",
+    "alt": "ClickHouse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/3456d093-c0fe-4ab0-85b7-52e3c29ee596/clickhouse.png",
     "source": "partners",
     "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
   },
@@ -459,20 +489,45 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
   },
   {
+    "alt": "n8n logo",
+    "type": "inline_data_uri",
+    "omitted": true,
+    "source": "partners",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+  },
+  {
+    "alt": "Daytona logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png",
+    "source": "partners",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+  },
+  {
+    "alt": "Galaxy Holdings logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png",
+    "source": "partners",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+  },
+  {
     "alt": "Novaland logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/novaland-HY_6hW9d.svg",
     "source": "partners",
     "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
   },
   {
-    "alt": "RMIT University logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/assets/rmit-C5wvFzzs.png",
+    "alt": "Saigon AI Hub logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png",
     "source": "partners",
     "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
   },
   {
-    "alt": "Saigon AI Hub logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png",
+    "alt": "TASCO logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png",
+    "source": "partners",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+  },
+  {
+    "alt": "BE logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c31beb7-567a-4c55-9684-56b23094bf56/be.png",
     "source": "partners",
     "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
   },
@@ -504,12 +559,6 @@
   {
     "alt": "TASCO logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png",
-    "source": "partners",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
-  },
-  {
-    "alt": "Galaxy Holdings logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png",
     "source": "partners",
     "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
   },
@@ -702,15 +751,14 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
   },
   {
-    "alt": "n8n logo",
-    "type": "inline_data_uri",
-    "omitted": true,
+    "alt": "Langfuse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/f6555c0c-7487-4621-966e-b05c17bd3089/langfuse.png",
     "source": "section_partners_preview",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
   },
   {
-    "alt": "Daytona logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png",
+    "alt": "ClickHouse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/3456d093-c0fe-4ab0-85b7-52e3c29ee596/clickhouse.png",
     "source": "section_partners_preview",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
   },
@@ -764,20 +812,45 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
   },
   {
+    "alt": "n8n logo",
+    "type": "inline_data_uri",
+    "omitted": true,
+    "source": "section_partners_preview",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
+  },
+  {
+    "alt": "Daytona logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/assets/daytona-DP1IVHGG.png",
+    "source": "section_partners_preview",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
+  },
+  {
+    "alt": "Galaxy Holdings logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png",
+    "source": "section_partners_preview",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
+  },
+  {
     "alt": "Novaland logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/novaland-HY_6hW9d.svg",
     "source": "section_partners_preview",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
   },
   {
-    "alt": "RMIT University logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/assets/rmit-C5wvFzzs.png",
+    "alt": "Saigon AI Hub logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png",
     "source": "section_partners_preview",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
   },
   {
-    "alt": "Saigon AI Hub logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/2143aead-d1d9-498a-8b17-0f2f634ab5aa/saigon-ai-hub.png",
+    "alt": "TASCO logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png",
+    "source": "section_partners_preview",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
+  },
+  {
+    "alt": "BE logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c31beb7-567a-4c55-9684-56b23094bf56/be.png",
     "source": "section_partners_preview",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
   },
@@ -809,12 +882,6 @@
   {
     "alt": "TASCO logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/tasco-Bgvm_IfN.png",
-    "source": "section_partners_preview",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
-  },
-  {
-    "alt": "Galaxy Holdings logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/9c8fecda-ec8c-4ed3-8823-7d356de78d91/galaxyholdings.png",
     "source": "section_partners_preview",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#partners_preview"
   },
@@ -916,6 +983,12 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
   },
   {
+    "alt": "Tencent Cloud logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/440a0c7f-e7da-4ca8-b7ce-550b81a75385/tencent-cloud.png",
+    "source": "section_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+  },
+  {
     "alt": "NVIDIA logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/nvidia-5AcRFX3u.png",
     "source": "section_programme",
@@ -924,13 +997,6 @@
   {
     "alt": "TRAE logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/trae-BnVBAW92.png",
-    "source": "section_programme",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
-  },
-  {
-    "alt": "Apify logo",
-    "type": "inline_data_uri",
-    "omitted": true,
     "source": "section_programme",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
   },
@@ -947,32 +1013,52 @@
     "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
   },
   {
-    "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/venues/vng-campus.webp",
-    "source": "section_programme",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
-  },
-  {
     "alt": "Agora logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/agora-QnjCbkeX.png",
     "source": "section_programme",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
   },
   {
-    "alt": "Google for Developers logo",
-    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/890b0ff2-fe97-4908-91d7-07d1862dd7f1/googledev.svg",
-    "source": "section_programme",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
-  },
-  {
-    "alt": "TinyFish logo",
+    "alt": "Tiny Fish logo",
     "url": "https://agenticaibuildweek.genaifund.ai/assets/tinyfish-ux5kSZ0w.png",
     "source": "section_programme",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
   },
   {
     "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp",
+    "url": "https://agenticaibuildweek.genaifund.ai/venues/vng-campus.webp",
+    "source": "section_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+  },
+  {
+    "alt": "Apify logo",
+    "type": "inline_data_uri",
+    "omitted": true,
+    "source": "section_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+  },
+  {
+    "alt": "Langfuse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/f6555c0c-7487-4621-966e-b05c17bd3089/langfuse.png",
+    "source": "section_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+  },
+  {
+    "alt": "ClickHouse logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/3456d093-c0fe-4ab0-85b7-52e3c29ee596/clickhouse.png",
+    "source": "section_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+  },
+  {
+    "alt": "Google for Developers logo",
+    "type": "inline_data_uri",
+    "omitted": true,
+    "source": "section_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+  },
+  {
+    "alt": "Antitech logo",
+    "url": "https://agenticaibuildweek.genaifund.ai/__l5e/assets-v1/abba628c-3ec8-4772-a3c1-ef2448a1f871/antitech.png",
     "source": "section_programme",
     "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
   },
@@ -984,20 +1070,8 @@
   },
   {
     "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/workshops/byteplus.png",
-    "source": "section_daily_schedule",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
-  },
-  {
-    "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/workshops/nvidia.png",
-    "source": "section_daily_schedule",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
-  },
-  {
-    "alt": "",
-    "url": "https://agenticaibuildweek.genaifund.ai/workshops/trae.png",
-    "source": "section_daily_schedule",
-    "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+    "url": "https://agenticaibuildweek.genaifund.ai/venues/galaxy-innovation-park.webp",
+    "source": "section_programme",
+    "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
   }
 ]

@@ -1,8 +1,9 @@
 {
   "id": "day03-langfuse-clickhouse",
-  "source": "js_bundle_schedule",
+  "source": "homepage_daily_schedule+luma",
   "source_urls": [
-    "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+    "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
+    "https://luma.com/8zn9khl4"
   ],
   "type": "workshop",
   "day_number": 3,
@@ -14,9 +15,9 @@
   "venue": "VNG Campus",
   "city": "Ho Chi Minh City",
   "country": "Vietnam",
-  "registration_url": null,
-  "event_detail_url": null,
-  "description": "",
+  "registration_url": "https://luma.com/8zn9khl4",
+  "event_detail_url": "https://luma.com/8zn9khl4",
+  "description": "You're building fast. Prompts tweaked, model versions swapped, tools added and removed — and after every change, you're doing the same gut-check: _does this feel better?_\n\nBecause you have no other way to tell.\n\nThat's not iteration. That's guessing with extra steps. And on Day 4 of Agentic AI Build Week, when you're mid-build and things start behaving strangely, guessing is what kills your demo.\n\nThis workshop changes that.\n\n* * *\n\n **What this is**\n\nA 2-hour hands-on session on LLM observability and evals with Langfuse — the open-source engineering platform used by thousands of AI teams to get full visibility into what their agents are actually doing.\n\nIn 120 minutes, you will:\n\n- Set up **full trace visibility** across every step and tool call in your LLM agent\n\n- **Version and deploy prompts** outside your codebase so every change is trackable and reversible\n\n- Build a **monitoring layer** that catches failure modes automatically — before your users do\n\n- Run your first **eval experiment** and create a reusable dataset you can take into every future build\n\nFor hackathon builders specifically: while other teams are guessing why their agent broke, you'll have trace data, versioned prompts, and an eval loop that tells you in minutes whether your last change helped or hurt. That's the difference between a demo that impresses judges and one that barely holds together.\n\n* * *\n\n **Who this is for**\n\nThis workshop is for you if:\n\n- You're building LLM-powered applications and want a structured, repeatable way to improve them\n\n- You're competing in the [Agentic AI Build Week](https://luma.com/gaf-hm61) hackathon and want a real edge on Day 4\n\n- You're a tech lead evaluating observability tooling before taking an AI product to production\n\nThis is NOT for you if you're planning to evaluate your agent's performance by running it and hoping for the best.\n\nYou should be comfortable reading TypeScript. No prior Langfuse experience needed.\n\n* * *\n\n **Delivered by**\n\n **Muhammad Ali** — Specialist Solutions Architect, Langfuse/ClickHouse\n\nLangfuse is the leading open-source LLM observability platform, trusted by thousands of engineering teams building production-grade AI applications.\n\n* * *\n\n **Part of Agentic AI Build Week**\n\nThis workshop is one of 10+ technical sessions happening across [Agentic AI Build Week](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, July 8–12 in Ho Chi Minh City, organised by GenAI Fund.\n\nNot registered for the main event yet? [Apply for Agentic AI Build Week](https://luma.com/gaf-hm61) — 2,000+ builders, $1M+ in prizes, 5 days of workshops and a Demo Day.\n\n* * *\n\n **Come prepared**\n\nBring these and you'll hit the ground running:\n\n- Node.js 18+ installed on your laptop\n\n- A free [Langfuse Cloud](https://cloud.langfuse.com/?utm_source=luma) account (sign up takes 2 minutes)\n\n- An OpenAI API key (a temporary one will also be provided on the day)\n\n* * *\n\nJoin the [AABW builder community on Discord](https://discord.gg/pb7njVhVb?utm_source=luma) — that's where build teams are forming and pre-workshop prep is happening.",
   "takeaways": [],
   "speakers": [],
   "hosts": [],
@@ -33,23 +34,21 @@
     "google_maps_url": null,
     "source": "homepage"
   },
-  "status": "scheduled",
-  "confidence": "bundle_schedule",
+  "status": "registration_required",
+  "confidence": "homepage+external",
   "start_time": "12:00",
   "end_time": "14:00",
   "organizer_or_partner": "Langfuse × ClickHouse",
-  "completeness_score": 0.54,
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/dk/02c96f8a-7ac0-4009-9d64-5ad774eb1748.png",
+  "completeness_score": 0.77,
   "missing_fields": [
-    "registration_url",
-    "event_detail_url",
-    "description",
     "speakers",
     "requirements",
     "google_maps_url"
   ],
   "warnings": [],
-  "important_hash": "63f007b5d8f5f0277d290d9088c303aafc99c1300749a28976df2134ed969696",
-  "content_hash": "05cc300c791e9ec43ef2029085f749f40977036477730d1ebfe8abd7b2db02be",
-  "quality_level": "summary_only",
-  "scraped_at": "2026-06-18T15:27:19.781290"
+  "important_hash": "5ecb2adb701178bf3862c61498a1f22477663c1198dd34521cd705477b93f1b9",
+  "content_hash": "e82cce6b3a7834d9de939e9907e829412ec6b943d82acb454f38523d525fc58a",
+  "quality_level": "partial",
+  "scraped_at": "2026-06-22T12:17:07.828586"
 }

@@ -1,0 +1,90 @@
+{
+  "url": "https://luma.com/1mxdg4em",
+  "title": "From Spec to Production Code — Kiro, Claude Code & Codex on AWS",
+  "markdown": "![Cover Image for From Spec to Production Code — Kiro, Claude Code & Codex on AWS](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/mu/bf0e79f7-1eec-4f3c-8397-3f333a54b2c1.png)\n\n![Cover Image for From Spec to Production Code — Kiro, Claude Code & Codex on AWS](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/mu/bf0e79f7-1eec-4f3c-8397-3f333a54b2c1.png)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)\n\n# From Spec to Production Code — Kiro, Claude Code & Codex on AWS\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nJul\n\n9\n\nThursday, July 9\n\n9:00 AM - 10:30 AM GMT+7\n\nRegister to See Address\n\nThành phố Hồ Chí Minh, Vietnam\n\nWelcome! Please choose your desired ticket type:\n\nRequest to Join\n\nYou will be asked to verify token ownership with your wallet.\n\nAbout Event\n\nThe demo shipped. The AI writes code. Everyone is impressed.\n\nThen someone asks if it can run in production — with audit logs, IAM controls, and no model lock-in — and the room goes quiet.\n\nThat gap between \"works on my machine\" and \"deployed with governance\" is where most AI coding projects die. This workshop is where you close it.\n\n* * *\n\n **What This Is**\n\nA 90-minute, two-part AWS masterclass at the AWS HCMC Office — built for engineers who are actively building at Agentic AI Build Week.\n\nIn 90 minutes, you will:\n\n- Build a structured spec with Kiro and understand why every AI project that skips this step pays for it later\n\n- Learn how Kiro Hooks enforce engineering standards automatically — continuously, not just at commit time\n\n- Deploy Claude Code and Codex on Amazon Bedrock with IAM, usage policies, and CloudTrail wired in from day one\n\n- Apply agentic coding patterns — multi-file refactoring, test generation, codebase reasoning — using natural language commands\n\n- Leave with a production-hardened agent spec: tested, monitored, and ready to ship\n\n **Part 1 — Spec-Driven Development with Kiro**\n\nMost AI projects fail before a line of code is written — because the spec never existed. Kiro enforces a discipline most teams skip: structured requirements → design contract → code. You'll walk the full lifecycle live, then learn how Hooks keep standards enforced at every step after.\n\n **Part 2 — AI-Native Coding with Claude Code & Codex on Amazon Bedrock**\n\nWith the spec locked, you get 10x velocity without sacrificing control. Every model call stays inside your AWS boundary. Swap models without changing your workflow. Full logging and CloudTrail integration for auditability baked in — not bolted on. You'll apply agentic coding patterns to harden the agent spec from Part 1 using natural language commands.\n\n* * *\n\n **Who This Is For**\n\nThis workshop is for you if:\n\n- You're a developer, solutions architect, or technical founder building AI-assisted applications\n\n- You've used AI coding tools (Copilot, Cursor, or similar) and hit the ceiling on governance and control\n\n- You're building something at AABW that needs to be production-ready — not just demo-ready\n\nThis is NOT for you if you want another \"prompt engineering 101\" session. This is engineering discipline applied to agentic AI.\n\n* * *\n\n **Your Speaker**\n\n **Diep Nguyen** is a Solutions Architect at Amazon Web Services, based in Vietnam and working across the ASEAN region. He specialises in helping development teams move from AI prototypes to production-grade systems on AWS — with governance, flexibility, and auditability built in from the start.\n\n* * *\n\n **The Context**\n\nThis session is part of [Agentic AI Build Week (Jul 8–12)](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, hosted at the AWS HCMC Office with 2,000+ builders, 30+ tech partners, and a $1M+ prize pool.\n\n **Main event registration required.** Apply here first: [Register for AABW](https://bit.ly/AABWSKP?utm_source=luma)\n\n* * *\n\nSeats are limited to the AWS office capacity. Applications are reviewed — engineers actively building at AABW get priority.\n\n **👉 Apply below if you're shipping something real, not just watching.**\n\nLocation\n\nPlease register to see the exact location of this event.\n\nThành phố Hồ Chí Minh, Vietnam\n\n[View on Google Maps](https://www.google.com/maps/search/?api=1&query=10.771648888322012%2C106.70678530957088)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)",
+  "status": "ok",
+  "status_reason": "",
+  "description": "The demo shipped. The AI writes code. Everyone is impressed.\n\nThen someone asks if it can run in production — with audit logs, IAM controls, and no model lock-in — and the room goes quiet.\n\nThat gap between \"works on my machine\" and \"deployed with governance\" is where most AI coding projects die. This workshop is where you close it.\n\n* * *\n\n **What This Is**\n\nA 90-minute, two-part AWS masterclass at the AWS HCMC Office — built for engineers who are actively building at Agentic AI Build Week.\n\nIn 90 minutes, you will:\n\n- Build a structured spec with Kiro and understand why every AI project that skips this step pays for it later\n\n- Learn how Kiro Hooks enforce engineering standards automatically — continuously, not just at commit time\n\n- Deploy Claude Code and Codex on Amazon Bedrock with IAM, usage policies, and CloudTrail wired in from day one\n\n- Apply agentic coding patterns — multi-file refactoring, test generation, codebase reasoning — using natural language commands\n\n- Leave with a production-hardened agent spec: tested, monitored, and ready to ship\n\n **Part 1 — Spec-Driven Development with Kiro**\n\nMost AI projects fail before a line of code is written — because the spec never existed. Kiro enforces a discipline most teams skip: structured requirements → design contract → code. You'll walk the full lifecycle live, then learn how Hooks keep standards enforced at every step after.\n\n **Part 2 — AI-Native Coding with Claude Code & Codex on Amazon Bedrock**\n\nWith the spec locked, you get 10x velocity without sacrificing control. Every model call stays inside your AWS boundary. Swap models without changing your workflow. Full logging and CloudTrail integration for auditability baked in — not bolted on. You'll apply agentic coding patterns to harden the agent spec from Part 1 using natural language commands.\n\n* * *\n\n **Who This Is For**\n\nThis workshop is for you if:\n\n- You're a developer, solutions architect, or technical founder building AI-assisted applications\n\n- You've used AI coding tools (Copilot, Cursor, or similar) and hit the ceiling on governance and control\n\n- You're building something at AABW that needs to be production-ready — not just demo-ready\n\nThis is NOT for you if you want another \"prompt engineering 101\" session. This is engineering discipline applied to agentic AI.\n\n* * *\n\n **Your Speaker**\n\n **Diep Nguyen** is a Solutions Architect at Amazon Web Services, based in Vietnam and working across the ASEAN region. He specialises in helping development teams move from AI prototypes to production-grade systems on AWS — with governance, flexibility, and auditability built in from the start.\n\n* * *\n\n **The Context**\n\nThis session is part of [Agentic AI Build Week (Jul 8–12)](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, hosted at the AWS HCMC Office with 2,000+ builders, 30+ tech partners, and a $1M+ prize pool.\n\n **Main event registration required.** Apply here first: [Register for AABW](https://bit.ly/AABWSKP?utm_source=luma)\n\n* * *\n\nSeats are limited to the AWS office capacity. Applications are reviewed — engineers actively building at AABW get priority.\n\n **👉 Apply below if you're shipping something real, not just watching.**",
+  "takeaways": [],
+  "speakers": [],
+  "requirements": [],
+  "date_text": "",
+  "date": null,
+  "time_text": "",
+  "location_text": "",
+  "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.771648888322012%2C106.70678530957088",
+  "latitude": 10.771648888322012,
+  "longitude": 106.70678530957088,
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/mu/bf0e79f7-1eec-4f3c-8397-3f333a54b2c1.png",
+  "links": [
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Agentic AI Build Week (Jul 8–12)",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "Register for AABW",
+      "url": "https://bit.ly/AABWSKP?utm_source=luma",
+      "type": "external"
+    },
+    {
+      "text": "View on Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=10.771648888322012%2C106.70678530957088",
+      "type": "external"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    }
+  ],
+  "images": [
+    {
+      "alt": "Cover Image for From Spec to Production Code — Kiro, Claude Code & Codex on AWS",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/mu/bf0e79f7-1eec-4f3c-8397-3f333a54b2c1.png"
+    },
+    {
+      "alt": "Cover Image for From Spec to Production Code — Kiro, Claude Code & Codex on AWS",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/mu/bf0e79f7-1eec-4f3c-8397-3f333a54b2c1.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    }
+  ],
+  "raw_hash": "db2a956dde622b21eb5afb4379be5cdc442a9a6b856990c87c3d54b941a576be"
+}

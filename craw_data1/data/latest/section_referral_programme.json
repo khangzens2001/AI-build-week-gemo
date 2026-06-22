@@ -1,20 +1,20 @@
 {
   "url": "https://agenticaibuildweek.genaifund.ai/#referral_programme",
   "title": "Referral Programme",
-  "markdown": "Referral Programme\n\n## See the top builders bringing the ecosystem together.\n\nLive rankings of referrals driving Agentic AI Build Week.\n\n[View Referral Programme](https://agenticaibuildweek.genaifund.ai/leaderboard)",
+  "markdown": "Referral Programme\n\n## See the top builders bringing the ecosystem together.\n\nLive rankings of referrals driving Agentic AI Build Week.\n\n[View the top referral leaderboard](https://agenticaibuildweek.genaifund.ai/leaderboard)",
   "metadata": {
     "sourceURL": "https://agenticaibuildweek.genaifund.ai/",
     "section": "referral_programme"
   },
   "links": [
     {
-      "text": "View Referral Programme",
+      "text": "View the top referral leaderboard",
       "url": "https://agenticaibuildweek.genaifund.ai/leaderboard",
       "type": "internal_page"
     }
   ],
   "images": [],
   "status": "ok",
-  "content_hash": "0028ebefaa399925e9bdb2d793a2203c510bc19a4a7d76633a0190c346294b20",
-  "scraped_at": "2026-06-18T10:14:33.253699"
+  "content_hash": "90dca7c036f93379e1f6c22a14831b27cb7afd08fb208265ffdad1f3b98e6b72",
+  "scraped_at": "2026-06-22T11:19:01.901892"
 }

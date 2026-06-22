@@ -10,8 +10,8 @@
   "date": "2026-07-09",
   "display_date": "Thu · July 9",
   "timezone": "Indochina Time, GMT+7",
-  "title": "Tiny Fish",
-  "venue": "AWS Office, Bitexco Tower",
+  "title": "Give Any AI Agent Live, Production-Grade Access to the Real Web",
+  "venue": "AWS Office",
   "city": "Ho Chi Minh City",
   "country": "Vietnam",
   "registration_url": null,
@@ -48,8 +48,8 @@
     "google_maps_url"
   ],
   "warnings": [],
-  "important_hash": "495f81405cdfb71e5954bf7e1ac5942855442ff5609d22667c0fbb7c38aca55d",
+  "important_hash": "9b80f67812351057c4c2fcbf18ef9b46c87a5bd2a13b9cabdf1729781f36ad0d",
   "content_hash": "05cc300c791e9ec43ef2029085f749f40977036477730d1ebfe8abd7b2db02be",
   "quality_level": "summary_only",
-  "scraped_at": "2026-06-18T15:27:19.780015"
+  "scraped_at": "2026-06-22T12:17:07.827057"
 }

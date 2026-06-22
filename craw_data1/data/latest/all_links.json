@@ -1,9 +1,9 @@
 [
   {
-    "url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track",
-    "type": "internal_page",
+    "url": "https://agentic-ai-build-week-2026.devpost.com/?utm_source=announcment-bar&utm_medium=lovable&utm_campaign=landing_page",
+    "type": "devpost",
     "text_variants": [
-      "Pre-Event TrackBuilder Experience Track — win $900 & ship it liveEnter Now"
+      "Register on Devpost"
     ],
     "appearances": [
       {
@@ -13,10 +13,94 @@
     ]
   },
   {
-    "url": "https://luma.com/gaf-vbkf",
+    "url": "https://maps.app.goo.gl/jhfhELuEgD5DyMLU8",
+    "type": "external",
+    "text_variants": [
+      "Tasco"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_programme",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+      },
+      {
+        "source": "section_daily_schedule",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+      }
+    ]
+  },
+  {
+    "url": "https://maps.app.goo.gl/MXEHhsDpTJTTvTM28",
+    "type": "external",
+    "text_variants": [
+      "AWS Office"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_programme",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+      }
+    ]
+  },
+  {
+    "url": "https://maps.app.goo.gl/sB5PAxxbKTGxS5t39",
+    "type": "external",
+    "text_variants": [
+      "VNG Campus"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_programme",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+      }
+    ]
+  },
+  {
+    "url": "https://maps.app.goo.gl/HTcd3hWcVEwbco5EA",
+    "type": "external",
+    "text_variants": [
+      "Galaxy Innovation Park"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_programme",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+      },
+      {
+        "source": "section_programme",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#programme"
+      }
+    ]
+  },
+  {
+    "url": "https://luma.com/gaf-vbkf?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
     "type": "registration",
     "text_variants": [
-      "RSVP"
+      "Sign Up"
     ],
     "appearances": [
       {
@@ -30,10 +114,10 @@
     ]
   },
   {
-    "url": "https://luma.com/gaf-t4bs",
+    "url": "https://luma.com/tanuxv4i?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
     "type": "registration",
     "text_variants": [
-      "RSVP"
+      "Sign Up"
     ],
     "appearances": [
       {
@@ -47,10 +131,61 @@
     ]
   },
   {
-    "url": "https://luma.com/gaf-jpy4",
+    "url": "https://luma.com/gaf-t4bs?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
     "type": "registration",
     "text_variants": [
-      "RSVP"
+      "Sign Up"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_daily_schedule",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+      }
+    ]
+  },
+  {
+    "url": "https://luma.com/gaf-jpy4?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
+    "type": "registration",
+    "text_variants": [
+      "Sign Up"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_daily_schedule",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+      }
+    ]
+  },
+  {
+    "url": "https://luma.com/gaf-hm61?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
+    "type": "registration",
+    "text_variants": [
+      "Sign Up"
+    ],
+    "appearances": [
+      {
+        "source": "home",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/"
+      },
+      {
+        "source": "section_daily_schedule",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+      }
+    ]
+  },
+  {
+    "url": "https://luma.com/oawz935f?utm_source=workshop_listing&utm_medium=lovable&utm_campaign=landing_page",
+    "type": "registration",
+    "text_variants": [
+      "Sign Up"
     ],
     "appearances": [
       {
@@ -67,7 +202,7 @@
     "url": "https://agenticaibuildweek.genaifund.ai/leaderboard",
     "type": "internal_page",
     "text_variants": [
-      "View Referral Programme",
+      "View the top referral leaderboard",
       "View full referral leaderboard"
     ],
     "appearances": [
@@ -181,6 +316,41 @@
     ]
   },
   {
+    "url": "https://www.loom.com/share/1cc7c3e4416c4673bd73fc804155d9d3",
+    "type": "external",
+    "text_variants": [
+      "Open video in Loom"
+    ],
+    "appearances": [
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      },
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      }
+    ]
+  },
+  {
+    "url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track/showcase",
+    "type": "internal_page",
+    "text_variants": [
+      "Browse the showcase →",
+      "See the submissions →"
+    ],
+    "appearances": [
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      },
+      {
+        "source": "builder_experience_track",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/builder-experience-track"
+      }
+    ]
+  },
+  {
     "url": "https://agenticaibuildweek.genaifund.ai/",
     "type": "internal_page",
     "text_variants": [
@@ -211,8 +381,8 @@
     ]
   },
   {
-    "url": "https://drive.google.com/file/d/1bjYFPWrKmNtY8Zx37EWNH_VBlYp54SpJ/view?usp=drive_link",
-    "type": "document",
+    "url": "https://tally.so/r/VL4BLN?utm_source=partners_page&utm_medium=lovable&utm_campaign=landing_page",
+    "type": "external",
     "text_variants": [
       "Be Our Community Partner"
     ],
@@ -228,8 +398,8 @@
     ]
   },
   {
-    "url": "https://drive.google.com/file/d/1ES45mGnymkPcK0m92YMQXlP3w2uJt0gZ/view?usp=drive_link",
-    "type": "document",
+    "url": "https://tally.so/r/7Rpgl6?utm_source=partners_page&utm_medium=lovable&utm_campaign=landing_page",
+    "type": "external",
     "text_variants": [
       "I want to be AABW Ambassador"
     ],
@@ -238,6 +408,19 @@
         "source": "partners",
         "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
       },
+      {
+        "source": "partners",
+        "source_url": "https://agenticaibuildweek.genaifund.ai/partners"
+      }
+    ]
+  },
+  {
+    "url": "https://tally.so/r/68V8le?utm_source=partners_page&utm_medium=lovable&utm_campaign=landing_page",
+    "type": "external",
+    "text_variants": [
+      "Apply to be a volunteer"
+    ],
+    "appearances": [
       {
         "source": "partners",
         "source_url": "https://agenticaibuildweek.genaifund.ai/partners"

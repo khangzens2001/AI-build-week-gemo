@@ -1,0 +1,125 @@
+{
+  "url": "https://luma.com/lptsgwm6",
+  "title": "Production Multi-Agent AI on AWS — Bedrock AgentCore",
+  "markdown": "![Cover Image for Production Multi-Agent AI on AWS — Bedrock AgentCore](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/tl/08be5915-0b3a-4379-9903-ad4bf93aaa0c.png)\n\n![Cover Image for Production Multi-Agent AI on AWS — Bedrock AgentCore](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/tl/08be5915-0b3a-4379-9903-ad4bf93aaa0c.png)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\n[Kai Yong](https://luma.com/user/kaiyong)\n\n[Johan Nguyen](https://luma.com/user/usr-IU81nKofEVwjKgK)\n\n[Joshua Si](https://luma.com/user/usr-CheV1d8HyQYSCE0)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)\n\n# Production Multi-Agent AI on AWS — Bedrock AgentCore\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nJul\n\n9\n\nThursday, July 9\n\n1:00 PM - 2:30 PM GMT+7\n\nRegister to See Address\n\nThành phố Hồ Chí Minh, Vietnam\n\nWelcome! Please choose your desired ticket type:\n\nRequest to Join\n\nYou will be asked to verify token ownership with your wallet.\n\nAbout Event\n\nOne smart agent feels like a breakthrough.\n\nThen someone asks if it can run in production — with persistent memory, coordinated agents, and no model lock-in — and the architecture starts to show its cracks.\n\nMulti-agent AI is where serious systems live. But orchestrating those agents — with shared memory, tool access, and governance that holds — is where most engineering teams stall.\n\nBedrock AgentCore is where you move past the stall.\n\n* * *\n\n **What This Is**\n\nA 90-minute hands-on workshop at the [AWS HCMC Office](https://luma.com/gaf-hm61) — built for engineers actively building at Agentic AI Build Week.\n\nIn 90 minutes, you will:\n\n- Deploy a multi-agent system on AgentCore Runtime — using LangGraph, CrewAI, or your own framework — on fully managed AWS infrastructure, with no self-hosted overhead\n\n- Implement episodic and semantic memory so your agents learn from past interactions and maintain context across tasks\n\n- Apply supervisor and collaborative orchestration patterns — and understand exactly when each is the right call\n\n- Configure the AgentCore Gateway for intelligent routing, model versioning, and traffic management across your agent fleet\n\n- Leave with a working multi-agent system with memory, tool use, and Code Interpreter built from scratch — not a walkthrough, a build\n\n* * *\n\n **Who This Is For**\n\nThis workshop is for you if:\n\n- You're a developer, solutions architect, or technical founder who has shipped a single agent and wants to understand what production orchestration actually looks like\n\n- You're building something at AABW that needs to handle complex, multi-step tasks across more than one agent\n\n- You've used frameworks like LangGraph or CrewAI and want to understand how enterprise infrastructure wraps around them\n\nThis is NOT for you if you want a whiteboard overview of multi-agent theory. You'll build a system here — not a slide deck.\n\n* * *\n\n **Your Speaker**\n\n **Thi Nguyen** is a Senior Solutions Architect at Amazon Web Services. She works with engineering teams across the region on deploying production-grade AI systems on AWS — from initial architecture through to scaling and governance.\n\n* * *\n\n **The Context**\n\nThis session is part of [Agentic AI Build Week (Jul 8–12)](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, hosted at the AWS HCMC Office with 2,000+ builders, 30+ tech partners, and a $1M+ prize pool.\n\n **Main event registration required.** [Register for AABW](https://bit.ly/AABWSKP?utm_source=luma) first, then apply for this workshop.\n\n* * *\n\nSeats are limited to the AWS office capacity. Every applicant is reviewed — engineers actively building at AABW get priority.\n\n👉 Apply below if you're building a real system, not just watching one.\n\nLocation\n\nPlease register to see the exact location of this event.\n\nThành phố Hồ Chí Minh, Vietnam\n\n[View on Google Maps](https://www.google.com/maps/search/?api=1&query=10.772274851415126%2C106.70650461546764)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\n[Kai Yong](https://luma.com/user/kaiyong)\n\n[Johan Nguyen](https://luma.com/user/usr-IU81nKofEVwjKgK)\n\n[Joshua Si](https://luma.com/user/usr-CheV1d8HyQYSCE0)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)",
+  "status": "ok",
+  "status_reason": "",
+  "description": "One smart agent feels like a breakthrough.\n\nThen someone asks if it can run in production — with persistent memory, coordinated agents, and no model lock-in — and the architecture starts to show its cracks.\n\nMulti-agent AI is where serious systems live. But orchestrating those agents — with shared memory, tool access, and governance that holds — is where most engineering teams stall.\n\nBedrock AgentCore is where you move past the stall.\n\n* * *\n\n **What This Is**\n\nA 90-minute hands-on workshop at the [AWS HCMC Office](https://luma.com/gaf-hm61) — built for engineers actively building at Agentic AI Build Week.\n\nIn 90 minutes, you will:\n\n- Deploy a multi-agent system on AgentCore Runtime — using LangGraph, CrewAI, or your own framework — on fully managed AWS infrastructure, with no self-hosted overhead\n\n- Implement episodic and semantic memory so your agents learn from past interactions and maintain context across tasks\n\n- Apply supervisor and collaborative orchestration patterns — and understand exactly when each is the right call\n\n- Configure the AgentCore Gateway for intelligent routing, model versioning, and traffic management across your agent fleet\n\n- Leave with a working multi-agent system with memory, tool use, and Code Interpreter built from scratch — not a walkthrough, a build\n\n* * *\n\n **Who This Is For**\n\nThis workshop is for you if:\n\n- You're a developer, solutions architect, or technical founder who has shipped a single agent and wants to understand what production orchestration actually looks like\n\n- You're building something at AABW that needs to handle complex, multi-step tasks across more than one agent\n\n- You've used frameworks like LangGraph or CrewAI and want to understand how enterprise infrastructure wraps around them\n\nThis is NOT for you if you want a whiteboard overview of multi-agent theory. You'll build a system here — not a slide deck.\n\n* * *\n\n **Your Speaker**\n\n **Thi Nguyen** is a Senior Solutions Architect at Amazon Web Services. She works with engineering teams across the region on deploying production-grade AI systems on AWS — from initial architecture through to scaling and governance.\n\n* * *\n\n **The Context**\n\nThis session is part of [Agentic AI Build Week (Jul 8–12)](https://luma.com/gaf-hm61) — Southeast Asia's largest agentic AI hackathon, hosted at the AWS HCMC Office with 2,000+ builders, 30+ tech partners, and a $1M+ prize pool.\n\n **Main event registration required.** [Register for AABW](https://bit.ly/AABWSKP?utm_source=luma) first, then apply for this workshop.\n\n* * *\n\nSeats are limited to the AWS office capacity. Every applicant is reviewed — engineers actively building at AABW get priority.\n\n👉 Apply below if you're building a real system, not just watching one.",
+  "takeaways": [],
+  "speakers": [],
+  "requirements": [],
+  "date_text": "",
+  "date": null,
+  "time_text": "",
+  "location_text": "",
+  "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.772274851415126%2C106.70650461546764",
+  "latitude": 10.772274851415126,
+  "longitude": 106.70650461546764,
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/tl/08be5915-0b3a-4379-9903-ad4bf93aaa0c.png",
+  "links": [
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "Kai Yong",
+      "url": "https://luma.com/user/kaiyong",
+      "type": "registration"
+    },
+    {
+      "text": "Johan Nguyen",
+      "url": "https://luma.com/user/usr-IU81nKofEVwjKgK",
+      "type": "registration"
+    },
+    {
+      "text": "Joshua Si",
+      "url": "https://luma.com/user/usr-CheV1d8HyQYSCE0",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "AWS HCMC Office",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "Agentic AI Build Week (Jul 8–12)",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "Register for AABW",
+      "url": "https://bit.ly/AABWSKP?utm_source=luma",
+      "type": "external"
+    },
+    {
+      "text": "View on Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=10.772274851415126%2C106.70650461546764",
+      "type": "external"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "Kai Yong",
+      "url": "https://luma.com/user/kaiyong",
+      "type": "registration"
+    },
+    {
+      "text": "Johan Nguyen",
+      "url": "https://luma.com/user/usr-IU81nKofEVwjKgK",
+      "type": "registration"
+    },
+    {
+      "text": "Joshua Si",
+      "url": "https://luma.com/user/usr-CheV1d8HyQYSCE0",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    }
+  ],
+  "images": [
+    {
+      "alt": "Cover Image for Production Multi-Agent AI on AWS — Bedrock AgentCore",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/tl/08be5915-0b3a-4379-9903-ad4bf93aaa0c.png"
+    },
+    {
+      "alt": "Cover Image for Production Multi-Agent AI on AWS — Bedrock AgentCore",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/tl/08be5915-0b3a-4379-9903-ad4bf93aaa0c.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    }
+  ],
+  "raw_hash": "fbfa0b30614839f74091419acd8f709e349dc50812378f3d5096314621558130"
+}

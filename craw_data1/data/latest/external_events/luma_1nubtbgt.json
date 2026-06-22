@@ -1,0 +1,122 @@
+{
+  "url": "https://luma.com/1nubtbgt",
+  "title": "Design Patterns & Best Practices — Testing, Monitoring & Production Readiness",
+  "markdown": "![Cover Image for Design Patterns & Best Practices — Testing, Monitoring & Production Readiness](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/86/504be3ab-7a22-4f3f-a10d-fe03bff9dcf3.png)\n\n![Cover Image for Design Patterns & Best Practices — Testing, Monitoring & Production Readiness](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/86/504be3ab-7a22-4f3f-a10d-fe03bff9dcf3.png)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\n[Kai Yong](https://luma.com/user/kaiyong)\n\n[Johan Nguyen](https://luma.com/user/usr-IU81nKofEVwjKgK)\n\n[Joshua Si](https://luma.com/user/usr-CheV1d8HyQYSCE0)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)\n\n# Design Patterns & Best Practices — Testing, Monitoring & Production Readiness\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nJul\n\n9\n\nThursday, July 9\n\n4:30 PM - 6:00 PM GMT+7\n\nRegister to See Address\n\nThành phố Hồ Chí Minh, Vietnam\n\nWelcome! Please choose your desired ticket type:\n\nRequest to Join\n\nYou will be asked to verify token ownership with your wallet.\n\nAbout Event\n\nYou've built the agent. It runs cleanly in dev. It impresses your teammates in the demo.\n\nNow try deploying it — with real traffic, real edge cases, and model drift you didn’t anticipate.\n\nThat’s where most agentic AI projects quietly die. Not bad ideas. Just no production discipline.\n\n **Design Patterns & Best Practices** is the workshop that changes that. This is AWS’s third session of the day at AABW — where engineering rigour finally meets agentic AI.\n\n* * *\n\n## 🏗 WHAT THIS IS\n\nA 90-minute hands-on workshop where you’ll build the testing, monitoring, and observability infrastructure that separates a shipped product from an impressive demo.\n\nBy the end, you will:\n\n→ Master **Tool Use & ReAct loops** with the production patterns that don’t break under real load\n\n→ Apply **multi-agent orchestration** — supervisor, hierarchical, and collaborative — and know which pattern fits which problem\n\n→ Build **evaluation pipelines** and guardrails-as-code that catch failures before your users do\n\n→ Wire **end-to-end tracing and drift detection** into your system using AWS-native tooling\n\n→ Walk out with a **production-ready playbook**: tested, monitored, and continuously evaluated\n\n⚠️ This is **Workshop 3 of 3** in the AWS series at AABW. You’ll apply these patterns to the multi-agent system from Workshop 2 (Bedrock AgentCore — Multi-Agent Architecture for Production, 1:00–2:30 PM, same venue). Attending the full series gives you the highest return — but this session stands alone for builders who already have a multi-agent foundation.\n\n* * *\n\n## 👥 WHO THIS IS FOR\n\nThis workshop is for you if:\n\n→ You’ve built AI agents and want to know what “production-ready” actually means — not in theory, but in your stack\n\n→ You’ve been burned by a demo that looked great until it hit real traffic or edge cases\n\n→ You’re entering the AABW hackathon and want your submission evaluated for deployment-readiness, not just demo polish\n\nThis is **NOT** for you if you’re new to agentic AI frameworks — start with AWS Workshop 1: From Spec to Production Code (9:00–10:30 AM) first.\n\n* * *\n\n## 🎙 YOUR SPEAKER\n\n **Vu Pham** — Senior Solutions Architect, Amazon Web Services\n\nVu works directly with enterprise teams deploying production AI systems on AWS. This isn’t a slide deck — it’s a working session built from real deployments.\n\n* * *\n\n## 📋 EVENT DETAILS\n\n📅 Wednesday, 9 July 2026\n⏰ 4:30 PM – 6:00 PM (ICT)\n📍 AWS Ho Chi Minh City Office (300–400 pax capacity)\n\nPart of **[Agentic AI Build Week](https://luma.com/gaf-hm61)** — ASEAN’s largest agentic AI hackathon · July 8–12 · Ho Chi Minh City\n\n* * *\n\n## ✅ ONE REQUIREMENT\n\nTo attend this workshop, you must be registered for Agentic AI Build Week.\n\nRegister for AABW [here](https://luma.com/gaf-hm61), then apply for this session.\n\nLocation\n\nPlease register to see the exact location of this event.\n\nThành phố Hồ Chí Minh, Vietnam\n\n[View on Google Maps](https://www.google.com/maps/search/?api=1&query=10.773031946105222%2C106.70524889595842)\n\n![Avatar for GenAI Fund - Official](https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png)\n\nPresented by\n\n[GenAI Fund - Official](https://luma.com/gaf?k=c)\n\nFollow\n\nGenAI Fund is Southeast Asia’s first generative AI-focused venture fund, founded by former AWS leaders to accelerate enterprise innovation, leveraging a curated database of over 2,600 startups.\n\nHosted By\n\n[Eugene](https://luma.com/user/eugenekj)\n\n[Kai Yong](https://luma.com/user/kaiyong)\n\n[Johan Nguyen](https://luma.com/user/usr-IU81nKofEVwjKgK)\n\n[Joshua Si](https://luma.com/user/usr-CheV1d8HyQYSCE0)\n\nContact the Host\n\nReport Event\n\n[AI](https://luma.com/ai)",
+  "status": "ok",
+  "status_reason": "",
+  "description": "You've built the agent. It runs cleanly in dev. It impresses your teammates in the demo.\n\nNow try deploying it — with real traffic, real edge cases, and model drift you didn’t anticipate.\n\nThat’s where most agentic AI projects quietly die. Not bad ideas. Just no production discipline.\n\n **Design Patterns & Best Practices** is the workshop that changes that. This is AWS’s third session of the day at AABW — where engineering rigour finally meets agentic AI.\n\n* * *\n\n## 🏗 WHAT THIS IS\n\nA 90-minute hands-on workshop where you’ll build the testing, monitoring, and observability infrastructure that separates a shipped product from an impressive demo.\n\nBy the end, you will:\n\n→ Master **Tool Use & ReAct loops** with the production patterns that don’t break under real load\n\n→ Apply **multi-agent orchestration** — supervisor, hierarchical, and collaborative — and know which pattern fits which problem\n\n→ Build **evaluation pipelines** and guardrails-as-code that catch failures before your users do\n\n→ Wire **end-to-end tracing and drift detection** into your system using AWS-native tooling\n\n→ Walk out with a **production-ready playbook**: tested, monitored, and continuously evaluated\n\n⚠️ This is **Workshop 3 of 3** in the AWS series at AABW. You’ll apply these patterns to the multi-agent system from Workshop 2 (Bedrock AgentCore — Multi-Agent Architecture for Production, 1:00–2:30 PM, same venue). Attending the full series gives you the highest return — but this session stands alone for builders who already have a multi-agent foundation.\n\n* * *\n\n## 👥 WHO THIS IS FOR\n\nThis workshop is for you if:\n\n→ You’ve built AI agents and want to know what “production-ready” actually means — not in theory, but in your stack\n\n→ You’ve been burned by a demo that looked great until it hit real traffic or edge cases\n\n→ You’re entering the AABW hackathon and want your submission evaluated for deployment-readiness, not just demo polish\n\nThis is **NOT** for you if you’re new to agentic AI frameworks — start with AWS Workshop 1: From Spec to Production Code (9:00–10:30 AM) first.\n\n* * *\n\n## 🎙 YOUR SPEAKER\n\n **Vu Pham** — Senior Solutions Architect, Amazon Web Services\n\nVu works directly with enterprise teams deploying production AI systems on AWS. This isn’t a slide deck — it’s a working session built from real deployments.\n\n* * *\n\n## 📋 EVENT DETAILS\n\n📅 Wednesday, 9 July 2026\n⏰ 4:30 PM – 6:00 PM (ICT)\n📍 AWS Ho Chi Minh City Office (300–400 pax capacity)\n\nPart of **[Agentic AI Build Week](https://luma.com/gaf-hm61)** — ASEAN’s largest agentic AI hackathon · July 8–12 · Ho Chi Minh City\n\n* * *\n\n## ✅ ONE REQUIREMENT\n\nTo attend this workshop, you must be registered for Agentic AI Build Week.\n\nRegister for AABW [here](https://luma.com/gaf-hm61), then apply for this session.",
+  "takeaways": [],
+  "speakers": [],
+  "requirements": [
+    "Must be registered for Agentic AI Build Week"
+  ],
+  "date_text": "Wednesday, 9 July 2026",
+  "date": null,
+  "time_text": "4:30 PM – 6:00 PM (ICT)",
+  "location_text": "AWS Ho Chi Minh City Office (300–400 pax capacity)",
+  "google_maps_url": "https://www.google.com/maps/search/?api=1&query=10.773031946105222%2C106.70524889595842",
+  "latitude": 10.773031946105222,
+  "longitude": 106.70524889595842,
+  "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/86/504be3ab-7a22-4f3f-a10d-fe03bff9dcf3.png",
+  "links": [
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "Kai Yong",
+      "url": "https://luma.com/user/kaiyong",
+      "type": "registration"
+    },
+    {
+      "text": "Johan Nguyen",
+      "url": "https://luma.com/user/usr-IU81nKofEVwjKgK",
+      "type": "registration"
+    },
+    {
+      "text": "Joshua Si",
+      "url": "https://luma.com/user/usr-CheV1d8HyQYSCE0",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Agentic AI Build Week",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "here",
+      "url": "https://luma.com/gaf-hm61",
+      "type": "registration"
+    },
+    {
+      "text": "View on Google Maps",
+      "url": "https://www.google.com/maps/search/?api=1&query=10.773031946105222%2C106.70524889595842",
+      "type": "external"
+    },
+    {
+      "text": "GenAI Fund - Official",
+      "url": "https://luma.com/gaf?k=c",
+      "type": "registration"
+    },
+    {
+      "text": "Eugene",
+      "url": "https://luma.com/user/eugenekj",
+      "type": "registration"
+    },
+    {
+      "text": "Kai Yong",
+      "url": "https://luma.com/user/kaiyong",
+      "type": "registration"
+    },
+    {
+      "text": "Johan Nguyen",
+      "url": "https://luma.com/user/usr-IU81nKofEVwjKgK",
+      "type": "registration"
+    },
+    {
+      "text": "Joshua Si",
+      "url": "https://luma.com/user/usr-CheV1d8HyQYSCE0",
+      "type": "registration"
+    },
+    {
+      "text": "AI",
+      "url": "https://luma.com/ai",
+      "type": "registration"
+    }
+  ],
+  "images": [
+    {
+      "alt": "Cover Image for Design Patterns & Best Practices — Testing, Monitoring & Production Readiness",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/86/504be3ab-7a22-4f3f-a10d-fe03bff9dcf3.png"
+    },
+    {
+      "alt": "Cover Image for Design Patterns & Best Practices — Testing, Monitoring & Production Readiness",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/86/504be3ab-7a22-4f3f-a10d-fe03bff9dcf3.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    },
+    {
+      "alt": "Avatar for GenAI Fund - Official",
+      "url": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,anim=false,background=white,quality=75,width=32,height=32/uploads/mz/4ba288ee-6348-4d2b-9bdc-8e7e677ad70f.png"
+    }
+  ],
+  "raw_hash": "19729ad6ccfad3827dcf7d4d73a0d508758b7cdd24c0eddda28d4a3959dd282d"
+}

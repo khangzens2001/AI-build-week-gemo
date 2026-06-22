@@ -4,21 +4,21 @@
     "weekday": "Wed",
     "dateLabel": "July 8",
     "theme": "Enable",
-    "venue": "Tasco Office",
+    "venue": "Tasco",
     "venueImage": "/venues/tasco-office.webp",
     "workshop_partners": [
       "BytePlus",
+      "Tencent Cloud",
       "NVIDIA",
-      "TRAE",
-      "Apify"
+      "TRAE"
     ],
     "blocks": [
       {
         "time": "09:00",
-        "end": null,
-        "host": null,
         "label": "Registration & Welcome",
         "tone": "break",
+        "end": null,
+        "host": null,
         "luma": null,
         "lumaId": null
       },
@@ -26,37 +26,56 @@
         "time": "10:00",
         "end": "12:00",
         "host": "BytePlus",
+        "speaker": "Vu Tien Hung, Lam Thao, Tran Quoc Huy",
+        "linkedin": "https://www.linkedin.com/in/hung-vu-tien/",
         "label": "Render the Next Era of Creation with BytePlus AI Stack",
         "tone": "workshop",
         "luma": "https://luma.com/gaf-vbkf",
-        "lumaId": "evt-TtLtKxrH0efkETM"
+        "lumaId": "evt-TtLtKxrH0efkETM",
+        "description": ""
       },
       {
         "time": "12:00",
-        "end": null,
-        "host": null,
-        "label": "Lunch",
-        "tone": "break",
-        "luma": null,
+        "end": "14:00",
+        "host": "Tencent Cloud",
+        "label": "The Full-Stack Advantage: Building Production-Ready AI Agents with Tencent Cloud",
+        "tone": "workshop",
+        "luma": "https://luma.com/tanuxv4i",
+        "description": "Overwhelmed by a fragmented AI toolchain? Discover how to build stable, secure, and scalable enterprise agents with the Tencent Cloud AI & Edge Stack. Learn how CodeBuddy automates coding to break R&D bottlenecks, how TokenHub centralizes heterogeneous LLM management for cost optimization, how MPaaS AIGC capabilities empower content creation across text, image, and video, how EdgeOne Pages guarantees security and speed at the edge, and how Tencent RTC Conversational AI delivers ultra-low latency, human-like interactions for real-time communication.",
         "lumaId": null
       },
       {
         "time": "14:00",
         "end": "14:45",
         "host": "NVIDIA",
+        "speaker": "Jason Pham",
+        "linkedin": "https://www.linkedin.com/in/2207-jason-pham/",
         "label": "Inside NVIDIA Inception Program: How Startups Build & Scale AI Globally",
         "tone": "workshop",
         "luma": "https://luma.com/gaf-t4bs",
-        "lumaId": "evt-DzGyMadWRcAjYX0"
+        "lumaId": "evt-DzGyMadWRcAjYX0",
+        "description": ""
       },
       {
         "time": "15:00",
         "end": "16:00",
         "host": "TRAE",
+        "speaker": "Rita Huang, TRAE Product Operation Manager",
+        "linkedin": "https://www.linkedin.com/in/rita-huang-283763385/",
         "label": "TRAE in Your Professional Workflow",
         "tone": "workshop",
         "luma": "https://luma.com/gaf-jpy4",
         "lumaId": "evt-0CvTZee9QMkC1tT"
+      },
+      {
+        "time": "16:00",
+        "end": "18:00",
+        "host": "OpenClaw",
+        "label": "OpenClaw Workshop",
+        "tone": "workshop",
+        "community": null,
+        "luma": "https://luma.com/gaf-hm61",
+        "lumaId": null
       }
     ]
   },
@@ -65,36 +84,44 @@
     "weekday": "Thu",
     "dateLabel": "July 9",
     "theme": "Integrate",
-    "venue": "AWS Office, Bitexco Tower",
+    "venue": "AWS Office",
     "venueImage": "/venues/aws-office.webp",
     "workshop_partners": [
-      "AWS"
+      "AWS",
+      "Agora",
+      "Tiny Fish"
     ],
     "blocks": [
       {
         "time": "09:00",
         "end": "10:30",
         "host": "AWS",
-        "label": null,
+        "speaker": "Diep Nguyen, Solutions Architect, AWS",
+        "linkedin": "https://www.linkedin.com/in/diepnh/",
+        "label": "From Spec to Production Code — Kiro, Claude Code & Codex on AWS",
         "tone": "workshop",
-        "luma": null,
+        "luma": "https://luma.com/1mxdg4em",
+        "description": "",
         "lumaId": null
       },
       {
         "time": "10:30",
         "end": "12:00",
         "host": "Agora",
-        "label": null,
+        "speaker": "Director, Customer Support Engineering, Agora",
+        "linkedin": "https://www.linkedin.com/in/dederek/",
+        "label": "Physical AI Party: Agora ConvoAI World",
         "tone": "workshop",
-        "luma": null,
+        "luma": "https://luma.com/gaf-2wor",
+        "description": "Step into the future of AI beyond the screen. Explore how conversational AI, voice interfaces, real-time communication, and intelligent agents are transforming robots, devices, and real-world experiences. Through hands-on workshops, live demos, and builder sessions, you'll learn to create AI-powered applications that listen, speak, see, and interact with the physical world — gaining practical experience with voice AI, multimodal agents, real-time infrastructure, and Agora's ConvoAI ecosystem. Explore real-world use cases across robotics, smart devices, customer service, education, and healthcare, and access developer resources, APIs, and credits.",
         "lumaId": null
       },
       {
         "time": "12:00",
-        "end": null,
-        "host": null,
-        "label": "Lunch",
+        "end": "13:00",
+        "label": "Lunch Break",
         "tone": "break",
+        "host": null,
         "luma": null,
         "lumaId": null
       },
@@ -102,17 +129,30 @@
         "time": "13:00",
         "end": "14:30",
         "host": "AWS",
-        "label": null,
+        "speaker": "Thi Nguyen, Senior Solutions Architect, AWS",
+        "linkedin": "https://www.linkedin.com/in/ndthi/",
+        "label": "Bedrock AgentCore — Multi-Agent Architecture for Production",
         "tone": "workshop",
-        "luma": null,
+        "luma": "https://luma.com/lptsgwm6",
+        "description": "One smart agent is a prototype. An orchestrated system of agents with shared memory, tools, and governance is production architecture. Bedrock AgentCore provides the runtime, memory, and orchestration backbone to deploy multi-agent systems from any framework — LangGraph, CrewAI, or custom — on fully managed infrastructure. This workshop covers AgentCore Runtime, episodic and semantic memory systems, supervisor and collaborative orchestration patterns, and the AgentCore Gateway for routing, versioning, and traffic management. You'll build a working multi-agent system with memory, tool use, and Code Interpreter from scratch.",
         "lumaId": null
       },
       {
         "time": "14:30",
         "end": "16:00",
         "host": "Tiny Fish",
-        "label": null,
+        "label": "Give Any AI Agent Live, Production-Grade Access to the Real Web",
         "tone": "workshop",
+        "description": "",
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "16:00",
+        "end": "16:30",
+        "label": "Teabreak",
+        "tone": "break",
+        "host": null,
         "luma": null,
         "lumaId": null
       },
@@ -120,17 +160,20 @@
         "time": "16:30",
         "end": "18:00",
         "host": "AWS",
-        "label": null,
+        "speaker": "Vu Pham, Senior Solutions Architect, AWS",
+        "linkedin": "https://www.linkedin.com/in/vupa/",
+        "label": "Design Patterns & Best Practices — Testing, Monitoring & Production Readiness",
         "tone": "workshop",
-        "luma": null,
+        "luma": "https://luma.com/1nubtbgt",
+        "description": "\"It works on my machine\" is not a deployment strategy. This workshop is where engineering discipline meets agentic AI — covering the patterns, testing strategies, and observability infrastructure that separate production systems from demos. Learn Tool Use & ReAct loops, multi-agent orchestration patterns (supervisor, hierarchical, collaborative), memory management trade-offs, and human-in-the-loop decision gates. Then implement evaluation pipelines, guardrails-as-code, end-to-end tracing, and drift detection. Leave with a production-ready playbook: tested, monitored, and continuously evaluated.",
         "lumaId": null
       },
       {
         "time": "18:00",
-        "end": null,
-        "host": null,
-        "label": "AI × Gaming Night",
+        "end": "21:30",
+        "label": "Welcome Builders Night",
         "tone": "signature",
+        "host": null,
         "luma": null,
         "lumaId": null
       }
@@ -144,62 +187,63 @@
     "venue": "VNG Campus",
     "venueImage": "/venues/vng-campus.webp",
     "workshop_partners": [
-      "Agora",
+      "Apify",
+      "Langfuse × ClickHouse",
       "Google for Developers",
-      "TinyFish"
+      "Antitech"
     ],
     "blocks": [
-      {
-        "time": "09:00",
-        "end": null,
-        "host": null,
-        "label": "Registration & Welcome",
-        "tone": "break",
-        "luma": null,
-        "lumaId": null
-      },
       {
         "time": "10:00",
         "end": "12:00",
         "host": "Apify",
+        "speaker": "Saurav Jain (Senior Developer Community Manager) & Jakub Drobnik (Engineering Team Lead)",
+        "linkedin": "https://www.linkedin.com/in/sauain/",
         "label": "Build, Deploy & Monetize AI Agents: The Future of the Developer Economy",
         "tone": "workshop",
         "luma": "https://luma.com/gaf-umu5",
-        "lumaId": "evt-tBo8l1liwEUQi62"
+        "lumaId": "evt-tBo8l1liwEUQi62",
+        "description": "Learn how to build, deploy, and monetize AI agents through Apify. Build an agent and monetize it on the Apify platform, and hear our engineering team lead share his own experience building and publishing agents since the birth of Apify. Every attendee gets $25 in Apify credits plus a step-by-step guide to monetizing AI agents and participating in Apify prizes."
       },
       {
         "time": "12:00",
         "end": "14:00",
         "host": "Langfuse × ClickHouse",
-        "label": null,
+        "label": "Langfuse × ClickHouse",
         "tone": "workshop",
-        "luma": null,
+        "luma": "https://luma.com/8zn9khl4",
         "lumaId": null
       },
       {
         "time": "14:00",
         "end": "15:00",
         "host": "Google Developer Experts",
+        "speaker": "Linh Nguyen",
+        "linkedin": "https://www.linkedin.com/in/linhnguyenkhanh/",
         "label": "Beyond Autocomplete: How Agentic AI Solves the Enterprise Design Bottleneck",
         "tone": "workshop",
         "luma": "https://luma.com/gaf-idob",
-        "lumaId": "evt-ja1zqmbFpmpAY4M"
+        "lumaId": "evt-ja1zqmbFpmpAY4M",
+        "description": ""
       },
       {
         "time": "15:00",
-        "end": "17:00",
-        "host": "Tencent Cloud",
-        "label": null,
+        "end": "16:00",
+        "host": "Antitech",
+        "speaker": "Achraf \"Ash\" Jday, Co-Founder, Antitech",
+        "linkedin": "https://www.linkedin.com/in/achrafjday/",
+        "label": "Securing Agentic AI: From AI Security Fundamentals to Hands-on Agent Assessment with the Antitech SDK",
         "tone": "workshop",
-        "luma": null,
+        "luma": "https://luma.com/7l5r8205",
+        "description": "As AI agents move from demos into real products, the security model changes. Prompt injection, indirect prompt injection, unsafe tool use, memory poisoning, data leakage, weak guardrails, and policy bypasses become product, compliance, and enterprise-readiness problems. This workshop introduces the new security challenges of agentic AI, then turns those concepts into hands-on practice using Antitech's SDK. We'll start by democratising AI security — what can go wrong, why traditional application security isn't enough for agentic systems, and how to test and harden agents before deployment. The second part focuses on practical workflows: using Antitech SDK modules to assess agents, generate structured Agent Assessment Reports, identify vulnerabilities, and apply hardening patterns such as PII/data obfuscation, safer input/output handling, and anti-prompt-injection defenses. Leave with a security-native mindset and a practical way to evaluate the agents you build during Agentic AI Build Week.",
         "lumaId": null
       },
       {
         "time": "18:00",
-        "end": null,
-        "host": null,
-        "label": "Builder Night",
+        "end": "20:00",
+        "label": "Builder Night · Special Announcements",
         "tone": "signature",
+        "host": null,
         "luma": null,
         "lumaId": null
       }
@@ -216,55 +260,46 @@
     "blocks": [
       {
         "time": "09:00",
-        "end": null,
-        "host": null,
         "label": "Opening Ceremony + Keynotes",
         "tone": "signature",
+        "end": null,
+        "host": null,
+        "luma": null,
+        "lumaId": null
+      },
+      {
+        "time": "09:30",
+        "label": "Expert Parade + Networking",
+        "tone": "signature",
+        "end": null,
+        "host": null,
         "luma": null,
         "lumaId": null
       },
       {
         "time": "12:00",
-        "end": null,
-        "host": null,
-        "label": "Lunch",
+        "end": "13:00",
+        "label": "Lunch Break",
         "tone": "break",
-        "luma": null,
-        "lumaId": null
-      },
-      {
-        "time": "13:00",
-        "end": null,
         "host": null,
-        "label": "On-site Build Sprint",
-        "tone": "workshop",
-        "luma": null,
-        "lumaId": null
-      },
-      {
-        "time": "16:00",
-        "end": null,
-        "host": null,
-        "label": "Expert Parade",
-        "tone": "workshop",
         "luma": null,
         "lumaId": null
       },
       {
         "time": "18:00",
-        "end": null,
-        "host": null,
-        "label": "Networking Night",
+        "end": "20:00",
+        "label": "VIP Dinner",
         "tone": "signature",
-        "luma": "https://luma.com/gaf-u7gd",
-        "lumaId": "evt-FlMo6AtULkEZZhS"
+        "host": null,
+        "luma": null,
+        "lumaId": null
       },
       {
         "time": "20:00",
-        "end": null,
-        "host": null,
         "label": "Late Night Build",
         "tone": "workshop",
+        "end": null,
+        "host": null,
         "luma": null,
         "lumaId": null
       }
@@ -281,46 +316,28 @@
     "blocks": [
       {
         "time": "09:00",
-        "end": null,
-        "host": null,
-        "label": "Submission Deadline",
+        "label": "Demo Day",
         "tone": "signature",
-        "luma": null,
-        "lumaId": null
-      },
-      {
-        "time": "10:00",
         "end": null,
         "host": null,
-        "label": "Demo Pitches",
-        "tone": "workshop",
         "luma": null,
         "lumaId": null
       },
       {
         "time": "12:00",
-        "end": null,
-        "host": null,
-        "label": "Lunch",
+        "end": "13:00",
+        "label": "Lunch Break",
         "tone": "break",
+        "host": null,
         "luma": null,
         "lumaId": null
       },
       {
-        "time": "16:00",
-        "end": null,
-        "host": null,
+        "time": "14:30",
+        "end": "16:00",
         "label": "Awards Ceremony",
         "tone": "signature",
-        "luma": null,
-        "lumaId": null
-      },
-      {
-        "time": "18:00",
-        "end": null,
         "host": null,
-        "label": "Networking Night",
-        "tone": "signature",
         "luma": null,
         "lumaId": null
       }

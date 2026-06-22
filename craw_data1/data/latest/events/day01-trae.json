@@ -12,7 +12,7 @@
   "display_date": "Wed · July 8",
   "timezone": "Indochina Time, GMT+7",
   "title": "TRAE in Your Professional Workflow",
-  "venue": "Tasco Office",
+  "venue": "Tasco",
   "city": "Ho Chi Minh City",
   "country": "Vietnam",
   "registration_url": "https://luma.com/gaf-jpy4",
@@ -47,9 +47,9 @@
   },
   "status": "registration_required",
   "confidence": "homepage+external",
-  "organizer_or_partner": "TRAE",
   "start_time": "15:00",
   "end_time": "16:00",
+  "organizer_or_partner": "TRAE",
   "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/4w/98e547e7-11c0-4a07-b7cd-105069417d75.png",
   "external_time_text": "3:00 PM – 4:00 PM (Indochina Time, GMT+7)",
   "external_location_text": "TBC, HCMC",
@@ -58,8 +58,8 @@
   "warnings": [
     "exact address hidden until registration"
   ],
-  "important_hash": "26b93bf7fcde60bc1a9254d447c45701081cb3294cb9f551c08659b6c7fb26d7",
+  "important_hash": "51d5a4e9f7d38fdae1d674aea96d596cb8462738b5b7a7b784676efa3a993d4e",
   "content_hash": "b0c4ae50970b6ad1e1d546c851036bc07243fb394459fcd5da0caf3f079f9e14",
   "quality_level": "full",
-  "scraped_at": "2026-06-18T10:53:23.821195"
+  "scraped_at": "2026-06-22T12:17:07.823969"
 }

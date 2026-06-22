@@ -2,7 +2,8 @@
   "id": "day02-agora",
   "source": "js_bundle_schedule",
   "source_urls": [
-    "https://agenticaibuildweek.genaifund.ai/#daily_schedule"
+    "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
+    "https://luma.com/gaf-2wor"
   ],
   "type": "workshop",
   "day_number": 2,
@@ -10,12 +11,12 @@
   "date": "2026-07-09",
   "display_date": "Thu · July 9",
   "timezone": "Indochina Time, GMT+7",
-  "title": "Agora",
-  "venue": "AWS Office, Bitexco Tower",
+  "title": "Physical AI Party: Agora ConvoAI World",
+  "venue": "AWS Office",
   "city": "Ho Chi Minh City",
   "country": "Vietnam",
-  "registration_url": null,
-  "event_detail_url": null,
+  "registration_url": "https://luma.com/gaf-2wor",
+  "event_detail_url": "https://luma.com/gaf-2wor",
   "description": "",
   "takeaways": [],
   "speakers": [],
@@ -33,23 +34,21 @@
     "google_maps_url": null,
     "source": "homepage"
   },
-  "status": "scheduled",
+  "status": "registration_required",
   "confidence": "bundle_schedule",
   "start_time": "10:30",
   "end_time": "12:00",
   "organizer_or_partner": "Agora",
-  "completeness_score": 0.54,
+  "completeness_score": 0.69,
   "missing_fields": [
-    "registration_url",
-    "event_detail_url",
     "description",
     "speakers",
     "requirements",
     "google_maps_url"
   ],
   "warnings": [],
-  "important_hash": "f21682e29ee81baba7e5d727113ed2d9d4948436d0a172993b64e01b235c94cb",
+  "important_hash": "e79d142d15c177cd4cfa9c680d7248e79923d7791e47496b94d948c5fb199375",
   "content_hash": "05cc300c791e9ec43ef2029085f749f40977036477730d1ebfe8abd7b2db02be",
-  "quality_level": "summary_only",
-  "scraped_at": "2026-06-18T15:27:19.778035"
+  "quality_level": "partial",
+  "scraped_at": "2026-06-22T12:17:07.825459"
 }

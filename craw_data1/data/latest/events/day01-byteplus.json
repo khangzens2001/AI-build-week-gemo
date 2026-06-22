@@ -12,7 +12,7 @@
   "display_date": "Wed · July 8",
   "timezone": "Indochina Time, GMT+7",
   "title": "Render the Next Era of Creation with BytePlus AI Stack",
-  "venue": "Tasco Office",
+  "venue": "Tasco",
   "city": "Ho Chi Minh City",
   "country": "Vietnam",
   "registration_url": "https://luma.com/gaf-vbkf",
@@ -49,9 +49,9 @@
   },
   "status": "registration_required",
   "confidence": "homepage+external",
-  "organizer_or_partner": "BytePlus",
   "start_time": "10:00",
   "end_time": "12:00",
+  "organizer_or_partner": "BytePlus",
   "cover_image": "https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/uploads/r7/cf59a715-7e51-4fe5-90f4-23683ca3d53a.png",
   "external_time_text": "10:00 AM – 12:00 PM (Indochina Time, GMT+7)",
   "external_location_text": "TBC, HCMC",
@@ -60,8 +60,8 @@
   "warnings": [
     "exact address hidden until registration"
   ],
-  "important_hash": "21d1322596e07c046fb2fab5f3b2ed44bc7d0f4fc2c7de6086b779afec3ab78b",
+  "important_hash": "bea4f3f809d1edb175ae83aa2467db11eb01507cbee407c0bc6be9d9bba3e91d",
   "content_hash": "4b3d315db449b6dd6c90cfcc1753c17952c5a7773a0bba2d3c106e6e7b90553c",
   "quality_level": "full",
-  "scraped_at": "2026-06-18T10:53:23.815411"
+  "scraped_at": "2026-06-22T12:17:07.822620"
 }
