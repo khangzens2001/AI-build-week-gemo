@@ -1,3 +1,4 @@
 firecrawl-py
 apscheduler
 python-dotenv
+json5

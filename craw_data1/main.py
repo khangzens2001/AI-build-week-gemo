@@ -176,6 +176,13 @@ def run_scrape_job():
     # here, so this module stays a pure scraper with no webhook/HTTP concerns.
     aggregates["report"]["changed_count"] = changed_count
     aggregates["report"]["changed_pages"] = changed_pages
+    # Observable signal for which parser produced the schedule this cycle
+    # ("js" = deterministic bundle parse, "mimo" = LLM markdown fallback,
+    # "baseline-stale" = both failed, serving last-good). Lets the VM / a human
+    # see a silent degrade instead of it hiding behind stale data.
+    aggregates["report"]["bundle_schedule_status"] = getattr(
+        scraper, "_last_schedule_status", "unknown"
+    )
     save_json(os.path.join(config.LATEST_DIR, "all_links.json"), aggregates["all_links"])
     save_json(os.path.join(config.LATEST_DIR, "assets.json"), aggregates["assets"])
     save_json(os.path.join(config.LATEST_DIR, "site_index.json"), aggregates["site_index"])
