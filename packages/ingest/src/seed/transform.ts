@@ -22,18 +22,6 @@ import {
 // Raw input shapes (only the fields the transform reads).
 // ---------------------------------------------------------------------------
 
-export interface RawLocation {
-  event_id: string;
-  venue_name: string;
-  address_text: string | null;
-  city: string | null;
-  country: string | null;
-  latitude: number | null;
-  longitude: number | null;
-  google_maps_url: string | null;
-  source?: string;
-}
-
 export interface RawBlock {
   time: string | null;
   end: string | null;
@@ -190,39 +178,90 @@ function tone_to_type(tone: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Venues — dedup locations.json by venue_name, prefer rows with coords.
+// Venues — bundle-first, with a curated registry for canonical name + coords.
 // ---------------------------------------------------------------------------
 
-export function buildVenues(locations: RawLocation[], bundle: RawBundleDay[]): Venue[] {
-  const imageByVenue = new Map<string, string>();
+/**
+ * Curated registry for the (few, fixed) event venues, keyed by `slug(day.venue)`
+ * — the SAME id sessions derive their `venueId` from (see buildSessions). Keying
+ * on the bundle's venue slug guarantees `venue.id === session.venueId` by
+ * construction, so the orphan filter in run.ts keeps every attended venue no
+ * matter how the upstream parser spells the name.
+ *
+ * Why a registry instead of locations.json: the crawled locations.json is noisy
+ * (city-only rows, address_text mistaken for venue_name, split/missing coords —
+ * e.g. AWS Office has NO coordinates in any row), and its `venue_name` values
+ * ("Tasco Office", "AWS Office, Bitexco Tower") don't match the bundle's short
+ * names ("Tasco", "AWS Office"), which is exactly what silently dropped Tasco +
+ * AWS from the map. For a fixed, ~4-venue event these canonical coords are more
+ * correct and fully deterministic. A venue NOT in the registry still appears
+ * (from the bundle) with null coords → it lists but shows no map pin.
+ *
+ * Keyed on the live short-name slugs the json5 schedule parser emits. If those
+ * names change upstream, a miss degrades gracefully (null coords), never a drop.
+ */
+const VENUE_REGISTRY: Record<string, { name: string; lat: number; lng: number; address: string }> =
+  {
+    tasco: {
+      name: "Tasco Office",
+      lat: 10.8243,
+      lng: 106.6303,
+      address: "Tasco Office, Ho Chi Minh City",
+    },
+    "aws-office": {
+      name: "AWS Office, Bitexco Tower",
+      lat: 10.7717,
+      lng: 106.7042,
+      address: "Bitexco Financial Tower, 2 Hải Triều, Bến Nghé, Quận 1, Ho Chi Minh City",
+    },
+    "vng-campus": {
+      name: "VNG Campus",
+      lat: 10.7573,
+      lng: 106.7444,
+      address: "VNG Campus, Tân Thuận Đông, Quận 7, Ho Chi Minh City",
+    },
+    "galaxy-innovation-park": {
+      name: "Galaxy Innovation Park",
+      lat: 10.8231,
+      lng: 106.6297,
+      address: "Galaxy Innovation Park, Ho Chi Minh City",
+    },
+  };
+
+/** Build a deterministic Google Maps search link from any query string. */
+function mapsSearch(query: string): string {
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+}
+
+export function buildVenues(bundle: RawBundleDay[]): Venue[] {
+  const byId = new Map<string, Venue>();
   for (const d of bundle) {
-    if (d.venue && d.venueImage) imageByVenue.set(d.venue, d.venueImage);
+    if (!d.venue) continue;
+    const id = slug(d.venue);
+    if (byId.has(id)) continue; // e.g. day04 + day05 both at Galaxy
+    const reg = VENUE_REGISTRY[id];
+    const name = reg?.name ?? d.venue;
+    const lat = reg?.lat ?? null;
+    const lng = reg?.lng ?? null;
+    byId.set(id, {
+      id,
+      name,
+      address: reg?.address ?? null,
+      // All AABW venues are in Ho Chi Minh City.
+      city: "Ho Chi Minh City",
+      country: "Vietnam",
+      lat,
+      lng,
+      // getDirections relies on a usable mapUrl: exact coords when known, else a
+      // name search so an unregistered venue still links somewhere sensible.
+      mapUrl:
+        lat != null && lng != null
+          ? mapsSearch(`${lat},${lng}`)
+          : mapsSearch(`${name} Ho Chi Minh City`),
+      imageUrl: d.venueImage ?? null,
+    });
   }
-
-  const byName = new Map<string, RawLocation>();
-  for (const loc of locations) {
-    if (!loc.venue_name) continue;
-    const existing = byName.get(loc.venue_name);
-    // Prefer the row that has real coordinates.
-    const hasCoords = loc.latitude != null && loc.longitude != null;
-    const existingHasCoords =
-      existing != null && existing.latitude != null && existing.longitude != null;
-    if (!existing || (hasCoords && !existingHasCoords)) {
-      byName.set(loc.venue_name, loc);
-    }
-  }
-
-  return [...byName.values()].map((loc) => ({
-    id: slug(loc.venue_name),
-    name: loc.venue_name,
-    address: loc.address_text ?? null,
-    city: loc.city ?? null,
-    country: loc.country ?? null,
-    lat: loc.latitude ?? null,
-    lng: loc.longitude ?? null,
-    mapUrl: loc.google_maps_url ?? null,
-    imageUrl: imageByVenue.get(loc.venue_name) ?? null,
-  }));
+  return [...byId.values()];
 }
 
 // ---------------------------------------------------------------------------
