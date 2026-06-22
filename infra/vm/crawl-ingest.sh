@@ -94,6 +94,9 @@ podman run --rm \
   -w /app \
   -e FIRECRAWL_API_KEY \
   -e EXTERNAL_EVENT_RECHECK_HOURS="${EXTERNAL_EVENT_RECHECK_HOURS:-6}" \
+  -e MIMO_API_KEY="${MIMO_API_KEY:-}" \
+  -e MIMO_BASE_URL="${MIMO_BASE_URL:-}" \
+  -e MIMO_MODEL="${MIMO_MODEL:-}" \
   docker.io/library/python:3.11-slim \
   sh -c 'set -e; pip install --quiet --no-cache-dir -r requirements.txt && python main.py --once'
 
