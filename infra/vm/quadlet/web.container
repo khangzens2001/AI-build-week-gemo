@@ -4,13 +4,13 @@
 # nginx terminates TLS and reverse-proxies :443 → 127.0.0.1:3000.
 [Unit]
 Description=Event Copilot — web (Next.js standalone)
-After=ecnet-network.service chroma.service d1shim.service
+After=ecnet-network.service chroma.service d1shim.service snapshot-data-volume.service
 # Requires only the network (hard dep); chroma/d1shim are Wants (soft) so a
 # transient data-container outage doesn't take the whole web app down — the
 # routes that don't need them keep serving, and RAG/reminders recover when they
 # come back.
 Requires=ecnet-network.service
-Wants=chroma.service d1shim.service
+Wants=chroma.service d1shim.service snapshot-data-volume.service
 
 [Container]
 ContainerName=web
@@ -20,12 +20,17 @@ Image=docker.io/library/node:22-slim@sha256:d9f850096136edbc402debdd8729579a288a
 PublishPort=127.0.0.1:3000:3000
 # The packaged standalone root (contains apps/web/server.js, node_modules, packages).
 Volume=/srv/event-copilot/app:/app:ro,Z
+# Runtime snapshot volume (written by the crawl→re-ingest loop). data.ts hot-reloads
+# this file (mtime-gated) so the Schedule/now/next UI updates without a redeploy;
+# falls back to the bundled snapshot if the file is missing/invalid.
+Volume=snapshot-data.volume:/snap:ro,z
 WorkingDir=/app
 Network=ecnet.network
 EnvironmentFile=/srv/event-copilot/shared/web.env
 Environment=NODE_ENV=production
 Environment=PORT=3000
 Environment=HOSTNAME=0.0.0.0
+Environment=SNAPSHOT_PATH=/snap/snapshot.json
 Exec=node apps/web/server.js
 
 [Service]

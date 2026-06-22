@@ -1,6 +1,9 @@
 import { getVenueById, sessionsByStart, sessionsOnDay } from "@event/core";
 
 export const runtime = "nodejs";
+// Snapshot is hot-reloaded from a runtime file on the VM (crawl→re-ingest loop),
+// so the response must never be statically cached or new sessions won't show.
+export const dynamic = "force-dynamic";
 
 function withVenue(s: ReturnType<typeof sessionsByStart>[number]) {
   const venue = getVenueById(s.venueId);
