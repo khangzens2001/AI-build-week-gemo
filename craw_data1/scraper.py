@@ -356,16 +356,16 @@ class FirecrawlScraper:
             return days
 
         # JS-array parse failed or failed self-verify → try the MiMo markdown
-        # fallback (deferred: currently a stub returning None). Until MiMo lands,
-        # the caller's existing markdown-regex path (parse_daily_schedule_events)
-        # remains the floor.
+        # fallback (LLM structured-extracts the homepage schedule when the JS
+        # bundle drifts). If MiMo is unavailable/unusable it returns None and the
+        # caller's existing markdown-regex path remains the floor.
         logger.error(
             "JS-bundle schedule parse FAILED (days=%s, verified=%s) — the bundle "
             "structure likely drifted. Falling back; schedule may be stale.",
             bool(days),
             verified,
         )
-        mimo_days = parse_markdown_with_mimo(html, hint="full schedule")
+        mimo_days = parse_markdown_with_mimo(raw_schedule, hint="schedule JS literal")
         if mimo_days:
             self._last_schedule_status = "mimo"
             logger.info(f"Extracted schedule for {len(mimo_days)} days via MiMo fallback")
