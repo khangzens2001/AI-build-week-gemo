@@ -60,8 +60,12 @@ def sanitize_js_array(raw: str) -> str:
 def _to_blocks(raw_blocks: object) -> list[dict]:
     """Normalize each block to the consumed shape, keeping extra fields.
 
-    Extra keys (speaker/linkedin/description) are retained — downstream reads via
-    .get() so they're harmless, and they're useful future RAG/enrichment data.
+    Extra keys (speaker/linkedin) are retained as-is — downstream reads via .get()
+    so they're harmless, and they're useful future enrichment data. NOTE: `description`
+    is preserved as a KEY but its value is emptied: it's a backtick template literal
+    that sanitize_js_array replaces with "" (we don't parse JS template bodies). If a
+    description body is ever needed, convert the backtick literal to a proper JSON
+    string in sanitize instead of nulling it.
     """
     blocks: list[dict] = []
     if not isinstance(raw_blocks, list):
@@ -138,18 +142,28 @@ def parse_js_array(raw: str) -> list[dict] | None:
 def verify_against_raw(days: list[dict], raw: str) -> bool:
     """Self-check the parsed days against the raw literal.
 
-    Guards the (narrow) sanitize step: every non-null block label/luma/time must
-    appear verbatim in the raw array. If sanitize ever corrupted a value inside a
-    string, the corrupted value won't be a substring of `raw` and this fails, so
-    the caller treats the parse as untrustworthy (degrade, don't ship bad data).
+    Guards the (narrow) sanitize step: every retained STRING value — top-level day
+    fields and every block field — must appear verbatim in the raw array. If
+    sanitize ever corrupted a value inside a string, the corrupted value won't be a
+    substring of `raw` and this fails, so the caller treats the parse as
+    untrustworthy (degrade, don't ship bad data).
+
+    Note: json5 decodes escapes (\\", \\uXXXX). The current bundle stores literal
+    UTF-8 so decoded values match raw; if a future title carries an escaped char
+    this could false-negative → safe-fail to baseline (never ships wrong data).
+    `workshop_partners` is excluded: it's DERIVED (workshops[].name), not a verbatim
+    slice, so a substring check doesn't apply.
     """
     for day in days:
+        for key, val in day.items():
+            if key in ("blocks", "workshop_partners"):
+                continue
+            if isinstance(val, str) and val and val not in raw:
+                logger.warning("verify_against_raw: day.%s=%r not in source", key, val)
+                return False
         for block in day.get("blocks", []):
-            for key in ("label", "luma", "time"):
-                val = block.get(key)
-                if val and val not in raw:
-                    logger.warning(
-                        "verify_against_raw: %s=%r not found verbatim in source", key, val
-                    )
+            for key, val in block.items():
+                if isinstance(val, str) and val and val not in raw:
+                    logger.warning("verify_against_raw: block.%s=%r not in source", key, val)
                     return False
     return True

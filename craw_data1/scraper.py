@@ -286,7 +286,12 @@ class FirecrawlScraper:
         dynamic tabs via Firecrawl actions.
         """
         import re as _re
-        
+
+        # Default to the degrade signal; upgraded to "js"/"mimo" only on success.
+        # This covers EVERY early-return path below (fetch/marker/bracket failures)
+        # so a degrade is never mis-reported as "unknown" in report.json.
+        self._last_schedule_status = "baseline-stale"
+
         logger.info("Extracting schedule from JS bundle...")
         
         # Step 1: Get the JS bundle URL from the homepage HTML
@@ -342,7 +347,8 @@ class FirecrawlScraper:
         # data). A json5 parse is immune to field reorder/insertion. See
         # schedule_parser.py for the sanitize details + self-verification.
         days = parse_js_array(raw_schedule)
-        if days and verify_against_raw(days, raw_schedule):
+        verified = bool(days) and verify_against_raw(days, raw_schedule)
+        if days and verified:
             self._last_schedule_status = "js"
             logger.info(f"Extracted schedule for {len(days)} days from JS bundle (json5)")
             for day in days:
@@ -357,7 +363,7 @@ class FirecrawlScraper:
             "JS-bundle schedule parse FAILED (days=%s, verified=%s) — the bundle "
             "structure likely drifted. Falling back; schedule may be stale.",
             bool(days),
-            bool(days) and verify_against_raw(days, raw_schedule),
+            verified,
         )
         mimo_days = parse_markdown_with_mimo(html, hint="full schedule")
         if mimo_days:
@@ -365,6 +371,6 @@ class FirecrawlScraper:
             logger.info(f"Extracted schedule for {len(mimo_days)} days via MiMo fallback")
             return mimo_days
 
-        self._last_schedule_status = "baseline-stale"
+        # status already "baseline-stale" from method entry.
         return []
 
