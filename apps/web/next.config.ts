@@ -7,6 +7,29 @@ const withSerwist = withSerwistInit({
   swDest: "public/sw.js",
   // Disable the service worker in dev to avoid caching headaches while building.
   disable: process.env.NODE_ENV === "development",
+  // Do NOT precache session covers / venue images. On the VM these are served by
+  // host nginx from a volume the crawl loop refreshes; a build-time precache entry
+  // (with a frozen revision hash) would shadow nginx and serve a stale/missing
+  // cover forever. Serwist injects public/ files as additionalPrecacheEntries
+  // (which bypass manifestTransforms) and glob v10 ignores "!negation" in the
+  // pattern array — so the only reliable lever is an ALLOWLIST of public subtrees
+  // that omits covers/ and venues/. Those then go through runtime
+  // StaleWhileRevalidate instead, so newly-crawled covers appear without a rebuild.
+  // EXCEPTION: covers/session-fallback.png IS precached — the static offline
+  // safety-net SessionCard renders when a cover is missing (never crawled), so it
+  // must work offline / cold-cache.
+  // NOTE: a NEW top-level public asset must be added here to be precached.
+  globPublicPatterns: [
+    "brand/**",
+    "icons/**",
+    "*.png",
+    "*.svg",
+    "*.ico",
+    "*.webmanifest",
+    "*.json",
+    "*.txt",
+    "covers/session-fallback.png",
+  ],
 });
 
 const nextConfig: NextConfig = {
