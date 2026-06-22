@@ -7,6 +7,8 @@ from urllib.request import Request, urlopen
 
 from firecrawl import FirecrawlApp
 import config
+from schedule_parser import parse_js_array, verify_against_raw
+from mimo_parser import parse_markdown_with_mimo
 
 logger = logging.getLogger(__name__)
 
@@ -156,6 +158,10 @@ class FirecrawlScraper:
         if not config.FIRECRAWL_API_KEY:
             raise RuntimeError("FIRECRAWL_API_KEY is required. Set it in the environment or a local .env file.")
         self.app = FirecrawlApp(api_key=config.FIRECRAWL_API_KEY)
+        # Which path produced the last schedule parse: "js" | "mimo" |
+        # "baseline-stale". Surfaced into report.json so a silent degrade is
+        # observable (the original bug hid behind a quiet empty-list fallback).
+        self._last_schedule_status = "unknown"
 
     def discover_urls(self) -> list[str]:
         """Discover same-domain page URLs from sitemap, homepage HTML, /map, and known pages."""
@@ -280,7 +286,12 @@ class FirecrawlScraper:
         dynamic tabs via Firecrawl actions.
         """
         import re as _re
-        
+
+        # Default to the degrade signal; upgraded to "js"/"mimo" only on success.
+        # This covers EVERY early-return path below (fetch/marker/bracket failures)
+        # so a degrade is never mis-reported as "unknown" in report.json.
+        self._last_schedule_status = "baseline-stale"
+
         logger.info("Extracting schedule from JS bundle...")
         
         # Step 1: Get the JS bundle URL from the homepage HTML
@@ -329,80 +340,37 @@ class FirecrawlScraper:
             pos += 1
         
         raw_schedule = bundle_js[bracket_start:pos+1]
-        
-        # Step 3: Parse each day using regex (safer than JS→JSON conversion)
-        days = []
-        day_pattern = _re.compile(
-            r'\{day:"(\d+)",weekday:"([^"]+)",dateLabel:"([^"]+)",'
-            r'theme:"([^"]+)",venue:"([^"]+)",venueImage:"([^"]*)"'
+
+        # Step 3: Parse the JS object-literal array DETERMINISTICALLY (json5).
+        # The old positional regex here silently broke when the site inserted a
+        # `mapUrl` field between `venue` and `venueImage` (matched 0 days → stale
+        # data). A json5 parse is immune to field reorder/insertion. See
+        # schedule_parser.py for the sanitize details + self-verification.
+        days = parse_js_array(raw_schedule)
+        verified = bool(days) and verify_against_raw(days, raw_schedule)
+        if days and verified:
+            self._last_schedule_status = "js"
+            logger.info(f"Extracted schedule for {len(days)} days from JS bundle (json5)")
+            for day in days:
+                logger.info(f"  Day {day['day']} ({day['theme']}): {len(day['blocks'])} blocks")
+            return days
+
+        # JS-array parse failed or failed self-verify → try the MiMo markdown
+        # fallback (deferred: currently a stub returning None). Until MiMo lands,
+        # the caller's existing markdown-regex path (parse_daily_schedule_events)
+        # remains the floor.
+        logger.error(
+            "JS-bundle schedule parse FAILED (days=%s, verified=%s) — the bundle "
+            "structure likely drifted. Falling back; schedule may be stale.",
+            bool(days),
+            verified,
         )
-        
-        day_positions = [(m.start(), m) for m in day_pattern.finditer(raw_schedule)]
-        
-        for i, (day_start, day_match) in enumerate(day_positions):
-            # Determine the end boundary for this day's data
-            day_end = day_positions[i+1][0] if i+1 < len(day_positions) else len(raw_schedule)
-            day_chunk = raw_schedule[day_start:day_end]
-            
-            # Extract blocks for this day only
-            blocks_start = day_chunk.find('blocks:[')
-            if blocks_start < 0:
-                continue
-            
-            # Find the closing ] for blocks array
-            bd = 0
-            bp = blocks_start + 7
-            while bp < len(day_chunk) and not (day_chunk[bp] == ']' and bd == 0):
-                if day_chunk[bp] == '[':
-                    bd += 1
-                elif day_chunk[bp] == ']':
-                    if bd == 0:
-                        break
-                    bd -= 1
-                bp += 1
-            
-            blocks_chunk = day_chunk[blocks_start + 8:bp]
-            
-            blocks = []
-            for block_m in _re.finditer(
-                r'\{time:"([^"]*)"'
-                r'(?:,end:"([^"]*)")?'
-                r'(?:,host:"([^"]*)")?'
-                r'(?:,label:"([^"]*)")?'
-                r'(?:,tone:"([^"]*)")?'
-                r'(?:,luma:"([^"]*)")?'
-                r'(?:,lumaId:"([^"]*)")?',
-                blocks_chunk
-            ):
-                blocks.append({
-                    "time": block_m.group(1),
-                    "end": block_m.group(2) or None,
-                    "host": block_m.group(3) or None,
-                    "label": block_m.group(4) or None,
-                    "tone": block_m.group(5) or None,
-                    "luma": block_m.group(6) or None,
-                    "lumaId": block_m.group(7) or None,
-                })
-            
-            # Extract workshop partner names
-            partners = []
-            ws_chunk = day_chunk[:blocks_start]
-            for ws_m in _re.finditer(r'name:"([^"]+)"', ws_chunk):
-                partners.append(ws_m.group(1))
-            
-            days.append({
-                "day": day_match.group(1),
-                "weekday": day_match.group(2),
-                "dateLabel": day_match.group(3),
-                "theme": day_match.group(4),
-                "venue": day_match.group(5),
-                "venueImage": day_match.group(6),
-                "workshop_partners": partners,
-                "blocks": blocks,
-            })
-        
-        logger.info(f"Extracted schedule for {len(days)} days from JS bundle")
-        for day in days:
-            logger.info(f"  Day {day['day']} ({day['theme']}): {len(day['blocks'])} blocks")
-        
-        return days
+        mimo_days = parse_markdown_with_mimo(html, hint="full schedule")
+        if mimo_days:
+            self._last_schedule_status = "mimo"
+            logger.info(f"Extracted schedule for {len(mimo_days)} days via MiMo fallback")
+            return mimo_days
+
+        # status already "baseline-stale" from method entry.
+        return []
+
