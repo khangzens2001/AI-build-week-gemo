@@ -1,6 +1,8 @@
 import { getNextSessions, getVenueById } from "@event/core";
 
 export const runtime = "nodejs";
+// Snapshot is hot-reloaded from a runtime file on the VM; keep this dynamic.
+export const dynamic = "force-dynamic";
 
 /** Upcoming sessions after now. The client forwards its demo clock via `?now=`
  * (the server's own clock is frozen); falls back to the server default. */

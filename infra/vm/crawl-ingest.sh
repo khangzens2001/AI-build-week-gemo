@@ -37,6 +37,10 @@ ENVFILE=/srv/event-copilot/shared/web.env
 # Dedicated podman volume for crawl output (writable; survives between cycles so
 # change-detection has a prior snapshot to diff against).
 CRAWL_VOL=crawl-data
+# Dedicated podman volume the web container hot-reloads the runtime snapshot from
+# (infra/vm/quadlet/snapshot-data.volume). We write the freshly-seeded snapshot
+# here atomically so the Schedule/now/next UI updates without a rebuild+redeploy.
+SNAPSHOT_VOL=snapshot-data
 # Web container's loopback-published port (same one reminders.service curls).
 WEB_URL=http://127.0.0.1:3000
 
@@ -96,10 +100,15 @@ echo "==> [2/3] Seed + embed (bun, writable copy; reads crawl volume; → Chroma
 # Run in a copied /work because seed writes snapshot/chunks/seed.sql under the
 # (otherwise :ro) repo tree. Crawl volume mounted :ro at /crawl; CRAWL_LATEST_DIR
 # points seed at the fresh JSON. Attached to ecnet so embed reaches chroma by name.
+# The snapshot-data volume is mounted rw at /snap: after a successful seed+embed,
+# we ATOMICALLY promote the freshly-built snapshot.json there (temp + rename on the
+# same fs) — but ONLY if it's valid JSON with a sane session count, so a brittle
+# crawl can't wipe the live Schedule UI. The web container hot-reloads /snap.
 podman run --rm \
   --network ecnet \
   -v "${REPO}:/src:ro,Z" \
   -v "${CRAWL_VOL}:/crawl:ro" \
+  -v "${SNAPSHOT_VOL}:/snap" \
   -e GOOGLE_GENERATIVE_AI_API_KEY \
   -e GEMINI_EMBED_MODEL="${GEMINI_EMBED_MODEL:-gemini-embedding-001}" \
   -e GEMINI_EMBED_DIM="${GEMINI_EMBED_DIM:-3072}" \
@@ -107,8 +116,25 @@ podman run --rm \
   -e CHROMA_PORT="${CHROMA_PORT:-8000}" \
   -e CHROMA_COLLECTION="${CHROMA_COLLECTION:-aabw}" \
   -e CRAWL_LATEST_DIR=/crawl/latest \
+  -e SNAPSHOT_MIN_SESSIONS="${SNAPSHOT_MIN_SESSIONS:-10}" \
   docker.io/oven/bun:debian \
-  sh -c 'set -e; cp -a /src /work && cd /work && bun install && bun run seed && bun run embed'
+  sh -c 'set -e
+    cp -a /src /work && cd /work && bun install && bun run seed && bun run embed
+    # Promote the freshly-built snapshot for the web UI to hot-reload. Gate on a
+    # session-count floor so a partial crawl never publishes a near-empty schedule.
+    SNAP=/work/packages/core/data/snapshot.json
+    bun -e "
+      const fs=require(\"node:fs\");
+      const floor=Number(process.env.SNAPSHOT_MIN_SESSIONS||10);
+      const d=JSON.parse(fs.readFileSync(\"$SNAP\",\"utf8\"));
+      if(!Array.isArray(d.sessions)||d.sessions.length<floor){
+        console.error(\"snapshot rejected: sessions=\"+(d.sessions?.length)+\" < floor=\"+floor);process.exit(3);
+      }
+      fs.copyFileSync(\"$SNAP\",\"/snap/.snapshot.json.tmp\");
+      fs.renameSync(\"/snap/.snapshot.json.tmp\",\"/snap/snapshot.json\");
+      console.log(\"snapshot promoted: \"+d.sessions.length+\" sessions, generatedAt \"+d.generatedAt);
+    "
+  '
 
 echo "==> [3/3] Signal /api/ingest/hook if content changed"
 # Read the per-cycle change signal the crawler persisted into report.json. One
