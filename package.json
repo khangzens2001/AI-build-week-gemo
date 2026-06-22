@@ -17,6 +17,8 @@
     "embed": "bun run packages/ingest/src/seed/embed.ts",
     "fetch:images": "bun run scripts/fetch-images.ts",
     "ingest:devpost": "bun --filter '@event/ingest' crawl:devpost",
+    "crawl:participants": "npx tsx packages/ingest/src/devpost/scrape-participants.ts",
+    "transform:participants": "bun run packages/ingest/src/devpost/transform-participants.ts",
     "db:generate": "drizzle-kit generate",
     "db:migrate:local": "wrangler d1 migrations apply aabw --local",
     "db:migrate": "wrangler d1 migrations apply aabw --remote",

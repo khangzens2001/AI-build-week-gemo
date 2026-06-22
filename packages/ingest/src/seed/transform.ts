@@ -11,6 +11,7 @@
 
 import {
   type Deadline,
+  type Mentor,
   type Perk,
   type RetrievalChunk,
   type Session,
@@ -343,6 +344,146 @@ export function buildSessions(
   }
 
   return sessions;
+}
+
+// ---------------------------------------------------------------------------
+// Mentors — derived from real event speakers (events.json), deterministic.
+// ---------------------------------------------------------------------------
+
+/**
+ * Canonical expertise label set. Mentor.expertise is a free string[], but we
+ * constrain the heuristic (and the optional MiMo classifier in run.ts) to this
+ * set so the directory's filter chips stay consistent. Keep lowercase.
+ */
+export const EXPERTISE_LABELS = [
+  "ai",
+  "agents",
+  "rag",
+  "llm",
+  "ml",
+  "data",
+  "backend",
+  "frontend",
+  "infra",
+  "devops",
+  "cloud",
+  "design",
+  "ux",
+  "product",
+  "developer-tools",
+  "startup",
+] as const;
+
+/**
+ * Deterministic expertise from a blob of text (speaker title + org + session
+ * title + day theme). Pure + offline: a keyword→label table, capped so a single
+ * mentor never sprouts a dozen noisy chips. Labels are emitted in EXPERTISE_LABELS
+ * order (most "core" first), so the cap keeps the strongest signals. run.ts may
+ * augment this with the MiMo classifier, but this always works without a key so
+ * seed is never classifier-dependent.
+ */
+export function heuristicExpertise(text: string, max = 5): string[] {
+  const t = text.toLowerCase();
+  const hits = new Set<string>();
+  const rule = (label: (typeof EXPERTISE_LABELS)[number], needles: string[]) => {
+    if (needles.some((n) => t.includes(n))) hits.add(label);
+  };
+  rule("ai", ["genai", "artificial intelligence", "generative", " ai ", " ai/", "ai "]);
+  rule("agents", ["agent", "agentic", "convoai", "multi-agent"]);
+  rule("rag", ["rag", "retrieval", "grounding", "vector"]);
+  rule("llm", ["llm", "language model", "gpt", "claude", "gemini", "prompt"]);
+  rule("ml", ["machine learning", "nlp", "deep learning"]);
+  rule("data", ["data", "analytics", "clickhouse", "database", "scraping"]);
+  rule("backend", ["backend", "back-end", "api", "server", "enterprise"]);
+  rule("frontend", ["frontend", "front-end"]);
+  rule("infra", ["infra", "infrastructure", "scaling", "kubernetes", "deploy"]);
+  rule("devops", ["devops", "ci/cd", "pipeline", "observability"]);
+  rule("cloud", ["cloud", "aws", "nvidia", "byteplus", "tencent", "agora"]);
+  rule("design", ["design", "designer", "creative"]);
+  rule("ux", ["ux", "user experience", "product design"]);
+  rule("product", ["product", "go-to-market"]);
+  rule("developer-tools", ["developer", "trae", "autocomplete", "ide", "tooling"]);
+  rule("startup", ["startup", "founder", "accelerator", "inception", "monetize"]);
+  // Emit in EXPERTISE_LABELS order, capped — keeps the strongest signals.
+  return EXPERTISE_LABELS.filter((l) => hits.has(l)).slice(0, max);
+}
+
+/** A speaker parsed out of an event's `speakers[]` raw "Name — Title, Org" string. */
+export interface ParsedSpeaker {
+  name: string;
+  /** Concise "Title, Org" descriptor (verbatim from source, no invented prose). */
+  descriptor: string | null;
+}
+
+/**
+ * Parse a raw speaker string of the shape `"Name — Title, Org — extra prose"`.
+ * Splits on the FIRST em-dash for the name; the descriptor is the next segment
+ * up to a sentence break or a second em-dash, so trailing prose/bio sentences
+ * are dropped (we never fabricate, but we also don't carry a paragraph).
+ */
+export function parseSpeaker(raw: string): ParsedSpeaker | null {
+  const text = raw.trim();
+  if (!text) return null;
+  const parts = text.split(" — ");
+  const name = (parts[0] ?? "").trim();
+  if (!name) return null;
+  if (parts.length === 1) return { name, descriptor: null };
+  // Descriptor = the segment after the first em-dash, trimmed to the first
+  // sentence end so a long "— the person who…" prose tail is excluded.
+  const segment = (parts[1] ?? "").trim();
+  const firstSentence = segment.split(/(?<=\.)\s/)[0]?.trim() ?? segment;
+  const descriptor = firstSentence.length > 0 ? firstSentence : null;
+  return { name, descriptor };
+}
+
+/**
+ * Build the mentor directory from real event speakers. Deterministic + pure:
+ *   - dedupe speakers by name across (duplicated) events,
+ *   - name/descriptor parsed from the "Name — Title, Org" string,
+ *   - org fallback from the event's organizer_or_partner,
+ *   - expertise from `heuristicExpertise` over title+org+session+theme,
+ *   - slots = [] (the crawl has no office-hours times; a slot-less directory is
+ *     honest — see deepwork notes — rather than synthesizing bookable windows),
+ *   - bio = the verbatim descriptor (no invented prose),
+ *   - sourceUrl = the event's first source url.
+ *
+ * Returns the mentors AND a `classifyText` map (mentor id → the exact text used
+ * for expertise classification) so run.ts's optional MiMo augmentation classifies
+ * the SAME text without re-parsing speakers — one source, no id/text drift.
+ * `id = mentor-<slug(name)>` is stable so it never orphans office_hours_bookings
+ * across reseeds.
+ */
+export function buildMentors(events: RawEvent[]): {
+  mentors: Mentor[];
+  classifyText: Map<string, string>;
+} {
+  const byName = new Map<string, Mentor>();
+  const classifyText = new Map<string, string>();
+  for (const e of events) {
+    for (const raw of e.speakers ?? []) {
+      const parsed = parseSpeaker(raw);
+      if (!parsed) continue;
+      const id = `mentor-${slug(parsed.name)}`;
+      if (byName.has(id)) continue; // first event wins (events.json has dup rows)
+      const org = e.organizer_or_partner ?? null;
+      const expertiseText = [parsed.descriptor ?? "", org ?? "", e.title, e.day_theme ?? ""].join(
+        " ",
+      );
+      classifyText.set(id, expertiseText);
+      byName.set(id, {
+        id,
+        name: parsed.name,
+        title: parsed.descriptor,
+        org,
+        bio: parsed.descriptor,
+        avatarUrl: null,
+        expertise: heuristicExpertise(expertiseText),
+        slots: [],
+        sourceUrl: e.source_urls?.[0] ?? null,
+      });
+    }
+  }
+  return { mentors: [...byName.values()], classifyText };
 }
 
 // ---------------------------------------------------------------------------

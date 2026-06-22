@@ -224,3 +224,38 @@ export const BuildLogSchema = z.object({
   createdAt: z.number().int(),
 });
 export type BuildLog = z.infer<typeof BuildLogSchema>;
+
+// ===========================================================================
+// Devpost participants (scraped off-VM via Playwright — see
+// packages/ingest/src/devpost/scrape-participants.ts). Public-to-authenticated
+// directory data, used only to power the team/mentor copilot. NOT stored in D1;
+// it lands as participants.json + RAG chunks + a downloaded avatar per person.
+// ===========================================================================
+
+/** Team-status tag shown on a participant card (3 known values, else null). */
+export const TeamStatusSchema = z.enum(["Has a team", "Working solo", "Looking for teammates"]);
+export type TeamStatus = z.infer<typeof TeamStatusSchema>;
+
+/**
+ * One Devpost participant. `avatarUrl` may be "" when the card has no photo.
+ * `avatarLocal` is the public-relative path of the downloaded avatar
+ * (/participants/<id>.png), null until the avatar pass succeeds — mirrors how
+ * Session.coverImage points at a fetch:images-downloaded local file.
+ */
+export const ParticipantSchema = z.object({
+  participantId: z.string(),
+  name: z.string(),
+  username: z.string(),
+  profileUrl: z.string().url(),
+  avatarUrl: z.string(), // may be "" (no photo on the card)
+  avatarLocal: z.string().nullable().default(null), // /participants/<id>.png once downloaded
+  role: z.string().default(""),
+  teamStatus: TeamStatusSchema.nullable().default(null),
+  projects: z.number().int().default(0),
+  followers: z.number().int().default(0),
+  achievements: z.number().int().default(0),
+  skills: z.array(z.string()).default([]),
+  interests: z.array(z.string()).default([]),
+  scrapedAt: z.string().datetime(),
+});
+export type Participant = z.infer<typeof ParticipantSchema>;
