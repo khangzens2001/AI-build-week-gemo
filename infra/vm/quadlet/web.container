@@ -23,7 +23,7 @@ Volume=/srv/event-copilot/app:/app:ro,Z
 # Runtime snapshot volume (written by the crawl→re-ingest loop). data.ts hot-reloads
 # this file (mtime-gated) so the Schedule/now/next UI updates without a redeploy;
 # falls back to the bundled snapshot if the file is missing/invalid.
-Volume=snapshot-data.volume:/snap:ro
+Volume=snapshot-data.volume:/snap:ro,z
 WorkingDir=/app
 Network=ecnet.network
 EnvironmentFile=/srv/event-copilot/shared/web.env

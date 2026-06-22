@@ -45,9 +45,7 @@ let fsMod: typeof import("node:fs") | null | undefined;
 /**
  * Lazily load + cache the runtime snapshot file when `SNAPSHOT_PATH` is set.
  * mtime-gated so a steady file costs only a `statSync` per call; the file is
- * re-parsed only when it actually changes. `node:fs` is required dynamically (not
- * statically imported) so this module stays importable on Worker/edge/bun, where
- * the require fails and we permanently fall back to the bundled snapshot.
+ * re-parsed only when it actually changes.
  */
 function refreshFromFile(): void {
   if (!SNAPSHOT_PATH) return;

@@ -108,7 +108,7 @@ podman run --rm \
   --network ecnet \
   -v "${REPO}:/src:ro,Z" \
   -v "${CRAWL_VOL}:/crawl:ro" \
-  -v "${SNAPSHOT_VOL}:/snap" \
+  -v "${SNAPSHOT_VOL}:/snap:z" \
   -e GOOGLE_GENERATIVE_AI_API_KEY \
   -e GEMINI_EMBED_MODEL="${GEMINI_EMBED_MODEL:-gemini-embedding-001}" \
   -e GEMINI_EMBED_DIM="${GEMINI_EMBED_DIM:-3072}" \
@@ -116,16 +116,18 @@ podman run --rm \
   -e CHROMA_PORT="${CHROMA_PORT:-8000}" \
   -e CHROMA_COLLECTION="${CHROMA_COLLECTION:-aabw}" \
   -e CRAWL_LATEST_DIR=/crawl/latest \
-  -e SNAPSHOT_MIN_SESSIONS="${SNAPSHOT_MIN_SESSIONS:-10}" \
+  -e SNAPSHOT_MIN_SESSIONS="${SNAPSHOT_MIN_SESSIONS:-14}" \
   docker.io/oven/bun:debian \
   sh -c 'set -e
     cp -a /src /work && cd /work && bun install && bun run seed && bun run embed
     # Promote the freshly-built snapshot for the web UI to hot-reload. Gate on a
-    # session-count floor so a partial crawl never publishes a near-empty schedule.
+    # session-count floor (reader in data.ts is authoritative at ~50% of the
+    # baked-in count; this producer floor is the matching sanity gate) so a
+    # partial crawl never publishes a near-empty schedule.
     SNAP=/work/packages/core/data/snapshot.json
     bun -e "
       const fs=require(\"node:fs\");
-      const floor=Number(process.env.SNAPSHOT_MIN_SESSIONS||10);
+      const floor=Number(process.env.SNAPSHOT_MIN_SESSIONS||14);
       const d=JSON.parse(fs.readFileSync(\"$SNAP\",\"utf8\"));
       if(!Array.isArray(d.sessions)||d.sessions.length<floor){
         console.error(\"snapshot rejected: sessions=\"+(d.sessions?.length)+\" < floor=\"+floor);process.exit(3);
