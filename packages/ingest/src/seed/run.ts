@@ -32,7 +32,6 @@ import {
   type RawBundleDay,
   type RawEvent,
   type RawFaq,
-  type RawLocation,
   type RawProgrammeDay,
   type RawRegistrationLinks,
   type RawRetrievalChunk,
@@ -94,14 +93,13 @@ function main(): void {
   const events = readJson<RawEvent[]>("events.json");
   const bundle = readJson<RawBundleDay[]>("bundle_schedule.json");
   const programmeDays = readJson<RawProgrammeDay[]>("programme_days.json");
-  const locations = readJson<RawLocation[]>("locations.json");
   const registration = readJson<RawRegistrationLinks>("registration_links.json");
   const retrievalChunks = readJson<RawRetrievalChunk[]>("retrieval_chunks.json");
   const builderTrack = readJson<RawBuilderTrack>("builder_experience_track.json");
   const faq = readJson<RawFaq>("section_faq.json");
 
   // --- transform ---
-  const allVenues: Venue[] = buildVenues(locations, bundle);
+  const allVenues: Venue[] = buildVenues(bundle);
   const sessions: Session[] = buildSessions(events, bundle, programmeDays);
   const perks: Perk[] = buildPerks(events, builderTrack);
   const deadlines: Deadline[] = buildDeadlines(events, bundle, programmeDays, registration);
