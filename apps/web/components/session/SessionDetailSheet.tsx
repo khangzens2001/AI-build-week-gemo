@@ -1,5 +1,6 @@
 "use client";
 
+import { SessionCoverFallback } from "@/lib/sessionCover";
 import { dateLabel } from "@/lib/time";
 import type { ScheduleSession } from "@/lib/types";
 import Image from "next/image";
@@ -70,9 +71,9 @@ function SessionDetailSheetInner({
       }
     >
       <div className="space-y-4 py-1">
-        {/* Cover hero — only the partner workshops carry one */}
-        {showCover && session.coverImage && (
-          <div className="relative aspect-[16/11] w-full overflow-hidden rounded-2xl ring-1 ring-line">
+        {/* Cover hero — real image when present, else a deterministic gradient tile */}
+        <div className="relative aspect-[16/11] w-full overflow-hidden rounded-2xl ring-1 ring-line">
+          {showCover && session.coverImage ? (
             <Image
               src={session.coverImage}
               alt=""
@@ -81,12 +82,14 @@ function SessionDetailSheetInner({
               onError={() => setCoverOk(false)}
               className="object-cover"
             />
-            <div
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent"
-              aria-hidden
-            />
-          </div>
-        )}
+          ) : (
+            <SessionCoverFallback session={session} iconClassName="h-16 w-16" />
+          )}
+          <div
+            className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent"
+            aria-hidden
+          />
+        </div>
 
         {/* Time + countdown */}
         <div className="flex items-center justify-between rounded-2xl bg-surface-2 p-4">

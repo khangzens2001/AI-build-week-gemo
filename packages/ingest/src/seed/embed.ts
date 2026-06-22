@@ -3,17 +3,29 @@
  * embeds them with Gemini (same model + dimension used at query time, via
  * @event/core), and upserts them into Chroma as BYO-embedding documents.
  *
+ * Sources (both optional, merged + deduped by id):
+ *   1. packages/core/data/chunks.json — the event seed corpus (camelCase
+ *      `sourceUrl`, already shaped like RetrievalChunkSchema).
+ *   2. The Devpost scrape output `retrieval_chunks.json` (snake_case
+ *      `source_url`, type `devpost_page`). Path defaults to
+ *      packages/ingest/data/devpost/retrieval_chunks.json but can be pointed at
+ *      a mounted volume via DEVPOST_CHUNKS_FILE (used by infra/vm/devpost-ingest.sh).
+ *   A missing file is simply skipped — the event-only path still works when the
+ *   Devpost scrape has never run, and the Devpost sweep still works when only its
+ *   chunks are present. We error only if BOTH sources are absent/empty.
+ *
  * Prereqs:
  *   - GOOGLE_GENERATIVE_AI_API_KEY set (embedding calls).
  *   - A reachable Chroma server (local Podman `bun run chroma:up`, or Chroma
  *     Cloud env). The collection's dimension is fixed on first insert, so this
  *     MUST run with the same GEMINI_EMBED_DIM every time.
- *   - `bun run seed` has been run first (produces packages/core/data/chunks.json).
+ *   - `bun run seed` (event corpus) and/or `bun run ingest:devpost` (Devpost)
+ *     has been run first.
  *
  * Run with: `bun run src/seed/embed.ts` (wired as `bun run embed`).
  */
 
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -31,17 +43,79 @@ import { z } from "zod";
 const here = dirname(fileURLToPath(import.meta.url));
 const repoRoot = join(here, "..", "..", "..", "..");
 const chunksFile = join(repoRoot, "packages", "core", "data", "chunks.json");
+// Devpost scrape output. Overridable so the VM sweep can point at the mounted
+// `devpost-data` volume (see infra/vm/devpost-ingest.sh).
+const devpostChunksFile =
+  process.env.DEVPOST_CHUNKS_FILE ??
+  join(repoRoot, "packages", "ingest", "data", "devpost", "retrieval_chunks.json");
+
+/**
+ * The Devpost scraper emits chunks with snake_case `source_url` (chunks.ts),
+ * whereas RetrievalChunkSchema uses camelCase `sourceUrl`. Parse the raw shape
+ * here, then normalize the key when merging.
+ */
+const DevpostRawChunkSchema = z.object({
+  id: z.string(),
+  type: z.string(),
+  text: z.string(),
+  source_url: z.string().nullable().optional(),
+});
 
 /** Embed in batches so a large corpus stays within a single request's limits. */
 const BATCH_SIZE = 96;
 
+/** Read + validate a RetrievalChunk[] JSON file, or [] if it doesn't exist. */
+function readEventChunks(file: string): RetrievalChunk[] {
+  if (!existsSync(file)) {
+    console.log(`No event chunks at ${file} — skipping.`);
+    return [];
+  }
+  const raw = JSON.parse(readFileSync(file, "utf8"));
+  return z.array(RetrievalChunkSchema).parse(raw);
+}
+
+/** Read the Devpost scrape output (snake_case), normalizing source_url→sourceUrl. */
+function readDevpostChunks(file: string): RetrievalChunk[] {
+  if (!existsSync(file)) {
+    console.log(`No Devpost chunks at ${file} — skipping.`);
+    return [];
+  }
+  const raw = JSON.parse(readFileSync(file, "utf8"));
+  const parsed = z.array(DevpostRawChunkSchema).parse(raw);
+  return parsed.map((c) =>
+    RetrievalChunkSchema.parse({
+      id: c.id,
+      type: c.type, // keep `devpost_page`
+      text: c.text,
+      sourceUrl: c.source_url ?? null,
+    }),
+  );
+}
+
 async function main(): Promise<void> {
-  const raw = JSON.parse(readFileSync(chunksFile, "utf8"));
-  const chunks: RetrievalChunk[] = z.array(RetrievalChunkSchema).parse(raw);
+  // Merge both sources, deduping by id. Devpost ids are prefixed `devpost-...`
+  // so they never collide with event ids, but dedupe defensively anyway: the
+  // first writer (event corpus) wins on any id clash.
+  const byId = new Map<string, RetrievalChunk>();
+  for (const c of readEventChunks(chunksFile)) {
+    if (!byId.has(c.id)) byId.set(c.id, c);
+  }
+  let devpostCount = 0;
+  for (const c of readDevpostChunks(devpostChunksFile)) {
+    if (!byId.has(c.id)) {
+      byId.set(c.id, c);
+      devpostCount++;
+    }
+  }
+  const chunks: RetrievalChunk[] = [...byId.values()];
 
   if (chunks.length === 0) {
-    console.error("No chunks to embed. Run `bun run seed` first.");
+    console.error("No chunks to embed. Run `bun run seed` and/or `bun run ingest:devpost` first.");
     process.exit(1);
+  }
+
+  if (devpostCount > 0) {
+    console.log(`Including ${devpostCount} Devpost chunk(s) from ${devpostChunksFile}`);
   }
 
   console.log(

@@ -1,0 +1,20 @@
+# Fires the Devpost scrape → embed sweep every 6 hours. Re-scrapes the Devpost
+# pages (Firecrawl) and re-embeds their chunks into Chroma. Enable with:
+#   systemctl --user enable --now event-copilot-devpost-ingest.timer
+#
+# 6h (vs the event crawl's 30 min) because Devpost rules/resources/gallery change
+# far less often and each cycle re-embeds the Devpost chunks (Gemini cost).
+# OnBootSec=20min offsets the boot run so it doesn't collide with the event crawl
+# sweep (OnBootSec=5min); OnUnitActiveSec re-anchors from each start (singleton
+# service → runs can never overlap).
+[Unit]
+Description=Event Copilot — Devpost scrape + embed every 6h
+
+[Timer]
+OnBootSec=20min
+OnUnitActiveSec=6h
+AccuracySec=2min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

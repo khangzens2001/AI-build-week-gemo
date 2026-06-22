@@ -1,0 +1,8 @@
+# Persistent Devpost scrape output for the Devpost scrape → embed pipeline.
+# Generates `devpost-data-volume.service`; the real podman volume is named
+# `devpost-data` (VolumeName overrides the systemd- prefix), matching what
+# devpost-ingest.sh and its podman runs mount. Holds the Devpost scrape output
+# (per-page JSON + retrieval_chunks.json + report.json) between cycles.
+[Volume]
+VolumeName=devpost-data
+Label=app=event-copilot

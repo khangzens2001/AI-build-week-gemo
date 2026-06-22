@@ -16,7 +16,7 @@
     "seed": "bun run packages/ingest/src/seed/run.ts",
     "embed": "bun run packages/ingest/src/seed/embed.ts",
     "fetch:images": "bun run scripts/fetch-images.ts",
-    "ingest:devpost": "bun --filter '@aabw/ingest' crawl:devpost",
+    "ingest:devpost": "bun --filter '@event/ingest' crawl:devpost",
     "db:generate": "drizzle-kit generate",
     "db:migrate:local": "wrangler d1 migrations apply aabw --local",
     "db:migrate": "wrangler d1 migrations apply aabw --remote",

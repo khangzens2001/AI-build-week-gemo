@@ -1,0 +1,28 @@
+# Devpost scrape + embed sweep (triggered by event-copilot-devpost-ingest.timer).
+# Runs infra/vm/devpost-ingest.sh, which scrapes the Devpost pages (Firecrawl) and
+# embeds the resulting chunks into the SAME Chroma collection as the event crawl
+# sweep — RAG-only, no D1 / snapshot / Cue Pulse. Plain systemd --user unit (NOT
+# Quadlet) → lives in ~/.config/systemd/user/, mirroring the crawl-ingest sweep.
+#
+# Secrets (FIRECRAWL_API_KEY, GOOGLE_GENERATIVE_AI_API_KEY, GEMINI_EMBED_*,
+# CHROMA_*) come from the same web.env the containers use — the script sources it
+# itself, but we also set EnvironmentFile so the unit log shows a clear failure if
+# it's missing.
+[Unit]
+Description=Event Copilot — Devpost scrape + embed sweep
+# Needs the network + chroma (embed target). Soft deps (Wants) so a transient
+# outage doesn't permanently block the sweep; if chroma is down, `bun run embed`
+# fails and `set -e` aborts — the next timer tick retries. No web.service dep:
+# this sweep never signals the app (RAG-only). Wants/After the Quadlet-managed
+# devpost-data volume so the labeled volume the scrape writes to is materialized
+# before the sweep (the script no longer creates it itself — the .volume unit is
+# the single owner).
+After=chroma.service devpost-data-volume.service
+Wants=chroma.service devpost-data-volume.service
+
+[Service]
+Type=oneshot
+EnvironmentFile=/srv/event-copilot/shared/web.env
+# A Devpost scrape + embed can take a few minutes; allow headroom.
+TimeoutStartSec=900
+ExecStart=/srv/event-copilot/repo/infra/vm/devpost-ingest.sh

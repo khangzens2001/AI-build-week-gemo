@@ -1,13 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/cn";
+import { SessionCoverFallback } from "@/lib/sessionCover";
 import type { ScheduleSession, SessionType, Tone, VenueRef } from "@/lib/types";
 import Image from "next/image";
 import { useState } from "react";
 import { PinIcon } from "../icons";
 import { TypeBadge } from "../ui/TypeBadge";
-
-const SESSION_FALLBACK_IMAGE = "/covers/session-fallback.png";
 
 /** The minimum a card needs — both /api/now and /api/schedule rows satisfy it. */
 export type SessionCardData = {
@@ -20,6 +19,7 @@ export type SessionCardData = {
   tone?: Tone | null;
   venue?: VenueRef | null;
   coverImage?: string | null;
+  dayNumber?: number | null;
 };
 
 /**
@@ -41,7 +41,7 @@ export function SessionCard({
   const { title, partner, venue, type, tone, startTimeLabel, endTimeLabel } = session;
   const coverImage = session.coverImage ?? null;
   const [coverOk, setCoverOk] = useState(true);
-  const imageSrc = coverImage && coverOk ? coverImage : SESSION_FALLBACK_IMAGE;
+  const showCover = Boolean(coverImage) && coverOk;
 
   const inner = (
     <>
@@ -51,14 +51,18 @@ export function SessionCard({
           accent ? "ring-accent/40" : "ring-line",
         )}
       >
-        <Image
-          src={imageSrc}
-          alt=""
-          width={56}
-          height={56}
-          onError={() => coverImage && setCoverOk(false)}
-          className="h-full w-full object-cover"
-        />
+        {showCover && coverImage ? (
+          <Image
+            src={coverImage}
+            alt=""
+            width={56}
+            height={56}
+            onError={() => setCoverOk(false)}
+            className="h-full w-full object-cover"
+          />
+        ) : (
+          <SessionCoverFallback session={session} iconClassName="h-6 w-6" />
+        )}
       </span>
 
       {/* time rail */}

@@ -25,7 +25,13 @@ export const PAGES: PageSpec[] = [
   },
 ];
 
-/** packages/ingest/data/devpost/ */
-export const OUTPUT_DIR = path.join(import.meta.dir, "../../data/devpost");
+/**
+ * Where the scrape writes per-page JSON + retrieval_chunks.json + report.json.
+ * Defaults to packages/ingest/data/devpost/, overridable via DEVPOST_OUTPUT_DIR
+ * so the VM sweep (infra/vm/devpost-ingest.sh) can point it at a mounted podman
+ * volume the embed step then reads from.
+ */
+export const OUTPUT_DIR =
+  process.env.DEVPOST_OUTPUT_DIR ?? path.join(import.meta.dir, "../../data/devpost");
 
 export const MAX_RETRIES = 2;
