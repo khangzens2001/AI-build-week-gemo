@@ -37,6 +37,11 @@ ENVFILE=/srv/event-copilot/shared/web.env
 # Dedicated podman volume for crawl output (writable; survives between cycles so
 # change-detection has a prior snapshot to diff against).
 CRAWL_VOL=crawl-data
+# Host dir that nginx serves /covers/ + /venues/ from (NOT a podman named volume —
+# a volume's _data lives under ~/.local/share/containers, home-700, and host nginx
+# (www-data) can't traverse it). A plain bind dir under /srv with world-readable
+# files lets nginx serve crawl-refreshed covers without a web rebuild.
+STATIC_DIR=/srv/event-copilot/static
 # Web container's loopback-published port (same one reminders.service curls).
 WEB_URL=http://127.0.0.1:3000
 
@@ -89,6 +94,9 @@ podman run --rm \
   -w /app \
   -e FIRECRAWL_API_KEY \
   -e EXTERNAL_EVENT_RECHECK_HOURS="${EXTERNAL_EVENT_RECHECK_HOURS:-6}" \
+  -e MIMO_API_KEY="${MIMO_API_KEY:-}" \
+  -e MIMO_BASE_URL="${MIMO_BASE_URL:-}" \
+  -e MIMO_MODEL="${MIMO_MODEL:-}" \
   docker.io/library/python:3.11-slim \
   sh -c 'set -e; pip install --quiet --no-cache-dir -r requirements.txt && python main.py --once'
 
@@ -109,6 +117,36 @@ podman run --rm \
   -e CRAWL_LATEST_DIR=/crawl/latest \
   docker.io/oven/bun:debian \
   sh -c 'set -e; cp -a /src /work && cd /work && bun install && bun run seed && bun run embed'
+
+echo "==> [2.5/3] Fetch session/venue images into the nginx-served static dir"
+# fetch-images downloads Luma CDN covers + venue images. It is INTENTIONALLY
+# non-fatal: it runs after seed+embed succeeded, so a transient Luma 404 must not
+# abort the cycle (which would suppress the /api/ingest/hook signal below). The
+# bun container reads the FRESH crawl JSON (FETCH_IMAGES_DATA_DIR=/crawl/latest)
+# and writes covers into the static bind dir (FETCH_IMAGES_PUBLIC_DIR=/static).
+# Stage 0 already baseline-seeds /static from the committed repo covers, so even a
+# total fetch failure leaves the prior-good + committed covers in place.
+# --userns=keep-id → files owned by the host `deploy`/`zens` user (predictable);
+# fetch-images itself chmods dirs 755 / files 644 so nginx (www-data) can read.
+mkdir -p "${STATIC_DIR}"
+echo "    Baseline-seed static dir from committed repo covers/venues (no-clobber)"
+cp -rn "${REPO}/apps/web/public/covers" "${STATIC_DIR}/" 2>/dev/null || true
+cp -rn "${REPO}/apps/web/public/venues" "${STATIC_DIR}/" 2>/dev/null || true
+chmod -R a+rX "${STATIC_DIR}" 2>/dev/null || true
+podman run --rm \
+  --userns=keep-id \
+  -v "${REPO}:/src:ro,Z" \
+  -v "${CRAWL_VOL}:/crawl:ro" \
+  -v "${STATIC_DIR}:/static" \
+  -e FETCH_IMAGES_DATA_DIR=/crawl/latest \
+  -e FETCH_IMAGES_PUBLIC_DIR=/static \
+  -e HOME=/tmp \
+  -w /tmp \
+  docker.io/oven/bun:debian \
+  sh -c 'set -e; cp -a /src /tmp/work && cd /tmp/work && bun install && bun run fetch:images' \
+  || echo "    fetch-images non-fatal failure — keeping baseline/committed covers." >&2
+# Ensure anything fetch-images created is world-readable for nginx.
+chmod -R a+rX "${STATIC_DIR}" 2>/dev/null || true
 
 echo "==> [3/3] Signal /api/ingest/hook if content changed"
 # Read the per-cycle change signal the crawler persisted into report.json. One
