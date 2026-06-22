@@ -1,0 +1,8 @@
+# Durable home for the runtime snapshot the web container hot-reloads. Generates
+# `snapshot-data-volume.service`; the real podman volume is named `snapshot-data`.
+# crawl-ingest.sh writes the freshly-seeded snapshot.json here (atomic, gated);
+# web.container mounts it read-only at SNAPSHOT_PATH so the Schedule/now/next UI
+# reflects new crawled content without a rebuild+redeploy.
+[Volume]
+VolumeName=snapshot-data
+Label=app=event-copilot
