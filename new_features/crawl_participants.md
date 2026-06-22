@@ -32,9 +32,13 @@ Content-Type: application/x-www-form-urlencoded
 |---|---|
 | `utf8` | `✓` |
 | `authenticity_token` | Lấy từ trang login (CSRF token) |
-| `user[email]` | `rithamto@gmail.com` |
-| `user[password]` | `123123aC` |
+| `user[email]` | `$DEVPOST_EMAIL` (env — KHÔNG hardcode) |
+| `user[password]` | `$DEVPOST_PASSWORD` (env — KHÔNG hardcode) |
 | `return_to` | `https://devpost.com/` |
+
+> 🔴 **SECURITY:** Credentials thật trước đây bị commit trong file này (email/password/JWT) đã bị
+> XOÁ. Coi như đã lộ — **phải đổi mật khẩu Devpost** vì chúng còn trong git history. Scraper chỉ đọc
+> `DEVPOST_EMAIL` / `DEVPOST_PASSWORD` từ env, không có giá trị fallback hardcode.
 
 ### 2.2. Quy trình lấy CSRF Token
 
@@ -51,15 +55,11 @@ Content-Type: application/x-www-form-urlencoded
 | `_devpost` | `.devpost.com` | Session cookie (Rails) | Session |
 | `AWSALB` / `AWSALBCORS` | `devpost.com` | Load balancer cookies | 7 ngày |
 
-### 2.4. JWT Token (đã xác minh)
+### 2.4. JWT Token
 
-```
-eyJhbGciOiJIUzI1NiJ9.eyJpZCI6MTA0MDM5MTB9.gPd29RYL-O7kVN6ONatfHnz787EL1tYGLqW6O45lxyM
-```
-
-Payload decoded: `{"id": 10403910}` — User ID trên Devpost.
-
-> ⚠️ **Token này có hạn.** Cần login lại nếu expired (30 ngày từ 19/06/2026).
+> 🔴 **REDACTED.** JWT thật (chứa user id) trước đây bị commit ở đây đã bị xoá. Không cần lưu token
+> trong tài liệu — scraper login một lần rồi cache `storageState` vào `playwright/.auth/devpost.json`
+> (gitignored). Token cũ coi như đã lộ.
 
 ---
 
@@ -234,8 +234,9 @@ const BASE_URL = "https://agentic-ai-build-week-2026.devpost.com";
 const LOGIN_URL = "https://secure.devpost.com/users/login?ref=top-nav-login";
 const PARTICIPANTS_URL = `${BASE_URL}/participants`;
 
-const EMAIL = process.env.DEVPOST_EMAIL ?? "rithamto@gmail.com";
-const PASSWORD = process.env.DEVPOST_PASSWORD ?? "123123aC";
+const EMAIL = process.env.DEVPOST_EMAIL; // env only — NO hardcoded fallback
+const PASSWORD = process.env.DEVPOST_PASSWORD; // env only — NO hardcoded fallback
+if (!EMAIL || !PASSWORD) throw new Error("Set DEVPOST_EMAIL and DEVPOST_PASSWORD env vars");
 
 async function login(page: Page): Promise<void> {
   console.log("🔑 Logging in to Devpost...");
@@ -495,8 +496,8 @@ curl -s -c cookies.txt -b cookies.txt -L \
   -X POST "https://secure.devpost.com/users/login" \
   --data-urlencode "utf8=✓" \
   --data-urlencode "authenticity_token=${CSRF}" \
-  --data-urlencode "user[email]=rithamto@gmail.com" \
-  --data-urlencode "user[password]=123123aC" \
+  --data-urlencode "user[email]=${DEVPOST_EMAIL}" \
+  --data-urlencode "user[password]=${DEVPOST_PASSWORD}" \
   --data-urlencode "return_to=https://devpost.com/" \
   -o /dev/null
 

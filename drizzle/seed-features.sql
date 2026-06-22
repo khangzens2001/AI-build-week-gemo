@@ -36,21 +36,12 @@ INSERT INTO announcements (id, kind, title, body, severity, target_id, source_ur
   ('ann-byteplus-room', 'venue', 'BytePlus workshop room moved', 'The BytePlus AI Stack workshop (10:00–12:00) is now in the main hall on level 2, Tasco Office.', 'important', 'day01-byteplus', 'https://luma.com/gaf-vbkf', 1783485900000),
   ('ann-lunch', 'schedule', 'Lunch served from 12:00', 'Lunch is now being served on the ground floor. Sessions resume at 14:00 with NVIDIA Inception.', 'info', 'day01-lunch', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', 1783490400000);
 
--- ---- Mentors with office-hours slots -------------------------------------
-DELETE FROM mentors;
-INSERT INTO mentors (id, name, title, org, bio, avatar_url, expertise, slots, source_url) VALUES
-  ('mentor-anh', 'Anh Nguyen', 'Staff Engineer', 'Cloud Partner', 'Backend & data infra. Happy to unblock scaling, queues, and Postgres pain.', NULL,
-    '["backend","postgres","infra","scaling","typescript"]',
-    '[{"id":"anh-1","startsAt":1783479600000,"endsAt":1783483200000},{"id":"anh-2","startsAt":1783497600000,"endsAt":1783501200000}]',
-    'https://agenticaibuildweek.genaifund.ai/'),
-  ('mentor-priya', 'Priya Shah', 'AI Researcher', 'Model Partner', 'RAG, agents, evaluation. Ask me about grounding, citations, and tool-calling.', NULL,
-    '["ai","rag","agents","llm","evaluation","python"]',
-    '[{"id":"priya-1","startsAt":1783483200000,"endsAt":1783486800000},{"id":"priya-2","startsAt":1783566000000,"endsAt":1783569600000}]',
-    'https://agenticaibuildweek.genaifund.ai/'),
-  ('mentor-leo', 'Leo Tran', 'Product Designer', 'Design Studio', 'Mobile-first UX, demo polish, and pitch storytelling for Demo Day.', NULL,
-    '["design","ux","mobile","pitch","frontend"]',
-    '[{"id":"leo-1","startsAt":1783580400000,"endsAt":1783584000000}]',
-    'https://agenticaibuildweek.genaifund.ai/');
+-- ---- Mentors --------------------------------------------------------------
+-- Mentors are now GENERATED from real event speakers by the seed transform
+-- (packages/ingest/src/seed/buildMentors) and live in drizzle/seed.sql, which
+-- db-reset-local.ts applies BEFORE this file. We must NOT re-DELETE/INSERT them
+-- here or the crawl-derived rows get clobbered by stale hand-written ones.
+-- (Office-hours bookings FK to mentors(id); the generated ids are stable slugs.)
 
 -- ---- Demo team + build log (public feed) ---------------------------------
 DELETE FROM build_logs;

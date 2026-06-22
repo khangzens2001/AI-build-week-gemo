@@ -3,16 +3,21 @@
  * embeds them with Gemini (same model + dimension used at query time, via
  * @event/core), and upserts them into Chroma as BYO-embedding documents.
  *
- * Sources (both optional, merged + deduped by id):
+ * Sources (all optional, merged + deduped by id):
  *   1. packages/core/data/chunks.json — the event seed corpus (camelCase
  *      `sourceUrl`, already shaped like RetrievalChunkSchema).
  *   2. The Devpost scrape output `retrieval_chunks.json` (snake_case
  *      `source_url`, type `devpost_page`). Path defaults to
  *      packages/ingest/data/devpost/retrieval_chunks.json but can be pointed at
  *      a mounted volume via DEVPOST_CHUNKS_FILE (used by infra/vm/devpost-ingest.sh).
+ *   3. The participants scrape output `participant_retrieval_chunks.json`
+ *      (snake_case `source_url`, type `participant`). Path defaults to
+ *      packages/ingest/data/devpost/participant_retrieval_chunks.json,
+ *      overridable via PARTICIPANT_CHUNKS_FILE. Ids are `participant-*` so they
+ *      never collide with the `devpost-*` page ids or the event corpus.
  *   A missing file is simply skipped — the event-only path still works when the
  *   Devpost scrape has never run, and the Devpost sweep still works when only its
- *   chunks are present. We error only if BOTH sources are absent/empty.
+ *   chunks are present. We error only if ALL sources are absent/empty.
  *
  * Prereqs:
  *   - GOOGLE_GENERATIVE_AI_API_KEY set (embedding calls).
@@ -48,6 +53,11 @@ const chunksFile = join(repoRoot, "packages", "core", "data", "chunks.json");
 const devpostChunksFile =
   process.env.DEVPOST_CHUNKS_FILE ??
   join(repoRoot, "packages", "ingest", "data", "devpost", "retrieval_chunks.json");
+// Participants scrape output (scrape-participants.ts → transform-participants.ts).
+// Overridable like the Devpost file so the VM sweep can point at a mounted volume.
+const participantChunksFile =
+  process.env.PARTICIPANT_CHUNKS_FILE ??
+  join(repoRoot, "packages", "ingest", "data", "devpost", "participant_retrieval_chunks.json");
 
 /**
  * The Devpost scraper emits chunks with snake_case `source_url` (chunks.ts),
@@ -107,15 +117,29 @@ async function main(): Promise<void> {
       devpostCount++;
     }
   }
+  // Participant chunks share the snake_case shape (id/type/text/source_url), so
+  // the same normalizer applies. `participant-*` ids never collide above.
+  let participantCount = 0;
+  for (const c of readDevpostChunks(participantChunksFile)) {
+    if (!byId.has(c.id)) {
+      byId.set(c.id, c);
+      participantCount++;
+    }
+  }
   const chunks: RetrievalChunk[] = [...byId.values()];
 
   if (chunks.length === 0) {
-    console.error("No chunks to embed. Run `bun run seed` and/or `bun run ingest:devpost` first.");
+    console.error(
+      "No chunks to embed. Run `bun run seed`, `bun run ingest:devpost`, and/or `bun run crawl:participants` first.",
+    );
     process.exit(1);
   }
 
   if (devpostCount > 0) {
     console.log(`Including ${devpostCount} Devpost chunk(s) from ${devpostChunksFile}`);
+  }
+  if (participantCount > 0) {
+    console.log(`Including ${participantCount} participant chunk(s) from ${participantChunksFile}`);
   }
 
   console.log(

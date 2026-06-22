@@ -33,6 +33,9 @@ dist/
 .playwright-mcp/
 /*.png
 
+# playwright cached auth (login-once storageState — contains session tokens)
+playwright/.auth/
+
 # vercel
 .vercel
 
