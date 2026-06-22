@@ -13,17 +13,42 @@ function hostLabel(url: string): string {
 
 /**
  * A small source link — the app cites where information comes from (RAG/agent
- * rule: never fabricate, always show sources). Renders as a subtle chip.
+ * rule: never fabricate, always show sources). Renders as a subtle chip, or as
+ * an icon-only badge (`iconOnly`) in dense headers where a long domain would
+ * crowd out the primary content (e.g. mentor cards). Icon-only keeps the source
+ * affordance + accessible label without stealing horizontal space.
  */
 export function CitationLink({
   url,
   label,
   className,
+  iconOnly = false,
 }: {
   url: string;
   label?: string;
   className?: string;
+  iconOnly?: boolean;
 }) {
+  const text = label ?? hostLabel(url);
+  if (iconOnly) {
+    return (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Source: ${text}`}
+        title={text}
+        className={cn(
+          "inline-flex shrink-0 items-center justify-center rounded-md bg-surface-2 p-1",
+          "text-muted ring-1 ring-inset ring-line",
+          "transition hover:text-foreground hover:ring-accent/30",
+          className,
+        )}
+      >
+        <ExternalIcon className="h-3 w-3 opacity-70" />
+      </a>
+    );
+  }
   return (
     <a
       href={url}
@@ -37,7 +62,7 @@ export function CitationLink({
       )}
     >
       <ExternalIcon className="h-3 w-3 shrink-0 opacity-70" />
-      <span className="truncate">{label ?? hostLabel(url)}</span>
+      <span className="truncate">{text}</span>
     </a>
   );
 }

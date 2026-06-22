@@ -90,7 +90,7 @@ export function MentorCard({
             </p>
           )}
         </div>
-        {mentor.sourceUrl && <CitationLink url={mentor.sourceUrl} />}
+        {mentor.sourceUrl && <CitationLink url={mentor.sourceUrl} iconOnly className="mt-0.5" />}
       </div>
 
       {mentor.expertise.length > 0 && (
