@@ -712,6 +712,12 @@ class EventPipeline:
                 events.append(external_event)
         merged_events = []
         changed_counts = {"events_changed": 0, "events_content_changed": 0, "events_schedule_changed": 0, "events_stale": 0}
+        # Human-readable titles of events that are genuinely new (first time seen)
+        # or whose important/content fields changed this cycle. These drive the
+        # Cue Pulse announcement text so a builder sees "X added / Y updated"
+        # instead of a generic page-changed blurb.
+        new_event_titles: list[str] = []
+        changed_event_titles: list[str] = []
         latest_events_dir = os.path.join(config.LATEST_DIR, "events")
         os.makedirs(latest_events_dir, exist_ok=True)
         previous_event_ids = {
@@ -741,6 +747,11 @@ class EventPipeline:
                         changed_counts["events_schedule_changed"] += 1
                     if old_event.get("content_hash") != merged["content_hash"]:
                         changed_counts["events_content_changed"] += 1
+                    if merged.get("title"):
+                        changed_event_titles.append(merged["title"])
+                elif merged.get("title"):
+                    # No prior file for this id → a brand-new event this cycle.
+                    new_event_titles.append(merged["title"])
                 archive_if_changed(merged["id"], old_event, merged)
                 write_json(os.path.join(latest_events_dir, f"{merged['id']}.json"), merged)
             else:
@@ -782,6 +793,8 @@ class EventPipeline:
             "events_partial": sum(1 for event in merged_events if event.get("quality_level") == "partial"),
             "events_summary_only": sum(1 for event in merged_events if event.get("quality_level") == "summary_only"),
             **changed_counts,
+            "new_event_titles": new_event_titles,
+            "changed_event_titles": changed_event_titles,
             "external_event_pages_checked": len(details_by_url),
             "external_event_pages_skipped_unchanged": sum(1 for detail in details_by_url.values() if detail and detail.get("unchanged")),
             "external_event_pages_skipped_by_ttl": sum(1 for detail in details_by_url.values() if detail and detail.get("skipped_by_ttl")),

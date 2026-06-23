@@ -167,15 +167,28 @@ def run_scrape_job():
     # Exclude non-section data before building aggregates
     aggregate_sections = {k: v for k, v in sections.items() if isinstance(v, dict)}
     aggregates = build_aggregates(saved_pages, aggregate_sections, skipped)
+    new_event_titles = []
+    changed_event_titles = []
     if event_outputs:
         aggregates["report"]["event_report"] = event_outputs["event_report"]
         aggregates["site_index"]["event_report"] = event_outputs["event_report"]
+        new_event_titles = event_outputs["event_report"].get("new_event_titles", [])
+        changed_event_titles = event_outputs["event_report"].get("changed_event_titles", [])
     # Persist the per-cycle page-change signal into report.json so the VM's
     # crawl-ingest one-shot can decide (after re-embedding) whether to POST the
     # /api/ingest/hook re-ingest webhook. We own the signal in the shell, not
     # here, so this module stays a pure scraper with no webhook/HTTP concerns.
-    aggregates["report"]["changed_count"] = changed_count
+    #
+    # changed_count gates the Pulse signal. It counts BOTH page-level changes
+    # (home/partners/etc) AND event-level changes (new or updated sessions) so a
+    # newly added/moved session fires a Pulse even when the static pages are
+    # byte-identical. The titles below let the hook write a concrete summary.
+    aggregates["report"]["changed_count"] = (
+        changed_count + len(new_event_titles) + len(changed_event_titles)
+    )
     aggregates["report"]["changed_pages"] = changed_pages
+    aggregates["report"]["new_event_titles"] = new_event_titles
+    aggregates["report"]["changed_event_titles"] = changed_event_titles
     # Observable signal for which parser produced the schedule this cycle
     # ("js" = deterministic bundle parse, "mimo" = LLM markdown fallback,
     # "baseline-stale" = both failed, serving last-good). Lets the VM / a human
