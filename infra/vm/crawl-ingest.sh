@@ -198,39 +198,52 @@ pages = d.get("changed_pages", []) or []
 new_titles = d.get("new_event_titles", []) or []
 chg_titles = d.get("changed_event_titles", []) or []
 
-def _join_titles(titles, cap=5):
-    # Keep announcements readable: name up to `cap` sessions, summarise the rest.
+# Sessions are the only page-level change worth announcing to attendees. The
+# other static pages are internal scaffolding whose slugs (home,
+# builder_experience_track, leaderboard, partners) must NEVER leak into a
+# user-facing announcement. We gate the Pulse on SESSION changes only; bare
+# page-byte changes with no session delta are treated as noise and skipped.
+def _join_titles(titles, cap=4):
     shown = titles[:cap]
     text = "; ".join(shown)
     extra = len(titles) - len(shown)
     if extra > 0:
-        text += f" and {extra} more"
+        text += f", and {extra} more"
     return text
+
+# Effective gate: only announce when actual sessions were added or changed.
+session_count = len(new_titles) + len(chg_titles)
 
 parts = []
 if new_titles:
-    parts.append("New sessions added: " + _join_titles(new_titles) + ".")
+    parts.append("New sessions: " + _join_titles(new_titles) + ".")
 if chg_titles:
     parts.append("Updated sessions: " + _join_titles(chg_titles) + ".")
-if pages:
-    parts.append("Updated pages: " + ", ".join(pages) + ".")
-after = " ".join(parts) if parts else "Event information was refreshed."
+after = " ".join(parts)
 
-# Prefer a session-centric title when sessions moved; else a page-update title.
-if new_titles:
+# Title mirrors exactly what happened (added vs updated), session-centric.
+if new_titles and chg_titles:
+    title = f"{len(new_titles)} new + {len(chg_titles)} updated sessions"
+elif new_titles:
     title = "New session added" if len(new_titles) == 1 else f"{len(new_titles)} new sessions added"
 elif chg_titles:
     title = "Session updated" if len(chg_titles) == 1 else f"{len(chg_titles)} sessions updated"
 else:
-    title = "Event info updated"
+    title = ""
 
 body = {
-    "url": "https://agenticaibuildweek.genaifund.ai/",
+    "url": "https://agenticaibuildweek.genaifund.ai/#daily_schedule",
     "changeType": "recrawl",
     "title": title,
     "after": after,
+    "kind": "schedule",
+    "severity": "info",
 }
-print(count)
+# Gate on session_count, NOT the broader changed_count: a cycle where only the
+# static marketing pages shifted bytes (but no session changed) prints 0 here,
+# so the shell skips the hook and Pulse stays quiet instead of posting a vague
+# "pages were revised" item with no attendee value.
+print(session_count)
 print(json.dumps(body))' 2>/dev/null || printf '0\n{}\n')
 
 CHANGED_COUNT=$(printf '%s\n' "$HOOK_OUT" | sed -n '1p')
@@ -240,7 +253,7 @@ if [[ "${CHANGED_COUNT:-0}" -gt 0 ]]; then
   if [[ -z "${INGEST_HOOK_TOKEN:-}" ]]; then
     echo "    changed_count=$CHANGED_COUNT but INGEST_HOOK_TOKEN unset — skipping Pulse signal." >&2
   else
-    echo "    $CHANGED_COUNT change(s) detected — POSTing re-ingest hook."
+    echo "    $CHANGED_COUNT session change(s) detected — POSTing re-ingest hook."
     # The hook summarizes the change (Gemini) into a Cue Pulse announcement + push.
     curl -fsS -m 30 \
       -H "Authorization: Bearer ${INGEST_HOOK_TOKEN}" \
@@ -250,7 +263,7 @@ if [[ "${CHANGED_COUNT:-0}" -gt 0 ]]; then
     echo "    Pulse signal sent."
   fi
 else
-  echo "    No content changes this cycle — nothing to signal."
+  echo "    No session changes this cycle — nothing to signal."
 fi
 
 echo "==> Done."
