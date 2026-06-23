@@ -38,6 +38,11 @@ interface ChangePayload {
   // sends kind="schedule" when sessions changed, etc.
   kind?: "schedule" | "venue" | "perk" | "deadline" | "general";
   severity?: "info" | "important" | "urgent";
+  // ISO 8601 (or epoch-ms) instant the change was DETECTED by the crawler
+  // (its report `generated_at`). Used as the announcement's created_at so the
+  // Pulse "time ago" reflects when the change actually happened, not when the
+  // (possibly delayed) embed+POST finished. Falls back to now if absent/invalid.
+  detectedAt?: string | number;
 }
 
 const SUMMARY_SYSTEM =
@@ -84,12 +89,25 @@ async function publishPulse(payload: ChangePayload): Promise<{ id: string; pushe
   const summary = await summarizeChange(payload);
   const title = payload.title?.trim() || "Event update";
 
+  // Honour the crawler's detection instant when provided (ISO string or epoch
+  // ms), so the Pulse timestamp reflects WHEN the change happened, not when the
+  // embed+POST finished. Reject NaN / non-positive values back to now.
+  let createdAt: number | undefined;
+  if (payload.detectedAt != null) {
+    const ms =
+      typeof payload.detectedAt === "number"
+        ? payload.detectedAt
+        : Date.parse(payload.detectedAt);
+    if (Number.isFinite(ms) && ms > 0) createdAt = ms;
+  }
+
   const id = await createAnnouncement({
     kind: payload.kind ?? "general",
     title,
     body: summary,
     severity: payload.severity ?? "info",
     sourceUrl: payload.url ?? null,
+    createdAt,
   });
 
   const tokens = await allPushTokens();

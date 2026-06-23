@@ -167,6 +167,13 @@ export interface CreateAnnouncementInput {
   severity?: Announcement["severity"];
   targetId?: string | null;
   sourceUrl?: string | null;
+  /**
+   * Epoch ms the change was actually detected (e.g. the crawler's report
+   * `generated_at`). Defaults to `Date.now()` when omitted. Passing this keeps
+   * the Pulse "time ago" honest even when embedding/processing adds latency
+   * between detection and insert.
+   */
+  createdAt?: number;
 }
 
 export async function createAnnouncement(input: CreateAnnouncementInput): Promise<string> {
@@ -181,7 +188,7 @@ export async function createAnnouncement(input: CreateAnnouncementInput): Promis
       input.severity ?? "info",
       input.targetId ?? null,
       input.sourceUrl ?? null,
-      Date.now(),
+      input.createdAt ?? Date.now(),
     ],
   );
   return id;
