@@ -1,12 +1,13 @@
-import { afterEach, describe, expect, test } from "bun:test";
-import { eventTimeToEpoch, formatTimeLabel, getCurrentTime, isNowWithin } from "../src/time";
+import { describe, expect, test } from "bun:test";
+import {
+  eventTimeToEpoch,
+  formatTimeLabel,
+  getCurrentTime,
+  isNowWithin,
+  isoDateLabel,
+} from "../src/time";
 
 const DAY1 = "2026-07-08";
-
-afterEach(() => {
-  process.env.DEMO_NOW = undefined;
-  process.env.NEXT_PUBLIC_DEMO_NOW = undefined;
-});
 
 describe("eventTimeToEpoch", () => {
   test("parses a GMT+7 wall-clock time to epoch ms", () => {
@@ -59,16 +60,19 @@ describe("isNowWithin", () => {
   });
 });
 
-describe("getCurrentTime (demo clock)", () => {
-  test("uses DEMO_NOW override when set", () => {
-    process.env.DEMO_NOW = "2026-07-08T10:30:00+07:00";
-    expect(getCurrentTime()).toBe(Date.parse("2026-07-08T03:30:00Z"));
+describe("getCurrentTime", () => {
+  test("tracks the real wall clock", () => {
+    expect(Math.abs(getCurrentTime() - Date.now())).toBeLessThan(1000);
+  });
+});
+
+describe("isoDateLabel", () => {
+  test("formats epoch ms to a GMT+7 ISO date", () => {
+    expect(isoDateLabel(Date.parse("2026-07-08T10:00:00+07:00"))).toBe("2026-07-08");
   });
 
-  test("falls back to wall clock when unset/invalid", () => {
-    process.env.DEMO_NOW = "not-a-date";
-    const before = Date.now();
-    const now = getCurrentTime();
-    expect(now).toBeGreaterThanOrEqual(before);
+  test("rolls into the next GMT+7 day for late-UTC times", () => {
+    // 2026-07-08 18:00 UTC === 2026-07-09 01:00 GMT+7.
+    expect(isoDateLabel(Date.parse("2026-07-08T18:00:00Z"))).toBe("2026-07-09");
   });
 });

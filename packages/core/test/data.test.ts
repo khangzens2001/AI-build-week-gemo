@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, test } from "bun:test";
+import { describe, expect, test } from "bun:test";
 import {
   findSessions,
   getNextSessions,
@@ -9,13 +9,9 @@ import {
   sessionsOnDay,
 } from "../src/data";
 
-// Demo clock anchored mid Day-1 morning (BytePlus workshop runs 10:00–12:00 GMT+7).
+// Anchored mid Day-1 morning (BytePlus workshop runs 10:00–12:00 GMT+7).
 const DAY1_1100 = Date.parse("2026-07-08T11:00:00+07:00");
 const DAY1_0800 = Date.parse("2026-07-08T08:00:00+07:00");
-
-afterEach(() => {
-  process.env.DEMO_NOW = undefined;
-});
 
 describe("snapshot integrity", () => {
   test("has the expected seed counts", () => {
@@ -27,7 +23,7 @@ describe("snapshot integrity", () => {
   });
 });
 
-describe("getNowSessions (demo clock)", () => {
+describe("getNowSessions", () => {
   test("returns in-progress sessions at 11:00 on Day 1", () => {
     const now = getNowSessions(DAY1_1100);
     expect(now.length).toBeGreaterThan(0);
@@ -43,7 +39,7 @@ describe("getNowSessions (demo clock)", () => {
   });
 });
 
-describe("getNextSessions (demo clock)", () => {
+describe("getNextSessions", () => {
   test("returns upcoming sessions sorted by start", () => {
     const next = getNextSessions(DAY1_1100, 5);
     expect(next.length).toBeGreaterThan(0);

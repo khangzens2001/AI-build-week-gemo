@@ -1,9 +1,8 @@
-import { clockSeed } from "./now";
 import { EVENT_DAYS, type EventDay } from "./types";
 
 /**
- * Human time + countdown helpers, all driven by the demo clock so the UI agrees
- * with the server. Times from the API are epoch ms (GMT+7 wall clock baked in).
+ * Human time + countdown helpers on the real wall clock. Times from the API are
+ * epoch ms (GMT+7 wall clock baked in).
  */
 
 const HCMC_TZ = "Asia/Ho_Chi_Minh";
@@ -58,7 +57,7 @@ export type Countdown = {
   seconds: number;
 };
 
-export function countdownTo(target: number, from: number = clockSeed()): Countdown {
+export function countdownTo(target: number, from: number = Date.now()): Countdown {
   const ms = target - from;
   const past = ms <= 0;
   const abs = Math.abs(ms);
@@ -70,7 +69,7 @@ export function countdownTo(target: number, from: number = clockSeed()): Countdo
 }
 
 /** Compact relative phrase: "in 25 min", "in 2h 10m", "in 3 days", "just now". */
-export function relativePhrase(target: number, from: number = clockSeed()): string {
+export function relativePhrase(target: number, from: number = Date.now()): string {
   const c = countdownTo(target, from);
   const sign = c.past ? "ago" : "in";
   if (c.days >= 1) {
@@ -88,10 +87,10 @@ export function relativePhrase(target: number, from: number = clockSeed()): stri
 
 /**
  * Short "time ago" label for a past epoch ms: "now", "12m ago", "3h ago",
- * "2d ago". Demo-clock aware via `from` (defaults to the frozen seed). Used by
- * the Pulse feed and the build log where rows carry a `createdAt`.
+ * "2d ago". Uses the real wall clock via `from` (defaults to now). Used by the
+ * Pulse feed and the build log where rows carry a `createdAt`.
  */
-export function timeAgo(epochMs: number, from: number = clockSeed()): string {
+export function timeAgo(epochMs: number, from: number = Date.now()): string {
   const diff = from - epochMs;
   if (diff < 45_000) return "now";
   const mins = Math.round(diff / 60_000);

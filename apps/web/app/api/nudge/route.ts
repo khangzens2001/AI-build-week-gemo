@@ -12,9 +12,6 @@ export const runtime = "nodejs";
 const Body = z.object({
   interests: z.array(z.string()).default([]),
   limit: z.number().int().min(1).max(3).default(1),
-  // Client passes the demo-clock instant so suggestions match the countdown the
-  // UI renders (server getCurrentTime is frozen at DEMO_NOW; the client ticks).
-  now: z.number().int().optional(),
 });
 
 /** Tokenize a free-text interest list into lowercased, de-duped terms. */
@@ -27,9 +24,9 @@ function tokenize(interests: string[]): string[] {
 }
 
 /**
- * Proactive nudge: surface the soonest upcoming sessions (demo-clock aware),
- * lightly re-ranked by overlap with the caller's interests, plus the next
- * deadline. Deterministic server orchestration — no LLM, only snapshot data.
+ * Proactive nudge: surface the soonest upcoming sessions, lightly re-ranked by
+ * overlap with the caller's interests, plus the next deadline. Deterministic
+ * server orchestration — no LLM, only snapshot data.
  */
 export async function POST(req: Request) {
   const parsed = Body.safeParse(await req.json().catch(() => ({})));
@@ -38,8 +35,7 @@ export async function POST(req: Request) {
   }
   const { interests, limit } = parsed.data;
 
-  // Prefer the client-sent demo instant; fall back to the server demo clock.
-  const now = parsed.data.now ?? getCurrentTime();
+  const now = getCurrentTime();
   const upcoming = getNextSessions(now, 8);
   const tokens = tokenize(interests);
 

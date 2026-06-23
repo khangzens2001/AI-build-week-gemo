@@ -4,7 +4,6 @@ import { ChecklistView } from "@/components/checklist/ChecklistView";
 import { DayTabs } from "@/components/schedule/DayTabs";
 import { ScheduleList } from "@/components/schedule/ScheduleList";
 import { Segmented } from "@/components/ui/Segmented";
-import { clockSeed } from "@/lib/now";
 import { EVENT_DAYS } from "@/lib/types";
 import { useState } from "react";
 
@@ -12,10 +11,8 @@ const HCMC_TZ = "Asia/Ho_Chi_Minh";
 
 /** Default to the current event day if we're inside the window, else Day 1. */
 function defaultDay(): string {
-  // clockSeed (not the anchored clientNow) so the initial state is SSR-stable.
-  const today = new Intl.DateTimeFormat("en-CA", { timeZone: HCMC_TZ }).format(
-    new Date(clockSeed()),
-  );
+  // Date.now() keeps the initial state SSR-stable (no localStorage / anchoring).
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: HCMC_TZ }).format(new Date());
   return EVENT_DAYS.some((d) => d.day === today) ? today : EVENT_DAYS[0].day;
 }
 

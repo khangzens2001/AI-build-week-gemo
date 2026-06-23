@@ -12,7 +12,7 @@ import {
   sessionsOnDay,
 } from "./data";
 import { retrieve } from "./retrieve";
-import { formatTimeLabel, getCurrentTime } from "./time";
+import { formatTimeLabel, getCurrentTime, isoDateLabel } from "./time";
 import { announcementTools } from "./tools/announcements";
 import { checklistTools } from "./tools/checklist";
 import { mentorTools } from "./tools/mentors";
@@ -70,6 +70,7 @@ export const tools = {
     execute: async () => {
       const now = getCurrentTime();
       return {
+        today: isoDateLabel(now),
         now: formatTimeLabel(now),
         sessions: getNowSessions(now).map(sessionView),
       };
@@ -85,6 +86,7 @@ export const tools = {
     execute: async ({ limit }) => {
       const now = getCurrentTime();
       return {
+        today: isoDateLabel(now),
         now: formatTimeLabel(now),
         sessions: getNextSessions(now, limit).map(sessionView),
       };

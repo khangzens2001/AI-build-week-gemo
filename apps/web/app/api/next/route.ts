@@ -4,14 +4,11 @@ export const runtime = "nodejs";
 // Snapshot is hot-reloaded from a runtime file on the VM; keep this dynamic.
 export const dynamic = "force-dynamic";
 
-/** Upcoming sessions after now. The client forwards its demo clock via `?now=`
- * (the server's own clock is frozen); falls back to the server default. */
+/** Upcoming sessions after now, on the server's real wall clock. */
 export function GET(req: Request) {
   const url = new URL(req.url);
   const limit = Number(url.searchParams.get("limit") ?? "5");
-  const nowParam = Number(url.searchParams.get("now"));
-  const now = Number.isNaN(nowParam) ? undefined : nowParam;
-  const sessions = getNextSessions(now, Number.isNaN(limit) ? 5 : limit).map((s) => {
+  const sessions = getNextSessions(undefined, Number.isNaN(limit) ? 5 : limit).map((s) => {
     const venue = getVenueById(s.venueId);
     return {
       id: s.id,

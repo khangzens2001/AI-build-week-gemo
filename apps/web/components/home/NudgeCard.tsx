@@ -2,7 +2,6 @@
 
 import { useNowTick } from "@/hooks/useNowTick";
 import { fetchJson } from "@/lib/fetcher";
-import { clientNow } from "@/lib/now";
 import { relativePhrase } from "@/lib/time";
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
@@ -28,9 +27,9 @@ type NudgeResponse = {
 };
 
 /**
- * Proactive nudge — POSTs /api/nudge (demo-clock aware on the server) and leads
- * with the single best "up next" suggestion, plus the nearest deadline. Bridges
- * to Chat for directions. Quiet when there's nothing ahead.
+ * Proactive nudge — POSTs /api/nudge and leads with the single best "up next"
+ * suggestion, plus the nearest deadline. Bridges to Chat for directions. Quiet
+ * when there's nothing ahead.
  */
 export function NudgeCard() {
   const tick = useNowTick(60_000);
@@ -39,9 +38,7 @@ export function NudgeCard() {
     queryFn: () =>
       fetchJson<NudgeResponse>("/api/nudge", {
         method: "POST",
-        // Send the advancing client demo clock so the server's suggestions stay
-        // in lockstep with the countdown this card renders.
-        body: JSON.stringify({ limit: 1, now: clientNow() }),
+        body: JSON.stringify({ limit: 1 }),
       }),
     refetchInterval: 60_000,
     staleTime: 30_000,

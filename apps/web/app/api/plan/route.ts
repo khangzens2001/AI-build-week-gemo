@@ -1,4 +1,12 @@
-import { allDeadlines, allPerks, chatModel, getCurrentTime, sessionsByStart } from "@event/core";
+import {
+  allDeadlines,
+  allPerks,
+  chatModel,
+  formatDateLabel,
+  getCurrentTime,
+  isoDateLabel,
+  sessionsByStart,
+} from "@event/core";
 import { generateText } from "ai";
 import { clientIp, rateLimit } from "../_lib/ratelimit";
 
@@ -7,10 +15,15 @@ export const runtime = "nodejs";
 export const maxDuration = 120;
 
 // Focused planner prompt — unlike the chat agent, this route has no tools; it is
-// given the event data inline, so it must not be told to "use tools".
-const PLAN_SYSTEM = `You are Cue's day-planner for Agentic AI Build Week (AABW), Jul 8–12 2026, Ho Chi Minh City.
+// given the event data inline, so it must not be told to "use tools". The real
+// current date is prepended per-request so "remaining event time" resolves
+// against today, not a frozen instant.
+function buildPlanSystem(nowMs: number): string {
+  return `Today is ${formatDateLabel(nowMs)} (${isoDateLabel(nowMs)}) in Ho Chi Minh City (GMT+7). Use today's real date to resolve "remaining event time".
+You are Cue's day-planner for Agentic AI Build Week (AABW), Jul 8–12 2026, Ho Chi Minh City.
 Build a personalized, time-ordered agenda from ONLY the event data provided in the prompt. Never invent sessions, times, venues, or perks. If data is missing, say so briefly.
 Be concise and skimmable: group by time, note clashes between parallel sessions and recommend a pick, call out perks worth grabbing and deadlines to watch. Respond in the user's requested language.`;
+}
 
 /**
  * "Plan my day" (stretch) — a one-shot, higher-reasoning planner. Uses
@@ -60,7 +73,7 @@ export async function POST(req: Request) {
 
   const result = await generateText({
     model: chatModel,
-    system: PLAN_SYSTEM,
+    system: buildPlanSystem(now),
     prompt: `Build a personalized agenda for an AABW attendee.
 ${day ? `Day: ${day}.` : "Across the remaining event time."}
 ${body.interests ? `Their interests: ${body.interests}.` : "No stated interests — keep it broad."}
