@@ -33,10 +33,18 @@ interface ChangePayload {
   before?: string;
   after?: string;
   title?: string;
+  // Optional client hints so the Pulse item gets the right badge/colour instead
+  // of always landing as a generic "NEWS"/info card. The crawl-ingest signal
+  // sends kind="schedule" when sessions changed, etc.
+  kind?: "schedule" | "venue" | "perk" | "deadline" | "general";
+  severity?: "info" | "important" | "urgent";
 }
 
 const SUMMARY_SYSTEM =
-  "Restate ONLY what changed from the provided diff. Do not add facts. Keep to one sentence.";
+  "You write one short sentence for event attendees describing what changed, " +
+  "based ONLY on the provided text. Keep concrete names (session, venue, perk " +
+  "titles) exactly as given. Do NOT add facts. Do NOT mention internal page " +
+  "names, slugs, or identifiers (e.g. snake_case like builder_experience_track).";
 
 /**
  * Build a one-sentence summary of the change via Gemini. Falls back to a literal
@@ -77,10 +85,10 @@ async function publishPulse(payload: ChangePayload): Promise<{ id: string; pushe
   const title = payload.title?.trim() || "Event update";
 
   const id = await createAnnouncement({
-    kind: "general",
+    kind: payload.kind ?? "general",
     title,
     body: summary,
-    severity: "info",
+    severity: payload.severity ?? "info",
     sourceUrl: payload.url ?? null,
   });
 
