@@ -37,6 +37,10 @@ ENVFILE=/srv/event-copilot/shared/web.env
 # Dedicated podman volume for crawl output (writable; survives between cycles so
 # change-detection has a prior snapshot to diff against).
 CRAWL_VOL=crawl-data
+# Runtime snapshot volume promoted to after a successful seed+embed; the web
+# container hot-reloads packages/core/data/snapshot.json from here. Declared by
+# infra/vm/quadlet/snapshot-data.volume (VolumeName=snapshot-data).
+SNAPSHOT_VOL=snapshot-data
 # Host dir that nginx serves /covers/ + /venues/ from (NOT a podman named volume —
 # a volume's _data lives under ~/.local/share/containers, home-700, and host nginx
 # (www-data) can't traverse it). A plain bind dir under /srv with world-readable
@@ -174,28 +178,74 @@ chmod -R a+rX "${STATIC_DIR}" 2>/dev/null || true
 
 echo "==> [3/3] Signal /api/ingest/hook if content changed"
 # Read the per-cycle change signal the crawler persisted into report.json. One
-# throwaway container reads the volume AND parses both fields (count drives the
-# gate; pages drive the payload text) — no host `python3`/`jq` dependency, matching
-# the throwaway-container pattern used everywhere else in this stack.
-read -r CHANGED_COUNT CHANGED_PAGES < <(podman run --rm -v "${CRAWL_VOL}:/crawl:ro" \
+# throwaway container reads the volume AND builds the FULL hook payload (so event
+# titles with commas/quotes/unicode are escaped by json.dumps, never by fragile
+# shell quoting) — no host python3/jq dependency. It prints two lines:
+#   line 1: changed_count   (gate)
+#   line 2: compact JSON request body for /api/ingest/hook (concrete summary)
+# The `after` text names the new/updated sessions so the Gemini summary (and its
+# literal fallback) describe WHAT changed, not just "a page was updated".
+HOOK_OUT=$(podman run --rm -v "${CRAWL_VOL}:/crawl:ro" \
   docker.io/library/python:3.11-slim python -c \
-  'import json
+  'import json, sys
 try:
     d = json.load(open("/crawl/latest/report.json"))
-    print(int(d.get("changed_count", 0)), ",".join(d.get("changed_pages", [])))
 except Exception:
-    print("0 ")' 2>/dev/null || echo "0 ")
+    print(0); print(json.dumps({})); sys.exit(0)
+
+count = int(d.get("changed_count", 0))
+pages = d.get("changed_pages", []) or []
+new_titles = d.get("new_event_titles", []) or []
+chg_titles = d.get("changed_event_titles", []) or []
+
+def _join_titles(titles, cap=5):
+    # Keep announcements readable: name up to `cap` sessions, summarise the rest.
+    shown = titles[:cap]
+    text = "; ".join(shown)
+    extra = len(titles) - len(shown)
+    if extra > 0:
+        text += f" and {extra} more"
+    return text
+
+parts = []
+if new_titles:
+    parts.append("New sessions added: " + _join_titles(new_titles) + ".")
+if chg_titles:
+    parts.append("Updated sessions: " + _join_titles(chg_titles) + ".")
+if pages:
+    parts.append("Updated pages: " + ", ".join(pages) + ".")
+after = " ".join(parts) if parts else "Event information was refreshed."
+
+# Prefer a session-centric title when sessions moved; else a page-update title.
+if new_titles:
+    title = "New session added" if len(new_titles) == 1 else f"{len(new_titles)} new sessions added"
+elif chg_titles:
+    title = "Session updated" if len(chg_titles) == 1 else f"{len(chg_titles)} sessions updated"
+else:
+    title = "Event info updated"
+
+body = {
+    "url": "https://agenticaibuildweek.genaifund.ai/",
+    "changeType": "recrawl",
+    "title": title,
+    "after": after,
+}
+print(count)
+print(json.dumps(body))' 2>/dev/null || printf '0\n{}\n')
+
+CHANGED_COUNT=$(printf '%s\n' "$HOOK_OUT" | sed -n '1p')
+HOOK_BODY=$(printf '%s\n' "$HOOK_OUT" | sed -n '2p')
 
 if [[ "${CHANGED_COUNT:-0}" -gt 0 ]]; then
   if [[ -z "${INGEST_HOOK_TOKEN:-}" ]]; then
     echo "    changed_count=$CHANGED_COUNT but INGEST_HOOK_TOKEN unset — skipping Pulse signal." >&2
   else
-    echo "    $CHANGED_COUNT page(s) changed (${CHANGED_PAGES:-?}) — POSTing re-ingest hook."
+    echo "    $CHANGED_COUNT change(s) detected — POSTing re-ingest hook."
     # The hook summarizes the change (Gemini) into a Cue Pulse announcement + push.
     curl -fsS -m 30 \
       -H "Authorization: Bearer ${INGEST_HOOK_TOKEN}" \
       -H "Content-Type: application/json" \
-      -d "{\"url\":\"https://agenticaibuildweek.genaifund.ai/\",\"changeType\":\"recrawl\",\"title\":\"Event info updated\",\"after\":\"Updated pages: ${CHANGED_PAGES}\"}" \
+      -d "${HOOK_BODY}" \
       "${WEB_URL}/api/ingest/hook" >/dev/null
     echo "    Pulse signal sent."
   fi

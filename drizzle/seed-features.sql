@@ -29,12 +29,23 @@ VALUES (
   NULL, 1783476000000, 1783476000000
 );
 
--- ---- Cue Pulse: sample announcements -------------------------------------
+-- ---- Cue Pulse: baseline announcements -----------------------------------
+-- Real event data (deadline, schedule, perks, venues) drawn from the crawler's
+-- snapshot — NOT mock copy. These give the feed useful content from the start of
+-- the event; the auto-crawl→/api/ingest/hook loop adds further items only when it
+-- detects a genuine change. Every row cites its real source_url. created_at is
+-- staggered (3 min apart, anchored just before the Day-1 09:00 open) so the
+-- `ORDER BY created_at DESC` feed has a stable, sensible order: action-first
+-- deadline on top, then schedule, then perks, then venues.
 DELETE FROM announcements;
 INSERT INTO announcements (id, kind, title, body, severity, target_id, source_url, created_at) VALUES
-  ('ann-welcome', 'general', 'Welcome to Day 1 — Enable', 'Registration is open at Tasco Office. Grab your badge, find the wifi card at the desk, and head up for the kickoff.', 'info', NULL, 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', 1783477800000),
-  ('ann-byteplus-room', 'venue', 'BytePlus workshop room moved', 'The BytePlus AI Stack workshop (10:00–12:00) is now in the main hall on level 2, Tasco Office.', 'important', 'day01-byteplus', 'https://luma.com/gaf-vbkf', 1783485900000),
-  ('ann-lunch', 'schedule', 'Lunch served from 12:00', 'Lunch is now being served on the ground floor. Sessions resume at 14:00 with NVIDIA Inception.', 'info', 'day01-lunch', 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', 1783490400000);
+  ('reg-deadline', 'deadline', 'Register for Agentic AI Build Week', 'RSVP to secure your spot. Registration is open now on Luma — badge pickup is at Tasco Office.', 'important', NULL, 'https://luma.com/gaf-hm61?utm_source=landing_page', 1783475400000),
+  ('day1-live', 'schedule', 'Day 1 schedule is live', 'Day 1 (July 8) sessions from BytePlus, Tencent Cloud and NVIDIA are now published. Doors and registration open at 09:00.', 'info', NULL, 'https://agenticaibuildweek.genaifund.ai/#daily_schedule', 1783475220000),
+  ('perk-builder-prize', 'perk', 'Builder Experience Track Prize', 'Win $900 + an AABW tee, and the winning build gets deployed live to thousands.', 'important', NULL, 'https://agenticaibuildweek.genaifund.ai/builder-experience-track', 1783475040000),
+  ('perk-byteplus', 'perk', 'BytePlus V-START credits', 'Up to $15,000 in AI & cloud credits for qualifying startups — apply via the BytePlus workshop on Day 1.', 'info', NULL, 'https://luma.com/gaf-vbkf', 1783474860000),
+  ('perk-nvidia', 'perk', 'NVIDIA Inception benefits', 'Free NVIDIA DLI course for every participant, plus Inception startup benefits: compute, capital and connections.', 'info', NULL, 'https://luma.com/gaf-t4bs', 1783474680000),
+  ('perk-apify', 'perk', 'Apify platform credits', '$25 in Apify platform credits, with top-ups available at the Apify booth.', 'info', NULL, 'https://luma.com/gaf-umu5', 1783474500000),
+  ('venues-confirmed', 'venue', 'Venues confirmed across HCMC', 'Sessions run at Tasco Office (main hub), AWS Office at Bitexco Tower, VNG Campus (Q7) and Galaxy Innovation Park. Check the Map tab for directions.', 'info', NULL, 'https://agenticaibuildweek.genaifund.ai/', 1783474320000);
 
 -- ---- Mentors --------------------------------------------------------------
 -- Mentors are now GENERATED from real event speakers by the seed transform
