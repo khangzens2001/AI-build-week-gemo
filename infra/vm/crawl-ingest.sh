@@ -96,6 +96,7 @@ podman run --rm \
   -v "${CRAWL_VOL}:/app/data" \
   --tmpfs /app/logs \
   -w /app \
+  -e TZ="${EVENT_TZ:-Asia/Ho_Chi_Minh}" \
   -e FIRECRAWL_API_KEY \
   -e EXTERNAL_EVENT_RECHECK_HOURS="${EXTERNAL_EVENT_RECHECK_HOURS:-6}" \
   -e MIMO_API_KEY="${MIMO_API_KEY:-}" \
@@ -186,6 +187,7 @@ echo "==> [3/3] Signal /api/ingest/hook if content changed"
 # The `after` text names the new/updated sessions so the Gemini summary (and its
 # literal fallback) describe WHAT changed, not just "a page was updated".
 HOOK_OUT=$(podman run --rm -v "${CRAWL_VOL}:/crawl:ro" \
+  -e TZ="${EVENT_TZ:-Asia/Ho_Chi_Minh}" \
   docker.io/library/python:3.11-slim python -c \
   'import json, sys
 try:
@@ -214,6 +216,23 @@ def _join_titles(titles, cap=4):
 # Effective gate: only announce when actual sessions were added or changed.
 session_count = len(new_titles) + len(chg_titles)
 
+# When the crawler detected the change. Prefer the event_report timestamp, fall
+# back to the top-level report generated_at. These are NAIVE ISO strings (no
+# offset). We resolve them to an unambiguous epoch-ms here, interpreting the
+# naive value in THIS container local timezone — which the podman run sets to
+# Asia/Ho_Chi_Minh (TZ env below), matching the crawl container that wrote it.
+# Sent to the hook as detectedAt (epoch ms) so the Pulse "time ago" reflects
+# detection time, not embed+POST completion, with zero TZ ambiguity downstream.
+er = d.get("event_report", {}) or {}
+detected_iso = er.get("generated_at") or d.get("generated_at")
+detected_ms = None
+if detected_iso:
+    try:
+        import datetime as _dt
+        detected_ms = int(_dt.datetime.fromisoformat(detected_iso).timestamp() * 1000)
+    except Exception:
+        detected_ms = None
+
 parts = []
 if new_titles:
     parts.append("New sessions: " + _join_titles(new_titles) + ".")
@@ -239,6 +258,12 @@ body = {
     "kind": "schedule",
     "severity": "info",
 }
+# detectedAt is epoch ms resolved from the crawler naive generated_at in the
+# event timezone (this container runs TZ=Asia/Ho_Chi_Minh, see podman run). The
+# hook stores it verbatim as created_at, so the "time ago" is correct regardless
+# of the consumer clock.
+if detected_ms:
+    body["detectedAt"] = detected_ms
 # Gate on session_count, NOT the broader changed_count: a cycle where only the
 # static marketing pages shifted bytes (but no session changed) prints 0 here,
 # so the shell skips the hook and Pulse stays quiet instead of posting a vague
