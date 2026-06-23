@@ -1,35 +1,17 @@
 /**
- * Time utilities + the demo clock.
+ * Time utilities for the AABW event (Asia/Ho_Chi_Minh, GMT+7).
  *
- * The event runs Jul 8–12 2026 (Asia/Ho_Chi_Minh, GMT+7) but the app may be
- * demoed earlier. To keep "now / next" meaningful, every time-aware code path
- * resolves "current time" through {@link getCurrentTime} instead of calling
- * `Date.now()` directly. Set `DEMO_NOW` (server) / `NEXT_PUBLIC_DEMO_NOW`
- * (client) to an ISO timestamp to freeze the clock at a point during the event.
- * Tool/API layers may also pass an explicit `now` (e.g. from a `?now=` query)
- * which always wins over the env default.
+ * Everything runs on the real wall clock: {@link getCurrentTime} returns
+ * `Date.now()`. The helpers below format epoch ms into GMT+7 wall-clock and
+ * date labels and convert event-local times to epoch ms.
  */
 
 /** Fixed UTC offset for Indochina Time (GMT+7). AABW has no DST. */
 export const AABW_TZ_OFFSET = "+07:00";
 
-/** Resolve the configured demo-clock override from env, if any. */
-function demoNowFromEnv(): number | undefined {
-  // NEXT_PUBLIC_ value is inlined on the client; DEMO_NOW is server-only.
-  const raw =
-    (typeof process !== "undefined" ? process.env?.DEMO_NOW : undefined) ??
-    (typeof process !== "undefined" ? process.env?.NEXT_PUBLIC_DEMO_NOW : undefined);
-  if (!raw) return undefined;
-  const ms = Date.parse(raw);
-  return Number.isNaN(ms) ? undefined : ms;
-}
-
-/**
- * The single source of truth for "now", in epoch ms. Returns the demo-clock
- * override when configured, otherwise the real wall clock.
- */
+/** The single source of truth for "now", in epoch ms — the real wall clock. */
 export function getCurrentTime(): number {
-  return demoNowFromEnv() ?? Date.now();
+  return Date.now();
 }
 
 /** Convenience: current time as a `Date`. */
@@ -79,4 +61,22 @@ export function formatTimeLabel(epochMs: number | null): string {
     hour12: false,
     timeZone: "Asia/Ho_Chi_Minh",
   }).format(new Date(epochMs));
+}
+
+/** Format an epoch ms as a GMT+7 date label like "Wednesday, 23/06/2026". */
+export function formatDateLabel(epochMs: number = getCurrentTime()): string {
+  return new Intl.DateTimeFormat("en-GB", {
+    weekday: "long",
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    timeZone: "Asia/Ho_Chi_Minh",
+  }).format(new Date(epochMs));
+}
+
+/** ISO date (YYYY-MM-DD) in the event timezone for an epoch ms. */
+export function isoDateLabel(epochMs: number = getCurrentTime()): string {
+  return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Ho_Chi_Minh" }).format(
+    new Date(epochMs),
+  );
 }

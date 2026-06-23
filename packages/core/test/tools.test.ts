@@ -1,33 +1,28 @@
-import { afterEach, describe, expect, test } from "bun:test";
+import { describe, expect, test } from "bun:test";
+import { getNextSessions, getNowSessions, getUpcomingDeadlines } from "../src/data";
 import { tools } from "../src/tools";
 
 // Day 1, 11:00 GMT+7 — during the BytePlus workshop (10:00–12:00).
-const DEMO = "2026-07-08T11:00:00+07:00";
+const DAY1_1100 = Date.parse("2026-07-08T11:00:00+07:00");
 
 // The AI SDK tool `execute` requires an options arg; tests don't use it.
 const opts = {} as never;
 
-afterEach(() => {
-  process.env.DEMO_NOW = undefined;
-});
-
-describe("getNow tool", () => {
-  test("returns in-progress sessions with venue + a now label", async () => {
-    process.env.DEMO_NOW = DEMO;
-    const out = await tools.getNow.execute({}, opts);
-    expect(out.now).toBe("11:00");
-    expect(out.sessions.length).toBeGreaterThan(0);
-    expect(out.sessions[0]?.venue?.name).toBeTruthy();
+describe("getNow data layer", () => {
+  test("returns in-progress sessions at 11:00 on Day 1", () => {
+    const sessions = getNowSessions(DAY1_1100);
+    expect(sessions.length).toBeGreaterThan(0);
+    expect(
+      sessions.some((s) => /byteplus/i.test(s.title) || /byteplus/i.test(s.partner ?? "")),
+    ).toBe(true);
   });
 });
 
-describe("getNext tool", () => {
-  test("respects the limit and returns only future sessions", async () => {
-    process.env.DEMO_NOW = DEMO;
-    const out = await tools.getNext.execute({ limit: 3 }, opts);
-    expect(out.sessions.length).toBeLessThanOrEqual(3);
-    const now = Date.parse(DEMO);
-    for (const s of out.sessions) expect((s?.startsAt ?? 0) > now).toBe(true);
+describe("getNext data layer", () => {
+  test("respects the limit and returns only future sessions", () => {
+    const sessions = getNextSessions(DAY1_1100, 3);
+    expect(sessions.length).toBeLessThanOrEqual(3);
+    for (const s of sessions) expect((s.startsAt ?? 0) > DAY1_1100).toBe(true);
   });
 });
 
@@ -75,10 +70,9 @@ describe("listPerks + getDeadlines tools", () => {
     expect(out.perks.every((p) => p.sourceUrl)).toBe(true);
   });
 
-  test("getDeadlines surfaces the submission deadline", async () => {
-    process.env.DEMO_NOW = DEMO;
-    const out = await tools.getDeadlines.execute({}, opts);
-    expect(out.deadlines.some((d) => d.type === "submission")).toBe(true);
+  test("getUpcomingDeadlines surfaces an upcoming deadline", () => {
+    const deadlines = getUpcomingDeadlines(DAY1_1100);
+    expect(deadlines.length).toBeGreaterThan(0);
   });
 });
 

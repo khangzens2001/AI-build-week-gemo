@@ -1,4 +1,4 @@
-import { SYSTEM_PROMPT, chatModel, tools } from "@event/core";
+import { buildSystemPrompt, chatModel, tools } from "@event/core";
 import { type UIMessage, convertToModelMessages, stepCountIs, streamText } from "ai";
 import { clientIp, rateLimit } from "../_lib/ratelimit";
 
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
 
   const result = streamText({
     model: chatModel,
-    system: SYSTEM_PROMPT,
+    system: buildSystemPrompt(),
     messages: await convertToModelMessages(body.messages),
     tools,
     // Allow the model to call a tool, read its output, then answer (multi-step).

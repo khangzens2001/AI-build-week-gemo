@@ -1,38 +1,29 @@
 "use client";
 
 import { fetchJson } from "@/lib/fetcher";
-import { clientNow } from "@/lib/now";
 import type { Deadline, NextSession, NowSession, Perk, ScheduleSession, Venue } from "@/lib/types";
 import { useQuery } from "@tanstack/react-query";
 
 /**
- * The client demo clock is the source of truth for "now". The server's
- * getCurrentTime() is frozen, so we forward `?now=` on time-sensitive reads and
- * the routes pass it into the core time-aware queries — keeping the server's
- * now/next/deadlines consistent with the client's advancing countdown.
- *
- * Bucketed to the minute so it doesn't bust the React Query cache every second.
+ * Time-sensitive reads (now / next / deadlines) run on the server's real wall
+ * clock, so the client no longer forwards a `?now=`. They refetch on an
+ * interval to stay live.
  */
-function nowParam(): number {
-  return Math.floor(clientNow() / 60_000) * 60_000;
-}
 
 /** Sessions happening right now. Refetches every 60s to stay live. */
 export function useNow() {
-  const now = nowParam();
   return useQuery({
-    queryKey: ["now", now],
-    queryFn: () => fetchJson<{ sessions: NowSession[] }>(`/api/now?now=${now}`),
+    queryKey: ["now"],
+    queryFn: () => fetchJson<{ sessions: NowSession[] }>("/api/now"),
     refetchInterval: 60_000,
     staleTime: 30_000,
   });
 }
 
 export function useNext(limit = 5) {
-  const now = nowParam();
   return useQuery({
-    queryKey: ["next", limit, now],
-    queryFn: () => fetchJson<{ sessions: NextSession[] }>(`/api/next?limit=${limit}&now=${now}`),
+    queryKey: ["next", limit],
+    queryFn: () => fetchJson<{ sessions: NextSession[] }>(`/api/next?limit=${limit}`),
     refetchInterval: 60_000,
     staleTime: 30_000,
   });
@@ -66,10 +57,9 @@ export function usePerks() {
 }
 
 export function useDeadlines() {
-  const now = nowParam();
   return useQuery({
-    queryKey: ["deadlines", now],
-    queryFn: () => fetchJson<{ deadlines: Deadline[] }>(`/api/deadlines?now=${now}`),
+    queryKey: ["deadlines"],
+    queryFn: () => fetchJson<{ deadlines: Deadline[] }>("/api/deadlines"),
     refetchInterval: 60_000,
     staleTime: 30_000,
   });

@@ -1,25 +1,19 @@
 "use client";
 
-import { clientNow, clockSeed } from "@/lib/now";
 import { useEffect, useState } from "react";
 
 /**
- * A ticking "now" for live countdowns, driven by the demo clock so it agrees
- * with the server AND keeps running across page refreshes.
+ * A ticking "now" for live countdowns on the real wall clock.
  *
- * SSR-safety: the first render uses {@link clockSeed} (the un-advanced demo
- * start, no localStorage) so server and client hydrate identically. Right after
- * mount we switch to {@link clientNow} (the anchored, real-elapsed-advanced
- * value) and tick from there — so a refresh resumes the countdown instead of
- * resetting it.
+ * SSR-safety: the first render seeds with `Date.now()` in the useState
+ * initializer; a post-mount effect then ticks it forward on an interval.
  */
 export function useNowTick(intervalMs = 1000): number {
-  const [now, setNow] = useState(() => clockSeed());
+  const [now, setNow] = useState(() => Date.now());
 
   useEffect(() => {
-    // Jump to the anchored running time immediately post-mount, then tick.
-    setNow(clientNow());
-    const id = setInterval(() => setNow(clientNow()), intervalMs);
+    setNow(Date.now());
+    const id = setInterval(() => setNow(Date.now()), intervalMs);
     return () => clearInterval(id);
   }, [intervalMs]);
 
