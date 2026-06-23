@@ -1,6 +1,6 @@
 "use client";
 
-import { useAddChecklistItem, useChecklist } from "@/hooks/useChecklist";
+import { useAddChecklistItem, useChecklist, useUpdateChecklistItem } from "@/hooks/useChecklist";
 import { cn } from "@/lib/cn";
 import { SUBMISSION_TEMPLATE } from "@/lib/submission";
 import { signIn, useSession } from "next-auth/react";
@@ -15,10 +15,33 @@ export function SubmissionChecklist() {
   const { status } = useSession();
   const { data } = useChecklist();
   const add = useAddChecklistItem();
+  const update = useUpdateChecklistItem();
 
   const submissionItems = (data?.items ?? []).filter((i) => i.targetType === "submission");
   const tracked = submissionItems.length > 0;
   const doneCount = submissionItems.filter((i) => i.completed).length;
+
+  const toggleStep = async (step: (typeof SUBMISSION_TEMPLATE)[number]) => {
+    if (status !== "authenticated") {
+      signIn("google");
+      return;
+    }
+    const match = submissionItems.find((i) => i.title === step.title);
+    if (match) {
+      update.mutate({ id: match.id, completed: !match.completed });
+      return;
+    }
+    try {
+      const created = await add.mutateAsync({
+        title: step.title,
+        notes: step.notes,
+        targetType: "submission",
+      });
+      update.mutate({ id: created.id, completed: true });
+    } catch {
+      signIn("google");
+    }
+  };
 
   const trackAll = () => {
     if (status !== "authenticated") {
@@ -59,9 +82,12 @@ export function SubmissionChecklist() {
           const match = submissionItems.find((i) => i.title === step.title);
           const completed = match?.completed ?? false;
           return (
-            <div
+            <button
+              type="button"
               key={step.title}
-              className="flex items-start gap-3 rounded-2xl border border-line bg-surface p-3.5"
+              onClick={() => toggleStep(step)}
+              disabled={add.isPending || update.isPending}
+              className="flex w-full items-start gap-3 rounded-2xl border border-line bg-surface p-3.5 text-left transition hover:border-line/80 active:scale-[0.99] disabled:opacity-60"
             >
               <span
                 className={cn(
@@ -84,7 +110,7 @@ export function SubmissionChecklist() {
                 </p>
                 <p className="mt-0.5 text-xs leading-snug text-muted">{step.notes}</p>
               </div>
-            </div>
+            </button>
           );
         })}
       </div>
@@ -105,9 +131,7 @@ export function SubmissionChecklist() {
         </button>
       )}
       {tracked && (
-        <p className="mt-2.5 text-center text-xs text-faint">
-          Tick these off in Schedule → My Checklist.
-        </p>
+        <p className="mt-2.5 text-center text-xs text-faint">Tap any step to tick it off.</p>
       )}
     </section>
   );
